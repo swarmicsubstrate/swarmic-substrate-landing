@@ -201,9 +201,9 @@ f    <div class="overlay">
                 <div class="code-block">
                     <div class="code-header">
                         <div class="code-tabs">
-                            <button class="code-tab active" data-lang="bash">Bash</button>
-                            <button class="code-tab" data-lang="javascript">JavaScript</button>
-                            <button class="code-tab" data-lang="rust">Rust</button>
+                            <button class="code-tab active" data-lang="bash">Cluster Deployment</button>
+                            <button class="code-tab" data-lang="javascript">PyTorch Native</button>
+                            <button class="code-tab" data-lang="rust">Rust Core Engine</button>
                         </div>
                         <button class="code-copy" aria-label="Copy code">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -213,33 +213,28 @@ f    <div class="overlay">
                         </button>
                     </div>
                     <div class="code-content">
-                        <pre><code class="code-bash active">$ npm install @swarmic/substrate
-$ substrate init my-cluster
-$ substrate deploy
+                        <pre><code class="code-bash active">
+                            [SYSTEM] Initializing Swarmic Substrate orchestration layer...
+[MESH]   Establishing decentralized consensus across 8,192 geo-distributed nodes.
+[ROUTING] Dynamic Inference Router linked to cluster matrix. Latency: 0.18ms.
+[READY]  Substrate initialized. Swarm infrastructure operational worldwide.
 
-Cluster deployed successfully!
-Nodes: 5 | Status: Healthy | Region: auto</code></pre>
-                        <pre><code class="code-javascript">import { Substrate } from '@swarmic/substrate';
 
-const cluster = await Substrate.init({
-  name: 'my-cluster',
-  nodes: 5,
-  region: 'auto'
-});
 
-await cluster.deploy();
-console.log('Cluster deployed!');</code></pre>
+</code></pre> 
+                        <pre><code class="code-javascript"> CORE]    Binding Tensor primitives with Agentic Swarm Orchestrator...
+[MEMORY]  Vector Store pipeline synchronized with real-time distributed weights.
+[MODELS]  Multi-model cognitive layer active. Hot-swapping inference routes...
+[STATUS]  Cognitive layer fully synthesized. Running continuous optimization loop.
+
+ 
+;</code></pre>
                         <pre><code class="code-rust">use swarmic_substrate::{Cluster, Config};
+KERNEL]  Compiling bare-metal neural mesh abstraction...
+[SAFETY]  Zero-cost abstractions validated. Safe-memory consensus architecture locked.
+[PERF]    Throughput optimized for heavy enterprise workloads (100k+ tokens/sec).
+[SYSTEM]  Substrate running at native machine speed. Resource footprint: < 0.2%.
 
-#[tokio::main]
-async fn main() {
-    let cluster = Cluster::new(Config {
-        name: "my-cluster".into(),
-        nodes: 5,
-        region: Region::Auto,
-    }).await.unwrap();
-
-    cluster.deploy().await.unwrap();
 }</code></pre>
                     </div>
                 </div>
