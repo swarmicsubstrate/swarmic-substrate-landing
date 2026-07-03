@@ -268,7 +268,22 @@ await swarm.deploy();</code></pre>
         </footer>
     </div>
 
-    <script type="module" src="/app.js"></script>
+   <script>
+ document.addEventListener("DOMContentLoaded", () => {
+   const tabs = document.querySelectorAll(".tabs-container button, button.tab-btn");
+   const blocks = document.querySelectorAll(".code-content pre");
+
+   tabs.forEach((tab, index) => {
+     tab.addEventListener("click", () => {
+       tabs.forEach(t => t.classList.remove("active"));
+       blocks.forEach(b => b.style.display = "none");
+
+       tab.classList.add("active");
+       if (blocks[index]) blocks[index].style.display = "block";
+     });
+   });
+ });
+</script>
 </body>
 
                                                    
