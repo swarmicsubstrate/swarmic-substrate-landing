@@ -186,8 +186,7 @@
             <section class="code-section">
         <div class="marketing-section" style="margin-top: 3rem; text-align: center;">
    <p style="font-size: 1.25rem; color: #9ca3af; margin-bottom: 3rem; font-family: sans-serif;">
-       Next-Generation Infrastructure for Autonomous AI Agents.
-   </p>
+       Next-Generation Infrastructure for Autonomous AI Agents.</p>
 
    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; text-align: left;">
        <div style="background: #111827; border: 1px solid #1f2937; padding: 2rem; border-radius: 12px;">
@@ -197,8 +196,7 @@
 
        <div style="background: #111827; border: 1px solid #1f2937; padding: 2rem; border-radius: 12px;">
            <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 0.75rem; font-family: sans-serif;">Model Orchestration</h3>
-           <p style="color: #9ca3af; font-size: 0.95rem; line-height: 1.6; font-family: sans-serif;">Dynamic routing using a custom Mixture of Experts (MoE) protocol to optimize compute costs and LLM resource consumption.
-</p>
+           <p style="color: #9ca3af; font-size: 0.95rem; line-height: 1.6; font-family: sans-serif;">Dynamic routing using a custom Mixture of Experts (MoE) protocol to optimize compute costs and LLM resource consumption.</p>
        </div>
 
        <div style="background: #111827; border: 1px solid #1f2937; padding: 2rem; border-radius: 12px;">
@@ -207,18 +205,43 @@
        </div>
    </div>
 </div>       
-<div style="background: #111827; border: 1px solid #1f2937; padding: 25px; border-radius: 12px; text-align: left; max-width: 650px; margin: 30px auto; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; line-height: 1.5; color: #e5e7eb; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+<!-- Developer SDK Section -->
+<div style="text-align: center; margin-top: 60px; margin-bottom: 20px; width: 100%;">
+<span style="background: rgba(59, 130, 246, 0.1); color: #3b82f6; padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; font-family: 'Inter', sans-serif;">Developer SDK Example</span>
+<h3 style="color: #fff; font-size: 1.5rem; margin: 15px 0 5px 0; font-family: 'Inter', sans-serif; font-weight: 600;">Integrate with a Single Line of Code</h3>
+<p style="color: #9ca3af; font-size: 0.95rem; max-width: 500px; margin: 0 auto 20px auto; font-family: 'Inter', sans-serif; line-height: 1.5;">Initialize parallel agent execution nodes directly inside your existing asynchronous infrastructure pipelines.</p>
+
+
+<div style="background: #111827; border: 1px solid #1f2937; padding: 25px; border-radius: 12px; text-align: left; max-width: 650px; margin: 0 auto 40px auto; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; line-height: 1.5; color: #e5e7eb; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
 <p style="margin: 0 0 15px 0; color: #6b7280; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">// src/main.rs</p>
 <span style="color: #f43f5e;">use</span> swarmic_substrate::{Cluster, Config, AgentRuntime};<br><br>
 <span style="color: #3b82f6;">#[tokio::main]</span><br>
 <span style="color: #f43f5e;">async fn</span> <span style="color: #10b981;">main</span>() -> Result&lt;(), Box&lt;<span style="color: #f43f5e;">dyn</span> std::error::Error&gt;&gt; {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #f43f5e;">let</span> config = Config::from_env()?;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #f43f5e;">let</span> cluster = Cluster::init(config).<span style="color: #3b82f6;">await</span>?;<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #10b981;">let</span> cluster = Cluster::init(config).<span style="color: #3b82f6;">await</span>?;<br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6b7280;">// Spawn autonomous execution nodes</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;cluster.deploy_agents(AgentRuntime::parallel()).<span style="color: #3b82f6;">await</span>?;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;Ok(())<br>
 }
 </div>
+
+
+
+<div style="background: #111827; border: 1px solid #1f2937; padding: 25px; border-radius: 12px; text-align: left; max-width: 650px; margin: 0 auto 40px auto; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; line-height: 1.5; color: #e5e7eb; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+<p style="margin: 0 0 15px 0; color: #6b7280; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">// src/main.rs</p>
+<span style="color: #f43f5e;">use</span> swarmic_substrate::{Cluster, Config, AgentRuntime};<br><br>
+<span style="color: #3b82f6;">#[tokio::main]</span><br>
+<span style="color: #f43f5e;">async fn</span> <span style="color: #10b981;">main</span>() -> Result&lt;(), Box&lt;<span style="color: #f43f5e;">dyn</span> std::error::Error&gt;&gt; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #f43f5e;">let</span> config = Config::from_env()?;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #10b981;">let</span> cluster = Cluster::init(config).<span style="color: #3b82f6;">await</span>?;<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6b7280;">// Spawn autonomous execution nodes</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;cluster.deploy_agents(AgentRuntime::parallel()).<span style="color: #3b82f6;">await</span>?;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Ok(())<br>
+}
+</div>
+
+
+
 
   
 </div>
