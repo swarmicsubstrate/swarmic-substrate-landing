@@ -215,7 +215,7 @@
 <div style="background: #111827; border: 1px solid #1f2937; padding: 25px; border-radius: 12px; text-align: left; max-width: 650px; margin: 0 auto 40px auto; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; line-height: 1.5; color: #e5e7eb; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
 <p style="margin: 0 0 15px 0; color: #6b7280; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">// src/main.rs</p>
 <span style="color: #f43f5e;">use</span> swarmic_substrate::{Cluster, Config, AgentRuntime};<br><br>
-<span style="color: #3b82f6;">#[tokio::main]</span><br>
+<span style="color: #3b82f6;"#[tokio::main]</span><br>
 <span style="color: #f43f5e;">async fn</span> <span style="color: #10b981;">main</span>() -> Result&lt;(), Box&lt;<span style="color: #f43f5e;">dyn</span> std::error::Error&gt;&gt; {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #f43f5e;">let</span> config = Config::from_env()?;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #10b981;">let</span> cluster = Cluster::init(config).<span style="color: #3b82f6;">await</span>?;<br><br>
@@ -224,25 +224,6 @@
 &nbsp;&nbsp;&nbsp;&nbsp;Ok(())<br>
 }
 </div>
-
-
-
-<div style="background: #111827; border: 1px solid #1f2937; padding: 25px; border-radius: 12px; text-align: left; max-width: 650px; margin: 0 auto 40px auto; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; line-height: 1.5; color: #e5e7eb; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-<p style="margin: 0 0 15px 0; color: #6b7280; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">// src/main.rs</p>
-<span style="color: #f43f5e;">use</span> swarmic_substrate::{Cluster, Config, AgentRuntime};<br><br>
-<span style="color: #3b82f6;">#[tokio::main]</span><br>
-<span style="color: #f43f5e;">async fn</span> <span style="color: #10b981;">main</span>() -> Result&lt;(), Box&lt;<span style="color: #f43f5e;">dyn</span> std::error::Error&gt;&gt; {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #f43f5e;">let</span> config = Config::from_env()?;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #10b981;">let</span> cluster = Cluster::init(config).<span style="color: #3b82f6;">await</span>?;<br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6b7280;">// Spawn autonomous execution nodes</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;cluster.deploy_agents(AgentRuntime::parallel()).<span style="color: #3b82f6;">await</span>?;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Ok(())<br>
-}
-</div>
-
-
-
-
   
 </div>
                 </div>
