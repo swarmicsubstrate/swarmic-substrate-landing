@@ -60,7 +60,11 @@
                     <span class="badge-dot"></span>
                     <span>Autonomous MoE Live</span>
                 </div>
-                <h1 class="hero-title">SWARMIC <span class="gradient-text">NETWORKS</span> Parallel Agent Orchestration</h1>
+                <h1 class="hero-title">SWARMIC <span class="gradient-text">SUBSTRATE</span>: High-Throughput Cloud Orchestration for Multi-Agent Systems</h1>
+<p class="hero-subtitle" style="max-width: 800px; margin: 20px auto 30px auto; color: #9ca3af; line-height: 1.6; font-size: 1.1rem; text-align: center;">Mitigate inference costs and eliminate latency bottlenecks. Deploy localized, quantized sLLM clusters on a zero-trust compute substrate engineered for scalable, multi-agent enterprise automation across European and US infrastructure pipelines.</p>
+<div class="hero-actions" style="text-align: center; margin-bottom: 40px;">
+<a href="#pricing" class="btn btn-primary" style="display: inline-block; background: #3b82f6; color: #fff; padding: 12px 30px; border-radius: 6px; text-decoration: none; font-weight: 600;">Launch Substrate</a>
+</div>
 
                 <div class="hero-stats">
                     <div class="stat">
@@ -110,8 +114,9 @@
                                 <path d="M12 2v4m0 12v4M2 12h4m12 0h4m-2.93-7.07l-2.83 2.83m-8.48 8.48l-2.83 2.83m0-14.14l2.83 2.83m8.48 8.48l2.83 2.83"/>
                             </svg>
                         </div>
-                      <h3>🧠 Cognitive Layer & Daily Workflow Synergy</h3>
-                        <p>Next-generation digital colleagues designed for high-throughput information synthesis. Mitigating systemic cognitive overload and automating personal multi-step tasks to transform raw consumer data into instant operational clarity.</p>
+                     <h3>🧠 Cognitive Layer & High-Throughput Cache</h3>
+<p>Next-generation distributed memory systems designed for fast token generation. Eliminating redundant inference cycles and optimizing contextual prompt caching to deliver sub-millisecond response clarity across deep agent neural meshes.</p>
+
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">
@@ -202,8 +207,20 @@
        </div>
    </div>
 </div>       
+<div style="background: #111827; border: 1px solid #1f2937; padding: 25px; border-radius: 12px; text-align: left; max-width: 650px; margin: 30px auto; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; line-height: 1.5; color: #e5e7eb; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+<p style="margin: 0 0 15px 0; color: #6b7280; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">// src/main.rs</p>
+<span style="color: #f43f5e;">use</span> swarmic_substrate::{Cluster, Config, AgentRuntime};<br><br>
+<span style="color: #3b82f6;">#[tokio::main]</span><br>
+<span style="color: #f43f5e;">async fn</span> <span style="color: #10b981;">main</span>() -> Result&lt;(), Box&lt;<span style="color: #f43f5e;">dyn</span> std::error::Error&gt;&gt; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #f43f5e;">let</span> config = Config::from_env()?;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #f43f5e;">let</span> cluster = Cluster::init(config).<span style="color: #3b82f6;">await</span>?;<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6b7280;">// Spawn autonomous execution nodes</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;cluster.deploy_agents(AgentRuntime::parallel()).<span style="color: #3b82f6;">await</span>?;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Ok(())<br>
+}
+</div>
 
-   <pre style="display: none;"><code class="code-rust">use swarmic_substrate::{Cluster, Config}; }</code></pre>
+  
 </div>
                 </div>
             </section>
@@ -287,9 +304,7 @@
 </div>
 
 <div class="footer-bottom" style="display: flex; flex-direction: column; align-items: center; text-align: center; width: 100%; padding-top: 20px; border-top: 1px solid #1f2937; margin-top: 40px;">
-<p style="margin: 0; font-family: 'Inter', sans-serif; color: #9ca3af;">&copy; 2026 Swarmic Substrate LLC is a registered cloud software technology provider in the State of Wyoming.
-
-.</p>
+<p style="margin: 0; font-family: 'Inter', sans-serif; color: #9ca3af;">&copy; 2026 Swarmic Substrate LLC is a registered cloud software technology provider in the State of Wyoming..</p>
 <p style="color: #525252; font-size: 11px; margin-top: 12px; max-width: 600px; line-height: 1.5; font-family: 'Inter', sans-serif; padding: 0 20px;">This website is a static informational landing page. We do not use tracking cookies or collect personal data. Swarmic Substrate LLC is a registered cloud software technology provider. All information is provided 'as is' without warranties of any kind. Governing Law: United States.</p>
 </div>
 </footer>
