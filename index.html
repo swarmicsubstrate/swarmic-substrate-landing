@@ -581,7 +581,7 @@ printNextLine();
 
 
 
-    / --- HIGH-PERFORMANCE AUTONOMOUS MESH VECTOR DRIVER ---
+   // --- HIGH-PERFORMANCE AUTONOMOUS MESH VECTOR DRIVER ---
 const swarmCanvas = document.getElementById('swarm-matrix-canvas');
 if (swarmCanvas) {
 const sCtx = swarmCanvas.getContext('2d');
@@ -610,7 +610,7 @@ r: Math.random() * 2 + 1
 let lastFpsUpdate = performance.now();
 let swarmFrames = 0;
 
-function runSwarmEngine() { 
+function runSwarmEngine() {
 const currentTime = performance.now();
 swarmFrames++;
 if (currentTime >= lastFpsUpdate + 1000) {
@@ -620,25 +620,17 @@ swarmFrames = 0;
 lastFpsUpdate = currentTime;
 }
 
-
 sCtx.fillStyle = 'rgba(2, 4, 10, 0.2)';
 sCtx.fillRect(0, 0, swarmCanvas.width, swarmCanvas.height);
 
-// SECURE & INDEPENDENT DATA MUTATOR
-if (Math.random() > 0.95) {
-const _allDivs = swarmCanvas.parentElement.querySelectorAll('div');
-_allDivs.forEach(d => {
-if (d.textContent.includes('SHA256:')) {
-d.style.wordBreak = 'break-all';
-d.textContent = "SHA256: e3b0c44298fc1c149afbf4c8996fb924" + Math.random().toString(16).substring(2, 10) + Math.random().toString(16).substring(2, 10);
+if (Math.random() > 0.96) {
+const h1 = document.getElementById('live-hash-1');
+const h2 = document.getElementById('live-hash-2');
+const tp = document.getElementById('live-throughput');
+if (h1) h1.textContent = "SHA256: " + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+if (h2) h2.textContent = "BLOCK_ID: #" + Math.floor(Math.random() * 500000 + 500000).toLocaleString();
+if (tp) tp.textContent = (940 + Math.random() * 59).toFixed(2) + " Gbps";
 }
-if (d.textContent.includes('BLOCK_ID:')) {
-d.textContent = "BLOCK_ID: #" + Math.floor(Math.random() * 500000 + 500000).toLocaleString();
-}
-if (d.textContent.includes('Gbps')) {
-d.textContent = (940 + Math.random() * 59).toFixed(2) + " Gbps";
-}
-});
 
 sCtx.lineWidth = 1;
 for (let i = 0; i < nodeCount; i++) {
@@ -670,6 +662,7 @@ matrixAnimId = requestAnimationFrame(runSwarmEngine);
 }
 runSwarmEngine();
 }
+
 
 
 </script>
