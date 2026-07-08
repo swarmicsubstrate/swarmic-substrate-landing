@@ -485,23 +485,25 @@ btn.style.color = '#9ca3af';
 <div id="terminal-screen" style="color: #38bdf8; font-size: 0.9rem; line-height: 1.8; min-height: 180px; white-space: pre-wrap;">$ click 'Run Simulation' to initialize distributed agent framework...<span style="animation: blink 1s infinite;" id="terminal-cursor">|</span></div>
 
 <!-- PRESTIGIOUS REAL-TIME METRICS PANEL -->
-<div id="metrics-panel" style="display: none; border-top: 1px solid #1e293b; margin-top: 20px; padding-top: 20px; font-family: monospace;">
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px;">
-<div style="background: #070a13; border: 1px solid #1e293b; padding: 12px; border-radius: 6px;">
-<div style="color: #64748b; font-size: 0.7rem; text-transform: uppercase;">Node CPU Load</div>
-<div style="color: #3b82f6; font-size: 1.2rem; font-weight: bold; margin-top: 4px;" id="metric-cpu">0.0%</div>
-</div>
-<div style="background: #070a13; border: 1px solid #1e293b; padding: 12px; border-radius: 6px;">
-<div style="color: #64748b; font-size: 0.7rem; text-transform: uppercase;">Cluster VRAM</div>
-<div style="color: #eab308; font-size: 1.2rem; font-weight: bold; margin-top: 4px;" id="metric-vram">0.0 GB</div>
-</div>
-<div style="background: #070a13; border: 1px solid #1e293b; padding: 12px; border-radius: 6px;">
-<div style="color: #64748b; font-size: 0.7rem; text-transform: uppercase;">Tokens / Sec</div>
-<div style="color: #10b981; font-size: 1.2rem; font-weight: bold; margin-top: 4px;" id="metric-tps">0 t/s</div>
-</div>
-</div>
+<div id="metrics-panel" style="display: none; border-top: 1px solid #1e293b; margin-top: 40px; padding-top: 40px; font-family: monospace;">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 20px;">
+
+<div style="background: #020617; border: 1px solid #1e293b; padding: 20px; border-radius: 8px;">
+<span style="color: #64748b; font-size: 0.7rem; text-transform: uppercase;">Node CPU Load</span>
+<div id="metric-cpu" style="color: #3b82f6; font-size: 1.5rem; font-weight: bold; margin-top: 5px;">0.0%</div>
 </div>
 
+<div style="background: #020617; border: 1px solid #1e293b; padding: 20px; border-radius: 8px;">
+<span style="color: #64748b; font-size: 0.7rem; text-transform: uppercase;">Cluster VRAM</span>
+<div id="metric-vram" style="color: #eab308; font-size: 1.5rem; font-weight: bold; margin-top: 5px;">0.0 GB</div>
+</div>
+
+<div style="background: #020617; border: 1px solid #1e293b; padding: 20px; border-radius: 8px;">
+<span style="color: #64748b; font-size: 0.7rem; text-transform: uppercase;">Tokens / Sec</span>
+<div id="metric-tps" style="color: #10b981; font-size: 1.5rem; font-weight: bold; margin-top: 5px;">0 t/s</div>
+</div>
+
+</div>
 </div>
 </div>
 </section>
