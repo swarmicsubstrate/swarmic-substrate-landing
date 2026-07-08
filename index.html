@@ -440,9 +440,9 @@ btn.style.color = '#9ca3af';
 
 <!-- TERMINAL HEADER DOTS -->
 <div style="display: flex; gap: 8px; margin-bottom: 20px; border-bottom: 1px solid #1e293b; padding-bottom: 12px;">
-<span style="width: 12px; height: 12px; background: #ef4444; border-radius: 50%;"></span>
-<span style="width: 12px; height: 12px; background: #eab308; border-radius: 50%;"></span>
-<span style="width: 12px; height: 12px; background: #22c55e; border-radius: 50%;"></span>
+<span onclick="triggerEasterEgg('red')" style="width: 12px; height: 12px; background: #ef4444; border-radius: 50%; cursor: pointer;"></span>
+<span onclick="triggerEasterEgg('yellow')" style="width: 12px; height: 12px; background: #eab308; border-radius: 50%; cursor: pointer;"></span>
+<span onclick="triggerEasterEgg('green')" style="width: 12px; height: 12px; background: #22c55e; border-radius: 50%; cursor: pointer;"></span>
 <span style="color: #475569; font-size: 0.75rem; margin-left: 15px; font-family: sans-serif;">substrate-terminal ~ guest</span>
 </div>
 
@@ -457,6 +457,16 @@ btn.style.color = '#9ca3af';
 
 <!-- SIMULATION LIVE ENGINE SCRIPT -->
 <script>
+function triggerEasterEgg(color) {
+const screen = document.getElementById('terminal-screen');
+if(color === 'red') {
+screen.innerHTML = "<span style='color: #ef4444;'>[ACCESS DENIED] Sovereign substrate core connection cannot be terminated by guest role.</span>\n$ _";
+} else if(color === 'yellow') {
+screen.innerHTML = "<span style='color: #eab308;'>[WARNING] System minimization bypassed. Multi-agent cluster virtualization requires full-screen persistence.</span>\n$ _";
+} else if(color === 'green') {
+screen.innerHTML = "<span style='color: #22c55e;'>[EXPAND] High-availability matrix already optimized for your device layout.</span>\n$ _";
+}
+}
 function triggerSwarmSimulation() {
 const btn = document.getElementById('run-sim-btn');
 const screen = document.getElementById('terminal-screen');
