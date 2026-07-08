@@ -530,9 +530,7 @@ function triggerSwarmSimulation() {
 const btn = document.getElementById('run-sim-btn');
 const screen = document.getElementById('terminal-screen');
 const panel = document.getElementById('metrics-panel');
-
 if (metricsInterval) clearInterval(metricsInterval);
-
 btn.disabled = true;
 btn.style.background = '#1e293b';
 btn.style.color = '#64748b';
@@ -552,20 +550,18 @@ const logs = [
 "$ system status: OPERATIONAL. Live telemetry streaming active."
 ];
 
-screen.innerHTML =  "";
+screen.textContent = "";
 panel.style.display = 'block';
 let currentLine = 0;
 
 function printNextLine() {
 if (currentLine < logs.length) {
-screen.innerHTML += logs[currentLine] + "<br>";
+screen.textContent += logs[currentLine] + "\n";
 currentLine++;
 screen.scrollTop = screen.scrollHeight;
-
 document.getElementById('metric-cpu').textContent = (Math.random() * 30 + 40).toFixed(1) + "%";
 document.getElementById('metric-vram').textContent = (Math.random() * 10 + 75).toFixed(1) + " GB";
 document.getElementById('metric-tps').textContent = Math.floor(Math.random() * 200 + 800) + " t/s";
-
 setTimeout(printNextLine, Math.random() * 300 + 200);
 } else {
 btn.disabled = false;
@@ -573,7 +569,6 @@ btn.style.background = '#3b82f6';
 btn.style.color = '#fff';
 btn.textContent = 'Run Again';
 btn.style.boxShadow = '0 4px 12px rgba(59,130,246,0.3)';
-
 metricsInterval = setInterval(() => {
 document.getElementById('metric-cpu').textContent = (Math.random() * 15 + 75).toFixed(1) + "%";
 document.getElementById('metric-vram').textContent = (Math.random() * 3 + 92).toFixed(1) + " GB";
@@ -581,9 +576,11 @@ document.getElementById('metric-tps').textContent = Math.floor(Math.random() * 4
 }, 400);
 }
 }
-
 printNextLine();
 }
+</script>
+
+
     / --- HIGH-PERFORMANCE AUTONOMOUS MESH VECTOR DRIVER ---
 const swarmCanvas = document.getElementById('swarm-matrix-canvas');
 if (swarmCanvas) {
