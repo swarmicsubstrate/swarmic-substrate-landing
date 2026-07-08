@@ -518,13 +518,13 @@ const logs = [
 "$ system status: OPERATIONAL. Live telemetry streaming active."
 ];
 
-screen.textContent = "";
+screen.innerHTML =  "";
 panel.style.display = 'block';
 let currentLine = 0;
 
 function printNextLine() {
 if (currentLine < logs.length) {
-screen.textContent += logs[currentLine] + "<br>";
+screen.innerHTML += logs[currentLine] + "<br>";
 currentLine++;
 screen.scrollTop = screen.scrollHeight;
 
