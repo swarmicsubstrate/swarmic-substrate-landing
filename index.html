@@ -382,8 +382,28 @@ Corporate Governance Notice: Swarmic Substrate is a registered trademark of Swar
 <script type="module" src="app.js"></script>
 
 <!-- COMPLIANCE PRIVACY DIALOG MODAL -->
-<div id="privacy-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 9999; justify-content: center; align-items: center;">
-<div style="background: #111827; border: 1px solid #1f2937; padding: 40px; border-radius: 12px; max-width: 600px; width: 100%; max-height: 80%; overflow-y: auto; position: relative; font-family: sans-serif;">
+<div id="privacy-modal" style="display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100vw;
+height: 100vh;
+background: rgba(0,0,0,0.8);
+z-index: 9999;">
+<div style="background: #111827;
+border: 1px solid #1f2937;
+padding: 25px;
+border-radius: 12px;
+max-width: 500px;
+width: calc(100% - 40px);
+max-height: 85vh;
+overflow-y: auto;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+font-family: sans-serif;
+box-sizing: border-box;">
 <button style="position: absolute; top: 15px; right: 15px; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer;" onclick="document.getElementById('privacy-modal').style.display='none';">×</button>
 <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 20px;">Privacy Policy</h3>
 <p style="margin-bottom: 15px; color: #9ca3af;">Swarmic Substrate LLC ("we", "us", or "our") operates swarmicsubstrate.com. This policy outlines our standard data handling configurations.</p>
@@ -392,6 +412,8 @@ Corporate Governance Notice: Swarmic Substrate is a registered trademark of Swar
 <p style="font-size: 0.85rem; color: #6b7280; margin-top: 30px;">Last updated: July 2026. For governance inquiries, contact operations.</p>
 </div>
 </div>
+
+
 
 </body>
 </html>
