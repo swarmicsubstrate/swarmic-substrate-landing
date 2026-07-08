@@ -622,23 +622,21 @@ lastFpsUpdate = currentTime;
 sCtx.fillStyle = 'rgba(2, 4, 10, 0.2)';
 sCtx.fillRect(0, 0, swarmCanvas.width, swarmCanvas.height);
 
-// DYNAMIC CRYPTO MUTATOR ENGINE
-const textContainer = swarmCanvas.parentElement.querySelector('div[style*="position: absolute"]');
-if (textContainer && Math.random() > 0.94) {
-textContainer.innerHTML = `
-<div style="color: #3b82f6; font-size: 0.85rem; font-weight: bold;">[SYS_FABRIC] ORCHESTRATION LAYER</div>
-<div style="color: #4b5563; font-size: 0.75rem; margin-top: 4px; word-break: break-all;">SHA256: e3b0c44298fc1c149afbf4c8996fb924${Math.random().toString(16).substring(2, 10)}${Math.random().toString(16).substring(2, 10)}</div>
-<div style="color: #4b5563; font-size: 0.75rem;">BLOCK_ID: #994,${Math.floor(Math.random() * 800 + 100)}.811</div>
-`;
-
-const tpContainer = swarmCanvas.parentElement.querySelector('div[style*="bottom: 15px"]');
-if (tpContainer) {
-tpContainer.innerHTML = `
-<div style="color: #10b981; font-size: 0.9rem; font-weight: bold;">THROUGHPUT RATIO</div>
-<div style="color: #fff; font-size: 1.3rem; font-weight: bold; margin-top: 2px;">${(940 + Math.random() * 59).toFixed(2)} Gbps</div>
-`;
+// SECURE & INDEPENDENT DATA MUTATOR
+if (Math.random() > 0.95) {
+const _allDivs = swarmCanvas.parentElement.querySelectorAll('div');
+_allDivs.forEach(d => {
+if (d.textContent.includes('SHA256:')) {
+d.style.wordBreak = 'break-all';
+d.textContent = "SHA256: e3b0c44298fc1c149afbf4c8996fb924" + Math.random().toString(16).substring(2, 10) + Math.random().toString(16).substring(2, 10);
 }
+if (d.textContent.includes('BLOCK_ID:')) {
+d.textContent = "BLOCK_ID: #" + Math.floor(Math.random() * 500000 + 500000).toLocaleString();
 }
+if (d.textContent.includes('Gbps')) {
+d.textContent = (940 + Math.random() * 59).toFixed(2) + " Gbps";
+}
+});
 
 sCtx.lineWidth = 1;
 for (let i = 0; i < nodeCount; i++) {
