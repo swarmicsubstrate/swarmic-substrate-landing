@@ -286,28 +286,14 @@
 </div>
 </section>
 
-<!-- Integrated Bottom Footer Layout -->
-<footer class="footer" style="width: 100%; border-top: 1px solid #1f2937; padding: 60px 0 20px 0; background: #070a13;">
-<div class="footer-content" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-<div class="footer-brand">
-<div class="logo">
-<div class="logo-icon">
-<svg viewBox="0 0 40 40" fill="none" xmlns="http://w3.org">
-<circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
-<circle cx="20" cy="20" r="12" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.5"/>
-<circle cx="20" cy="20" r="5" fill="currentColor"/>
-</svg>
-</div>
-</div>
-<p>Building the future of distributed systems.</p>
-</div>
-
+<!-- ================================================================= -->
+<!-- TECHNICAL DOCUMENTATION SECTION -->
+<!-- ================================================================= -->
 <section id="tech-docs" style="padding: 60px 20px; background: #0b0f19; border-top: 1px solid #1f2937; width: 100%;">
-    
 <div style="max-width: 1200px; margin: 0 auto; text-align: left; color: #9ca3af; font-family: sans-serif;">
 <span style="color: #3b82f6; font-size: 0.8rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;">Technical Core</span>
 <h2 style="color: #fff; font-size: 2rem; margin: 10px 0 20px 0; font-weight: 700;">Substrate Cluster Documentation</h2>
-<p style="line-height: 1.6; margin-bottom: 20px;">Swarmic Substrate introduces localized, quantized sLLM (Small Large Language Model) nodes running parallel on top of zero-trust hardware partitions. Every cluster isolates localized inference execution memory, preventing data leakages across institutional zones.</p>
+<p style="line-height: 1.6; margin-bottom: 20px;">Swarmic Substrate introduces localized, quantized sLLM (Small Large Language Model) nodes running high-availability multitasking swarm provisioning protocols.</p>
 <div style="background: #111827; border: 1px solid #1f2937; padding: 20px; border-radius: 8px; font-family: monospace; color: #3b82f6; font-size: 0.9rem;">
 // High-Availability Multitasking Swarm Provisioning Protocol<br>
 [Cluster-Init] Mapping isolated execution partitions... OK<br>
@@ -316,54 +302,99 @@
 </div>
 </section>
 
-<!-- SECTION: API REFERENCE -->
+<!-- ================================================================= -->
+<!-- API REFERENCE SECTION -->
+<!-- ================================================================= -->
 <section id="api-endpoints" style="padding: 60px 20px; background: #070a13; border-top: 1px solid #1f2937;">
 <div style="max-width: 1200px; margin: 0 auto; text-align: left; color: #9ca3af; font-family: sans-serif;">
 <span style="color: #10b981; font-size: 0.8rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;">Developer Tools</span>
 <h2 style="color: #fff; font-size: 2rem; margin: 10px 0 20px 0; font-weight: 700;">API Reference Layout</h2>
-<p style="line-height: 1.6; margin-bottom: 20px;">Integrate multi-agent parallel computing into your sovereign cloud workflow using our low-latency JSON endpoints. Authenticate secure pipelines directly over TLS 1.3 tunnels.</p>
-<div style="background: #111827; border: 1px solid #1f2937; padding: 20px; border-radius: 8px; font-family: monospace; color: #10b981; font-size: 0.9rem; word-break: break-all; overflow-x: auto;">
-
-POST https://api.swarmicsubstrate.com/v1/swarm/execute<br>
-Headers: Authorization: Bearer SECURE_SUBSTRATE_TOKEN<br>
-Payload: { "agent_cluster": "sovereign-llm", "concurrency_limit": 128 }
-</div>
+<p style="line-height: 1.6; margin-bottom: 20px;">Integrate multi-agent parallel computing into your sovereign cloud workflow using our low-latency infrastructure.</p>
+<div style="background: #111827; border: 1px solid #1f2937; padding: 20px; border-radius: 8px; font-family: monospace; color: #10b981; font-size: 0.9rem; white-space: pre-wrap; word-break: break-all;">POST https://api.swarmicsubstrate.com/v1/swarm/execute
+Headers: Authorization: Bearer SECURE_SUBSTRATE_TOKEN
+Payload: { "agent_cluster": "sovereign-llm", "concurrency_limit": 128 }</div>
 </div>
 </section>
-<!-- COMPLIANCE FOOTER LINKS -->
-<div style="width: 100%; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; padding: 40px 20px; background: #070a13; font-family: sans-serif;">
-<div style="flex: 1;">
-<h4 style="color: #fff; font-size: 1rem; margin-bottom: 15px;">Product</h4>
+
+<!-- ================================================================= -->
+<!-- INTEGRATED BOTTOM FOOTER LAYOUT (FIXED & ALIGNED) -->
+<!-- ================================================================= -->
+<footer class="footer" style="width: 100%; border-top: 1px solid #1f2937; padding: 60px 0 40px 0; background: #070a13; font-family: sans-serif;">
+
+<!-- Upper Footer Row -->
+<div class="footer-content" style="max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 40px;">
+
+<!-- LEFT SIDE: Brand Logo and Statement -->
+<div class="footer-brand" style="display: flex; align-items: center; gap: 15px; flex: 1; min-width: 280px;">
+<div class="logo" style="display: flex; align-items: center;">
+<div class="logo-icon">
+<svg viewBox="0 0 40 40" fill="none" xmlns="http://w3.org" style="width: 32px; height: 32px;">
+<circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2" style="color: #00d2ff;"></circle>
+<circle cx="20" cy="20" r="12" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.5" style="color: #00d2ff;"></circle>
+<circle cx="20" cy="20" r="5" fill="currentColor" style="color: #00d2ff;"></circle>
+</svg>
+</div>
+</div>
+<p style="margin: 0; color: #9ca3af; font-size: 0.95rem;">Building the future of distributed systems.</p>
+</div>
+
+<!-- RIGHT SIDE: Multi-column Links Navigation -->
+<div class="footer-links-wrapper" style="display: flex; gap: 60px; flex-wrap: wrap;">
+
+<!-- Product Column -->
+<div class="footer-column" style="flex: 1; min-width: 120px;">
+<h4 style="color: #fff; font-size: 1rem; margin: 0 0 15px 0; font-weight: 600;">Product</h4>
 <p style="margin: 8px 0;"><a href="#features" style="color: #9ca3af; text-decoration: none; font-size: 0.9rem;">Features</a></p>
 <p style="margin: 8px 0;"><a href="#pricing" style="color: #9ca3af; text-decoration: none; font-size: 0.9rem;">Pricing</a></p>
-<p style="margin: 8px 0;"><a href="#swarm-execution" style="color: #9ca3af; text-decoration: none; font-size: 0.9rem;">Architecture</a></p>
+<p style="margin: 8px 0;"><a href="#api-endpoints" style="color: #9ca3af; text-decoration: none; font-size: 0.9rem;">Architecture</a></p>
 </div>
-<div style="flex: 1;">
-<h4 style="color: #fff; font-size: 1rem; margin-bottom: 15px;">Resources</h4>
+
+<!-- Resources Column -->
+<div class="footer-column" style="flex: 1; min-width: 120px;">
+<h4 style="color: #fff; font-size: 1rem; margin: 0 0 15px 0; font-weight: 600;">Resources</h4>
 <p style="margin: 8px 0;"><a href="#tech-docs" style="color: #9ca3af; text-decoration: none; font-size: 0.9rem;">Documentation</a></p>
 <p style="margin: 8px 0;"><a href="#api-endpoints" style="color: #9ca3af; text-decoration: none; font-size: 0.9rem;">API Reference</a></p>
+<p style="margin: 8px 0;"><a href="#support" style="color: #9ca3af; text-decoration: none; font-size: 0.9rem;">Support</a></p>
 </div>
-<div style="flex: 1;">
-<h4 style="color: #fff; font-size: 1rem; margin-bottom: 15px;">Company</h4>
-<p style="margin: 8px 0;"><a href="#pricing" style="color: #9ca3af; text-decoration: none; font-size: 0.9rem;">Launch Substrate</a></p>
+
+<!-- Company Column -->
+<div class="footer-column" style="flex: 1; min-width: 120px;">
+<h4 style="color: #fff; font-size: 1rem; margin: 0 0 15px 0; font-weight: 600;">Company</h4>
+<p style="margin: 8px 0;"><a href="#" style="color: #9ca3af; text-decoration: none; font-size: 0.9rem;">Launch Substrate</a></p>
 <p style="margin: 8px 0;"><a href="mailto:contact@swarmicsubstrate.com" style="color: #9ca3af; text-decoration: none; font-size: 0.9rem;">Contact</a></p>
-<p style="margin: 8px 0;"><a href="#" style="color: #9ca3af; text-decoration: none; font-size: 0.9rem;" onclick="document.getElementById('privacy-modal').style.display='flex'; return false;">Terms & Privacy Policy</a></p>
+<p style="margin: 8px 0;"><a href="#" style="color: #9ca3af; text-decoration: none; font-size: 0.9rem;" onclick="document.getElementById('privacy-modal').style.display='block'; return false;">Terms & Privacy Policy</a></p>
+</div>
+
 </div>
 </div>
 
 
-
-<div class="footer-bottom" style="width: 100%; display: flex; flex-direction: column; align-items: center; padding-top: 30px; border-top: 1px solid #1f2937; margin-top: 40px; text-align: center;">
+<div class="footer-bottom" style="width: 100%; max-width: 1200px; margin: 40px auto 0 auto; padding: 20px 20px 0 20px; border-top: 1px solid #1f2937; display: flex; flex-direction: column; align-items: center; text-align: center;">
 <p style="margin: 0; font-family: 'Inter', sans-serif; color: #9ca3af; font-size: 0.9rem;">
 &copy; 2026 Swarmic Substrate LLC. All rights reserved.
 </p>
-<p style="color: #525252; font-size: 11px; margin-top: 12px; max-width: 800px; line-height: 1.5; font-family: sans-serif;">
-Corporate Governance Notice: Swarmic Substrate is a registered trademark of Swarmic Substrate LLC, organized under the laws of the State of Wyoming, USA. All enterprise compute orchestration mechanisms, multi-agent frameworks, and localized sLLM execution layers described herein are proprietary architectural assets. Standard performance values are benchmarks and subject to network layout variations.
+<p style="color: #525252; font-size: 11px; margin-top: 12px; max-width: 800px; line-height: 1.5;">
+Corporate Governance Notice: Swarmic Substrate is a registered trademark of Swarmic Substrate LLC, organized under the laws of the State of Wyoming, USA. All enterprise compute orchestration mechanisms, multi-agent frameworks, and localized sLLM execution layers described herein are proprietary architectural assets. Standard performance values are benchmarks and subject to network layout variations. All information is provided 'as is' without warranties of any kind. Governing Law: United States.
 </p>
 </div>
-
 </footer>
 
+<script type="module" src="app.js"></script>
+
+<!-- COMPLIANCE PRIVACY DIALOG MODAL -->
+<div id="privacy-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 9999; justify-content: center; align-items: center;">
+<div style="background: #111827; border: 1px solid #1f2937; padding: 40px; border-radius: 12px; max-width: 600px; width: 100%; max-height: 80%; overflow-y: auto; position: relative; font-family: sans-serif;">
+<button style="position: absolute; top: 15px; right: 15px; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer;" onclick="document.getElementById('privacy-modal').style.display='none';">×</button>
+<h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 20px;">Privacy Policy</h3>
+<p style="margin-bottom: 15px; color: #9ca3af;">Swarmic Substrate LLC ("we", "us", or "our") operates swarmicsubstrate.com. This policy outlines our standard data handling configurations.</p>
+<p style="margin-bottom: 15px; color: #9ca3af;"><strong>Data Protection & Sovereignty:</strong> All algorithmic workflows, multi-agent state parameters, and temporary runtime layers execute strictly within sandboxed, encrypted computational regions.</p>
+<p style="margin-bottom: 15px; color: #9ca3af;"><strong>Compliance Framework:</strong> Our execution mechanisms are structurally aligned with international corporate sovereignty data standard directives.</p>
+<p style="font-size: 0.85rem; color: #6b7280; margin-top: 30px;">Last updated: July 2026. For governance inquiries, contact operations.</p>
+</div>
+</div>
+
+</body>
+</html>
 <script type="module" src="app.js"></script>
         <!-- PRIVACY POLICY MODAL FOR COMPLIANCE -->
 <div id="privacy-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 9999; align-items: center; justify-content: center; padding: 20px;">
