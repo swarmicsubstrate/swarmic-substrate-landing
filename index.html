@@ -304,18 +304,127 @@
 </section>
 
 <!-- ================================================================= -->
-<!-- API REFERENCE SECTION -->
+<!-- DEVELOPER TOOLS / API REFERENCE SECTION WITH LIVE INTERACTIVE TABS -->
 <!-- ================================================================= -->
-<section id="api-endpoints" style="padding: 60px 20px; background: #070a13; border-top: 1px solid #1f2937;">
+<section id="api-endpoints" style="padding: 60px 20px; background: #070a13; border-top: 1px solid #1f2937; position: relative;">
 <div style="max-width: 1200px; margin: 0 auto; text-align: left; color: #9ca3af; font-family: sans-serif;">
 <span style="color: #10b981; font-size: 0.8rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;">Developer Tools</span>
 <h2 style="color: #fff; font-size: 2rem; margin: 10px 0 20px 0; font-weight: 700;">API Reference Layout</h2>
-<p style="line-height: 1.6; margin-bottom: 20px;">Integrate multi-agent parallel computing into your sovereign cloud workflow using our low-latency infrastructure.</p>
-<div style="background: #111827; border: 1px solid #1f2937; padding: 20px; border-radius: 8px; font-family: monospace; color: #10b981; font-size: 0.9rem; white-space: pre-wrap; word-break: break-all;">POST https://api.swarmicsubstrate.com/v1/swarm/execute
-Headers: Authorization: Bearer SECURE_SUBSTRATE_TOKEN
-Payload: { "agent_cluster": "sovereign-llm", "concurrency_limit": 128 }</div>
+<p style="line-height: 1.6; margin-bottom: 25px;">Integrate multi-agent parallel computing into your sovereign cloud workflow using our low-latency infrastructure.</p>
+
+<!-- INTERACTIVE LANGUAGE TABS CONTROL -->
+<div style="display: flex; gap: 10px; margin-bottom: 0px; position: relative; z-index: 5;">
+<button id="tab-curl" onclick="switchApiTab('curl')" style="background: #111827; border: 1px solid #1f2937; border-bottom: none; color: #10b981; padding: 10px 20px; border-top-left-radius: 6px; border-top-right-radius: 6px; font-family: monospace; font-size: 0.85rem; cursor: pointer; font-weight: 600;">cURL</button>
+<button id="tab-python" onclick="switchApiTab('python')" style="background: #070a13; border: 1px solid #1f2937; border-bottom: none; color: #64748b; padding: 10px 20px; border-top-left-radius: 6px; border-top-right-radius: 6px; font-family: monospace; font-size: 0.85rem; cursor: pointer;">Python</button>
+<button id="tab-node" onclick="switchApiTab('node')" style="background: #070a13; border: 1px solid #1f2937; border-bottom: none; color: #64748b; padding: 10px 20px; border-top-left-radius: 6px; border-top-right-radius: 6px; font-family: monospace; font-size: 0.85rem; cursor: pointer;">Node.js</button>
+</div>
+
+<!-- CODE CONTAINER WITH INTERNAL COPY BUTTON -->
+<div style="background: #111827; border: 1px solid #1f2937; padding: 25px; border-radius: 8px; border-top-left-radius: 0px; font-family: monospace; font-size: 0.9rem; position: relative;">
+
+<!-- LIFT-OFF COPY BUTTON -->
+<button id="api-copy-btn" onclick="copyApiCode()" style="position: absolute; top: 15px; right: 15px; background: #1f2937; border: 1px solid #374151; color: #9ca3af; padding: 5px 12px; border-radius: 4px; font-size: 0.75rem; cursor: pointer; transition: all 0.2s; font-family: sans-serif;">Copy</button>
+
+<!-- LIVE CHANGING CODE BLOCK -->
+<pre id="api-code-block" style="margin: 0; color: #10b981; white-space: pre-wrap; word-break: break-all; line-height: 1.5;">curl -X POST https://swarmicsubstrate.com \
+-H "Authorization: Bearer SECURE_SUBSTRATE_TOKEN" \
+-H "Content-Type: application/json" \
+-d '{
+"agent_cluster": "sovereign-llm",
+"concurrency_limit": 128
+}'</pre>
+</div>
+
 </div>
 </section>
+
+<!-- LIVE JAVA SCRIPT FOR INTERACTIVE REFS -->
+<script>
+// OBJECT CONTAINING SOVEREIGN REAL CODE SNIPPETS
+const apiSnippets = {
+curl: `curl -X POST https://swarmicsubstrate.com \\
+-H "Authorization: Bearer SECURE_SUBSTRATE_TOKEN" \\
+-H "Content-Type: application/json" \\
+-d '{
+"agent_cluster": "sovereign-llm",
+"concurrency_limit": 128
+}'`,
+python: `import requests
+
+url = "https://swarmicsubstrate.com"
+headers = {
+"Authorization": "Bearer SECURE_SUBSTRATE_TOKEN",
+"Content-Type": "application/json"
+}
+payload = {
+"agent_cluster": "sovereign-llm",
+"concurrency_limit": 128
+}
+
+response = requests.post(url, json=payload, headers=headers)
+print(response.json())`,
+node: `const url = 'https://swarmicsubstrate.com';
+const data = {
+agent_cluster: 'sovereign-llm',
+concurrency_limit: 128
+};
+
+fetch(url, {
+method: 'POST',
+headers: {
+'Authorization': 'Bearer SECURE_SUBSTRATE_TOKEN',
+'Content-Type': 'application/json'
+},
+body: JSON.stringify(data)
+})
+.then(res => res.json())
+.then(result => console.log(result));`
+};
+
+// TAB SWITCHING FUNCTIONALITY
+function switchApiTab(lang) {
+const block = document.getElementById('api-code-block');
+const tabs = {
+curl: document.getElementById('tab-curl'),
+python: document.getElementById('tab-python'),
+node: document.getElementById('tab-node')
+};
+
+// Reset all tabs styles
+for (let key in tabs) {
+tabs[key].style.background = '#070a13';
+tabs[key].style.color = '#64748b';
+tabs[key].style.fontWeight = 'normal';
+}
+
+// Highlight selected active tab
+tabs[lang].style.background = '#111827';
+tabs[lang].style.color = '#10b981';
+tabs[lang].style.fontWeight = '600';
+
+// Swap the text content smoothly
+block.textContent = apiSnippets[lang];
+}
+
+// MODERN CLIPBOARD COPY FUNCTIONALITY
+function copyApiCode() {
+const codeText = document.getElementById('api-code-block').textContent;
+const btn = document.getElementById('api-copy-btn');
+
+navigator.clipboard.writeText(codeText).then(() => {
+btn.textContent = 'Copied!';
+btn.style.background = '#10b981';
+btn.style.color = '#fff';
+
+// Reset button layout after timeout
+setTimeout(() => {
+btn.textContent = 'Copy';
+btn.style.background = '#1f2937';
+btn.style.color = '#9ca3af';
+}, 2000);
+});
+}
+</script>
 
 <!-- ================================================================= -->
 <!-- INTEGRATED BOTTOM FOOTER LAYOUT (FIXED & ALIGNED) -->
