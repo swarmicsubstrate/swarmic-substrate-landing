@@ -451,34 +451,60 @@ btn.style.color = '#9ca3af';
 
 <!-- LIVE TERMINAL CONSOLE LOGS -->
 <div id="terminal-screen" style="color: #38bdf8; font-size: 0.9rem; line-height: 1.8; min-height: 180px; white-space: pre-wrap;">$ click 'Run Simulation' to initialize distributed agent framework...<span style="animation: blink 1s infinite;" id="terminal-cursor">|</span></div>
+
+<!-- PRESTIGIOUS REAL-TIME METRICS PANEL -->
+<div id="metrics-panel" style="display: none; border-top: 1px solid #1e293b; margin-top: 20px; padding-top: 20px; font-family: monospace;">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px;">
+<div style="background: #070a13; border: 1px solid #1e293b; padding: 12px; border-radius: 6px;">
+<div style="color: #64748b; font-size: 0.7rem; text-transform: uppercase;">Node CPU Load</div>
+<div style="color: #3b82f6; font-size: 1.2rem; font-weight: bold; margin-top: 4px;" id="metric-cpu">0.0%</div>
+</div>
+<div style="background: #070a13; border: 1px solid #1e293b; padding: 12px; border-radius: 6px;">
+<div style="color: #64748b; font-size: 0.7rem; text-transform: uppercase;">Cluster VRAM</div>
+<div style="color: #eab308; font-size: 1.2rem; font-weight: bold; margin-top: 4px;" id="metric-vram">0.0 GB</div>
+</div>
+<div style="background: #070a13; border: 1px solid #1e293b; padding: 12px; border-radius: 6px;">
+<div style="color: #64748b; font-size: 0.7rem; text-transform: uppercase;">Tokens / Sec</div>
+<div style="color: #10b981; font-size: 1.2rem; font-weight: bold; margin-top: 4px;" id="metric-tps">0 t/s</div>
+</div>
+</div>
+</div>
+
 </div>
 </div>
 </section>
 
 <!-- SIMULATION LIVE ENGINE SCRIPT -->
 <script>
+let metricsInterval = null;
+
 function triggerEasterEgg(color) {
 const screen = document.getElementById('terminal-screen');
+if (metricsInterval) clearInterval(metricsInterval);
+document.getElementById('metrics-panel').style.display = 'none';
+
 if(color === 'red') {
-screen.innerHTML = "<span style='color: #ef4444;'>[ACCESS DENIED] Sovereign substrate core connection cannot be terminated by guest role.</span>\n$ _";
+screen.innerHTML = "<span style='color: #ef4444;'>[ACCESS DENIED] Sovereign substrate core connection cannot be terminated by guest role.</span>\\n$ _";
 } else if(color === 'yellow') {
-screen.innerHTML = "<span style='color: #eab308;'>[WARNING] System minimization bypassed. Multi-agent cluster virtualization requires full-screen persistence.</span>\n$ _";
+screen.innerHTML = "<span style='color: #eab308;'>[WARNING] System minimization bypassed. Multi-agent cluster virtualization requires full-screen persistence.</span>\\n$ _";
 } else if(color === 'green') {
-screen.innerHTML = "<span style='color: #22c55e;'>[EXPAND] High-availability matrix already optimized for your device layout.</span>\n$ _";
+screen.innerHTML = "<span style='color: #22c55e;'>[EXPAND] High-availability matrix already optimized for your device layout.</span>\\n$ _";
 }
 }
+
 function triggerSwarmSimulation() {
 const btn = document.getElementById('run-sim-btn');
 const screen = document.getElementById('terminal-screen');
+const panel = document.getElementById('metrics-panel');
 
-// Disable button during execution
+if (metricsInterval) clearInterval(metricsInterval);
+
 btn.disabled = true;
 btn.style.background = '#1e293b';
 btn.style.color = '#64748b';
 btn.style.boxShadow = 'none';
 btn.textContent = 'Executing...';
 
-// Terminal sequence lines
 const logs = [
 "$ substrate swarm --init --cluster=sovereign-us-east",
 "[SYSTEM] Booting sandboxed sLLM compute node partitions...",
@@ -489,37 +515,43 @@ const logs = [
 "[AGENT-64] Localized model shards synchronized via secure handshake.",
 "[CLUSTER] Parallel workload dispatching across Wyoming computing farm...",
 "[SUCCESS] Swarmic Substrate cluster deployed. All tokens validated.",
-"$ system status: OPERATIONAL. Ready for remote API commands."
+"$ system status: OPERATIONAL. Live telemetry streaming active."
 ];
 
 screen.textContent = "";
+panel.style.display = 'block';
 let currentLine = 0;
 
 function printNextLine() {
 if (currentLine < logs.length) {
-// Apply different colors for system status vs commands
-let text = logs[currentLine];
-screen.textContent += text + "\n";
+screen.textContent += logs[currentLine] + "\\n";
 currentLine++;
-
-// Auto scroll simulator
 screen.scrollTop = screen.scrollHeight;
 
-// Dynamic timeout for real typing effect feel
-setTimeout(printNextLine, Math.random() * 400 + 300);
+document.getElementById('metric-cpu').textContent = (Math.random() * 30 + 40).toFixed(1) + "%";
+document.getElementById('metric-vram').textContent = (Math.random() * 10 + 75).toFixed(1) + " GB";
+document.getElementById('metric-tps').textContent = Math.floor(Math.random() * 200 + 800) + " t/s";
+
+setTimeout(printNextLine, Math.random() * 300 + 200);
 } else {
-// Re-enable trigger button layout
 btn.disabled = false;
 btn.style.background = '#3b82f6';
 btn.style.color = '#fff';
 btn.textContent = 'Run Again';
 btn.style.boxShadow = '0 4px 12px rgba(59,130,246,0.3)';
+
+metricsInterval = setInterval(() => {
+document.getElementById('metric-cpu').textContent = (Math.random() * 15 + 75).toFixed(1) + "%";
+document.getElementById('metric-vram').textContent = (Math.random() * 3 + 92).toFixed(1) + " GB";
+document.getElementById('metric-tps').textContent = Math.floor(Math.random() * 400 + 4200) + " t/s";
+}, 400);
 }
 }
 
 printNextLine();
 }
 </script>
+
 
 <style>
 @keyframes blink {
