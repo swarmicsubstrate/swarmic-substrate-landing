@@ -337,7 +337,38 @@
 
 </div>
 </section>
+<!-- QUANTUM SWARM ROUTER FABRIC -->
+<section id="quantum-fabric" style="padding: 80px 20px; background: #03050a; border-top: 1px solid #10b981; width: 100%; box-sizing: border-box;">
+<div style="max-width: 1200px; margin: 0 auto; font-family: sans-serif;">
+<span style="color: #10b981; font-size: 0.8rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;">Real-Time Mesh Topology</span>
+<h2 style="color: #fff; font-size: 2.2rem; margin: 10px 0 30px 0; font-weight: 800; letter-spacing: -0.5px;">Autonomous Swarm Routing Fabric</h2>
 
+<div style="background: #060913; border: 1px solid #111827; padding: 25px; border-radius: 12px; position: relative; overflow: hidden; width: 100%; box-sizing: border-box;">
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #1f2937; padding-bottom: 10px;">
+<div style="display: flex; align-items: center; gap: 8px;">
+<span style="width: 10px; height: 10px; background: #10b981; border-radius: 50%; display: inline-block;"></span>
+<span style="color: #4b5563; font-family: monospace; font-size: 0.85rem;">DECENTRALIZED NODE PIPELINE: ACTIVE</span>
+</div>
+<span id="matrix-fps" style="color: #10b981; font-family: monospace; font-size: 0.85rem; background: rgba(16,185,129,0.1); padding: 2px 8px; border-radius: 4px;">60.0 FPS</span>
+</div>
+
+<div style="position: relative; width: 100%; height: 320px; background: #02040a; border-radius: 6px; border: 1px solid #1f2937; overflow: hidden;">
+<canvas id="swarm-matrix-canvas" style="position: absolute; top:0; left:0; width:100%; height:100%; display:block;"></canvas>
+
+<div style="position: absolute; top: 15px; left: 15px; font-family: monospace; pointer-events: none; text-shadow: 0 0 10px #000;">
+<div style="color: #3b82f6; font-size: 0.85rem; font-weight: bold;">[SYS_FABRIC] ORCHESTRATION LAYER</div>
+<div id="live-hash-1" style="color: #4b5563; font-size: 0.75rem; margin-top: 4px;">SHA256: e3b0c44298fc1c149afbf4c8996fb924...</div>
+<div id="live-hash-2" style="color: #4b5563; font-size: 0.75rem;">BLOCK_ID: #994,204.811</div>
+</div>
+
+<div style="position: absolute; bottom: 15px; right: 15px; font-family: monospace; pointer-events: none; text-align: right; text-shadow: 0 0 10px #000;">
+<div style="color: #10b981; font-size: 0.9rem; font-weight: bold;">THROUGHPUT RATIO</div>
+<div id="live-throughput" style="color: #fff; font-size: 1.3rem; font-weight: bold; margin-top: 2px;">994.82 Gbps</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 <!-- LIVE JAVA SCRIPT FOR INTERACTIVE REFS -->
 <script>
 // OBJECT CONTAINING SOVEREIGN REAL CODE SNIPPETS
@@ -550,6 +581,89 @@ document.getElementById('metric-tps').textContent = Math.floor(Math.random() * 4
 
 printNextLine();
 }
+    / --- HIGH-PERFORMANCE AUTONOMOUS MESH VECTOR DRIVER ---
+const swarmCanvas = document.getElementById('swarm-matrix-canvas');
+if (swarmCanvas) {
+const sCtx = swarmCanvas.getContext('2d');
+let matrixAnimId;
+
+function resizeSwarmCanvas() {
+const sRect = swarmCanvas.parentElement.getBoundingClientRect();
+swarmCanvas.width = sRect.width;
+swarmCanvas.height = sRect.height;
+}
+window.addEventListener('resize', resizeSwarmCanvas);
+resizeSwarmCanvas();
+
+const swarmNodes = [];
+const nodeCount = 45;
+for (let i = 0; i < nodeCount; i++) {
+swarmNodes.push({
+x: Math.random() * swarmCanvas.width,
+y: Math.random() * swarmCanvas.height,
+vx: (Math.random() - 0.5) * 1.6,
+vy: (Math.random() - 0.5) * 1.6,
+r: Math.random() * 2 + 1
+});
+}
+
+let lastFpsUpdate = performance.now();
+let swarmFrames = 0;
+
+function runSwarmEngine() {
+const currentTime = performance.now();
+swarmFrames++;
+if (currentTime >= lastFpsUpdate + 1000) {
+const fpsCounter = document.getElementById('matrix-fps');
+if (fpsCounter) fpsCounter.textContent = ((swarmFrames * 1000) / (currentTime - lastFpsUpdate)).toFixed(1) + " FPS";
+swarmFrames = 0;
+lastFpsUpdate = currentTime;
+}
+
+sCtx.fillStyle = 'rgba(2, 4, 10, 0.2)';
+sCtx.fillRect(0, 0, swarmCanvas.width, swarmCanvas.height);
+
+if (Math.random() > 0.96) {
+const h1 = document.getElementById('live-hash-1');
+const h2 = document.getElementById('live-hash-2');
+const tp = document.getElementById('live-throughput');
+if (h1) h1.textContent = "SHA256: " + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+if (h2) h2.textContent = "BLOCK_ID: #" + Math.floor(Math.random() * 500000 + 500000).toLocaleString();
+if (tp) tp.textContent = (940 + Math.random() * 59).toFixed(2) + " Gbps";
+}
+
+sCtx.lineWidth = 1;
+for (let i = 0; i < nodeCount; i++) {
+const n1 = swarmNodes[i];
+n1.x += n1.vx;
+n1.y += n1.vy;
+
+if (n1.x < 0 || n1.x > swarmCanvas.width) n1.vx *= -1;
+if (n1.y < 0 || n1.y > swarmCanvas.height) n1.vy *= -1;
+
+sCtx.beginPath();
+sCtx.arc(n1.x, n1.y, n1.r, 0, Math.PI * 2);
+sCtx.fillStyle = i % 6 === 0 ? '#3b82f6' : '#10b981';
+sCtx.fill();
+
+for (let j = i + 1; j < nodeCount; j++) {
+const n2 = swarmNodes[j];
+const distance = Math.hypot(n1.x - n2.x, n1.y - n2.y);
+if (distance < 85) {
+sCtx.strokeStyle = `rgba(16, 185, 129, ${1 - distance / 85 * 0.95})`;
+sCtx.beginPath();
+sCtx.moveTo(n1.x, n1.y);
+sCtx.lineTo(n2.x, n2.y);
+sCtx.stroke();
+}
+}
+}
+matrixAnimId = requestAnimationFrame(runSwarmEngine);
+}
+runSwarmEngine();
+}
+
+
 </script>
 
 
