@@ -737,11 +737,42 @@ runSwarmEngine();
 <!-- LEGAL LINKS: Redirection to dedicated terms and privacy documentation -->
 <p style="margin: 0; font-family: 'Inter', sans-serif; color: #6b7280; font-size: 0.8rem; line-height: 1.5;">
 Swarmic Substrate is a proprietary brand of Swarmic Substrate LLC.
-<a href="terms.html" style="color: #3b82f6; text-decoration: none; margin-left: 10px; font-weight: 500;">Terms of Service</a> &bull;
-<a href="privacy.html" style="color: #3b82f6; text-decoration: none; margin-left: 5px; font-weight: 500;">Privacy Policy</a>
+<a href="javascript:void(0)" onclick="openModal('terms-modal')" style="color: #3b82f6; text-decoration: none; margin-left: 10px; font-weight: 500;">Terms of Service</a> &bull;
+<a href="javascript:void(0)" onclick="openModal('privacy-modal')" style="color: #3b82f6; text-decoration: none; margin-left: 5px; font-weight: 500;">Privacy Policy</a>
+
 </p>
 
 </div>
+
+
+    <!-- SYSTEM MODALS: Premium pop-up layers for Terms and Privacy -->
+<div id="terms-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 99999; justify-content: center; align-items: center; padding: 20px;">
+<div style="background: #030712; border: 1px solid #1f2937; padding: 30px; max-width: 700px; width: 100%; max-height: 80vh; overflow-y: auto; border-radius: 12px; font-family: 'Inter', sans-serif; position: relative;">
+<button onclick="closeModal('terms-modal')" style="position: absolute; top: 15px; right: 15px; background: none; border: none; color: #9ca3af; font-size: 1.5rem; cursor: pointer;">&times;</button>
+<h2 style="color: #fff; margin-top: 0; border-bottom: 1px solid #1f2937; padding-bottom: 10px;">Terms of Service</h2>
+<p style="color: #9ca3af; font-size: 0.9rem; line-height: 1.6;"><strong>WARRANTY DISCLAIMER:</strong> TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE SOFTWARE, PLATFORM, AND SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. SWARMIC SUBSTRATE DOES NOT WARRANT THAT THE CLOUD ORCHESTRATION LAYER OR sLLM RUNTIME OPERATIONS WILL BE UNINTERRUPTED, ERROR-FREE, OR COMPLETELY SECURE.</p>
+<p style="color: #9ca3af; font-size: 0.9rem; line-height: 1.6;"><strong>GOVERNING LAW & JURISDICTION:</strong> This Agreement and any disputes arising out of or related to it shall be governed by and construed in accordance with the laws of the State of Delaware, USA, without regard to its conflict of laws principles. Any legal action, suit, or proceeding arising out of or relating to this Agreement shall be brought exclusively in the federal or state courts located in the State of Delaware, USA, and each party irrevocably and unconditionally submits to the sole and exclusive jurisdiction of such courts.</p>
+</div>
+</div>
+
+<div id="privacy-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 99999; justify-content: center; align-items: center; padding: 20px;">
+<div style="background: #030712; border: 1px solid #1f2937; padding: 30px; max-width: 700px; width: 100%; max-height: 80vh; overflow-y: auto; border-radius: 12px; font-family: 'Inter', sans-serif; position: relative;">
+<button onclick="closeModal('privacy-modal')" style="position: absolute; top: 15px; right: 15px; background: none; border: none; color: #9ca3af; font-size: 1.5rem; cursor: pointer;">&times;</button>
+<h2 style="color: #fff; margin-top: 0; border-bottom: 1px solid #1f2937; padding-bottom: 10px;">Privacy Policy</h2>
+<p style="color: #9ca3af; font-size: 0.9rem; line-height: 1.6;">Swarmic Substrate LLC operates the platform and cloud systems. We collect several different types of information for various purposes to provide and improve our high-throughput cloud orchestration infrastructure to you, including technical diagnostics and cluster performance data. The security of your data is critical to us, but remember that no method of transmission over the Internet is 100% secure.</p>
+</div>
+</div>
+
+<script>
+function openModal(id) {
+document.getElementById(id).style.display = 'flex';
+document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+document.getElementById(id).style.display = 'none';
+document.body.style.overflow = 'auto';
+}
+</script>
 
 
 </footer>
