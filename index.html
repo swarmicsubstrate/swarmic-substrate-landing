@@ -16,7 +16,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <style>html { scroll-behavior: smooth; }</style>
+    <style>
+html { scroll-behavior: smooth; }
+body { overflow-y: auto !important; height: auto !important; }
+section, footer { display: block !important; position: relative !important; clear: both !important; margin-bottom: 0 !important; padding-bottom: 60px !important; }
+#quantum-fabric, #live-simulation, #tech-docs, #tech-framework, .section, main { min-height: auto !important; height: auto !important; overflow: visible !important; }
+</style>
+
 </head>
 <body>
     <canvas id="particle-canvas"></canvas>
