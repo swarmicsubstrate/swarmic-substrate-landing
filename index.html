@@ -388,12 +388,11 @@ logs: "<span style='color: #79c0ff;'>> Scanning persistent state registries for 
 output: "AUTONOMOUS BUSINESS INTERACTION CORRESPONDENCE MESH:\n\n\"Hello! Quick update from our automated registry: your account statement is ready for settlement. Use this instant link to wire assets securely via integrated channels. Your upcoming slot remains locked. Need to modify parameters? Tap here to review current calendar gaps.\""
 }
 };
-
 function triggerSubstrateProductDemo(manifestKey, btnElement) {
 const inputArea = document.getElementById('demo-input-area');
 const box = document.getElementById('demo-output-box');
-const title = box ? box.parentNode.querySelector('div div') : null;
-const content = box ? box.parentNode.querySelectorAll('div div')[1] : null;
+const title = document.getElementById('biz-output-title');
+const content = document.getElementById('demo-output-content');
 const data = substrateProductManifests[manifestKey];
 
 if (box) box.style.display = 'none';
@@ -403,17 +402,25 @@ btnElement.parentNode.querySelectorAll('button').forEach(btn => {
 btn.style.background = '#161b22';
 btn.style.borderColor = '#30363d';
 btn.style.color = '#c9d1d9';
+btn.style.boxShadow = 'none';
 });
 btnElement.style.background = 'rgba(56, 139, 253, 0.1)';
 btnElement.style.borderColor = '#58a6ff';
 btnElement.style.color = '#ffffff';
+btnElement.style.boxShadow = '0 0 15px rgba(56, 139, 253, 0.15)';
 
 setTimeout(() => {
 if (title) title.innerHTML = data.title;
-if (content) content.innerHTML = data.output;
+
+if (content) {
+content.innerHTML = "<div style='margin-bottom: 20px; color: #58a6ff; font-size: 0.85rem; line-height: 1.6; border-bottom: 1px solid rgba(56,139,253,0.15); padding-bottom: 10px; text-align: left;'>" + data.logs + "</div><div style='white-space: pre-wrap; color: #c9d1d9; font-family: monospace; line-height: 1.6; text-align: left;'>" + (data.output ? data.output : data.text) + "</div>";
+}
+
 if (box) box.style.display = 'block';
 }, 600);
 }
+
+
 </script>
         
 <!-- ================================================================= -->
