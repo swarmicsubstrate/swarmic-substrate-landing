@@ -234,29 +234,55 @@ High-Throughput Cloud Orchestration for <span style="white-space: nowrap;">Multi
                     </div>
                 </div>
             </section>
+<!-- === CORE INFRASTRUCTURE MATRIX WITH KINETIC REVEAL === -->
+<section class="code-section" id="infrastructure-matrix-viewport" style="width: 100%; max-width: 1200px; margin: 40px auto; padding: 0 20px; font-family: -apple-system, BlinkMacSystemFont, sans-serif; box-sizing: border-box; text-align: center; opacity: 0; transform: translateY(40px); filter: blur(15px); transition: opacity 1.2s ease, transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 1.2s ease;">
+<div class="marketing-section" style="margin-top: 3rem; text-align: center;">
+<p style="font-size: 1.25rem; color: #9ca3af; margin-bottom: 3rem; font-family: sans-serif;">Next-Generation Infrastructure for Autonomous AI Agents.</p>
+</div>
 
-            <section class="code-section">
-        <div class="marketing-section" style="margin-top: 3rem; text-align: center;">
-   <p style="font-size: 1.25rem; color: #9ca3af; margin-bottom: 3rem; font-family: sans-serif;">
-       Next-Generation Infrastructure for Autonomous AI Agents.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; text-align: left;">
 
-   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; text-align: left;">
-       <div style="background: #111827; border: 1px solid #1f2937; padding: 2rem; border-radius: 12px;">
-           <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 0.75rem; font-family: sans-serif;">Agentic Workflows</h3>
-           <p style="color: #9ca3af; font-size: 0.95rem; line-height: 1.6; font-family: sans-serif;">Orchestrating multi-agent systems with autonomous task distribution and real-time execution layers.</p>
-       </div>
+<!-- Matrix Node 01: Agentic Workflows -->
+<div style="background: #111827; border: 1px solid #1f2937; padding: 2rem; border-radius: 12px; transition: all 0.3s ease;" onmouseover="this.style.borderColor='#3eb4ff'; this.style.boxShadow='0 10px 25px rgba(62,180,255,0.1)';" onmouseout="this.style.borderColor='#1f2937'; this.style.boxShadow='none';">
+<h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 0.75rem; font-family: sans-serif;">Agentic Workflows</h3>
+<p style="color: #9ca3af; font-size: 0.95rem; line-height: 1.6; font-family: sans-serif;">Orchestrating multi-agent systems with autonomous task distribution and real-time execution layers.</p>
+</div>
 
-       <div style="background: #111827; border: 1px solid #1f2937; padding: 2rem; border-radius: 12px;">
-           <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 0.75rem; font-family: sans-serif;">Model Orchestration</h3>
-           <p style="color: #9ca3af; font-size: 0.95rem; line-height: 1.6; font-family: sans-serif;">Dynamic routing using a custom Mixture of Experts (MoE) protocol to optimize compute costs and LLM resource consumption.</p>
-       </div>
+<!-- Matrix Node 02: Model Orchestration -->
+<div style="background: #111827; border: 1px solid #1f2937; padding: 2rem; border-radius: 12px; transition: all 0.3s ease;" onmouseover="this.style.borderColor='#3eb4ff'; this.style.boxShadow='0 10px 25px rgba(62,180,255,0.1)';" onmouseout="this.style.borderColor='#1f2937'; this.style.boxShadow='none';">
+<h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 0.75rem; font-family: sans-serif;">Model Orchestration</h3>
+<p style="color: #9ca3af; font-size: 0.95rem; line-height: 1.6; font-family: sans-serif;">Dynamic routing using a custom Mixture of Experts (MoE) protocol to optimize compute costs and LLM resource consumption.</p>
+</div>
 
-       <div style="background: #111827; border: 1px solid #1f2937; padding: 2rem; border-radius: 12px;">
-           <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 0.75rem; font-family: sans-serif;">Global Infrastructure</h3>
-           <p style="color: #9ca3af; font-size: 0.95rem; line-height: 1.6; font-family: sans-serif;">A cloud-native distributed system built purely in Rust, ensuring enterprise-grade stability and flawless scale.</p>
-       </div>
-   </div>
-</div>       
+<!-- Matrix Node 03: Global Infrastructure -->
+<div style="background: #111827; border: 1px solid #1f2937; padding: 2rem; border-radius: 12px; transition: all 0.3s ease;" onmouseover="this.style.borderColor='#3eb4ff'; this.style.boxShadow='0 10px 25px rgba(62,180,255,0.1)';" onmouseout="this.style.borderColor='#1f2937'; this.style.boxShadow='none';">
+<h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 0.75rem; font-family: sans-serif;">Global Infrastructure</h3>
+<p style="color: #9ca3af; font-size: 0.95rem; line-height: 1.6; font-family: sans-serif;">A cloud-native distributed system built purely in Rust, ensuring enterprise-grade stability and flawless scale.</p>
+</div>
+
+</div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+const matrixTarget = document.getElementById("infrastructure-matrix-viewport");
+if (matrixTarget) {
+const observer = new IntersectionObserver(function(entries, obs) {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+matrixTarget.style.opacity = "1";
+matrixTarget.style.transform = "translateY(0)";
+matrixTarget.style.filter = "blur(0)";
+obs.unobserve(entry.target);
+}
+});
+}, { root: null, threshold: 0.1 });
+observer.observe(matrixTarget);
+}
+});
+</script>
+
+                 
 <section id="swarm-execution" class="swarm-execution" style="padding: 60px 20px; background: #070a13; text-align: center;">
 <span style="color: #3b82f6; font-size: 0.8rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 10px;">Algorithmic Infrastructure</span>
  <div id="documentation"></div>
