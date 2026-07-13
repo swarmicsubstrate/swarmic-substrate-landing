@@ -349,9 +349,13 @@ Liquidity Mesh
 <div style="background: #0d1117; border: 1px solid #30363d; border-radius: 12px; overflow: hidden; width: 100%; box-shadow: 0 15px 40px rgba(0,0,0,0.5); box-sizing: border-box; margin: 0 auto; max-width: 850px;">
 <div style="background: #161b22; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #21262d;">
 <div style="display: flex; gap: 8px;">
-<span style="width: 12px; height: 12px; background: #ff5f56; border: 1px solid #e0443e; border-radius: 50%; display: inline-block;"></span>
-<span style="width: 12px; height: 12px; background: #ffbd2e; border: 1px solid #dea123; border-radius: 50%; display: inline-block;"></span>
-<span style="width: 12px; height: 12px; background: #27c93f; border: 1px solid #1aab29; border-radius: 50%; display: inline-block;"></span>
+<!-- CLOSE WINDOW (RED) -->
+<span onclick="const term = document.getElementById('substrate-terminal') || this.closest('section') || this.parentElement.parentElement.parentElement; if(term) term.style.display='none';" style="width: 12px; height: 12px; background: #ff5f56; border: 1px solid #e0443e; border-radius: 50%; display: inline-block; cursor: pointer; transition: opacity 0.15s;" onmouseover="this.style.opacity='0.7';" onmouseout="this.style.opacity='1';"></span>
+<!-- MINIMIZE (YELLOW) -->
+<span onclick="const content = this.parentElement.parentElement.nextElementSibling; if(content) content.style.display = content.style.display === 'none' ? 'block' : 'none';" style="width: 12px; height: 12px; background: #ffbd2e; border: 1px solid #dea123; border-radius: 50%; display: inline-block; cursor: pointer; transition: opacity 0.15s;" onmouseover="this.style.opacity='0.7';" onmouseout="this.style.opacity='1';"></span>
+<!-- FULLSCREEN (GREEN) -->
+<span onclick="const term = document.getElementById('substrate-terminal') || this.closest('section') || this.parentElement.parentElement.parentElement; if(term) { term.style.maxWidth = term.style.maxWidth === '100%' ? '1200px' : '100%'; term.style.width = '100%'; }" style="width: 12px; height: 12px; background: #27c93f; border: 1px solid #1aab29; border-radius: 50%; display: inline-block; cursor: pointer; transition: opacity 0.15s;" onmouseover="this.style.opacity='0.7';" onmouseout="this.style.opacity='1';"></span>
+
 </div>
 
 <span style="color: #8b949e; font-size: 0.8rem; font-family: monospace; letter-spacing: 0.05em; display: flex; align-items: center; gap: 8px;">
