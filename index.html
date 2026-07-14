@@ -1355,24 +1355,64 @@ initial-value: 0deg;
 100% { --border-angle: 360deg; }
 }
 </style>
+<!-- START OF INTERACTIVE MCP GATEWAY INSPECTOR (MODEL 1) -->
+<section style="position: relative !important; width: 100% !important; background-color: #050b14 !important; border-top: 1px solid #1f2937 !important; padding-top: 60px !important; padding-bottom: 80px !important; z-index: 9999 !important;">
+<div style="max-w: 1100px !important; margin-left: auto !important; margin-right: auto !important; padding-left: 24px !important; padding-right: 24px !important; font-family: sans-serif !important; color: #ffffff !important;">
+
+<div style="margin-bottom: 32px !important;">
+<span style="font-family: monospace !important; font-size: 11px !important; text-transform: uppercase !important; tracking: 0.25em !important; color: #3eb4ff !important;">OpenAI & Anthropic Alliance // Protocol Layer 2026</span>
+<h2 style="font-size: 28px !important; font-weight: 700 !important; margin-top: 8px !important; color: #ffffff !important;">Model Context Protocol (MCP) Route Explorer</h2>
+<p style="color: #9ca3af !important; font-size: 13px !important; margin-top: 8px !important; max-width: 650px !important;">Verify how Swarmic Substrate LLM nodes establish hardware-level context routing to decentralized data architectures natively without backend middleware API overhead.</p>
+</div>
+
+<div style="display: grid !important; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important; gap: 24px !important; align-items: start !important;">
+<!-- Control Panel -->
+<div style="background-color: rgba(11, 19, 43, 0.4) !important; border: 1px solid rgba(31, 41, 55, 0.8) !important; border-radius: 12px !important; padding: 20px !important;">
+<label style="display: block !important; font-size: 11px !important; font-family: monospace !important; text-transform: uppercase !important; color: #9ca3af !important; margin-bottom: 8px !important;">// Select Target Substrate Context Schema</label>
+<select id="mcp-schema-selector" onchange="triggerMcpTelemetry()" style="width: 100% !important; background-color: #0b132b !important; border: 1px solid #374151 !important; border-radius: 6px !important; padding: 12px !important; font-size: 13px !important; font-family: monospace !important; color: #ffffff !important; outline: none !important; cursor: pointer !important;">
+<option value="postgres">PostgreSQL Enterprise Cluster (Data Layer)</option>
+<option value="github">GitHub Organization Repositories (Code Layer)</option>
+<option value="slack">Slack Production Incident Channels (Comm Layer)</option>
+</select>
+<p style="font-size: 12px !important; color: #6b7280 !important; margin-top: 16px !important; line-height: 1.5 !important;">Changing the context dynamically forces the Swarm Supervisor node to map structural variables using the 2026 standardized MCP schemas.</p>
+</div>
+
+<!-- Live Terminal Output -->
+<div style="background-color: rgba(0, 0, 0, 0.6) !important; border: 1px solid #1f2937 !important; border-radius: 12px !important; padding: 20px !important; font-family: monospace !important; font-size: 12px !important;">
+<div style="display: flex !important; align-items: center !important; justify-content: space-between !important; border-bottom: 1px solid #1f2937 !important; padding-bottom: 8px !important; margin-bottom: 12px !important;">
+<span style="color: #3eb4ff !important; font-weight: 600 !important;">mcp-telemetry-router ~ online</span>
+<span style="display: inline-block !important; width: 6px !important; height: 6px !important; background-color: #10b981 !important; border-radius: 50% !important;"></span>
+</div>
+<pre id="mcp-json-display" style="color: #d1d5db !important; white-space: pre-wrap !important; margin: 0 !important; line-height: 1.5 !important;">Loading environment protocol parameters...</pre>
+</div>
+</div>
+
+</div>
+</section>
+
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-const featureCards = document.querySelectorAll('.feature-card');
+function triggerMcpTelemetry() {
+const selection = document.getElementById('mcp-schema-selector').value;
+const targetOutput = document.getElementById('mcp-json-display');
+let manifest = {};
 
-const audioClick = new Audio('data:audio/wav;base64,UklGRigAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQQAAAAAAAAD');
-audioClick.volume = 0.15;
+if (selection === 'postgres') {
+manifest = { protocol: "MCP/2026", active_context: "postgres_cluster_prod", status: "CONNECTED", schema_mapped: true, active_indexes: 142, latency: "1.2ms" };
+} else if (selection === 'github') {
+manifest = { protocol: "MCP/2026", active_context: "github_org_swarmic", status: "AUTHORIZED", structures_scanned: 38, webhooks: "ENABLED" };
+} else {
+manifest = { protocol: "MCP/2026", active_context: "slack_incident_stream", status: "STREAMING", channels_intercepted: 12, encryption: "TLS_1_3" };
+}
+targetOutput.innerHTML = JSON.stringify(manifest, null, 2);
+}
 
-featureCards.forEach(function(card) {
-card.addEventListener('mouseenter', function() {
-audioClick.currentTime = 0;
-audioClick.play().catch(function(err) {
-// Permission bypass
-});
-});
-});
-});
+setTimeout(() => {
+if (document.getElementById('mcp-schema-selector')) {
+triggerMcpTelemetry();
+}
+}, 300);
 </script>
-
+<!-- END OF INTERACTIVE MCP GATEWAY INSPECTOR -->
 
 
 
