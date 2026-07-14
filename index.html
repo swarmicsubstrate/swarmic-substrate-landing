@@ -1282,29 +1282,73 @@ box-sizing: border-box;">
 </div>
 </div>
 <style>
-div[style*="width: 1px;"][style*="background: linear-gradient"],
-div[style*="width: 1px;"][style*="background:linear-gradient"] {
+/* 1. Map container dimensions and secure boundaries */
+.feature-card {
 position: relative !important;
 overflow: hidden !important;
 }
-div[style*="width: 1px;"][style*="background: linear-gradient"]::after,
-div[style*="width: 1px;"][style*="background:linear-gradient"]::after {
+
+/* 2. Deploy Background Holographic Telemetry */
+.feature-card::before {
+content: 'LOG_OK.. \A [SYNC_2026].. \A NODE_ALLOC_OK.. \A SWARM_ACTIVE.. \A RUN_INF_ROUTING.. \A [SYS_STATE:READY].. \A REGION_US_EU.. \A AUTH_STACKED.. \A COGNITIVE_MESH_LOAD.. \A SECURE_FLOW_OK..' !important;
+position: absolute !important;
+top: 0 !important;
+right: 15px !important;
+font-family: monospace !important;
+font-size: 8px !important;
+line-height: 14px !important;
+white-space: pre !important;
+color: #3eb4ff !important;
+opacity: 0.03 !important;
+transition: opacity 0.4s ease, color 0.4s ease !important;
+animation: telemetryScroll 12s linear infinite !important;
+z-index: 0 !important;
+pointer-events: none !important;
+text-align: right !important;
+}
+
+/* 3. Deploy Foreground Neon Laser Pulse */
+.feature-card::after {
 content: '' !important;
 position: absolute !important;
-top: -40px !important;
-left: 0 !important;
-width: 100% !important;
-height: 40px !important;
-background: linear-gradient(180deg, transparent, #3eb4ff, #ffffff, transparent) !important;
-animation: dataPulse 3s infinite cubic-bezier(0.4, 0, 0.2, 1) !important;
+top: 0 !important;
+left: -150% !important;
+width: 60% !important;
+height: 100% !important;
+background: linear-gradient(90deg, transparent, rgba(62, 180, 255, 0.15), rgba(255, 255, 255, 0.6), rgba(62, 180, 255, 0.15), transparent) !important;
+transform: skewX(-25deg) !important;
+animation: laserSweep 7s infinite ease-in-out !important;
+pointer-events: none !important;
+z-index: 1 !important;
 }
-div[style*="width: 1px;"]:nth-of-type(2)::after { animation-delay: 0.8s !important; }
-div[style*="width: 1px;"]:nth-of-type(3)::after { animation-delay: 1.6s !important; }
-@keyframes dataPulse {
-0% { top: -40px; }
-30%, 100% { top: 100%; }
+
+/* 4. Intensify telemetry interaction upon hover state */
+.feature-card:hover::before {
+opacity: 0.15 !important;
+color: #ffffff !important;
+}
+
+/* 5. Decentralize execution cycles across the swarm cluster */
+.feature-card:nth-of-type(2)::after { animation-delay: 1.2s !important; }
+.feature-card:nth-of-type(3)::after { animation-delay: 2.4s !important; }
+.feature-card:nth-of-type(4)::after { animation-delay: 3.6s !important; }
+.feature-card:nth-of-type(5)::after { animation-delay: 4.8s !important; }
+.feature-card:nth-of-type(6)::after { animation-delay: 6.0s !important; }
+
+/* 6. Execution routing parameters for animators */
+@keyframes telemetryScroll {
+0% { transform: translateY(10px); }
+50% { transform: translateY(-40px); }
+100% { transform: translateY(10px); }
+}
+
+@keyframes laserSweep {
+0% { left: -150%; }
+20%, 100% { left: 150%; }
 }
 </style>
+
+
 
 
 
