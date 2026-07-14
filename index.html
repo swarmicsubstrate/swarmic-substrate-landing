@@ -957,42 +957,40 @@ setTimeout(closeSubstrateWaitlistModal, 2000);
 </div>
 </div>
 </section>
-<!-- START OF INTERACTIVE MCP GATEWAY INSPECTOR (MODEL 1) -->
-<section style="position: relative !important; width: 100% !important; border-top: 1px solid rgba(255,255,255,0.05) !important; padding-top: 80px !important; padding-bottom: 80px !important; z-index: 10 !important;">
-<div style="max-w: 1200px !important; margin-left: auto !important; margin-right: auto !important; padding-left: 20px !important; padding-right: 20px !important; font-family: sans-serif !important; color: #ffffff !important;">
+<!-- START OF INTERACTIVE MCP LIVE CANVAS SYSTEM -->
+<section style="position: relative !important; width: 100% !important; border-top: 1px solid rgba(255,255,255,0.05) !important; padding: 60px 20px !important; font-family: monospace !important; color: #fff !important;">
+<div style="max-w: 1100px !important; margin: 0 auto !important; display: grid !important; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important; gap: 24px !important;">
 
-<div style="margin-bottom: 40px !important;">
-<span style="font-family: monospace !important; font-size: 11px !important; text-transform: uppercase !important; tracking: 0.25em !important; color: #3eb4ff !important; font-weight: bold !important;">[MODEL_1 // CONTEXT MATRIX ORCHESTRATION]</span>
-<h2 style="font-size: 32px !important; font-weight: 800 !important; margin-top: 10px !important; tracking: -0.02em !important;">Model Context Protocol (MCP) Route Explorer</h2>
-<p style="color: #9ca3af !important; font-size: 14px !important; margin-top: 12px !important; max-width: 700px !important; line-height: 1.6 !important;">Autonomous context mapping mesh. Watch Swarmic Substrate bypass traditional middleware to ingest database schema ontologies in raw real-time execution loops.</p>
+<!-- LEFT: Visualizer Node Mesh -->
+<div id="m-c-box" style="background: rgba(11,19,43,0.3) !important; border: 1px solid rgba(62,180,255,0.2) !important; border-radius: 12px !important; padding: 20px !important; display: flex !important; flex-direction: column !important; justify-content: space-between !important; min-height: 320px !important; backdrop-filter: blur(10px) !important; transition: all 0.3s ease !important;">
+<div style="display: flex !important; justify-content: space-between !important; align-items: center !important;">
+<span style="color: #6b7280 !important; font-size: 10px !important;">// TOPOLOGY VIEWPORT</span>
+<div id="m-status" style="border: 1px solid #10b981 !important; background: rgba(16,185,129,0.1) !important; padding: 2px 8px !important; border-radius: 12px !important; font-size: 10px !important; color: #10b981 !important; font-weight: bold !important;">CORE_STABLE</div>
+</div>
+<div style="background: rgba(0,0,0,0.2) !important; border-radius: 8px !important; padding: 30px 16px !important; display: flex !important; align-items: center !important; justify-content: space-between !important;">
+<div style="font-weight: bold !important; font-size: 11px !important; padding: 4px 8px !important; border: 1px solid #fff !important; border-radius: 4px !important;">SWARM_CORE</div>
+<div id="m-line" style="flex-grow: 1 !important; height: 1px !important; background: linear-gradient(90deg, #3eb4ff, #34d399) !important; margin: 0 12px !important; position: relative !important; overflow: hidden !important;"><div id="m-laser" style="position: absolute !important; top: 0 !important; left: -20px !important; width: 20px !important; height: 100% !important; background: #fff !important; animation: cP 1.2s infinite linear !important;"></div></div>
+<div id="m-node" style="font-weight: bold !important; font-size: 11px !important; color: #3eb4ff !important; border: 1px solid #3eb4ff !important; padding: 4px 8px !important; border-radius: 4px !important; background: #020617 !important;">POSTGRES_CLUSTER</div>
+</div>
+<div style="border-top: 1px solid rgba(255,255,255,0.05) !important; padding-top: 10px !important; display: flex !important; justify-content: space-between !important; font-size: 11px !important; color: #4b5563 !important;">
+<div>COMPRESSION: <span id="m-vram" style="color: #fff !important;">6.4X</span></div>
+<div>LATENCY: <span id="m-speed" style="color: #3eb4ff !important;">1.2ms</span></div>
+</div>
 </div>
 
-<div style="display: grid !important; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important; gap: 30px !important; align-items: stretch !important; font-family: monospace !important;">
-
-<!-- Controller Framework -->
-<div style="background: rgba(11, 19, 43, 0.3) !important; border: 1px solid rgba(62, 180, 255, 0.2) !important; border-radius: 12px !important; padding: 24px !important; display: flex !important; flex-direction: column !important; justify-content: space-between !important; min-height: 260px !important; backdrop-filter: blur(10px) !important;">
+<!-- RIGHT: IDE Input Engine -->
+<div style="background: rgba(5,11,20,0.8) !important; border: 1px solid #1f2937 !important; border-radius: 12px !important; padding: 20px !important; display: flex !important; flex-direction: column !important; justify-content: space-between !important; backdrop-filter: blur(10px) !important;">
 <div>
-<span style="color: #6b7280 !important; font-size: 10px !important; display: block !important; margin-bottom: 12px !important;">// SELECT PROTOCOL TARGET</span>
-<div style="display: flex !important; flex-direction: column !important; gap: 10px !important;">
-<button onclick="runMcpEngine('postgres')" id="m-btn-postgres" style="width: 100% !important; text-align: left !important; padding: 12px !important; background: rgba(62, 180, 255, 0.08) !important; border: 1px solid #3eb4ff !important; color: #3eb4ff !important; border-radius: 6px !important; font-family: monospace !important; font-size: 12px !important; cursor: pointer !important; font-weight: bold !important; transition: all 0.2s ease !important;">> CONNECT: PostgreSQL_Cluster_Prod</button>
-<button onclick="runMcpEngine('github')" id="m-btn-github" style="width: 100% !important; text-align: left !important; padding: 12px !important; background: rgba(255,255,255,0.02) !important; border: 1px solid rgba(255,255,255,0.05) !important; color: #9ca3af !important; border-radius: 6px !important; font-family: monospace !important; font-size: 12px !important; cursor: pointer !important; transition: all 0.2s ease !important;">> ATTACH: GitHub_Org_Repositories</button>
-<button onclick="runMcpEngine('slack')" id="m-btn-slack" style="width: 100% !important; text-align: left !important; padding: 12px !important; background: rgba(255,255,255,0.02) !important; border: 1px solid rgba(255,255,255,0.05) !important; color: #9ca3af !important; border-radius: 6px !important; font-family: monospace !important; font-size: 12px !important; cursor: pointer !important; transition: all 0.2s ease !important;">> INTERCEPT: Slack_Incident_Stream</button>
+<div style="display: flex !important; align-items: center !important; justify-content: space-between !important; border-bottom: 1px solid #1f2937 !important; padding-bottom: 8px !important; margin-bottom: 12px !important; font-size: 11px !important; color: #3eb4ff !important; font-weight: bold !important;">// mcp-manifest.json (LIVE_EDIT)</div>
+<textarea id="m-editor" oninput="liveCompile()" spellcheck="false" style="width: 100% !important; height: 200px !important; background: transparent !important; border: none !important; color: #e5e7eb !important; font-family: monospace !important; font-size: 13px !important; line-height: 1.5 !important; outline: none !important; resize: none !important; padding: 0 !important; margin: 0 !important;">{
+"protocol": "MCP/2026",
+"routing_target": "POSTGRES_CLUSTER",
+"hardware_compression": "6.4X",
+"handshake_latency_ms": 1.2
+}</textarea>
 </div>
-</div>
-<div style="border-top: 1px solid rgba(255,255,255,0.05) !important; padding-top: 14px !important; display: flex !important; justify-content: space-between !important; align-items: center !important; font-size: 11px !important;">
-<span>SWARM_CORE</span>
-<div style="flex-grow: 1 !important; height: 1px !important; background: linear-gradient(90deg, #3eb4ff, #34d399) !important; margin: 0 12px !important; position: relative !important; overflow: hidden !important;"><div id="mcp-beam" style="position: absolute !important; top: 0 !important; left: -20px !important; width: 20px !important; height: 100% !important; background: #fff !important; animation: bPulse 1.5s infinite linear !important;"></div></div>
-<span id="mcp-target-node" style="color: #3eb4ff !important; font-weight: bold !important; border: 1px solid rgba(62,180,255,0.4); padding: 2px 6px; border-radius: 4px; background: #020617; transition: all 0.3s ease !important; cursor: default !important; user-select: none !important; -webkit-user-select: none !important;">POSTGRES_DB</span>
-</div>
-</div>
-
-<!-- Live Compiler Terminal Output -->
-<div style="background: rgba(0, 0, 0, 0.7) !important; border: 1px solid #1f2937 !important; border-radius: 12px !important; padding: 24px !important; display: flex !important; flex-direction: column !important; justify-content: space-between !important; backdrop-filter: blur(10px) !important;">
-<div>
-<div style="display: flex !important; align-items: center !important; justify-content: space-between !important; border-bottom: 1px solid #1f2937 !important; padding-bottom: 10px !important; margin-bottom: 16px !important; font-size: 11px !important; color: #3eb4ff !important; font-weight: bold !important;">// mcp-telemetry-compiler ~ operational</div>
-<pre id="mcp-terminal-json" style="color: #e5e7eb !important; font-size: 12px !important; line-height: 1.6 !important; white-space: pre-wrap !important; margin: 0 !important; font-family: monospace !important;">Awaiting initialization manifest...</pre>
-</div>
-<div style="font-size: 10px !important; color: #4b5563 !important; border-top: 1px solid rgba(255,255,255,0.05) !important; padding-top: 10px !important; margin-top: 14px !important;">INGEST_ROUTE: SECURE // SHARD_SYNC: 100%</div>
+<div id="m-bar" style="border-top: 1px solid rgba(255,255,255,0.05) !important; padding-top: 10px !important; margin-top: 12px !important; font-size: 11px !important; color: #10b981 !important; font-weight: bold !important;">
+<span id="m-msg">>> PARSER_SUCCESS: MAPPED</span>
 </div>
 </div>
 
@@ -1000,60 +998,50 @@ setTimeout(closeSubstrateWaitlistModal, 2000);
 </section>
 
 <style>
-@keyframes bPulse { 0% { left: -30px; } 100% { left: 100%; } }
+@keyframes cP { 0% { left: -20px; } 100% { left: 100%; } }
 </style>
 
 <script>
-function runMcpEngine(key) {
-const terminal = document.getElementById('mcp-terminal-json');
-const node = document.getElementById('mcp-target-node');
-const beam = document.getElementById('mcp-beam');
+function liveCompile() {
+const code = document.getElementById('m-editor').value;
+const box = document.getElementById('m-c-box');
+const status = document.getElementById('m-status');
+const bar = document.getElementById('m-bar');
+const msg = document.getElementById('m-msg');
+const node = document.getElementById('m-node');
+const laser = document.getElementById('m-laser');
+const line = document.getElementById('m-line');
+const vram = document.getElementById('m-vram');
+const speed = document.getElementById('m-speed');
 
-const ids = ['postgres', 'github', 'slack'];
-for (let i = 0; i < ids.length; i++) {
-const btn = document.getElementById('m-btn-' + ids[i]);
-if (btn) {
-btn.style.background = "rgba(255,255,255,0.02)";
-btn.style.borderColor = "rgba(255,255,255,0.05)";
-btn.style.color = "#9ca3af";
-btn.style.fontWeight = "normal";
+try {
+const parsed = JSON.parse(code);
+box.style.borderColor = "rgba(62,180,255,0.2)";
+box.style.background = "rgba(11,19,43,0.3)";
+status.style.color = "#10b981"; status.style.borderColor = "#10b981"; status.style.background = "rgba(16,185,129,0.1)"; status.innerHTML = "CORE_STABLE";
+bar.style.color = "#10b981"; msg.innerHTML = ">> PARSER_SUCCESS: MAPPED";
+if (line) line.style.opacity = "1";
+if (laser) laser.style.display = "block";
+
+if (parsed.routing_target && node) {
+node.innerHTML = String(parsed.routing_target).toUpperCase();
+const t = String(parsed.routing_target).toLowerCase();
+if (t.includes('github')) { node.style.color = "#34d399"; node.style.borderColor = "#34d399"; }
+else if (t.includes('slack')) { node.style.color = "#f59e0b"; node.style.borderColor = "#f59e0b"; }
+else { node.style.color = "#3eb4ff"; node.style.borderColor = "#3eb4ff"; }
+}
+if (parsed.hardware_compression && vram) vram.innerHTML = String(parsed.hardware_compression);
+if (parsed.handshake_latency_ms && speed) speed.innerHTML = String(parsed.handshake_latency_ms) + "ms";
+} catch (err) {
+box.style.borderColor = "rgba(239,68,68,0.4)"; box.style.background = "rgba(239,68,68,0.02)";
+status.style.color = "#ef4444"; status.style.borderColor = "#ef4444"; status.style.background = "rgba(239,68,68,0.1)"; status.innerHTML = "SYNTAX_ERROR";
+bar.style.color = "#ef4444"; msg.innerHTML = ">> SYNTAX_ERR: INVALID_JSON";
+if (line) line.style.opacity = "0.1";
+if (laser) laser.style.display = "none";
 }
 }
-
-const activeBtn = document.getElementById('m-btn-' + key);
-if (activeBtn) {
-activeBtn.style.background = "rgba(62, 180, 255, 0.08)";
-activeBtn.style.borderColor = "#3eb4ff";
-activeBtn.style.color = "#3eb4ff";
-activeBtn.style.fontWeight = "bold";
-}
-
-if (beam) {
-beam.style.animation = 'none';
-beam.offsetHeight;
-beam.style.animation = 'bPulse 0.3s infinite linear';
-setTimeout(() => { beam.style.animation = 'bPulse 1.5s infinite linear'; }, 600);
-}
-
-let data = { protocol: "MCP/2026", routing_layer: "Swarmic_Core", handshake: "SUCCESS" };
-
-if (key === 'postgres') {
-if (node) { node.style.color = "#3eb4ff"; node.style.borderColor = "rgba(62,180,255,0.4)"; node.innerHTML = "POSTGRES_DB"; }
-data.model_context = { nodes: ["Claude_3_5", "OpenAI_o1"], target: "Xano_Prod_Cluster" };
-} else if (key === 'github') {
-if (node) { node.style.color = "#34d399"; node.style.borderColor = "rgba(52,211,153,0.4)"; node.innerHTML = "GITHUB_ORG"; }
-data.model_context = { nodes: ["Llama_3_3", "Code_Deployer"], target: "GitHub_Private_Mesh" };
-} else {
-if (node) { node.style.color = "#f59e0b"; node.style.borderColor = "rgba(245,158,11,0.4)"; node.innerHTML = "SLACK_FEED"; }
-data.model_context = { nodes: ["Incident_Orchestrator"], target: "Slack_Incident_Stream" };
-}
-if (terminal) terminal.innerHTML = JSON.stringify(data, null, 2);
-}
-
-setTimeout(() => { if (document.getElementById('m-btn-postgres')) runMcpEngine('postgres'); }, 200);
 </script>
-<!-- END OF INTERACTIVE MCP GATEWAY INSPECTOR -->
-<!-- SIMULATION LIVE ENGINE SCRIPT -->
+<!-- END OF INTERACTIVE MCP LIVE CANVAS SYSTEM -->
 <script>
 let metricsInterval = null;
 
