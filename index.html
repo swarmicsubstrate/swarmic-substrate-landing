@@ -270,19 +270,26 @@ Swarmic Substrate Core
 document.addEventListener("DOMContentLoaded", function() {
 const matrixNodes = document.querySelectorAll('.valley-interactive-node');
 
-matrixNodes.forEach((node, i) => {
+matrixNodes.forEach(node => {
 node.style.opacity = '0';
 node.style.transform = 'perspective(1000px) translateY(30px)';
-node.style.transition = 'opacity 1s ease, transform 1s ease';
+});
 
 setTimeout(() => {
+matrixNodes.forEach((node, i) => {
+setTimeout(() => {
+node.style.transition = 'opacity 1s ease, transform 1s ease';
 node.style.opacity = '1';
 node.style.transform = 'perspective(1000px) translateY(0)';
+
 setTimeout(() => {
 node.style.transition = 'transform 0.5s ease, border-color 0.25s ease, box-shadow 0.25s ease';
 }, 1000);
 }, i * 150);
+});
+}, 200);
 
+matrixNodes.forEach(node => {
 const flare = document.createElement('div');
 flare.style.position = 'absolute';
 flare.style.top = '0';
@@ -295,7 +302,6 @@ flare.style.opacity = '0';
 flare.style.transition = 'opacity 0.25s ease';
 flare.style.zIndex = '1';
 node.appendChild(flare);
-
 
 node.addEventListener('mousemove', function(e) {
 const dim = this.getBoundingClientRect();
@@ -312,8 +318,8 @@ this.style.borderColor = '#3eb4ff';
 
 node.addEventListener('mouseleave', function() {
 flare.style.opacity = '0';
-this.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
-this.style.borderColor = this.style.boxShadow && (this.style.boxShadow.includes('20px') || this.style.boxShadow.includes('25px')) ? '#3b82f6' : 'rgba(55, 65, 81, 0.7)';
+this.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+this.style.borderColor = 'rgba(55, 65, 81, 0.3)';
 });
 });
 });
