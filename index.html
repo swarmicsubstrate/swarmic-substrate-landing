@@ -1307,20 +1307,18 @@ pointer-events: none !important;
 text-align: right !important;
 }
 
-/* 3. Deploy Foreground Neon Laser Pulse Border Sweep */
+/* 3. Deploy PURE 360 DEGREE NEON BORDER CYCLONE */
 .feature-card::after {
 content: '' !important;
 position: absolute !important;
-inset: 0 !important; /* Wymusza dopasowanie idealnie do krawędzi karty */
-border: 1px solid transparent !important;
+inset: 0 !important;
+border: 1.5px solid transparent !important;
 border-radius: inherit !important;
-background: linear-gradient(90deg, transparent, #3eb4ff, #ffffff, #3eb4ff, transparent) border-box !important;
+background: conic-gradient(from var(--border-angle), transparent 70%, #3eb4ff, #ffffff, #3eb4ff, transparent) border-box !important;
 -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0) !important;
 -webkit-mask-composite: xor !important;
 mask-composite: exclude !important;
-background-size: 200% auto !important;
-background-position: 0% center !important;
-animation: borderGlow 6s linear infinite !important;
+animation: borderRotate 4s linear infinite !important;
 pointer-events: none !important;
 z-index: 2 !important;
 }
@@ -1332,24 +1330,32 @@ color: #ffffff !important;
 }
 
 /* 5. Decentralize execution cycles across the swarm cluster */
-.feature-card:nth-of-type(2)::after { animation-delay: 1s !important; }
-.feature-card:nth-of-type(3)::after { animation-delay: 2s !important; }
-.feature-card:nth-of-type(4)::after { animation-delay: 3s !important; }
-.feature-card:nth-of-type(5)::after { animation-delay: 4s !important; }
-.feature-card:nth-of-type(6)::after { animation-delay: 5s !important; }
+.feature-card:nth-of-type(2)::after { animation-delay: 0.7s !important; }
+.feature-card:nth-of-type(3)::after { animation-delay: 1.4s !important; }
+.feature-card:nth-of-type(4)::after { animation-delay: 2.1s !important; }
+.feature-card:nth-of-type(5)::after { animation-delay: 2.8s !important; }
+.feature-card:nth-of-type(6)::after { animation-delay: 3.5s !important; }
 
-/* 6. Execution routing parameters for animators */
+/* 6. Register professional 2026 border angle property */
+@property --border-angle {
+syntax: '<angle>';
+inherits: false;
+initial-value: 0deg;
+}
+
+/* 7. Execution routing parameters for animators */
 @keyframes telemetryScroll {
 0% { transform: translateY(10px); }
 50% { transform: translateY(-40px); }
 100% { transform: translateY(10px); }
 }
 
-@keyframes borderGlow {
-0% { background-position: 0% center; }
-100% { background-position: 200% center; }
+@keyframes borderRotate {
+0% { --border-angle: 0deg; }
+100% { --border-angle: 360deg; }
 }
 </style>
+
 
 
 
