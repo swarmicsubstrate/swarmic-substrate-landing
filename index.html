@@ -279,7 +279,6 @@ node.style.transform = 'perspective(1000px) translateY(30px)';
 connectionLines.forEach(function(line) {
 line.style.opacity = '0';
 line.style.height = '0px';
-line.style.transition = 'opacity 1s ease, height 1s ease';
 });
 
 setTimeout(function() {
@@ -297,6 +296,7 @@ node.style.transition = 'transform 0.5s ease, border-color 0.25s ease, box-shado
 
 setTimeout(function() {
 connectionLines.forEach(function(line) {
+line.style.transition = 'opacity 1s ease, height 1s ease';
 line.style.opacity = '0.6';
 line.style.height = '35px';
 });
@@ -338,6 +338,7 @@ this.style.borderColor = 'rgba(55, 65, 81, 0.3)';
 });
 });
 </script>
+
 
 
 
