@@ -1355,23 +1355,7 @@ initial-value: 0deg;
 100% { --border-angle: 360deg; }
 }
 </style>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-const featureCards = document.querySelectorAll('.feature-card');
 
-const audioClick = new Audio('data:audio/wav;base64,UklGRigAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQQAAAAAAAAD');
-audioClick.volume = 0.15;
-
-featureCards.forEach(function(card) {
-card.addEventListener('mouseenter', function() {
-audioClick.currentTime = 0;
-audioClick.play().catch(function(err) {
-// Permission bypass
-});
-});
-});
-});
-</script>
 
 
 
