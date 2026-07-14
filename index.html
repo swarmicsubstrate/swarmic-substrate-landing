@@ -269,10 +269,18 @@ Swarmic Substrate Core
 <script>
 document.addEventListener("DOMContentLoaded", function() {
 const matrixNodes = document.querySelectorAll('.valley-interactive-node');
+const parentContainer = document.querySelector('.valley-interactive-node')?.closest('section') || document.body;
+const connectionLines = parentContainer.querySelectorAll('div[style*="width: 1px"]');
 
 matrixNodes.forEach(node => {
 node.style.opacity = '0';
 node.style.transform = 'perspective(1000px) translateY(30px)';
+});
+
+connectionLines.forEach(line => {
+line.style.opacity = '0';
+line.style.height = '0px';
+line.style.transition = 'opacity 1s ease, height 1s ease';
 });
 
 setTimeout(() => {
@@ -287,6 +295,13 @@ node.style.transition = 'transform 0.5s ease, border-color 0.25s ease, box-shado
 }, 1000);
 }, i * 150);
 });
+
+setTimeout(() => {
+connectionLines.forEach(line => {
+line.style.opacity = '0.6';
+line.style.height = '30px';
+});
+}, 400);
 }, 200);
 
 matrixNodes.forEach(node => {
