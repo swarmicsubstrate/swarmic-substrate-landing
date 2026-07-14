@@ -1358,44 +1358,22 @@ initial-value: 0deg;
 <script>
 document.addEventListener("DOMContentLoaded", function() {
 const featureCards = document.querySelectorAll('.feature-card');
-let audioCtx = null;
 
-function playNeuralClick() {
-try {
-if (!audioCtx) {
-audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-}
-if (audioCtx.state === 'suspended') {
-audioCtx.resume();
-}
-
-const osc = audioCtx.createOscillator();
-const gainNode = audioCtx.createGain();
-
-osc.type = 'sine';
-osc.frequency.setValueAtTime(120, audioCtx.currentTime);
-osc.frequency.exponentialRampToValueAtTime(40, audioCtx.currentTime + 0.08);
-
-gainNode.gain.setValueAtTime(0.04, audioCtx.currentTime);
-gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.08);
-
-osc.connect(gainNode);
-gainNode.connect(audioCtx.destination);
-
-osc.start();
-osc.stop(audioCtx.currentTime + 0.08);
-} catch (e) {
-// Audio execution parameters verified
-}
-}
+const audioClick = new Audio('data:audio/wav;base64,UklGRigAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQQAAAAAAAAD');
+audioClick.volume = 0.15;
 
 featureCards.forEach(function(card) {
-card.addEventListener('mouseover', function() {
-setTimeout(playNeuralClick, 10);
+card.addEventListener('mouseenter', function() {
+audioClick.currentTime = 0;
+audioClick.play().catch(function(err) {
+// Permission bypass
+});
 });
 });
 });
 </script>
+
+
 
 
 
