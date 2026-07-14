@@ -1281,6 +1281,30 @@ box-sizing: border-box;">
 <p style="font-size: 0.85rem; color: #6b7280; margin-top: 30px;">Last updated: July 2026. For governance inquiries, contact operations.</p>
 </div>
 </div>
+<style>
+div[style*="width: 1px;"][style*="background: linear-gradient"],
+div[style*="width: 1px;"][style*="background:linear-gradient"] {
+position: relative !important;
+overflow: hidden !important;
+}
+div[style*="width: 1px;"][style*="background: linear-gradient"]::after,
+div[style*="width: 1px;"][style*="background:linear-gradient"]::after {
+content: '' !important;
+position: absolute !important;
+top: -40px !important;
+left: 0 !important;
+width: 100% !important;
+height: 40px !important;
+background: linear-gradient(180deg, transparent, #3eb4ff, #ffffff, transparent) !important;
+animation: dataPulse 3s infinite cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+div[style*="width: 1px;"]:nth-of-type(2)::after { animation-delay: 0.8s !important; }
+div[style*="width: 1px;"]:nth-of-type(3)::after { animation-delay: 1.6s !important; }
+@keyframes dataPulse {
+0% { top: -40px; }
+30%, 100% { top: 100%; }
+}
+</style>
 
 
 
