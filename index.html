@@ -80,7 +80,6 @@ opacity: 0;
 font-weight: 800;
 text-transform: uppercase;
 letter-spacing: -0.02em;
-    white-space: pre; 
 background: linear-gradient(135deg, #4b5563 0%, #ffffff 45%, #ffffff 55%, #1f2937 100%);
 background-size: 200% auto;
 -webkit-background-clip: text;
@@ -92,14 +91,22 @@ transition: all 0.4s ease;
 filter: drop-shadow(0 0 12px rgba(255,255,255,0.3)) !important;
 transform: translateY(-4px) scale(1.1) !important;
 }
+
 @media (max-width: 768px) {
+.hero-title {
+font-size: 1.85rem !important;
+line-height: 1.2 !important;
+word-break: keep-all !important;
+overflow-wrap: normal !important;
+}
 .reveal-letter {
-font-size: 1.65rem !important;
+display: inline !important;
+letter-spacing: -0.01em !important;
 }
 .hero p {
 font-size: 0.9rem !important;
 line-height: 1.5 !important;
-padding: 0 10px !important;
+padding: 0 15px !important;
 }
 }
 
