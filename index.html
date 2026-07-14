@@ -268,66 +268,65 @@ Swarmic Substrate Core
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-const matrixNodes = document.querySelectorAll('.valley-interactive-node');
-const parentContainer = document.querySelector('.valley-interactive-node')?.closest('section') || document.body;
-const connectionLines = parentContainer.querySelectorAll('div[style*="width: 1px"]');
+var matrixNodes = document.querySelectorAll('.valley-interactive-node');
+var connectionLines = document.querySelectorAll('div[style*="width: 1px"]');
 
-matrixNodes.forEach(node => {
+matrixNodes.forEach(function(node) {
 node.style.opacity = '0';
 node.style.transform = 'perspective(1000px) translateY(30px)';
 });
 
-connectionLines.forEach(line => {
+connectionLines.forEach(function(line) {
 line.style.opacity = '0';
 line.style.height = '0px';
 line.style.transition = 'opacity 1s ease, height 1s ease';
 });
 
-setTimeout(() => {
-matrixNodes.forEach((node, i) => {
-setTimeout(() => {
+setTimeout(function() {
+matrixNodes.forEach(function(node, i) {
+setTimeout(function() {
 node.style.transition = 'opacity 1s ease, transform 1s ease';
 node.style.opacity = '1';
 node.style.transform = 'perspective(1000px) translateY(0)';
 
-setTimeout(() => {
+setTimeout(function() {
 node.style.transition = 'transform 0.5s ease, border-color 0.25s ease, box-shadow 0.25s ease';
 }, 1000);
 }, i * 150);
 });
 
-setTimeout(() => {
-connectionLines.forEach(line => {
+setTimeout(function() {
+connectionLines.forEach(function(line) {
 line.style.opacity = '0.6';
-line.style.height = '30px';
+line.style.height = '35px';
 });
 }, 400);
 }, 200);
 
-matrixNodes.forEach(node => {
-const flare = document.createElement('div');
+matrixNodes.forEach(function(node) {
+var flare = document.createElement('div');
 flare.style.position = 'absolute';
 flare.style.top = '0';
 flare.style.left = '0';
 flare.style.width = '100%';
 flare.style.height = '100%';
 flare.style.pointerEvents = 'none';
-flare.style.background = `radial-gradient(circle 80px at 0px 0px, ${node.getAttribute('data-glow')} 0%, transparent 80%)`;
+flare.style.background = 'radial-gradient(circle 80px at 0px 0px, ' + node.getAttribute('data-glow') + ' 0%, transparent 80%)';
 flare.style.opacity = '0';
 flare.style.transition = 'opacity 0.25s ease';
 flare.style.zIndex = '1';
 node.appendChild(flare);
 
 node.addEventListener('mousemove', function(e) {
-const dim = this.getBoundingClientRect();
-const xLocal = e.clientX - dim.left;
-const yLocal = e.clientY - dim.top;
-const xTilt = ((xLocal / dim.width) - 0.5) * 10;
-const yTilt = ((yLocal / dim.height) - 0.5) * -10;
+var dim = this.getBoundingClientRect();
+var xLocal = e.clientX - dim.left;
+var yLocal = e.clientY - dim.top;
+var xTilt = ((xLocal / dim.width) - 0.5) * 10;
+var yTilt = ((yLocal / dim.height) - 0.5) * -10;
 
-flare.style.background = `radial-gradient(circle 100px at ${xLocal}px ${yLocal}px, ${this.getAttribute('data-glow')} 0%, transparent 80%)`;
+flare.style.background = 'radial-gradient(circle 100px at ' + xLocal + 'px ' + yLocal + 'px, ' + this.getAttribute('data-glow') + ' 0%, transparent 80%)';
 flare.style.opacity = '1';
-this.style.transform = `perspective(1000px) rotateX(${yTilt}deg) rotateY(${xTilt}deg) translateY(-2px)`;
+this.style.transform = 'perspective(1000px) rotateX(' + yTilt + 'deg) rotateY(' + xTilt + 'deg) translateY(-2px)';
 this.style.borderColor = '#3eb4ff';
 });
 
@@ -339,6 +338,7 @@ this.style.borderColor = 'rgba(55, 65, 81, 0.3)';
 });
 });
 </script>
+
 
 
             
