@@ -514,11 +514,21 @@ swarmObserver.observe(swarmRevealTarget);
 
 </section>
 <!-- START OF SWARM GRAPH NEURAL OPTIMIZER -->
-<section style="position: relative !important; width: 100% !important; border-top: 1px solid rgba(255,255,255,0.05) !important; padding: 60px 20px !important; font-family: monospace !important; color: #fff !important;">
-<div style="max-w: 1100px !important; margin: 0 auto !important; display: grid !important; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important; gap: 24px !important;">
+<section style="position: relative !important; width: 100% !important; border-top: 1px solid rgba(255,255,255,0.05) !important; padding: 60px 20px !important; font-family: monospace !important; color: #fff !important; user-select: none !important; -webkit-user-select: none !important;">
+<div style="max-w: 1100px !important; margin: 0 auto !important;">
+
+<!-- DYNAMIC ENGINEERING HEADER BLOCK -->
+<div style="margin-bottom: 40px !important; font-family: sans-serif !important; text-align: left !important;">
+<span style="font-family: monospace !important; font-size: 11px !important; text-transform: uppercase !important; tracking: 0.3em !important; color: #3eb4ff !important; font-weight: bold !important;">[LAB_STAGE_B // INFRASTRUCTURE GRAPH OPTIMIZER]</span>
+<h2 style="font-size: 32px !important; font-weight: 800 !important; color: #ffffff !important; margin-top: 10px !important; margin-bottom: 0 !important; tracking: -0.02em !important;">Next-Generation Infrastructure for Autonomous AI Agents</h2>
+<p style="color: #9ca3af !important; font-size: 14px !important; margin-top: 12px !important; margin-bottom: 0 !important; max-width: 750px !important; line-height: 1.6 !important;">Execute hardware-level tensor quantization. Drag the active matrix precision controller below to shuffle weight ontologies, recalculate cluster node stress, and audit instant infrastructure performance drops in real-time execution loops.</p>
+</div>
+
+<!-- Main Workspace Grid -->
+<div style="display: grid !important; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important; gap: 24px !important; align-items: stretch !important;">
 
 <!-- LEFT PANEL: Matrix Buffer -->
-<div style="background: rgba(11,19,43,0.3) !important; border: 1px solid rgba(62,180,255,0.2) !important; border-radius: 12px !important; padding: 20px !important; backdrop-filter: blur(10px) !important; display: flex !important; flex-direction: column !important; justify-content: space-between !important; min-height: 340px !important; user-select: none !important; -webkit-user-select: none !important; cursor: default !important;">
+<div style="background: rgba(11,19,43,0.3) !important; border: 1px solid rgba(62,180,255,0.2) !important; border-radius: 12px !important; padding: 20px !important; backdrop-filter: blur(10px) !important; display: flex !important; flex-direction: column !important; justify-content: space-between !important; min-height: 340px !important; cursor: default !important;">
 <div>
 <span style="color: #6b7280 !important; font-size: 10px !important; display: block !important; margin-bottom: 10px !important;">// ACTIVE TENSOR WEIGHTS BUFFER</span>
 <div id="s-grid" style="display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 6px !important; font-size: 11px !important; text-align: center !important; font-weight: bold !important; color: #34d399 !important; background: rgba(0,0,0,0.3) !important; padding: 12px !important; border-radius: 6px !important; border: 1px solid rgba(255,255,255,0.02) !important;">
@@ -541,10 +551,19 @@ swarmObserver.observe(swarmRevealTarget);
 <div style="background: rgba(5,11,20,0.8) !important; border: 1px solid #1f2937 !important; border-radius: 12px !important; padding: 20px !important; display: flex !important; flex-direction: column !important; justify-content: space-between !important; backdrop-filter: blur(10px) !important;">
 <div>
 <div style="display: flex !important; align-items: center !important; justify-content: space-between !important; border-bottom: 1px solid #1f2937 !important; padding-bottom: 10px !important; margin-bottom: 12px !important; font-size: 11px !important; color: #3eb4ff !important; font-weight: bold !important;">// sgno-yield-compiler ~ online</div>
-<div style="padding: 6px 0 !important;">
-<span style="color: #6b7280 !important; font-size: 10px !important; display: block !important;">// AUDITED COMPUTE COST REDUCTION</span>
-<div style="font-size: 34px !important; font-weight: 800 !important; color: #fff !important; tracking: -0.02em !important;">$<span id="s-cost">14,241</span></div>
+
+<!-- Pure Infrastructure Telemetry Metrics -->
+<div style="padding: 6px 0 !important; display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 15px !important; cursor: default !important;">
+<div>
+<span style="color: #6b7280 !important; font-size: 9px !important; display: block !important;">// GRAPH_EFFICIENCY</span>
+<div style="font-size: 24px !important; font-weight: 800 !important; color: #fff !important; tracking: -0.02em !important;"><span id="s-eff">0% BASE</span></div>
 </div>
+<div>
+<span style="color: #6b7280 !important; font-size: 9px !important; display: block !important;">// BANDWIDTH_SAVED</span>
+<div style="font-size: 24px !important; font-weight: 800 !important; color: #34d399 !important; tracking: -0.02em !important;"><span id="s-band">0.0 GB/s</span></div>
+</div>
+</div>
+
 <div id="s-log" style="margin-top: 12px !important; border-top: 1px solid #1f2937 !important; padding-top: 10px !important; font-size: 11px !important; color: #9ca3af !important; line-height: 1.5 !important;">
 <div style="color: #3eb4ff !important;">>> INITIALIZED: Floating-point 32-bit baseline loaded.</div>
 </div>
@@ -555,10 +574,21 @@ swarmObserver.observe(swarmRevealTarget);
 </div>
 
 </div>
+</div>
 </section>
 
+<style>
+#m-c-box *, #s-grid * { pointer-events: none !important; cursor: default !important; }
+</style>
+
 <script>
-let sDol = 14241, sInt = null, sMult = 2000;
+let sInt = null, sMult = 2000;
+const sgnoMatrixSpecs = {
+0: { eff: "0% BASE", band: "0.0 GB/s", logs: "<div style='color:#3eb4ff'>>> INITIALIZED: Floating-point 32-bit baseline graph loaded.</div>" },
+1: { eff: "+48% HIGH", band: "1.2 GB/s", logs: "<div style='color:#34d399'>>> COMPILE: Compressing graph network nodes into 16-bit float space.</div>" },
+2: { eff: "+164% MAX", band: "2.8 GB/s", logs: "<div style='color:#f59e0b'>>> WARNING: Dropping matrix weights into 8-bit scale arrays.</div>" },
+3: { eff: "+312% ULTRA", band: "4.2 GB/s", logs: "<div style='color:#ef4444'>>> SHARD_STRESS: Local CPU executing deep 4-bit integer packing!</div>" }
+};
 function shuf() {
 const g = document.getElementById('s-grid'); if (!g) return;
 const c = g.children, v = parseInt(document.getElementById('s-slider').value);
@@ -567,31 +597,22 @@ c[i].innerHTML = (v === 3) ? Math.floor(Math.random() * 8 - 4) : (v === 2) ? (Ma
 }
 }
 function optMesh() {
-const s = document.getElementById('s-slider'), bd = document.getElementById('s-badge'), rat = document.getElementById('s-ratio'), str = document.getElementById('s-stress'), log = document.getElementById('s-log'), g = document.getElementById('s-grid');
+const s = document.getElementById('s-slider'), bd = document.getElementById('s-badge'), rat = document.getElementById('s-ratio'), str = document.getElementById('s-stress'), log = document.getElementById('s-log'), g = document.getElementById('s-grid'), effNode = document.getElementById('s-eff'), bandNode = document.getElementById('s-band');
 if (!s) return; const v = parseInt(s.value); clearInterval(sInt);
+if (effNode) effNode.innerHTML = sgnoMatrixSpecs[v].eff;
+if (bandNode) bandNode.innerHTML = sgnoMatrixSpecs[v].band;
+if (log) log.innerHTML = sgnoMatrixSpecs[v].logs;
 if (v === 0) {
-bd.innerHTML = "FP32 (BASELINE)"; bd.style.color = "#3eb4ff"; rat.innerHTML = "1.0X"; str.innerHTML = "5% LOW"; str.style.color = "#34d399"; g.style.color = "#34d399";
-log.innerHTML = "<div style='color:#3eb4ff'>>> INITIALIZED: FP32 baseline loaded.</div>"; sMult = 2000;
+bd.innerHTML = "FP32 (BASELINE)"; bd.style.color = "#3eb4ff"; rat.innerHTML = "1.0X"; str.innerHTML = "5% LOW"; str.style.color = "#34d399"; g.style.color = "#34d399"; sMult = 2000;
 } else if (v === 1) {
-bd.innerHTML = "FP16 (HALF FLOAT)"; bd.style.color = "#34d399"; rat.innerHTML = "2.0X OPT"; str.innerHTML = "18% NORMAL"; str.style.color = "#34d399"; g.style.color = "#34d399";
-log.innerHTML = "<div style='color:#34d399'>>> COMPILE: Compressing nodes to 16-bit float space.</div>"; sMult = 800;
+bd.innerHTML = "FP16 (HALF FLOAT)"; bd.style.color = "#34d399"; rat.innerHTML = "2.0X OPT"; str.innerHTML = "18% NORMAL"; str.style.color = "#34d399"; g.style.color = "#34d399"; sMult = 800;
 } else if (v === 2) {
-bd.innerHTML = "INT8 (COMPRESSED)"; bd.style.color = "#f59e0b"; rat.innerHTML = "4.0X EXTREME"; str.innerHTML = "45% MEDIUM"; str.style.color = "#f59e0b"; g.style.color = "#f59e0b";
-log.innerHTML = "<div style='color:#f59e0b'>>> WARNING: Matrix weights dropped into 8-bit scale.</div>"; sMult = 300;
+bd.innerHTML = "INT8 (COMPRESSED)"; bd.style.color = "#f59e0b"; rat.innerHTML = "4.0X EXTREME"; str.innerHTML = "45% MEDIUM"; str.style.color = "#f59e0b"; g.style.color = "#f59e0b"; sMult = 300;
 } else if (v === 3) {
-bd.innerHTML = "INT4 (MAX SWARM QUANT)"; bd.style.color = "#ef4444"; rat.innerHTML = "8.0X SWARM"; str.innerHTML = "89% EXTREME CALC"; str.style.color = "#ef4444"; g.style.color = "#ef4444";
-log.innerHTML = "<div style='color:#ef4444'>>> SHARD_STRESS: CPU executing 4-bit packing!</div>"; sMult = 80;
+bd.innerHTML = "INT4 (MAX SWARM QUANT)"; bd.style.color = "#ef4444"; rat.innerHTML = "8.0X SWARM"; str.innerHTML = "89% EXTREME CALC"; str.style.color = "#ef4444"; g.style.color = "#ef4444"; sMult = 80;
 }
 sInt = setInterval(shuf, sMult); shuf();
 }
-setInterval(() => {
-const c = document.getElementById('s-cost'), s = document.getElementById('s-slider');
-if (c && s) {
-const v = parseInt(s.value);
-sDol += (v === 0) ? Math.floor(Math.random() * 2 + 1) : (v === 1) ? Math.floor(Math.random() * 8 + 3) : (v === 2) ? Math.floor(Math.random() * 18 + 8) : Math.floor(Math.random() * 45 + 20);
-c.innerHTML = sDol.toLocaleString('en-US');
-}
-}, 400);
 sInt = setInterval(shuf, 2000);
 </script>
 <!-- END OF SWARM GRAPH NEURAL OPTIMIZER -->
