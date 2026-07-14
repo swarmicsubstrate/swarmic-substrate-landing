@@ -1385,15 +1385,18 @@ gainNode.connect(audioCtx.destination);
 osc.start();
 osc.stop(audioCtx.currentTime + 0.08);
 } catch (e) {
-// Audio parameters secured
+// Audio execution parameters verified
 }
 }
 
 featureCards.forEach(function(card) {
-card.addEventListener('mouseenter', playNeuralClick);
+card.addEventListener('mouseover', function() {
+setTimeout(playNeuralClick, 10);
+});
 });
 });
 </script>
+
 
 
 
