@@ -1355,7 +1355,45 @@ initial-value: 0deg;
 100% { --border-angle: 360deg; }
 }
 </style>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+const featureCards = document.querySelectorAll('.feature-card');
+let audioCtx = null;
 
+function playNeuralClick() {
+try {
+if (!audioCtx) {
+audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+}
+if (audioCtx.state === 'suspended') {
+audioCtx.resume();
+}
+
+const osc = audioCtx.createOscillator();
+const gainNode = audioCtx.createGain();
+
+osc.type = 'sine';
+osc.frequency.setValueAtTime(120, audioCtx.currentTime);
+osc.frequency.exponentialRampToValueAtTime(40, audioCtx.currentTime + 0.08);
+
+gainNode.gain.setValueAtTime(0.04, audioCtx.currentTime);
+gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.08);
+
+osc.connect(gainNode);
+gainNode.connect(audioCtx.destination);
+
+osc.start();
+osc.stop(audioCtx.currentTime + 0.08);
+} catch (e) {
+// Audio parameters secured
+}
+}
+
+featureCards.forEach(function(card) {
+card.addEventListener('mouseenter', playNeuralClick);
+});
+});
+</script>
 
 
 
