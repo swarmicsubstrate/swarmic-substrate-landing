@@ -271,6 +271,7 @@ document.addEventListener("DOMContentLoaded", function() {
 const matrixNodes = document.querySelectorAll('.valley-interactive-node');
 
 matrixNodes.forEach((node, i) => {
+node.style.cursor = 'default';
 node.style.opacity = '0';
 node.style.transform = 'perspective(1000px) translateY(30px)';
 node.style.transition = 'opacity 1s ease, transform 1s ease';
