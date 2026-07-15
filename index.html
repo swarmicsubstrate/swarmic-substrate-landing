@@ -132,12 +132,13 @@ High-Throughput Cloud Orchestration for <span style="white-space: nowrap;">Multi
 
 <!-- LEFT COLUMN: Live Shard Log Streamer -->
 <div class="s-dash-col" style="padding-bottom: 15px !important; border-bottom: 1px solid rgba(255,255,255,0.05) !important; overflow: hidden !important; width: 100% !important; box-sizing: border-box !important;">
-<div style="display: flex !important; align-items: center !important; gap: 6px !important; margin-bottom: 8px !important;">
+<div style="display: flex !important; align-items: center !important; gap: 6px !important; margin-bottom: 12px !important;">
 <span style="width: 6px !important; height: 6px !important; background: #3eb4ff !important; border-radius: 50% !important; box-shadow: 0 0 8px #3eb4ff !important; flex-shrink: 0 !important;"></span>
 <span style="color: #3eb4ff !important; font-size: 11px !important; font-weight: bold !important; letter-spacing: 0.05em !important;">GLOBAL_SHARD_REGISTRY</span>
 </div>
-<!-- Rolling Log Viewport -->
-<div id="swarm-log-stream" style="font-size: 11px !important; color: #9ca3af !important; line-height: 1.5 !important; height: 75px !important; min-height: 75px !important; max-height: 75px !important; overflow: hidden !important; width: 100% !important; word-break: break-word !important; display: flex !important; flex-direction: column !important; gap: 4px !important; box-sizing: border-box !important;">
+<!-- Rolling Log Viewport (Fully Frozen Height) -->
+<div id="swarm-log-stream" style="font-size: 11px !important; color: #9ca3af !important; height: 60px !important; min-height: 60px !important; max-height: 60px !important; overflow: hidden !important; width: 100% !important; box-sizing: border-box !important; display: block !important;">
+<div style="color: #34d399 !important; height: 16px !important; line-height: 16px !important; margin-bottom: 4px !important; white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important;">[SAN_FRANCISCO_CORE] Re-routing token weights... CONNECTED</div>
 </div>
 </div>
 
@@ -145,10 +146,9 @@ High-Throughput Cloud Orchestration for <span style="white-space: nowrap;">Multi
 <div class="s-dash-col" style="padding-top: 15px !important; padding-bottom: 15px !important; border-bottom: 1px solid rgba(255,255,255,0.05) !important; width: 100% !important; box-sizing: border-box !important;">
 <span style="color: #6b7280 !important; font-size: 10px !important; display: block !important; margin-bottom: 4px !important;">// AUTONOMOUS_SWARM_HEALTH</span>
 <div style="display: flex !important; align-items: baseline !important; gap: 8px !important; flex-wrap: wrap !important;">
-<span id="swarm-health-pct" style="font-size: 28px !important; font-weight: 800 !important; color: #fff !important; tracking: -0.03em !important;">99.96%</span>
+<span id="swarm-health-pct" style="font-size: 28px !important; font-weight: 800 !important; color: #fff !important; tracking: -0.03em !important;">99.94%</span>
 <span style="color: #10b981 !important; font-size: 11px !important; font-weight: bold !important;">STABLE</span>
 </div>
-<!-- Resilient Progress Bar Matrix -->
 <div style="width: 100% !important; height: 3px !important; background: rgba(255,255,255,0.05) !important; border-radius: 2px !important; margin-top: 8px !important; overflow: hidden !important; box-sizing: border-box !important;">
 <div style="width: 100% !important; height: 100% !important; background: linear-gradient(90deg, #3eb4ff, #34d399) !important;"></div>
 </div>
@@ -158,53 +158,26 @@ High-Throughput Cloud Orchestration for <span style="white-space: nowrap;">Multi
 <div class="s-dash-col" style="padding-top: 15px !important; width: 100% !important; box-sizing: border-box !important;">
 <span style="color: #6b7280 !important; font-size: 10px !important; display: block !important; margin-bottom: 4px !important;">// CLUSTER_COMPUTE_THROUGHPUT</span>
 <div style="font-size: 24px !important; font-weight: 800 !important; color: #34d399 !important; tracking: -0.02em !important; line-height: 1.2 !important;">
-<span id="swarm-token-counter">4,176,789</span>
+<span id="swarm-token-counter">4,207,564</span>
 </div>
-<span style="color: #4b5563 !important; font-size: 9px !important; display: block !important; margin-top: 4px !important; word-break: break-all !important;">TOKENS_PROCESSED_INFERENCE_OK</span>
+<span style="color: #4b5563 !important; font-size: 9px !important; display: block !important; margin-top: 4px !important;">TOKENS_PROCESSED_INFERENCE_OK</span>
 </div>
 
 </div>
 </section>
 
-<!-- CSS INJECTOR FOR ABSOLUT RESPONSIVENESS -->
 <style>
-/* Base layout for large desktop screens (Grid columns layout) */
-.swarm-responsive-dashboard {
-display: grid !important;
-grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
-gap: 20px !important;
-}
-.s-dash-col {
-border-bottom: none !important;
-padding-top: 0 !important;
-padding-bottom: 0 !important;
-}
-.swarm-responsive-dashboard > div:not(:last-child) {
-border-right: 1px solid rgba(255,255,255,0.05) !important;
-padding-right: 15px !important;
-}
-
-/* Smart Mobile Override Layout (Enforces stacking and prevents horizontal scroll) */
+.swarm-responsive-dashboard { display: grid !important; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important; gap: 20px !important; }
+.s-dash-col { border-bottom: none !important; padding-top: 0 !important; padding-bottom: 0 !important; }
+.swarm-responsive-dashboard > div:not(:last-child) { border-right: 1px solid rgba(255,255,255,0.05) !important; padding-right: 15px !important; }
 @media (max-width: 768px) {
-.swarm-responsive-dashboard {
-display: flex !important;
-flex-direction: column !important;
-gap: 0 !important;
-}
-.s-dash-col {
-border-right: none !important;
-padding-right: 0 !important;
-width: 100% !important;
-}
-.swarm-responsive-dashboard > div:not(:last-child) {
-border-right: none !important;
-padding-right: 0 !important;
-}
+.swarm-responsive-dashboard { display: flex !important; flex-direction: column !important; gap: 0 !important; }
+.s-dash-col { border-right: none !important; padding-right: 0 !important; width: 100% !important; }
+.swarm-responsive-dashboard > div:not(:last-child) { border-right: none !important; padding-right: 0 !important; }
 }
 </style>
 
 <script>
-// Live Streamer Matrix Engine
 const swarmLogs = [
 { node: "WARSZAWA_NODE_4", action: "Ingesting telemetry matrix...", status: "OK", color: "#34d399" },
 { node: "DELAWARE_CLUSTER_9", action: "Sharding database volumes...", status: "SECURE", color: "#34d399" },
@@ -219,34 +192,29 @@ const stream = document.getElementById('swarm-log-stream');
 if (stream) {
 const item = swarmLogs[Math.floor(Math.random() * swarmLogs.length)];
 const logLine = document.createElement('div');
+logLine.style.color = "#9ca3af";
+logLine.style.height = "16px";
+logLine.style.lineHeight = "16px";
+logLine.style.marginBottom = "4px";
+logLine.style.whiteSpace = "nowrap";
+logLine.style.overflow = "hidden";
+logLine.style.textOverflow = "ellipsis";
 logLine.style.opacity = "0";
-logLine.style.transition = "opacity 0.3s ease";
-logLine.style.wordBreak = "break-all";
+logLine.style.transition = "opacity 0.2s ease";
 logLine.innerHTML = `[${item.node}] ${item.action} <span style="color:${item.color};font-weight:bold;">${item.status}</span>`;
 
 stream.insertBefore(logLine, stream.firstChild);
-setTimeout(() => logLine.style.opacity = "1", 50);
-
-if (stream.children.length > 3) {
-stream.removeChild(stream.lastChild);
+setTimeout(() => logLine.style.opacity = "1", 30);
+if (stream.children.length > 3) { stream.removeChild(stream.lastChild); }
 }
-}
-
-// Health Oscillator Matrix
 const health = document.getElementById('swarm-health-pct');
-if (health) {
-health.innerHTML = (99.9 + Math.random() * 0.09).toFixed(2) + "%";
-}
+if (health) { health.innerHTML = (99.9 + Math.random() * 0.09).toFixed(2) + "%"; }
 }, 2500);
 
-// High-Velocity Token Counter Physics
-let initialTokens = 4176789;
+let initialTokens = 4207564;
 setInterval(() => {
 const counter = document.getElementById('swarm-token-counter');
-if (counter) {
-initialTokens += Math.floor(Math.random() * 320 + 110);
-counter.innerHTML = initialTokens.toLocaleString('en-US');
-}
+if (counter) { initialTokens += Math.floor(Math.random() * 320 + 110); counter.innerHTML = initialTokens.toLocaleString('en-US'); }
 }, 150);
 </script>
 <!-- END OF GLOBAL SWARM LIVE OPERATIONAL DASHBOARD -->
