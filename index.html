@@ -1710,6 +1710,93 @@ Support: <a href="mailto:contact@swarmicsubstrate.com" style="color: #3b82f6; te
 </p>
 
 </div>
+<!-- SYSTEM COMPONENT: Premium Swarmic AI Substrate Support Bot -->
+<div id="swarmic-bot-launcher" onclick="toggleSwarmicBot()" style="position: fixed; bottom: 25px; right: 25px; width: 60px; height: 60px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10000; box-shadow: 0 0 20px rgba(59, 130, 246, 0.6); transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05) translateY(-2px)'; this.style.boxShadow='0 0 30px rgba(59, 130, 246, 0.85)';" onmouseout="this.style.transform='scale(1) translateY(0)'; this.style.boxShadow='0 0 20px rgba(59, 130, 246, 0.6)';">
+<span style="color: #fff; font-size: 24px; font-family: sans-serif;">🤖</span>
+</div>
+
+<div id="swarmic-bot-window" style="display: none; position: fixed; bottom: 95px; right: 25px; width: 360px; height: 480px; background: #030712; border: 1px solid #1f2937; border-radius: 12px; z-index: 10000; flex-direction: column; box-shadow: 0 10px 40px rgba(0,0,0,0.6); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; overflow: hidden;">
+<!-- Bot Header -->
+<div style="background: #0b0f19; border-bottom: 1px solid #1f2937; padding: 15px; display: flex; justify-content: space-between; align-items: center;">
+<div style="display: flex; align-items: center; gap: 10px;">
+<span style="width: 8px; height: 8px; background: #10b981; border-radius: 50%; display: inline-block; box-shadow: 0 0 8px #10b981;"></span>
+<span style="color: #fff; font-weight: 600; font-size: 13px; letter-spacing: 0.5px; font-family: monospace;">SWARMIC_CORE_BOT v1.0</span>
+</div>
+<button onclick="toggleSwarmicBot()" style="background: none; border: none; color: #6b7280; font-size: 18px; cursor: pointer;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#6b7280'">&times;</button>
+</div>
+
+<!-- Chat Messages Container -->
+<div id="swarmic-bot-messages" style="flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; background: #030712;">
+<div style="background: #111827; color: #e5e7eb; padding: 10px 14px; border-radius: 8px; border-left: 3px solid #3b82f6; max-width: 85%; font-size: 13px; line-height: 1.5;">
+Welcome to Swarmic Substrate Node. Ready to decode infrastructure parameters. Type your query (e.g., pricing, technology, delaware address).
+</div>
+</div>
+
+<!-- Chat Input -->
+<div style="padding: 12px; background: #0b0f19; border-top: 1px solid #1f2937; display: flex; gap: 8px;">
+<input type="text" id="swarmic-bot-input" onkeypress="if(event.key === 'Enter') sendSwarmicMessage()" placeholder="Ask a question..." style="flex: 1; background: #030712; border: 1px solid #1f2937; border-radius: 6px; padding: 10px; color: #fff; font-size: 13px; outline: none; transition: border 0.2s;" onfocus="this.style.borderColor='#3b82f6'" onblur="this.style.borderColor='#1f2937'">
+<button onclick="sendSwarmicMessage()" style="background: #3b82f6; border: none; color: #fff; padding: 0 16px; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='#60a5fa'" onmouseout="this.style.background='#3b82f6'">Send</button>
+</div>
+</div>
+
+<script>
+function toggleSwarmicBot() {
+const win = document.getElementById('swarmic-bot-window');
+win.style.display = (win.style.display === 'none' || win.style.display === '') ? 'flex' : 'none';
+}
+
+function sendSwarmicMessage() {
+const input = document.getElementById('swarmic-bot-input');
+const query = input.value.trim().toLowerCase();
+if (!query) return;
+
+appendSwarmicBubble(input.value, true);
+input.value = '';
+
+setTimeout(() => {
+let reply = "Query logged into context registry. For direct pipeline communications, contact our team at contact@swarmicsubstrate.com.";
+
+if (query.includes('price') || query.includes('pricing') || query.includes('cost') || query.includes('cennik') || query.includes('plan')) {
+reply = "Swarmic Infrastructure plans: Developer Core ($29/mo), Orchestration Suite ($79/mo), and Enterprise Substrate ($249/mo). Secure billing executes via authorized MoR platforms.";
+} else if (query.includes('tech') || query.includes('sllm') || query.includes('runtime') || query.includes('ai') || query.includes('cluster')) {
+reply = "The sLLM Runtime layer manages context prompt caching, latency-optimized multi-agent synchronization, and bare-metal execution node handshaking across high-throughput clusters.";
+} else if (query.includes('address') || query.includes('delaware') || query.includes('office') || query.includes('where') || query.includes('adres')) {
+reply = "Swarmic Substrate LLC is a registered corporate entity in the State of Delaware. Registered Corporate Office: 131 Continental Dr, Suite 305, Newark, Delaware 19713, United States.";
+} else if (query.includes('hello') || query.includes('hi') || query.includes('hey') || query.includes('czesc')) {
+reply = "System active. How can I assist with your distributed cloud orchestration deployment parameters today?";
+}
+
+appendSwarmicBubble(reply, false);
+}, 600);
+}
+
+function appendSwarmicBubble(text, isUser) {
+const container = document.getElementById('swarmic-bot-messages');
+const bubble = document.createElement('div');
+
+bubble.style.padding = "10px 14px";
+bubble.style.borderRadius = "8px";
+bubble.style.fontSize = "13px";
+bubble.style.lineHeight = "1.5";
+bubble.style.maxWidth = "85%";
+
+if (isUser) {
+bubble.style.background = "#3b82f6";
+bubble.style.color = "#fff";
+bubble.style.alignSelf = "flex-end";
+} else {
+bubble.style.background = "#111827";
+bubble.style.color = "#e5e7eb";
+bubble.style.alignSelf = "flex-start";
+bubble.style.borderLeft = "3px solid #3b82f6";
+}
+
+bubble.innerText = text;
+container.appendChild(bubble);
+container.scrollTop = container.scrollHeight;
+}
+</script>
+
 
 
    <!-- SYSTEM MODALS: Premium pop-up layers for Terms and Privacy -->
