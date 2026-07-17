@@ -1776,31 +1776,38 @@ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
 
 <script>
 function toggleSwarmicBot() {
-const win = document.getElementById('swarmic-bot-window');
-win.style.display = (win.style.display === 'none' || win.style.display === '') ? 'flex' : 'none';
+const windowEl = document.getElementById('swarmic-bot-window');
+if (windowEl.style.display === 'none' || windowEl.style.display === '') {
+windowEl.style.display = 'flex';
+} else {
+windowEl.style.display = 'none';
 }
-function injectPresetPrompt(t) {
-document.getElementById('swarmic-bot-input').value = t;
+}
+
+function injectPresetPrompt(promptText) {
+const inputEl = document.getElementById('swarmic-bot-input-field');
+if (inputEl) {
+inputEl.value = promptText;
 sendSwarmicMessage();
 }
+}
+
 function sendSwarmicMessage() {
-const input = document.getElementById('swarmic-bot-input');
-const query = input.value.trim().toLowerCase();
+const inputEl = document.getElementById('swarmic-bot-input-field');
+if (!inputEl) return;
+
+const query = inputEl.value.trim();
 if (!query) return;
 
-appendSwarmicBubble(input.value, true);
-input.value = '';
+appendSwarmicBubble(query, true);
+inputEl.value = '';
 
 const container = document.getElementById('swarmic-bot-messages');
-const botBubble = document.createElement('div');
-botBubble.className = "cyber-bubble-bot";
-Object.assign(botBubble.style, { padding: "14px 18px", borderRadius: "14px", fontSize: "12.5px", lineHeight: "1.6", whiteSpace: "pre-wrap" });
-botBubble.innerText = "⏳ SYNTHESIZING TELEMETRY STREAM...";
-container.appendChild(botBubble);
+const botBubble = appendSwarmicBubble('...', false);
 container.scrollTop = container.scrollHeight;
 
 setTimeout(() => {
-et resp = '';
+let resp = '';
 let lowerQuery = query.toLowerCase();
 
 if (lowerQuery.includes('price') || lowerQuery.includes('cost') || lowerQuery.includes('plan') || lowerQuery.includes('cena') || lowerQuery.includes('ceny')) {
@@ -1827,12 +1834,12 @@ setTimeout(streamText, 14);
 streamText();
 }, 550);
 }
-Object.assign(bubble.style, { padding: "14px 18px", borderRadius: "14px", fontSize: "12.5px", lineHeight: "1.6", whiteSpace: "pre-wrap" });
 
 function appendSwarmicBubble(text, isUser) {
 const container = document.getElementById('swarmic-bot-messages');
 const bubble = document.createElement('div');
-Object.assign(bubble.style, { padding: "14px 18px", borderRadius: "14px", fontSize: "12.5px", lineHeight: "1.6" });
+Object.assign(bubble.style, { padding: "14px 18px", borderRadius: "14px", fontSize: "12.5px", lineHeight: "1.5", marginBottom: "12px", maxWidth: "80%", wordBreak: "break-word" });
+
 if (isUser) {
 bubble.className = "cyber-bubble-user";
 bubble.style.alignSelf = "flex-end";
@@ -1840,9 +1847,11 @@ bubble.style.alignSelf = "flex-end";
 bubble.className = "cyber-bubble-bot";
 bubble.style.alignSelf = "flex-start";
 }
+
 bubble.innerText = text;
 container.appendChild(bubble);
 container.scrollTop = container.scrollHeight;
+return bubble;
 }
 </script>
 
