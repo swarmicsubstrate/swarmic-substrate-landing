@@ -1794,7 +1794,7 @@ input.value = '';
 const container = document.getElementById('swarmic-bot-messages');
 const botBubble = document.createElement('div');
 botBubble.className = "cyber-bubble-bot";
-Object.assign(botBubble.style, { padding: "14px 18px", borderRadius: "14px", fontSize: "12.5px", lineHeight: "1.6" });
+Object.assign(botBubble.style, { padding: "14px 18px", borderRadius: "14px", fontSize: "12.5px", lineHeight: "1.6", whiteSpace: "pre-wrap" });
 botBubble.innerText = "⏳ SYNTHESIZING TELEMETRY STREAM...";
 container.appendChild(botBubble);
 container.scrollTop = container.scrollHeight;
