@@ -1823,7 +1823,7 @@ setTimeout(streamText, 14);
 }
 streamText();
 }, 550);
-
+}
 function appendSwarmicBubble(text, isUser) {
 const container = document.getElementById('swarmic-bot-messages');
 const bubble = document.createElement('div');
@@ -1838,6 +1838,7 @@ bubble.style.alignSelf = "flex-start";
 bubble.innerText = text;
 container.appendChild(bubble);
 container.scrollTop = container.scrollHeight;
+}
 }
 </script>
 
