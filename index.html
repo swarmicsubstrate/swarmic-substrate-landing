@@ -1837,7 +1837,20 @@ streamText();
 function appendSwarmicBubble(text, isUser) {
 const container = document.getElementById('swarmic-bot-messages');
 const bubble = document.createElement('div');
-Object.assign(bubble.style, { padding: "14px 18px", borderRadius: "14px", fontSize: "12.5px", lineHeight: "1.5", marginBottom: "12px", maxWidth: "80%", wordBreak: "break-word" });
+
+// WYMUSZENIE ROZBIJANIA SŁÓW I SPACJI
+Object.assign(bubble.style, {
+padding: "14px 18px",
+borderRadius: "14px",
+fontSize: "12.5px",
+lineHeight: "1.5",
+marginBottom: "12px",
+maxWidth: "85%",
+display: "block",
+whiteSpace: "normal",
+wordBreak: "keep-all",
+wordWrap: "break-word"
+});
 
 if (isUser) {
 bubble.className = "cyber-bubble-user";
