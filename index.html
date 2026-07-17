@@ -1800,16 +1800,19 @@ container.appendChild(botBubble);
 container.scrollTop = container.scrollHeight;
 
 setTimeout(() => {
-let resp = 'Query successfully cached. For raw core pipe orchestration routing, reach our infrastructure team.';
+et resp = '';
+let lowerQuery = query.toLowerCase();
 
-if (query.includes('price') || query.includes('cost') || query.includes('plan') || query.includes('tier')) {
+if (lowerQuery.includes('price') || lowerQuery.includes('cost') || lowerQuery.includes('plan') || lowerQuery.includes('cena') || lowerQuery.includes('ceny')) {
 resp = 'Swarmic Core deployment tiers: Developer Shard ($29/mo), Orchestration Suite ($79/mo), and Enterprise Substrate ($249/mo). Complete tokenized multi-currency clearing pipeline executes securely via integrated PCI-DSS compliant infrastructure.';
-} else if (query.includes('tech') || query.includes('sllm') || query.includes('runtime') || query.includes('architecture')) {
-resp = 'The proprietary sLLM Runtime substrate layers algorithmically orchestrate zero-latency context token caching, parallel distributed multi-agent state synchronization arrays, and secure bare-metal server cluster execution node handshakes.';
-} else if (query.includes('address') || query.includes('delaware') || query.includes('office')) {
+} else if (lowerQuery.includes('tech') || lowerQuery.includes('sllm') || lowerQuery.includes('runtime') || lowerQuery.includes('architecture') || lowerQuery.includes('architekt')) {
+resp = 'The proprietary sLLM Runtime substrate layers algorithmically orchestrate zero-latency context token caching, parallel distributed multi-agent state synchronization arrays, and secure bare metal server cluster execution node handshakes.';
+} else if (lowerQuery.includes('address') || lowerQuery.includes('delaware') || lowerQuery.includes('office') || lowerQuery.includes('adres') || lowerQuery.includes('siedzib')) {
 resp = 'Swarmic Substrate LLC is a fully compliant technology entity formed in the State of Delaware. Registered Headquarters: 131 Continental Dr, Suite 305, Newark, Delaware 19713, United States.';
-} else if (query.includes('hello') || query.includes('hi') || query.includes('start')) {
-resp = 'Main node active. Distributed core telemetries synchronized. Input query into system interface.';
+} else if (lowerQuery.includes('hello') || lowerQuery.includes('hi') || lowerQuery.includes('start') || lowerQuery.includes('hej') || lowerQuery.includes('wit')) {
+resp = 'Connection established. SWARMIC_CORE v2.6 session initialized. Input operational telemetry parameters or execute network nodes. Available modules: [Architecture], [Pricing], [Address].';
+} else {
+resp = 'Query logged outside active Swarmic Core scope. For safety, I only resolve queries regarding Swarmic deployment tiers, pricing models, PCI-DSS compliance, and Delaware LLC architecture. Please refine your query.';
 }
 
 botBubble.innerText = "";
