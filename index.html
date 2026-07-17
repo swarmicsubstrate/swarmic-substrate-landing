@@ -1794,7 +1794,7 @@ input.value = '';
 const container = document.getElementById('swarmic-bot-messages');
 const botBubble = document.createElement('div');
 botBubble.className = "cyber-bubble-bot";
-Object.assign(botBubble.style, { padding: "14px 18px", borderRadius: "14px", fontSize: "12.5px", lineHeight: "1.6", maxWidth: "85%", alignSelf: "flex-start", boxSizing: "border-box", wordBreak: "break-word" });
+Object.assign(botBubble.style, { padding: "14px 18px", borderRadius: "14px", fontSize: "12.5px", lineHeight: "1.6" });
 botBubble.innerText = "⏳ SYNTHESIZING TELEMETRY STREAM...";
 container.appendChild(botBubble);
 container.scrollTop = container.scrollHeight;
@@ -1824,10 +1824,11 @@ setTimeout(streamText, 14);
 streamText();
 }, 550);
 }
+
 function appendSwarmicBubble(text, isUser) {
 const container = document.getElementById('swarmic-bot-messages');
 const bubble = document.createElement('div');
-Object.assign(bubble.style, { padding: "14px 18px", borderRadius: "14px", fontSize: "12.5px", lineHeight: "1.6", maxWidth: "85%", boxSizing: "border-box", wordBreak: "break-word" });
+Object.assign(bubble.style, { padding: "14px 18px", borderRadius: "14px", fontSize: "12.5px", lineHeight: "1.6" });
 if (isUser) {
 bubble.className = "cyber-bubble-user";
 bubble.style.alignSelf = "flex-end";
@@ -1838,7 +1839,6 @@ bubble.style.alignSelf = "flex-start";
 bubble.innerText = text;
 container.appendChild(bubble);
 container.scrollTop = container.scrollHeight;
-}
 }
 </script>
 
