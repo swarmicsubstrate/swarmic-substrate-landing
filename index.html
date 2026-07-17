@@ -1766,11 +1766,10 @@ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
 <button onclick="injectPresetPrompt('See pricing tiers')" style="background: rgba(11, 15, 25, 0.6); border: 1px solid #1f2937; color: #3b82f6; padding: 6px 14px; border-radius: 30px; font-size: 11px; font-weight: 500; font-family: inherit; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.borderColor='#3b82f6'; this.style.color='#fff'; this.style.boxShadow='0 0 15px rgba(59,130,246,0.4)';" onmouseout="this.style.borderColor='#1f2937'; this.style.color='#3b82f6'; this.style.boxShadow='none';">💳 Pricing</button>
 <button onclick="injectPresetPrompt('Corporate office')" style="background: rgba(11, 15, 25, 0.6); border: 1px solid #1f2937; color: #3b82f6; padding: 6px 14px; border-radius: 30px; font-size: 11px; font-weight: 500; font-family: inherit; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.borderColor='#3b82f6'; this.style.color='#fff'; this.style.boxShadow='0 0 15px rgba(59,130,246,0.4)';" onmouseout="this.style.borderColor='#1f2937'; this.style.color='#3b82f6'; this.style.boxShadow='none';">🏛️ Address</button>
 </div>
-
 <!-- Terminal Command Input Line -->
-<div style="padding: 16px 20px; background: rgba(11, 15, 25, 0.9) !important; border-top: 1px solid rgba(59, 130, 246, 0.2); display: flex; gap: 10px; align-items: center; box-sizing: border-box; flex-shrink: 0 !important;">
-<input type="text" id="swarmic-bot-input" onkeypress="if(event.key === 'Enter') sendSwarmicMessage()" placeholder="SYS_COMMAND_INJECTION..." style="flex: 1; background: #030712; border: 1px solid #1f2937; border-radius: 10px; padding: 12px; color: #00ffa3; font-size: 12px; outline: none; font-family: monospace; box-shadow: inset 0 2px 8px rgba(0,0,0,0.5); transition: all 0.3s;" onfocus="this.style.borderColor='#3b82f6'; this.style.boxShadow='inset 0 2px 8px rgba(0,0,0,0.5), 0 0 10px rgba(59,130,246,0.2)';" onblur="this.style.borderColor='#1f2937';">
-<button onclick="sendSwarmicMessage()" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 12px 22px; border-radius: 10px; font-size: 12px; font-weight: 600; font-family: inherit; cursor: pointer; transition: all 0.3s; box-shadow: 0 4px 12px rgba(29,78,216,0.3);" onmouseover="this.style.background='linear-gradient(135deg, #3b82f6, #2563eb)'; this.style.boxShadow='0 4px 20px rgba(59,130,246,0.5)';" onmouseout="this.style.background='linear-gradient(135deg, #2563eb, #1d4ed8)'; this.style.boxShadow='0 4px 12px rgba(29,78,216,0.3)';">EXEC</button>
+<div style="padding: 16px 20px; background: rgba(11, 15, 25, 0.9) !important; border-top: 1px solid rgba(59, 130, 246, 0.2); display: flex; gap: 12px; align-items: center;">
+<input type="text" id="swarmic-bot-input" onkeypress="if(event.key === 'Enter') sendSwarmicMessage()" placeholder="SYS_COMMAND_INJECTION..." style="flex: 1; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 12px 16px; border-radius: 8px; color: #fff; font-family: monospace; font-size: 13px; outline: none;">
+<button onclick="sendSwarmicMessage()" style="background: linear-gradient(135deg, #256beb, #1d4ed8); border: 1px solid rgba(255,255,255,0.1); padding: 12px 24px; border-radius: 8px; color: #fff; font-family: monospace; font-size: 13px; font-weight: bold; cursor: pointer;">EXEC</button>
 </div>
 </div>
 
@@ -1785,7 +1784,7 @@ windowEl.style.display = 'none';
 }
 
 function injectPresetPrompt(promptText) {
-const inputEl = document.getElementById('swarmic-bot-input-field');
+const inputEl = document.getElementById('swarmic-bot-input');
 if (inputEl) {
 inputEl.value = promptText;
 sendSwarmicMessage();
@@ -1793,7 +1792,7 @@ sendSwarmicMessage();
 }
 
 function sendSwarmicMessage() {
-const inputEl = document.getElementById('swarmic-bot-input-field');
+const inputEl = document.getElementById('swarmic-bot-input');
 if (!inputEl) return;
 
 const query = inputEl.value.trim();
@@ -1855,9 +1854,7 @@ return bubble;
 }
 </script>
 
-
-
-
+    
    <!-- SYSTEM MODALS: Premium pop-up layers for Terms and Privacy -->
 <div id="terms-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 1000; align-items: center; justify-content: center;">
 <div style="background: #030712; border: 1px solid #1f2937; padding: 30px; max-width: 700px; width: 100%; max-height: 80vh; overflow-y: auto; border-radius: 8px; position: relative;">
