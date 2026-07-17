@@ -1800,19 +1800,18 @@ container.appendChild(botBubble);
 container.scrollTop = container.scrollHeight;
 
 setTimeout(() => {
-let resp = '[REGISTRY LOGGED] Query successfully cached. For raw core pipe orchestration routing, reach our infrastructure team.';
+let resp = 'Query successfully cached. For raw core pipe orchestration routing, reach our infrastructure team.';
 
 if (query.includes('price') || query.includes('cost') || query.includes('plan') || query.includes('tier')) {
-resp = '[TELEMETRY MATRIX] Swarmic Core deployment tiers: Developer Shard ($29/mo), Orchestration Suite ($79/mo), and Enterprise Substrate ($249/mo). Complete tokenized multi-currency clearing pipeline executes securely via integrated merchant architectural infrastructure managed by Stripe.';
+resp = 'Swarmic Core deployment tiers: Developer Shard ($29/mo), Orchestration Suite ($79/mo), and Enterprise Substrate ($249/mo). Complete tokenized multi-currency clearing pipeline executes securely via integrated merchant architectural infrastructure managed by Stripe.';
 } else if (query.includes('tech') || query.includes('sllm') || query.includes('runtime') || query.includes('architecture')) {
-resp = '[SPECIFICATION LAYER] The proprietary sLLM Runtime substrate layers algorithmically orchestrate zero-latency context token caching, parallel distributed multi-agent state synchronization arrays, and secure bare-metal server cluster execution node handshakes.';
+resp = 'The proprietary sLLM Runtime substrate layers algorithmically orchestrate zero-latency context token caching, parallel distributed multi-agent state synchronization arrays, and secure bare-metal server cluster execution node handshakes.';
 } else if (query.includes('address') || query.includes('delaware') || query.includes('office')) {
-resp = '[COMPLIANCE RECORD] Swarmic Substrate LLC is a fully compliant sovereign technology corporation formed in the State of Delaware. Sovereign Registered Headquarters: 131 Continental Dr, Suite 305, Newark, Delaware 19713, United States.';
+resp = 'Swarmic Substrate LLC is a fully compliant sovereign technology corporation formed in the State of Delaware. Sovereign Registered Headquarters: 131 Continental Dr, Suite 305, Newark, Delaware 19713, United States.';
 } else if (query.includes('hello') || query.includes('hi') || query.includes('start')) {
-resp = '[SYSTEM ACTIVE] Main node active. Distributed core telemetries synchronized. Input query into system interface.';
+resp = 'Main node active. Distributed core telemetries synchronized. Input query into system interface.';
 }
-resp = resp.replace(/\[.*?\]/g, '');
-resp = resp.replace(/([.,:;])(?=[^\s])/g, '$1 ').replace(/\s+/g, ' ').trim();
+
 botBubble.innerText = "";
 let idx = 0;
 function streamText() {
@@ -1824,7 +1823,6 @@ setTimeout(streamText, 14);
 }
 streamText();
 }, 550);
-}
 function appendSwarmicBubble(text, isUser) {
 const container = document.getElementById('swarmic-bot-messages');
 const bubble = document.createElement('div');
