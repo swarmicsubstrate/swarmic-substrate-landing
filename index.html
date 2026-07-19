@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Swarmic Substrate | High-Throughput Cloud Orchestration for Multi-Agent Systems</title>
-<link rel="icon" type="image/png" href="favicon.png">
-<meta name="description" content="Deploy and scale parallel multi-agent enterprise automation workflows on a secure cloud substrate. Built for high-velocity local shard telemetry testing canvas.">
+    <title>Swarmic Substrate | High-Throughput Cloud Orchestration for Multi-Agent Systems</title>
+    <link rel="icon" type="image/png" href="https://swarmicsubstrate.com"> 
+<meta name="description" content="Deploy and scale parallel multi-agent enterprise automation workflows on a secure cloud substrate. Built for low-latency sovereign inference.">
 
-<link rel="preconnect" href="https://googleapis.com">
-<link rel="preconnect" href="https://gstatic.com" crossorigin>
-<link href="https://googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<style>
-html { scroll-behavior: smooth; }
-</style>
+<meta property="og:title" content="Swarmic Substrate | AI Agent Cloud Infrastructure">
+<meta property="og:description" content="Mitigate inference costs and eliminate latency bottlenecks. Deploy localized, quantized sLLM clusters on a zero-trust compute substrate.">
+<meta property="og:url" content="https://swarmicsubstrate.com">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>html { scroll-behavior: smooth; }</style>
 </head>
 <body>
     <canvas id="particle-canvas"></canvas>
@@ -131,15 +132,13 @@ High-Throughput Cloud Orchestration for <span style="white-space: nowrap;">Multi
 
 <!-- LEFT COLUMN: Live Shard Log Streamer -->
 <div class="s-dash-col" style="padding-bottom: 15px !important; border-bottom: 1px solid rgba(255,255,255,0.05) !important; overflow: hidden !important; width: 100% !important; box-sizing: border-box !important;">
-<div style="display: flex !important; align-items: center !important; gap: 6px !important; margin-bottom: 12px !important;">
+<div style="display: flex !important; align-items: center !important; gap: 6px !important; margin-bottom: 8px !important;">
 <span style="width: 6px !important; height: 6px !important; background: #3eb4ff !important; border-radius: 50% !important; box-shadow: 0 0 8px #3eb4ff !important; flex-shrink: 0 !important;"></span>
 <span style="color: #3eb4ff !important; font-size: 11px !important; font-weight: bold !important; letter-spacing: 0.05em !important;">GLOBAL_SHARD_REGISTRY</span>
 </div>
-<!-- Pure Immutable Text Buffer Rows (No insertion, no movement) -->
-<div style="height: 60px !important; min-height: 60px !important; max-height: 60px !important; overflow: hidden !important; width: 100% !important; box-sizing: border-box !important; display: flex !important; flex-direction: column !important; justify-content: space-between !important;">
-<div id="q-log-1" style="font-size: 11px !important; color: #34d399 !important; height: 20px !important; line-height: 20px !important; white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important; transition: opacity 0.15s ease !important;">[SAN_FRANCISCO_CORE] Re-routing token weights... CONNECTED</div>
-<div id="q-log-2" style="font-size: 11px !important; color: #9ca3af !important; height: 20px !important; line-height: 20px !important; white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important;">[LONDON_EDGE_7] Executing handshakes... GRANTED</div>
-<div id="q-log-3" style="font-size: 11px !important; color: #9ca3af !important; height: 20px !important; line-height: 20px !important; white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important; opacity: 0.6 !important;">[WARSZAWA_NODE_4] Ingesting telemetry matrix... OK</div>
+<!-- Rolling Log Viewport -->
+<div id="swarm-log-stream" style="font-size: 11px !important; color: #9ca3af !important; line-height: 1.5 !important; height: 55px !important; overflow: hidden !important; width: 100% !important; word-break: break-all !important;">
+<div style="color: #34d399 !important;">[SAN_FRANCISCO_CORE] Re-routing token weights... CONNECTED</div>
 </div>
 </div>
 
@@ -147,9 +146,10 @@ High-Throughput Cloud Orchestration for <span style="white-space: nowrap;">Multi
 <div class="s-dash-col" style="padding-top: 15px !important; padding-bottom: 15px !important; border-bottom: 1px solid rgba(255,255,255,0.05) !important; width: 100% !important; box-sizing: border-box !important;">
 <span style="color: #6b7280 !important; font-size: 10px !important; display: block !important; margin-bottom: 4px !important;">// AUTONOMOUS_SWARM_HEALTH</span>
 <div style="display: flex !important; align-items: baseline !important; gap: 8px !important; flex-wrap: wrap !important;">
-<span id="swarm-health-pct" style="font-size: 28px !important; font-weight: 800 !important; color: #fff !important; tracking: -0.03em !important;">99.98%</span>
+<span id="swarm-health-pct" style="font-size: 28px !important; font-weight: 800 !important; color: #fff !important; tracking: -0.03em !important;">99.96%</span>
 <span style="color: #10b981 !important; font-size: 11px !important; font-weight: bold !important;">STABLE</span>
 </div>
+<!-- Resilient Progress Bar Matrix -->
 <div style="width: 100% !important; height: 3px !important; background: rgba(255,255,255,0.05) !important; border-radius: 2px !important; margin-top: 8px !important; overflow: hidden !important; box-sizing: border-box !important;">
 <div style="width: 100% !important; height: 100% !important; background: linear-gradient(90deg, #3eb4ff, #34d399) !important;"></div>
 </div>
@@ -159,80 +159,98 @@ High-Throughput Cloud Orchestration for <span style="white-space: nowrap;">Multi
 <div class="s-dash-col" style="padding-top: 15px !important; width: 100% !important; box-sizing: border-box !important;">
 <span style="color: #6b7280 !important; font-size: 10px !important; display: block !important; margin-bottom: 4px !important;">// CLUSTER_COMPUTE_THROUGHPUT</span>
 <div style="font-size: 24px !important; font-weight: 800 !important; color: #34d399 !important; tracking: -0.02em !important; line-height: 1.2 !important;">
-<span id="swarm-token-counter">4,207,564</span>
+<span id="swarm-token-counter">4,176,789</span>
 </div>
-<span style="color: #4b5563 !important; font-size: 9px !important; display: block !important; margin-top: 4px !important;">TOKENS_PROCESSED_INFERENCE_OK</span>
+<span style="color: #4b5563 !important; font-size: 9px !important; display: block !important; margin-top: 4px !important; word-break: break-all !important;">TOKENS_PROCESSED_INFERENCE_OK</span>
 </div>
 
 </div>
 </section>
 
+<!-- CSS INJECTOR FOR ABSOLUT RESPONSIVENESS -->
 <style>
-.swarm-responsive-dashboard { display: grid !important; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important; gap: 20px !important; }
-.s-dash-col { border-bottom: none !important; padding-top: 0 !important; padding-bottom: 0 !important; }
-.swarm-responsive-dashboard > div:not(:last-child) { border-right: 1px solid rgba(255,255,255,0.05) !important; padding-right: 15px !important; }
+/* Base layout for large desktop screens (Grid columns layout) */
+.swarm-responsive-dashboard {
+display: grid !important;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+gap: 20px !important;
+}
+.s-dash-col {
+border-bottom: none !important;
+padding-top: 0 !important;
+padding-bottom: 0 !important;
+}
+.swarm-responsive-dashboard > div:not(:last-child) {
+border-right: 1px solid rgba(255,255,255,0.05) !important;
+padding-right: 15px !important;
+}
+
+/* Smart Mobile Override Layout (Enforces stacking and prevents horizontal scroll) */
 @media (max-width: 768px) {
-.swarm-responsive-dashboard { display: flex !important; flex-direction: column !important; gap: 0 !important; }
-.s-dash-col { border-right: none !important; padding-right: 0 !important; width: 100% !important; }
-.swarm-responsive-dashboard > div:not(:last-child) { border-right: none !important; padding-right: 0 !important; }
+.swarm-responsive-dashboard {
+display: flex !important;
+flex-direction: column !important;
+gap: 0 !important;
+}
+.s-dash-col {
+border-right: none !important;
+padding-right: 0 !important;
+width: 100% !important;
+}
+.swarm-responsive-dashboard > div:not(:last-child) {
+border-right: none !important;
+padding-right: 0 !important;
+}
 }
 </style>
 
 <script>
-const sHistory = [
-"[SAN_FRANCISCO_CORE] Re-routing token weights... CONNECTED",
-"[LONDON_EDGE_7] Executing handshakes... GRANTED",
-"[WARSZAWA_NODE_4] Ingesting telemetry matrix... OK"
-];
-
+// Live Streamer Matrix Engine
 const swarmLogs = [
-{ node: "WARSZAWA_NODE_4", text: "Ingesting telemetry matrix... OK" },
-{ node: "DELAWARE_CLUSTER_9", text: "Sharding database volumes... SECURE" },
-{ node: "SAN_FRANCISCO_CORE", text: "Re-routing token weights... CONNECTED" },
-{ node: "LONDON_EDGE_7", text: "Executing handshakes... GRANTED" },
-{ node: "TOKYO_NODE_12", text: "Optimizing cluster vram... STABLE" },
-{ node: "FRANKFURT_CORE", text: "Bypassing REST middleware... SUCCESS" }
+{ node: "WARSZAWA_NODE_4", action: "Ingesting telemetry matrix...", status: "OK", color: "#34d399" },
+{ node: "DELAWARE_CLUSTER_9", action: "Sharding database volumes...", status: "SECURE", color: "#34d399" },
+{ node: "SAN_FRANCISCO_CORE", action: "Re-routing token weights...", status: "CONNECTED", color: "#3eb4ff" },
+{ node: "LONDON_EDGE_7", action: "Executing handshakes...", status: "GRANTED", color: "#34d399" },
+{ node: "TOKYO_NODE_12", action: "Optimizing cluster vram...", status: "STABLE", color: "#34d399" },
+{ node: "FRANKFURT_CORE", action: "Bypassing REST middleware...", status: "SUCCESS", color: "#3eb4ff" }
 ];
 
 setInterval(() => {
-const l1 = document.getElementById('q-log-1');
-const l2 = document.getElementById('q-log-2');
-const l3 = document.getElementById('q-log-3');
-
-if (l1 && l2 && l3) {
-// Losowanie nowej unikalnej operacji chmurowej
-let nextLog = "";
-do {
+const stream = document.getElementById('swarm-log-stream');
+if (stream) {
 const item = swarmLogs[Math.floor(Math.random() * swarmLogs.length)];
-nextLog = `[${item.node}] ${item.text}`;
-} while (nextLog === sHistory[0]);
+const logLine = document.createElement('div');
+logLine.style.opacity = "0";
+logLine.style.transition = "opacity 0.3s ease";
+logLine.style.wordBreak = "break-all";
+logLine.innerHTML = `[${item.node}] ${item.action} <span style="color:${item.color};font-weight:bold;">${item.status}</span>`;
 
-// Przesunięcie tablicy stanów tekstowych w dół
-sHistory.unshift(nextLog);
-if (sHistory.length > 3) sHistory.pop();
+stream.insertBefore(logLine, stream.firstChild);
+setTimeout(() => logLine.style.opacity = "1", 50);
 
-// Dyskretna hollywoodzka animacja podmiany treści (Zero ruchu fizycznego struktur HTML)
-l1.style.opacity = "0.2";
-setTimeout(() => {
-l1.innerHTML = sHistory[0];
-l2.innerHTML = sHistory[1];
-l3.innerHTML = sHistory[2];
-l1.style.opacity = "1";
-}, 120);
+if (stream.children.length > 3) {
+stream.removeChild(stream.lastChild);
+}
 }
 
+// Health Oscillator Matrix
 const health = document.getElementById('swarm-health-pct');
-if (health) { health.innerHTML = (99.9 + Math.random() * 0.09).toFixed(2) + "%"; }
-}, 2800);
+if (health) {
+health.innerHTML = (99.9 + Math.random() * 0.09).toFixed(2) + "%";
+}
+}, 2500);
 
-let initialTokens = 4207564;
+// High-Velocity Token Counter Physics
+let initialTokens = 4176789;
 setInterval(() => {
 const counter = document.getElementById('swarm-token-counter');
-if (counter) { initialTokens += Math.floor(Math.random() * 320 + 110); counter.innerHTML = initialTokens.toLocaleString('en-US'); }
+if (counter) {
+initialTokens += Math.floor(Math.random() * 320 + 110);
+counter.innerHTML = initialTokens.toLocaleString('en-US');
+}
 }, 150);
 </script>
 <!-- END OF GLOBAL SWARM LIVE OPERATIONAL DASHBOARD -->
-
 
 
 </script>
@@ -492,7 +510,7 @@ term.innerHTML += "<div style='color:#3eb4ff'>>> ROUTING: Spawning sub-task bran
 if (l1) l1.style.background = "#34d399"; if (l2) l2.style.background = "#34d399"; if (l3) l3.style.background = "#34d399";
 }, 1000);
 setTimeout(() => {
-term.innerHTML += "<div style='color:#34d399'>>> PROCESSING: Distributed workers executing loops parallel!</div>";
+term.innerHTML += "<div style='color:#34d399'>>> PROCESSING: Decentralized workers executing loops parallel!</div>";
 if (w1) { w1.style.color = "#34d399"; w1.style.borderColor = "#34d399"; }
 if (w2) { w2.style.color = "#34d399"; w2.style.borderColor = "#34d399"; }
 if (w3) { w3.style.color = "#34d399"; w3.style.borderColor = "#34d399"; }
@@ -898,7 +916,7 @@ Geospatial Network
 
 <!-- INTERFACE 4: BOOKING MESH -->
 <button onclick="triggerSubstrateProductDemo('demo-sch', this)" style="background: #0d1117; color: #8892b0; border: 1px solid #21262d; padding: 10px 22px; font-family: ui-monospace, SFMono-Regular, monospace; font-size: 0.75rem; font-weight: 500; border-radius: 6px; cursor: pointer; letter-spacing: 0.03em; transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);" onmouseover="this.style.border='1px solid #a855f7'; this.style.color='#ffffff'; this.style.background='#161b22';" onmouseout="this.style.border='1px solid #21262d'; this.style.color='#8892b0'; this.style.background='#0d1117';">
-Data Routing Mesh
+Liquidity Mesh
 </button>
 </div>
 
@@ -1499,145 +1517,9 @@ runSwarmEngine();
 50% { opacity: 0; }
 }
 </style>
-<!-- START OF SWARMIC COMPLIANCE PRICING MATRIX WITH LUXURY MODAL -->
-<section style="position: relative !important; width: 100% !important; border-top: 1px solid rgba(255,255,255,0.02) !important; padding: 60px 20px !important; font-family: monospace !important; color: #ffffff !important; overflow: hidden !important; background: #000000 !important; user-select: none !important; -webkit-user-select: none !important; cursor: default !important; box-sizing: border-box !important; z-index: 5 !important;">
-<div style="max-width: 1100px !important; margin: 0 auto !important; box-sizing: border-box !important; width: 100% !important;">
 
-<div style="margin-bottom: 40px !important; text-align: left !important;">
-<span style="font-size: 11px !important; text-transform: uppercase !important; letter-spacing: 0.3em !important; color: #3eb4ff !important; font-weight: bold !important;">[ SWARMIC SUBSTRATE // SYSTEM PROVISIONING FEES ]</span>
-<h3 style="font-size: 24px !important; font-weight: 800 !important; margin-top: 8px !important; font-family: sans-serif !important;">Infrastructure Subscriptions</h3>
-</div>
 
-<div style="display: grid !important; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important; gap: 24px !important; align-items: start !important;">
 
-<!-- Tier 1 -->
-<div style="background: rgba(11, 22, 43, 0.2) !important; border: 1px solid rgba(62, 180, 255, 0.1) !important; border-radius: 12px !important; padding: 24px !important; text-align: left !important; box-sizing: border-box !important;">
-<div style="font-size: 10px !important; color: #6b7280 !important; font-weight: bold !important;">// CONFIGURATION_TIER_01</div>
-<div style="font-size: 16px !important; font-weight: bold !important; color: #fff !important; margin-top: 4px !important;">Developer Core</div>
-<div style="font-size: 32px !important; font-weight: 800 !important; color: #ffffff !important; margin: 12px 0 !important;">$29<span style="font-size: 14px !important; font-weight: 400 !important; color: #4b5563 !important;"> / mo</span></div>
-<div style="font-size: 11px !important; color: #9ca3af !important; line-height: 1.8 !important; margin-bottom: 20px !important;">
-<div>✓ Access to Dynamic Inference Router Framework</div>
-<div>✓ High-Velocity Local Shard Telemetry Testing Canvas</div>
-<div>✓ Cancel infrastructure billing loop at any moment</div>
-</div>
-<button onclick="openSwarmicModal('Developer Core ($29/mo)')" style="width: 100% !important; background: transparent !important; color: #ffffff !important; border: 1px solid rgba(255,255,255,0.15) !important; padding: 12px !important; border-radius: 6px !important; font-weight: bold !important; font-size: 11px !important; font-family: monospace !important; cursor: pointer !important;">Initialize Node</button>
-</div>
-
-<!-- Tier 2 -->
-<div style="background: rgba(11, 22, 43, 0.3) !important; border: 1px solid rgba(62, 180, 255, 0.2) !important; border-radius: 12px !important; padding: 24px !important; text-align: left !important; box-sizing: border-box !important;">
-<div style="font-size: 10px !important; color: #3eb4ff !important; font-weight: bold !important;">// CONFIGURATION_TIER_02</div>
-<div style="font-size: 16px !important; font-weight: bold !important; color: #fff !important; margin-top: 4px !important;">Orchestration Suite</div>
-<div style="font-size: 32px !important; font-weight: 800 !important; color: #ffffff !important; margin: 12px 0 !important;">$79<span style="font-size: 14px !important; font-weight: 400 !important; color: #4b5563 !important;"> / mo</span></div>
-<div style="font-size: 11px !important; color: #9ca3af !important; line-height: 1.8 !important; margin-bottom: 20px !important;">
-<div>✓ Full Cognitive Layer & Context Prompt Caching</div>
-<div>✓ Latency-Optimized Multi-Agent Synchronization Tools</div>
-<div>✓ Complete 14-Day Sovereign Infrastructure Guarantee</div>
-</div>
-<button onclick="openSwarmicModal('Orchestration Suite ($79/mo)')" style="width: 100% !important; background: transparent !important; color: #ffffff !important; border: 1px solid rgba(255,255,255,0.2) !important; padding: 12px !important; border-radius: 6px !important; font-weight: bold !important; font-size: 11px !important; font-family: monospace !important; cursor: pointer !important;">Deploy Suite Layer</button>
-</div>
-
-<!-- Tier 3 -->
-<div style="background: rgba(4, 8, 20, 0.6) !important; border: 1px solid rgba(168, 85, 247, 0.3) !important; border-radius: 12px !important; padding: 24px !important; text-align: left !important; box-sizing: border-box !important; box-shadow: 0 10px 30px rgba(168,85,247,0.05) !important;">
-<div style="display: flex !important; justify-content: space-between !important; align-items: center !important;">
-<span style="font-size: 10px !important; color: #a855f7 !important; font-weight: bold !important;">// CONFIGURATION_TIER_03</span>
-<span style="background: rgba(168,85,247,0.1) !important; color: #a855f7 !important; font-size: 8px !important; font-weight: bold !important; padding: 2px 6px !important; border-radius: 4px !important;">PRODUCTION</span>
-</div>
-<div style="font-size: 16px !important; font-weight: bold !important; color: #fff !important; margin-top: 4px !important;">Enterprise Substrate</div>
-<div style="font-size: 32px !important; font-weight: 800 !important; color: #ffffff !important; margin: 12px 0 !important;">$249<span style="font-size: 14px !important; font-weight: 400 !important; color: #4b5563 !important;"> / mo</span></div>
-<div style="font-size: 11px !important; color: #9ca3af !important; line-height: 1.8 !important; margin-bottom: 20px !important;">
-<div>• Full Deterministic Mesh & Institutional Data Isolation</div>
-<div>• Secure Bare-Metal Execution Node Handshaking</div>
-<div>• Premium Dedicated Enterprise Support SLA Channels</div>
-</div>
-<button onclick="openSwarmicModal('Enterprise Substrate ($249/mo)')" style="width: 100% !important; padding: 14px !important; background: #3b82f6 !important; border: none !important; color: #fff !important; border-radius: 8px !important; font-weight: 600 !important; font-size: 14px !important; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important; cursor: pointer !important; font-family: -apple-system, BlinkMacSystemFont, sans-serif !important;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 0 30px rgba(59, 130, 246, 0.85)'; this.style.background='#60a5fa';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.background='#3b82f6';">Launch Substrate</button>
-
-</div>
-
-</div>
-
-<div style="margin-top: 24px !important; text-align: center !important; font-size: 10px !important; color: #4b5563 !important; opacity: 0.8 !important;">
-Secure billing and automated multi-currency routing powered by enterprise-grade payment infrastructure.
-</div>
-
-</div>
-</section>
-
-<!-- THE HOLLYWOOD COMPLIANCE MODAL LAYER -->
-<div id="swarmic-billing-modal" style="display: none !important; position: fixed !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; background: rgba(2, 4, 12, 0.85) !important; backdrop-filter: blur(12px) !important; -webkit-backdrop-filter: blur(12px) !important; z-index: 999999 !important; justify-content: center !important; align-items: center !important; padding: 20px !important; box-sizing: border-box !important;">
-<div style="background: #040814 !important; border: 1px solid rgba(62, 180, 255, 0.2) !important; border-radius: 20px !important; padding: 40px !important; max-width: 550px !important; width: 100% !important; box-shadow: 0 50px 100px rgba(0,0,0,0.8), 0 0 40px rgba(62,180,255,0.05) !important; font-family: monospace !important; color: #ffffff !important; text-align: left !important; box-sizing: border-box !important; position: relative !important;">
-<div style="font-size: 11px !important; color: #3eb4ff !important; font-weight: bold !important; letter-spacing: 0.2em !important; margin-bottom: 16px !important;">[ SWARMIC_SUSTRATE // PROVISIONING_NOTICE ]</div>
-<h4 style="font-size: 22px !important; font-weight: bold !important; color: #ffffff !important; margin-bottom: 16px !important; font-family: sans-serif !important; letter-spacing: -0.01em !important;">Node Allocation Initiated</h4>
-<p style="color: #9ca3af !important; font-size: 13px !important; line-height: 1.6 !important; margin-bottom: 24px !important;">
-Your user request payload has been cataloged. Infrastructure allocation tokens for <strong id="modal-tier-name" style="color: #ffffff !important;">[Tier]</strong> are being assigned within the local routing layer.<br><br>
-Priority onboarding synchronization loop will follow under strict validation parameters via secure institutional support channels. No financial debit tracks are executed during this priority onboarding sequence.
-</p>
-<button onclick="closeSwarmicModal()" style="width: 100% !important; background: linear-gradient(135deg, #3eb4ff 0%, #a855f7 100%) !important; color: #ffffff !important; font-weight: bold !important; padding: 14px !important; border: none !important; border-radius: 8px !important; font-size: 12px !important; font-family: monospace !important; cursor: pointer !important; letter-spacing: 0.05em !important; box-shadow: 0 0 20px rgba(62,180,255,0.2) !important;">ACKNOWLEDGEMENT // CLOSE_BUFFER</button>
-</div>
-</div>
-
-<script>
-function openSwarmicModal(tierName) {
-const modal = document.getElementById('swarmic-billing-modal');
-const targetText = document.getElementById('modal-tier-name');
-if (modal && targetText) {
-targetText.innerHTML = tierName;
-modal.style.display = 'flex';
-}
-}
-function closeSwarmicModal() {
-const modal = document.getElementById('swarmic-billing-modal');
-if (modal) modal.style.display = 'none';
-}
-</script>
-<!-- END OF SWARMIC COMPLIANCE PRICING MATRIX WITH LUXURY MODAL -->
-
-<!-- INFRASTRUCTURE METRICS: Interactive sLLM Runtime Cluster Monitor -->
-<div style="background: #030712; border: 1px solid #1f2937; padding: 25px; border-radius: 12px; max-width: 1200px; margin: 40px auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; box-shadow: 0 10px 30px rgba(0,0,0,0.5); width: calc(100% - 40px); box-sizing: border-box;">
-<div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1f2937; padding-bottom: 15px; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
-<div style="display: flex; align-items: center; gap: 10px;">
-<span style="width: 10px; height: 10px; background: #10b981; border-radius: 50%; display: inline-block; box-shadow: 0 0 10px #10b981; animation: pulse 2s infinite;"></span>
-<h3 style="color: #fff; margin: 0; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; font-family: monospace;">sLLM Cluster Operations Live</h3>
-</div>
-<span style="color: #6b7280; font-size: 12px; font-family: monospace;">Region: US-East (Delaware)</span>
-</div>
-
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
-<div style="background: #0b0f19; border: 1px solid #111827; padding: 15px; border-radius: 8px; text-align: center;">
-<div style="color: #6b7280; font-size: 11px; text-transform: uppercase; margin-bottom: 5px; font-family: monospace;">Network Throughput</div>
-<div style="color: #3b82f6; font-size: 24px; font-weight: 700; font-family: monospace;" id="metric-throughput">142,500 <span style="font-size: 12px; font-weight: 400; color: #4b5563;">T/s</span></div>
-</div>
-<div style="background: #0b0f19; border: 1px solid #111827; padding: 15px; border-radius: 8px; text-align: center;">
-<div style="color: #6b7280; font-size: 11px; text-transform: uppercase; margin-bottom: 5px; font-family: monospace;">Active GPU Nodes</div>
-<div style="color: #10b981; font-size: 24px; font-weight: 700; font-family: monospace;">512 / 512</div>
-</div>
-<div style="background: #0b0f19; border: 1px solid #111827; padding: 15px; border-radius: 8px; text-align: center;">
-<div style="color: #6b7280; font-size: 11px; text-transform: uppercase; margin-bottom: 5px; font-family: monospace;">Context Latency</div>
-<div style="color: #f59e0b; font-size: 24px; font-weight: 700; font-family: monospace;" id="metric-latency">1.24 <span style="font-size: 12px; font-weight: 400; color: #4b5563;">ms</span></div>
-</div>
-</div>
-</div>
-
-<script>
-// Dynamic Real-time Architecture Simulator for sLLM Runtime
-setInterval(() => {
-const baseThroughput = 142000;
-const fluxThroughput = Math.floor(Math.random() * 1500);
-const elThroughput = document.getElementById('metric-throughput');
-if (elThroughput) elThroughput.innerHTML = (baseThroughput + fluxThroughput).toLocaleString() + ' <span style="font-size: 12px; font-weight: 400; color: #4b5563;">T/s</span>';
-
-const latency = (1.15 + (Math.random() * 0.2)).toFixed(2);
-const elLatency = document.getElementById('metric-latency');
-if (elLatency) elLatency.innerHTML = latency + ' <span style="font-size: 12px; font-weight: 400; color: #4b5563;">ms</span>';
-}, 1200);
-</script>
-
-<style>
-@keyframes pulse {
-0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
-100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
-}
-</style>
 
 <!-- INTEGRATED BOTTOM FOOTER LAYOUT (FIXED & ALIGNED) -->
 <!-- ================================================================= -->
@@ -1668,7 +1550,7 @@ if (elLatency) elLatency.innerHTML = latency + ' <span style="font-size: 12px; f
 <h4 style="color: #fff; font-size: 1rem; margin: 0 0 15px 0; font-weight: 600;">Product</h4>
 <p style="margin: 8px 0;"><a href="#features" style="color: #9ca3af; text-decoration: none; font-size: 0.9rem;">Features</a></p>
 <p style="margin: 8px 0;"><a href="#pricing" style="color: #9ca3af; text-decoration: none; font-size: 0.9rem;">Pricing</a></p>
-<li><a href="javascript:void(0)" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="color: #9ca3af; text-decoration: none;">Architecture</a></li>
+<p style="margin: 8px 0;"><a href="#architecture" style="color: #9ca3af; text-decoration: none; font-size: 0.9rem;">Architecture</a></p>
 </div>
 
 <!-- Resources Column -->
@@ -1697,203 +1579,39 @@ if (elLatency) elLatency.innerHTML = latency + ' <span style="font-size: 12px; f
 
 <div class="footer-bottom" style="width: 100%; max-width: 1200px; margin: 40px auto 0 auto; padding: 20px 0; border-top: 1px solid #1f2937; text-align: left;">
 
-<!-- SYSTEM NOTICE: Full legal verification for Delaware LLC via Stripe Atlas compliance -->
-<p style="text-align: center; color: #9ca3af; font-size: 13px; line-height: 2.1; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; width: 100%; margin: 0 auto; letter-spacing: 0.2px;">
-&copy; 2026 Swarmic Substrate LLC. All rights reserved. &nbsp;|&nbsp;
-Support: <a href="mailto:contact@swarmicsubstrate.com" style="color: #3b82f6; text-decoration: none; font-weight: 500; transition: color 0.2s;" onmouseover="this.style.color='#60a5fa'" onmouseout="this.style.color='#3b82f6'">contact@swarmicsubstrate.com</a> <br>
-<span style="color: #6b7280; font-size: 12px; font-weight: 400;">Registered Office: 131 Continental Dr, Suite 305, Newark, Delaware 19713, United States</span> <br>
-<span style="opacity: 0.9; font-size: 12px; margin-top: 4px; display: inline-block;">
-<a href="javascript:void(0)" onclick="openModal('terms-modal')" style="color: #3b82f6; text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Terms of Service</a> &nbsp;&bull;&nbsp;
-<a href="javascript:void(0)" onclick="openModal('privacy-modal')" style="color: #3b82f6; text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Privacy Policy</a>
-</span>
+<!-- SYSTEM NOTICE: Corporate status for Delaware LLC via Stripe Atlas compliance -->
+<p style="margin: 0 0 8px 0; font-family: 'Inter', sans-serif; color: #9ca3af; font-size: 0.85rem; line-height: 1.5; letter-spacing: -0.01em;">
+&copy; 2026 Swarmic Substrate LLC. All rights reserved. Swarmic Substrate LLC is a premium cloud software and multi-agent AI systems provider organized under the laws of the State of Delaware, USA.
+</p>
+
+<!-- LEGAL LINKS: Redirection to dedicated terms and privacy documentation -->
+<p style="margin: 0; font-family: 'Inter', sans-serif; color: #6b7280; font-size: 0.8rem; line-height: 1.5;">
+Swarmic Substrate is a proprietary brand of Swarmic Substrate LLC.
+<a href="javascript:void(0)" onclick="openModal('terms-modal')" style="color: #3b82f6; text-decoration: none; margin-left: 10px; font-weight: 500;">Terms of Service</a> &bull;
+<a href="javascript:void(0)" onclick="openModal('privacy-modal')" style="color: #3b82f6; text-decoration: none; margin-left: 5px; font-weight: 500;">Privacy Policy</a>
+
 </p>
 
 </div>
-<!-- SYSTEM COMPONENT: Hyper-Tuned Cyber Agent Interface (2026 Sovereign Neon Stack) -->
-<style>
-@keyframes swarmicPulse {
-0% { box-shadow: 0 0 15px rgba(59, 130, 246, 0.4), inset 0 0 10px rgba(59, 130, 246, 0.2); }
-50% { box-shadow: 0 0 35px rgba(59, 130, 246, 0.8), inset 0 0 20px rgba(59, 130, 246, 0.4); }
-100% { box-shadow: 0 0 15px rgba(59, 130, 246, 0.4), inset 0 0 10px rgba(59, 130, 246, 0.2); }
-}
-@keyframes borderGlow {
-0% { border-color: #1f2937; }
-50% { border-color: #3b82f6; }
-100% { border-color: #1f2937; }
-}
-.cyber-bubble-user {
-background: linear-gradient(135deg, #1d4ed8, #3b82f6) !important;
-color: #fff !important;
-box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3) !important;
-border: 1px solid rgba(255, 255, 255, 0.1) !important;
-}
-.cyber-bubble-bot {
-background: rgba(17, 24, 39, 0.7) !important;
-color: #e5e7eb !important;
-border-left: 4px solid #3b82f6 !important;
-border-right: 1px solid rgba(59, 130, 246, 0.1) !important;
-border-top: 1px solid rgba(59, 130, 246, 0.1) !important;
-border-bottom: 1px solid rgba(59, 130, 246, 0.1) !important;
-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
-}
-</style>
-
-<div id="swarmic-bot-launcher" onclick="toggleSwarmicBot()" style="position: fixed !important; bottom: 25px !important; right: 25px !important; width: 65px !important; height: 65px !important; background: #030712 !important; border: 2px solid #3b82f6 !important; border-radius: 50% !important; display: flex !important; align-items: center !important; justify-content: center !important; cursor: pointer !important; z-index: 25000 !important; animation: swarmicPulse 3s infinite !important; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;" onmouseover="this.style.transform='scale(1.1) rotate(10deg)';" onmouseout="this.style.transform='scale(1) rotate(0deg)';">
-<span style="color: #fff !important; font-size: 28px !important; user-select: none !important; filter: drop-shadow(0 0 8px #3b82f6);">🤖</span>
-</div>
-
-<div id="swarmic-bot-window" style="display: none; position: fixed !important; bottom: 105px !important; right: 25px !important; width: 390px !important; max-width: calc(100vw - 50px) !important; height: 500px !important; background: rgba(3, 7, 18, 0.90) !important; backdrop-filter: blur(16px) -webkit-backdrop-filter: blur(16px) !important; border: 1px solid #1f2937 !important; border-radius: 20px !important; z-index: 25000 !important; flex-direction: column !important; box-shadow: 0 25px 60px rgba(0,0,0,0.8), 0 0 30px rgba(59, 130, 246, 0.1) !important; font-family: 'JetBrains Mono', -apple-system, monospace !important; overflow: hidden !important; box-sizing: border-box !important; animation: borderGlow 6s infinite;">
-
-<!-- Tuned Header -->
-<div style="background: rgba(11, 15, 25, 0.9) !important; border-bottom: 1px solid rgba(59, 130, 246, 0.2); padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0 !important;">
-<div style="display: flex; align-items: center; gap: 12px;">
-<span style="width: 9px; height: 9px; background: #00ffa3; border-radius: 50%; display: inline-block; box-shadow: 0 0 12px #00ffa3; animation: swarmicPulse 1.5s infinite;"></span>
-<span style="color: #fff; font-weight: 600; font-size: 11px; letter-spacing: 1.5px; font-family: monospace; text-shadow: 0 0 10px rgba(255,255,255,0.2);">SWARMIC_SYSTEM_AGENT // V2.6</span>
-</div>
-<button onclick="toggleSwarmicBot()" style="background: none; border: none; color: #4b5563; font-size: 24px; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.color='#ff4a4a'; this.style.transform='scale(1.1)';" onmouseout="this.style.color='#4b5563'; this.style.transform='scale(1)';">&times;</button>
-</div>
-
-<!-- Main Terminal Messages -->
-<div id="swarmic-bot-messages" style="flex: 1 !important; padding: 20px; overflow-y: auto !important; min-height: 0 !important; display: flex; flex-direction: column; gap: 16px; background: transparent; box-sizing: border-box !important;">
-<div class="cyber-bubble-bot" style="padding: 14px 18px; border-radius: 14px; max-width: 90%; font-size: 12.5px; line-height: 1.6; word-break: break-word !important;">
-[UPLINK ENABLED] Autonomous substrate interface initialized. Ready to render high-throughput compute topology parameters. Inject command array.
-</div>
-</div>
-
-<!-- Neon Prompt Injectors -->
-<div id="swarmic-bot-prompts" style="padding: 12px 20px; display: flex; flex-wrap: wrap; gap: 8px; background: transparent; border-top: 1px solid rgba(255,255,255,0.03); box-sizing: border-box; flex-shrink: 0 !important;">
-<button onclick="injectPresetPrompt('Check architecture')" style="background: rgba(11, 15, 25, 0.6); border: 1px solid #1f2937; color: #3b82f6; padding: 6px 14px; border-radius: 30px; font-size: 11px; font-weight: 500; font-family: inherit; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.borderColor='#3b82f6'; this.style.color='#fff'; this.style.boxShadow='0 0 15px rgba(59,130,246,0.4)';" onmouseout="this.style.borderColor='#1f2937'; this.style.color='#3b82f6'; this.style.boxShadow='none';">⚙️ Architecture</button>
-<button onclick="injectPresetPrompt('See pricing tiers')" style="background: rgba(11, 15, 25, 0.6); border: 1px solid #1f2937; color: #3b82f6; padding: 6px 14px; border-radius: 30px; font-size: 11px; font-weight: 500; font-family: inherit; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.borderColor='#3b82f6'; this.style.color='#fff'; this.style.boxShadow='0 0 15px rgba(59,130,246,0.4)';" onmouseout="this.style.borderColor='#1f2937'; this.style.color='#3b82f6'; this.style.boxShadow='none';">💳 Pricing</button>
-<button onclick="injectPresetPrompt('Corporate office')" style="background: rgba(11, 15, 25, 0.6); border: 1px solid #1f2937; color: #3b82f6; padding: 6px 14px; border-radius: 30px; font-size: 11px; font-weight: 500; font-family: inherit; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.borderColor='#3b82f6'; this.style.color='#fff'; this.style.boxShadow='0 0 15px rgba(59,130,246,0.4)';" onmouseout="this.style.borderColor='#1f2937'; this.style.color='#3b82f6'; this.style.boxShadow='none';">🏛️ Address</button>
-</div>
-
-<!-- Terminal Command Input Line -->
-<div style="padding: 16px 20px; background: rgba(11, 15, 25, 0.9) !important; border-top: 1px solid rgba(59, 130, 246, 0.2); display: flex; gap: 10px; align-items: center; box-sizing: border-box; flex-shrink: 0 !important;">
-<input type="text" id="swarmic-bot-input" onkeypress="if(event.key === 'Enter') sendSwarmicMessage()" placeholder="SYS_COMMAND_INJECTION..." style="flex: 1; background: #030712; border: 1px solid #1f2937; border-radius: 10px; padding: 12px; color: #00ffa3; font-size: 12px; outline: none; font-family: monospace; box-shadow: inset 0 2px 8px rgba(0,0,0,0.5); transition: all 0.3s;" onfocus="this.style.borderColor='#3b82f6'; this.style.boxShadow='inset 0 2px 8px rgba(0,0,0,0.5), 0 0 10px rgba(59,130,246,0.2)';" onblur="this.style.borderColor='#1f2937';">
-<button onclick="sendSwarmicMessage()" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 12px 22px; border-radius: 10px; font-size: 12px; font-weight: 600; font-family: inherit; cursor: pointer; transition: all 0.3s; box-shadow: 0 4px 12px rgba(29,78,216,0.3);" onmouseover="this.style.background='linear-gradient(135deg, #3b82f6, #2563eb)'; this.style.boxShadow='0 4px 20px rgba(59,130,246,0.5)';" onmouseout="this.style.background='linear-gradient(135deg, #2563eb, #1d4ed8)'; this.style.boxShadow='0 4px 12px rgba(29,78,216,0.3)';">EXEC</button>
-</div>
-</div>
-
-<script>
-function toggleSwarmicBot() {
-const win = document.getElementById('swarmic-bot-window');
-win.style.display = (win.style.display === 'none' || win.style.display === '') ? 'flex' : 'none';
-}
-function injectPresetPrompt(t) {
-document.getElementById('swarmic-bot-input').value = t;
-sendSwarmicMessage();
-}
-function sendSwarmicMessage() {
-const input = document.getElementById('swarmic-bot-input');
-const query = input.value.trim().toLowerCase();
-if (!query) return;
-
-appendSwarmicBubble(input.value, true);
-input.value = '';
-
-const container = document.getElementById('swarmic-bot-messages');
-const botBubble = document.createElement('div');
-botBubble.className = "cyber-bubble-bot";
-Object.assign(botBubble.style, { padding: "14px 18px", borderRadius: "14px", fontSize: "12.5px", lineHeight: "1.6", whiteSpace: "pre-wrap" });
-botBubble.innerText = "⏳ SYNTHESIZING TELEMETRY STREAM...";
-container.appendChild(botBubble);
-container.scrollTop = container.scrollHeight;
-
-setTimeout(() => {
-let resp = 'Query successfully cached. For raw core pipe orchestration routing, reach our infrastructure team.';
-
-if (query.includes('price') || query.includes('cost') || query.includes('plan') || query.includes('tier')) {
-resp = 'Swarmic Core deployment tiers: Developer Shard ($29/mo), Orchestration Suite ($79/mo), and Enterprise Substrate ($249/mo). Complete tokenized multi-currency clearing pipeline executes securely via integrated merchant architectural infrastructure managed by Stripe.';
-} else if (query.includes('tech') || query.includes('sllm') || query.includes('runtime') || query.includes('architecture')) {
-resp = 'The proprietary sLLM Runtime substrate layers algorithmically orchestrate zero-latency context token caching, parallel distributed multi-agent state synchronization arrays, and secure bare-metal server cluster execution node handshakes.';
-} else if (query.includes('address') || query.includes('delaware') || query.includes('office')) {
-resp = 'Swarmic Substrate LLC is a fully compliant sovereign technology corporation formed in the State of Delaware. Sovereign Registered Headquarters: 131 Continental Dr, Suite 305, Newark, Delaware 19713, United States.';
-} else if (query.includes('hello') || query.includes('hi') || query.includes('start')) {
-resp = 'Main node active. Distributed core telemetries synchronized. Input query into system interface.';
-}
-
-botBubble.innerText = "";
-let idx = 0;
-function streamText() {
-if (idx < resp.length) {
-botBubble.innerText += resp.charAt(idx++);
-container.scrollTop = container.scrollHeight;
-setTimeout(streamText, 14);
-}
-}
-streamText();
-}, 550);
-}
-Object.assign(bubble.style, { padding: "14px 18px", borderRadius: "14px", fontSize: "12.5px", lineHeight: "1.6", whiteSpace: "pre-wrap" });
-
-function appendSwarmicBubble(text, isUser) {
-const container = document.getElementById('swarmic-bot-messages');
-const bubble = document.createElement('div');
-Object.assign(bubble.style, { padding: "14px 18px", borderRadius: "14px", fontSize: "12.5px", lineHeight: "1.6" });
-if (isUser) {
-bubble.className = "cyber-bubble-user";
-bubble.style.alignSelf = "flex-end";
-} else {
-bubble.className = "cyber-bubble-bot";
-bubble.style.alignSelf = "flex-start";
-}
-bubble.innerText = text;
-container.appendChild(bubble);
-container.scrollTop = container.scrollHeight;
-}
-</script>
 
 
-
-
-   <!-- SYSTEM MODALS: Premium pop-up layers for Terms and Privacy -->
-<div id="terms-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 1000; align-items: center; justify-content: center;">
-<div style="background: #030712; border: 1px solid #1f2937; padding: 30px; max-width: 700px; width: 100%; max-height: 80vh; overflow-y: auto; border-radius: 8px; position: relative;">
+    <!-- SYSTEM MODALS: Premium pop-up layers for Terms and Privacy -->
+<div id="terms-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 99999; justify-content: center; align-items: center; padding: 20px;">
+<div style="background: #030712; border: 1px solid #1f2937; padding: 30px; max-width: 700px; width: 100%; max-height: 80vh; overflow-y: auto; border-radius: 12px; font-family: 'Inter', sans-serif; position: relative;">
 <button onclick="closeModal('terms-modal')" style="position: absolute; top: 15px; right: 15px; background: none; border: none; color: #9ca3af; font-size: 1.5rem; cursor: pointer;">&times;</button>
-<h2 style="color: #fff; margin-top: 0; border-bottom: 1px solid #1f2937; padding-bottom: 10px; font-family: -apple-system, sans-serif;">Terms of Service</h2>
+<h2 style="color: #fff; margin-top: 0; border-bottom: 1px solid #1f2937; padding-bottom: 10px;">Terms of Service</h2>
+<p style="color: #9ca3af; font-size: 0.9rem; line-height: 1.6;"><strong>WARRANTY DISCLAIMER:</strong> TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE SOFTWARE, PLATFORM, AND SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. SWARMIC SUBSTRATE DOES NOT WARRANT THAT THE CLOUD ORCHESTRATION LAYER OR sLLM RUNTIME OPERATIONS WILL BE UNINTERRUPTED, ERROR-FREE, OR COMPLETELY SECURE.</p>
+    <strong>WAITLIST &amp; INFRASTRUCTURE SUBSCRIPTION BLUEPRINT:</strong> Swarmic Substrate LLC is currently operating in a pre-launch infrastructure testing phase.The infrastructure allocation structures displayed within this ecosystem represent corporate capacity management frameworks.Submitting your email via our waitlist interactive elements constitutes a request for early sandbox access and priority routing allocation. No financial profiles, credit card assets, or processing methods will be stored or charged during this beta optimization period. Official commercial rollouts and multi-currency billing architecture will be executed strictly upon the integration of our authorized Merchant of Record platforms.
 
-<p style="color: #6b7280; font-size: 0.85rem; line-height: 1.6; margin-bottom: 15px; font-family: monospace;">
-Effective Date: July 16, 2026<br>
-Corporate Entity: Swarmic Substrate LLC<br>
-Registered Office: 131 Continental Dr, Suite 305, Newark, Delaware 19713, United States<br>
-Contact Email: contact@swarmicsubstrate.com
-</p>
-
-<p style="color: #9ca3af; font-size: 0.9rem; line-height: 1.6; margin-bottom: 15px; font-family: -apple-system, sans-serif;">
-<strong>WARRANTY DISCLAIMER:</strong> TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE SOFTWARE, PLATFORM, AND SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. SWARMIC SUBSTRATE DOES NOT WARRANT THAT THE CLOUD ORCHESTRATION LAYER OR sLLM RUNTIME OPERATIONS WILL BE UNINTERRUPTED, ERROR-FREE, OR COMPLETELY SECURE.
-</p>
-
-<p style="color: #9ca3af; font-size: 0.9rem; line-height: 1.6; margin-bottom: 15px; font-family: -apple-system, sans-serif;">
-<strong>WAITLIST & INFRASTRUCTURE SUBSCRIPTION BLUEPRINT:</strong> Swarmic Substrate LLC is currently operating in a pre-launch infrastructure testing phase. The infrastructure allocation structures displayed within this ecosystem represent corporate capacity management frameworks. Submitting your email via our waitlist interactive elements constitutes a request for early sandbox access and priority routing allocation. No financial profiles, credit card assets, or processing methods will be stored or charged during this beta optimization period. Official commercial rollouts and multi-currency billing architecture will be executed strictly upon the integration of our authorized Merchant of Record platforms.
-</p>
-
-<p style="color: #9ca3af; font-size: 0.9rem; line-height: 1.6; font-family: -apple-system, sans-serif;">
-<strong>GOVERNING LAW & JURISDICTION:</strong> This Agreement and any disputes arising out of or related to it shall be governed by and construed in accordance with the laws of the State of Delaware, USA, without regard to its conflict of laws principles. Any legal action, suit, or proceeding arising out of or relating to this Agreement shall be brought exclusively in the federal or state courts located in the State of Delaware, USA, and each party irrevocably and unconditionally submits to the sole and exclusive jurisdiction of such courts. Registered Corporate Office: Swarmic Substrate LLC, 131 Continental Dr, Suite 305, Newark, Delaware 19713, United States.
-</p>
+<p style="color: #9ca3af; font-size: 0.9rem; line-height: 1.6;"><strong>GOVERNING LAW & JURISDICTION:</strong> This Agreement and any disputes arising out of or related to it shall be governed by and construed in accordance with the laws of the State of Delaware, USA, without regard to its conflict of laws principles. Any legal action, suit, or proceeding arising out of or relating to this Agreement shall be brought exclusively in the federal or state courts located in the State of Delaware, USA, and each party irrevocably and unconditionally submits to the sole and exclusive jurisdiction of such courts.</p>
 </div>
 </div>
 
-<div id="privacy-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 1000; align-items: center; justify-content: center;">
-<div style="background: #030712; border: 1px solid #1f2937; padding: 30px; max-width: 700px; width: 100%; max-height: 80vh; overflow-y: auto; border-radius: 8px; position: relative;">
+<div id="privacy-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 99999; justify-content: center; align-items: center; padding: 20px;">
+<div style="background: #030712; border: 1px solid #1f2937; padding: 30px; max-width: 700px; width: 100%; max-height: 80vh; overflow-y: auto; border-radius: 12px; font-family: 'Inter', sans-serif; position: relative;">
 <button onclick="closeModal('privacy-modal')" style="position: absolute; top: 15px; right: 15px; background: none; border: none; color: #9ca3af; font-size: 1.5rem; cursor: pointer;">&times;</button>
-<h2 style="color: #fff; margin-top: 0; border-bottom: 1px solid #1f2937; padding-bottom: 10px; font-family: -apple-system, sans-serif;">Privacy Policy</h2>
-
-<p style="color: #6b7280; font-size: 0.85rem; line-height: 1.6; margin-bottom: 15px; font-family: monospace;">
-Effective Date: July 16, 2026<br>
-Data Controller: Swarmic Substrate LLC, 131 Continental Dr, Suite 305, Newark, Delaware 19713, United States
-</p>
-
-<p style="color: #9ca3af; font-size: 0.9rem; line-height: 1.6; margin-bottom: 15px; font-family: -apple-system, sans-serif;">
-Swarmic Substrate LLC operates the platform and cloud systems. We collect several different types of information for various purposes to provide and improve our high-throughput cloud orchestration infrastructure to you, including technical diagnostics, IP addresses, cookies, and cluster performance data.
-</p>
-
-<p style="color: #9ca3af; font-size: 0.9rem; line-height: 1.6; margin-bottom: 15px; font-family: -apple-system, sans-serif;">
-The security of your data is critical to us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.
-</p>
-
-<p style="color: #9ca3af; font-size: 0.9rem; line-height: 1.6; font-family: -apple-system, sans-serif;">
-<strong>Data Protection Rights:</strong> Under applicable regulations, you have the right to access, update, or delete the information we have on you. If you wish to be informed what Personal Data we hold about you or if you want it to be removed from our systems, please contact us at: <a href="mailto:contact@swarmicsubstrate.com" style="color: #3b82f6; text-decoration: none;">contact@swarmicsubstrate.com</a>.
-</p>
+<h2 style="color: #fff; margin-top: 0; border-bottom: 1px solid #1f2937; padding-bottom: 10px;">Privacy Policy</h2>
+<p style="color: #9ca3af; font-size: 0.9rem; line-height: 1.6;">Swarmic Substrate LLC operates the platform and cloud systems. We collect several different types of information for various purposes to provide and improve our high-throughput cloud orchestration infrastructure to you, including technical diagnostics and cluster performance data. The security of your data is critical to us, but remember that no method of transmission over the Internet is 100% secure.</p>
 </div>
 </div>
 
