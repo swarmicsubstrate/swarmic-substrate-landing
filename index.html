@@ -13,6 +13,41 @@
 <link rel="stylesheet" href="style.css">
 <style>
 html { scroll-behavior: smooth; }
+    #particle-canvas {
+position: absolute;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+z-index: 1;
+background: radial-gradient(circle at 50% 50%, rgba(26, 21, 44, 0.4) 0%, #000000 100%);
+overflow: hidden;
+}
+#particle-canvas::before {
+content: '';
+position: absolute;
+width: 200%;
+height: 200%;
+top: -50%;
+left: -50%;
+background-image:
+radial-gradient(rgba(138, 43, 226, 0.18) 2px, transparent 2px),
+radial-gradient(rgba(0, 255, 204, 0.12) 1.5px, transparent 1.5px);
+background-size: 50px 50px;
+background-position: 0 0, 25px 25px;
+animation: swarmicMatrixShift 25s linear infinite;
+}
+@keyframes swarmicMatrixShift {
+0% { transform: rotate(0deg) translateY(0); }
+50% { transform: rotate(1deg) translateY(-15px); }
+100% { transform: rotate(0deg) translateY(0); }
+}
+.overlay, .header, main, section {
+position: relative;
+z-index: 2;
+}
+
+
 </style>
 
 
