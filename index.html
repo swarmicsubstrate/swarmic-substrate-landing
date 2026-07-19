@@ -1810,22 +1810,22 @@ let resp = '';
 let lowerQuery = query.toLowerCase();
 
 if (lowerQuery.includes('price') || lowerQuery.includes('cost') || lowerQuery.includes('plan') || lowerQuery.includes('cena') || lowerQuery.includes('ceny')) {
-resp = 'Swarmic Core deployment tiers:\n• Developer Shard ($29/mo)\n• Orchestration Suite ($79/mo)\n• Enterprise Substrate ($249/mo)\n\nComplete tokenized multi-currency clearing pipeline executes securely via integrated PCI-DSS compliant infrastructure.';
+resp = 'Swarmic Core deployment tiers: Developer Shard ($29/mo), Orchestration Suite ($79/mo), and Enterprise Substrate ($249/mo). Complete tokenized multi-currency clearing pipeline executes securely via integrated PCI-DSS compliant infrastructure.';
 } else if (lowerQuery.includes('tech') || lowerQuery.includes('sllm') || lowerQuery.includes('runtime') || lowerQuery.includes('architecture') || lowerQuery.includes('architekt')) {
 resp = 'The proprietary sLLM Runtime substrate layers algorithmically orchestrate zero-latency context token caching, parallel distributed multi-agent state synchronization arrays, and secure bare metal server cluster execution node handshakes.';
 } else if (lowerQuery.includes('address') || lowerQuery.includes('delaware') || lowerQuery.includes('office') || lowerQuery.includes('adres') || lowerQuery.includes('siedzib')) {
-resp = 'Swarmic Substrate LLC is a fully compliant technology entity formed in the State of Delaware.\n\nRegistered Headquarters:\n131 Continental Dr, Suite 305,\nNewark, Delaware 19713,\nUnited States.\n\nEnterprise service-level agreements and node operations are managed securely via our verified network.';
+resp = 'Swarmic Substrate LLC is a fully compliant technology entity formed in the State of Delaware. Registered Headquarters: 131 Continental Dr, Suite 305, Newark, Delaware 19713, United States.';
 } else if (lowerQuery.includes('hello') || lowerQuery.includes('hi') || lowerQuery.includes('start') || lowerQuery.includes('hej') || lowerQuery.includes('wit')) {
 resp = 'Connection established. SWARMIC_CORE v2.6 session initialized. Input operational telemetry parameters or execute network nodes. Available modules: [Architecture], [Pricing], [Address].';
 } else {
 resp = 'Query logged outside active Swarmic Core scope. For safety, I only resolve queries regarding Swarmic deployment tiers, pricing models, PCI-DSS compliance, and Delaware LLC architecture. Please refine your query.';
 }
 
-botBubble.textContent = "";
+botBubble.innerText = "";
 let idx = 0;
 function streamText() {
 if (idx < resp.length) {
-botBubble.textContent += resp.charAt(idx++);
+botBubble.innerText += resp.charAt(idx++);
 container.scrollTop = container.scrollHeight;
 setTimeout(streamText, 14);
 }
@@ -1837,19 +1837,7 @@ streamText();
 function appendSwarmicBubble(text, isUser) {
 const container = document.getElementById('swarmic-bot-messages');
 const bubble = document.createElement('div');
-
-Object.assign(bubble.style, {
-padding: "14px 18px",
-borderRadius: "14px",
-fontSize: "12.5px",
-lineHeight: "1.6",
-marginBottom: "12px",
-maxWidth: "85%",
-display: "block",
-whiteSpace: "pre-wrap",
-wordBreak: "keep-all",
-wordWrap: "break-word"
-});
+Object.assign(bubble.style, { padding: "14px 18px", borderRadius: "14px", fontSize: "12.5px", lineHeight: "1.5", marginBottom: "12px", maxWidth: "80%", wordBreak: "break-word" });
 
 if (isUser) {
 bubble.className = "cyber-bubble-user";
@@ -1859,12 +1847,13 @@ bubble.className = "cyber-bubble-bot";
 bubble.style.alignSelf = "flex-start";
 }
 
-bubble.textContent = text;
+bubble.innerText = text;
 container.appendChild(bubble);
 container.scrollTop = container.scrollHeight;
 return bubble;
 }
 </script>
+
     
    <!-- SYSTEM MODALS: Premium pop-up layers for Terms and Privacy -->
 <div id="terms-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 1000; align-items: center; justify-content: center;">
