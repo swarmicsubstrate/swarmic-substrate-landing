@@ -14,6 +14,44 @@
 <style>
 html { scroll-behavior: smooth; }
 </style>
+<!-- SWARMIC_BACKGROUND_MESH_INTEGRATION_CORE -->
+<script src="https://cloudflare.com"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+particlesJS("particle-canvas", {
+"particles": {
+"number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+"color": { "value": "#8a2be2" }, /* Fiolet Swarmic Substrate */
+"shape": { "type": "circle" },
+"opacity": { "value": 0.25, "random": false },
+"size": { "value": 3, "random": true },
+"line_linked": { "enable": true, "distance": 150, "color": "#00ffcc", "opacity": 0.18, "width": 1 }, /* Cyber Green */
+"move": { "enable": true, "speed": 1.5, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+},
+"interactivity": {
+"detect_on": "canvas",
+"events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true }
+},
+"retina_detect": true
+});
+});
+</script>
+<style>
+#particle-canvas {
+position: absolute;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+z-index: 1;
+pointer-events: none;
+}
+.overlay, .header {
+position: relative;
+z-index: 2; /* UI ponad tłem */
+}
+</style>
+
 
 
 </head>
