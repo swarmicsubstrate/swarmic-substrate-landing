@@ -13,44 +13,7 @@
 <link rel="stylesheet" href="style.css">
 <style>
 html { scroll-behavior: smooth; }
-    #particle-canvas {
-position: absolute;
-width: 100%;
-height: 100%;
-top: 0;
-left: 0;
-z-index: 1;
-background: radial-gradient(circle at 50% 50%, rgba(26, 21, 44, 0.4) 0%, #000000 100%);
-overflow: hidden;
-}
-#particle-canvas::before {
-content: '';
-position: absolute;
-width: 200%;
-height: 200%;
-top: -50%;
-left: -50%;
-background-image:
-radial-gradient(rgba(138, 43, 226, 0.18) 2px, transparent 2px),
-radial-gradient(rgba(0, 255, 204, 0.12) 1.5px, transparent 1.5px);
-background-size: 50px 50px;
-background-position: 0 0, 25px 25px;
-animation: swarmicMatrixShift 25s linear infinite;
-}
-@keyframes swarmicMatrixShift {
-0% { transform: rotate(0deg) translateY(0); }
-50% { transform: rotate(1deg) translateY(-15px); }
-100% { transform: rotate(0deg) translateY(0); }
-}
-.overlay, .header, main, section {
-position: relative;
-z-index: 2;
-}
-
-
 </style>
-
-
 
 
 </head>
@@ -1602,7 +1565,7 @@ Secure billing and automated multi-currency routing powered by enterprise-grade 
 <!-- THE HOLLYWOOD COMPLIANCE MODAL LAYER -->
 <div id="swarmic-billing-modal" style="display: none !important; position: fixed !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; background: rgba(2, 4, 12, 0.85) !important; backdrop-filter: blur(12px) !important; -webkit-backdrop-filter: blur(12px) !important; z-index: 999999 !important; justify-content: center !important; align-items: center !important; padding: 20px !important; box-sizing: border-box !important;">
 <div style="background: #040814 !important; border: 1px solid rgba(62, 180, 255, 0.2) !important; border-radius: 20px !important; padding: 40px !important; max-width: 550px !important; width: 100% !important; box-shadow: 0 50px 100px rgba(0,0,0,0.8), 0 0 40px rgba(62,180,255,0.05) !important; font-family: monospace !important; color: #ffffff !important; text-align: left !important; box-sizing: border-box !important; position: relative !important;">
-<div style="font-size: 11px !important; color: #3eb4ff !important; font-weight: bold !important; letter-spacing: 0.2em !important; margin-bottom: 16px !important;">[ SWARMIC_SUBSTRATE // PROVISIONING_NOTICE ]</div>
+<div style="font-size: 11px !important; color: #3eb4ff !important; font-weight: bold !important; letter-spacing: 0.2em !important; margin-bottom: 16px !important;">[ SWARMIC_SUSTRATE // PROVISIONING_NOTICE ]</div>
 <h4 style="font-size: 22px !important; font-weight: bold !important; color: #ffffff !important; margin-bottom: 16px !important; font-family: sans-serif !important; letter-spacing: -0.01em !important;">Node Allocation Initiated</h4>
 <p style="color: #9ca3af !important; font-size: 13px !important; line-height: 1.6 !important; margin-bottom: 24px !important;">
 Your user request payload has been cataloged. Infrastructure allocation tokens for <strong id="modal-tier-name" style="color: #ffffff !important;">[Tier]</strong> are being assigned within the local routing layer.<br><br>
@@ -1803,66 +1766,57 @@ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
 <button onclick="injectPresetPrompt('See pricing tiers')" style="background: rgba(11, 15, 25, 0.6); border: 1px solid #1f2937; color: #3b82f6; padding: 6px 14px; border-radius: 30px; font-size: 11px; font-weight: 500; font-family: inherit; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.borderColor='#3b82f6'; this.style.color='#fff'; this.style.boxShadow='0 0 15px rgba(59,130,246,0.4)';" onmouseout="this.style.borderColor='#1f2937'; this.style.color='#3b82f6'; this.style.boxShadow='none';">💳 Pricing</button>
 <button onclick="injectPresetPrompt('Corporate office')" style="background: rgba(11, 15, 25, 0.6); border: 1px solid #1f2937; color: #3b82f6; padding: 6px 14px; border-radius: 30px; font-size: 11px; font-weight: 500; font-family: inherit; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.borderColor='#3b82f6'; this.style.color='#fff'; this.style.boxShadow='0 0 15px rgba(59,130,246,0.4)';" onmouseout="this.style.borderColor='#1f2937'; this.style.color='#3b82f6'; this.style.boxShadow='none';">🏛️ Address</button>
 </div>
+
 <!-- Terminal Command Input Line -->
-<div style="padding: 16px 20px; background: rgba(11, 15, 25, 0.9) !important; border-top: 1px solid rgba(59, 130, 246, 0.2); display: flex; gap: 12px; align-items: center;">
-<input type="text" id="swarmic-bot-input" onkeypress="if(event.key === 'Enter') sendSwarmicMessage()" placeholder="SYS_COMMAND_INJECTION..." style="flex: 1; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 12px 16px; border-radius: 8px; color: #fff; font-family: monospace; font-size: 13px; outline: none;">
-<button onclick="sendSwarmicMessage()" style="background: linear-gradient(135deg, #256beb, #1d4ed8); border: 1px solid rgba(255,255,255,0.1); padding: 12px 24px; border-radius: 8px; color: #fff; font-family: monospace; font-size: 13px; font-weight: bold; cursor: pointer;">EXEC</button>
+<div style="padding: 16px 20px; background: rgba(11, 15, 25, 0.9) !important; border-top: 1px solid rgba(59, 130, 246, 0.2); display: flex; gap: 10px; align-items: center; box-sizing: border-box; flex-shrink: 0 !important;">
+<input type="text" id="swarmic-bot-input" onkeypress="if(event.key === 'Enter') sendSwarmicMessage()" placeholder="SYS_COMMAND_INJECTION..." style="flex: 1; background: #030712; border: 1px solid #1f2937; border-radius: 10px; padding: 12px; color: #00ffa3; font-size: 12px; outline: none; font-family: monospace; box-shadow: inset 0 2px 8px rgba(0,0,0,0.5); transition: all 0.3s;" onfocus="this.style.borderColor='#3b82f6'; this.style.boxShadow='inset 0 2px 8px rgba(0,0,0,0.5), 0 0 10px rgba(59,130,246,0.2)';" onblur="this.style.borderColor='#1f2937';">
+<button onclick="sendSwarmicMessage()" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 12px 22px; border-radius: 10px; font-size: 12px; font-weight: 600; font-family: inherit; cursor: pointer; transition: all 0.3s; box-shadow: 0 4px 12px rgba(29,78,216,0.3);" onmouseover="this.style.background='linear-gradient(135deg, #3b82f6, #2563eb)'; this.style.boxShadow='0 4px 20px rgba(59,130,246,0.5)';" onmouseout="this.style.background='linear-gradient(135deg, #2563eb, #1d4ed8)'; this.style.boxShadow='0 4px 12px rgba(29,78,216,0.3)';">EXEC</button>
 </div>
 </div>
 
 <script>
 function toggleSwarmicBot() {
-const windowEl = document.getElementById('swarmic-bot-window');
-if (windowEl.style.display === 'none' || windowEl.style.display === '') {
-windowEl.style.display = 'flex';
-} else {
-windowEl.style.display = 'none';
+const win = document.getElementById('swarmic-bot-window');
+win.style.display = (win.style.display === 'none' || win.style.display === '') ? 'flex' : 'none';
 }
-}
-
-function injectPresetPrompt(promptText) {
-const inputEl = document.getElementById('swarmic-bot-input');
-if (inputEl) {
-inputEl.value = promptText;
+function injectPresetPrompt(t) {
+document.getElementById('swarmic-bot-input').value = t;
 sendSwarmicMessage();
 }
-}
-
 function sendSwarmicMessage() {
-const inputEl = document.getElementById('swarmic-bot-input');
-if (!inputEl) return;
-
-const query = inputEl.value.trim();
+const input = document.getElementById('swarmic-bot-input');
+const query = input.value.trim().toLowerCase();
 if (!query) return;
 
-appendSwarmicBubble(query, true);
-inputEl.value = '';
+appendSwarmicBubble(input.value, true);
+input.value = '';
 
 const container = document.getElementById('swarmic-bot-messages');
-const botBubble = appendSwarmicBubble('...', false);
+const botBubble = document.createElement('div');
+botBubble.className = "cyber-bubble-bot";
+Object.assign(botBubble.style, { padding: "14px 18px", borderRadius: "14px", fontSize: "12.5px", lineHeight: "1.6", whiteSpace: "pre-wrap" });
+botBubble.innerText = "⏳ SYNTHESIZING TELEMETRY STREAM...";
+container.appendChild(botBubble);
 container.scrollTop = container.scrollHeight;
 
 setTimeout(() => {
-let resp = '';
-let lowerQuery = query.toLowerCase();
+let resp = 'Query successfully cached. For raw core pipe orchestration routing, reach our infrastructure team.';
 
-if (lowerQuery.includes('price') || lowerQuery.includes('cost') || lowerQuery.includes('plan') || lowerQuery.includes('cena') || lowerQuery.includes('ceny')) {
-resp = 'Swarmic Core deployment tiers:\n• Developer Shard ($29/mo)\n• Orchestration Suite ($79/mo)\n• Enterprise Substrate ($249/mo)\n\nComplete tokenized multi-currency clearing pipeline executes securely via integrated PCI-DSS compliant infrastructure.';
-} else if (lowerQuery.includes('tech') || lowerQuery.includes('sllm') || lowerQuery.includes('runtime') || lowerQuery.includes('architecture') || lowerQuery.includes('architekt')) {
-resp = 'The proprietary sLLM Runtime substrate layers algorithmically orchestrate zero-latency context token caching, parallel distributed multi-agent state synchronization arrays, and secure bare metal server cluster execution node handshakes.';
-} else if (lowerQuery.includes('address') || lowerQuery.includes('delaware') || lowerQuery.includes('office') || lowerQuery.includes('adres') || lowerQuery.includes('siedzib')) {
-resp = 'Swarmic Substrate LLC is a fully compliant technology entity formed in the State of Delaware.\n\nRegistered Headquarters:\n131 Continental Dr, Suite 305,\nNewark, Delaware 19713,\nUnited States.\n\nEnterprise service-level agreements and node operations are managed securely via our verified network.';
-} else if (lowerQuery.includes('hello') || lowerQuery.includes('hi') || lowerQuery.includes('start') || lowerQuery.includes('hej') || lowerQuery.includes('wit')) {
-resp = 'Connection established. SWARMIC_CORE v2.6 session initialized. Input operational telemetry parameters or execute network nodes. Available modules: [Architecture], [Pricing], [Address].';
-} else {
-resp = 'Query logged outside active Swarmic Core scope. For safety, I only resolve queries regarding Swarmic deployment tiers, pricing models, PCI-DSS compliance, and Delaware LLC architecture. Please refine your query.';
+if (query.includes('price') || query.includes('cost') || query.includes('plan') || query.includes('tier')) {
+resp = 'Swarmic Core deployment tiers: Developer Shard ($29/mo), Orchestration Suite ($79/mo), and Enterprise Substrate ($249/mo). Complete tokenized multi-currency clearing pipeline executes securely via integrated merchant architectural infrastructure managed by Stripe.';
+} else if (query.includes('tech') || query.includes('sllm') || query.includes('runtime') || query.includes('architecture')) {
+resp = 'The proprietary sLLM Runtime substrate layers algorithmically orchestrate zero-latency context token caching, parallel distributed multi-agent state synchronization arrays, and secure bare-metal server cluster execution node handshakes.';
+} else if (query.includes('address') || query.includes('delaware') || query.includes('office')) {
+resp = 'Swarmic Substrate LLC is a fully compliant sovereign technology corporation formed in the State of Delaware. Sovereign Registered Headquarters: 131 Continental Dr, Suite 305, Newark, Delaware 19713, United States.';
+} else if (query.includes('hello') || query.includes('hi') || query.includes('start')) {
+resp = 'Main node active. Distributed core telemetries synchronized. Input query into system interface.';
 }
 
-botBubble.textContent = "";
+botBubble.innerText = "";
 let idx = 0;
 function streamText() {
 if (idx < resp.length) {
-botBubble.textContent += resp.charAt(idx++);
+botBubble.innerText += resp.charAt(idx++);
 container.scrollTop = container.scrollHeight;
 setTimeout(streamText, 14);
 }
@@ -1870,24 +1824,12 @@ setTimeout(streamText, 14);
 streamText();
 }, 550);
 }
+Object.assign(bubble.style, { padding: "14px 18px", borderRadius: "14px", fontSize: "12.5px", lineHeight: "1.6", whiteSpace: "pre-wrap" });
 
 function appendSwarmicBubble(text, isUser) {
 const container = document.getElementById('swarmic-bot-messages');
 const bubble = document.createElement('div');
-
-Object.assign(bubble.style, {
-padding: "14px 18px",
-borderRadius: "14px",
-fontSize: "12.5px",
-lineHeight: "1.6",
-marginBottom: "12px",
-maxWidth: "85%",
-display: "block",
-whiteSpace: "pre-wrap",
-wordBreak: "keep-all",
-wordWrap: "break-word"
-});
-
+Object.assign(bubble.style, { padding: "14px 18px", borderRadius: "14px", fontSize: "12.5px", lineHeight: "1.6" });
 if (isUser) {
 bubble.className = "cyber-bubble-user";
 bubble.style.alignSelf = "flex-end";
@@ -1895,14 +1837,15 @@ bubble.style.alignSelf = "flex-end";
 bubble.className = "cyber-bubble-bot";
 bubble.style.alignSelf = "flex-start";
 }
-
-bubble.textContent = text;
+bubble.innerText = text;
 container.appendChild(bubble);
 container.scrollTop = container.scrollHeight;
-return bubble;
 }
 </script>
-    
+
+
+
+
    <!-- SYSTEM MODALS: Premium pop-up layers for Terms and Privacy -->
 <div id="terms-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 1000; align-items: center; justify-content: center;">
 <div style="background: #030712; border: 1px solid #1f2937; padding: 30px; max-width: 700px; width: 100%; max-height: 80vh; overflow-y: auto; border-radius: 8px; position: relative;">
