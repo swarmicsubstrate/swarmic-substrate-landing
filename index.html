@@ -2060,20 +2060,6 @@ initial-value: 0deg;
 
 
 
-<script>
-// Pure high-performance mouse-tracking matrix
-document.addEventListener('mousemove', function(e) {
-var targets = document.querySelectorAll('[class*="shard"], [class*="SHARD"], [id*="shard"], [id*="SHARD"], [class*="registry"], [class*="REGISTRY"]');
-targets.forEach(function(el) {
-var rect = el.getBoundingClientRect();
-var x = e.clientX - rect.left;
-var y = e.clientY - rect.top;
-el.style.setProperty('--x', x + 'px');
-el.style.setProperty('--y', y + 'px');
-});
-});
-</script>
-
 
 
 </body>
