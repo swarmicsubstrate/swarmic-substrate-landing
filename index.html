@@ -1508,62 +1508,60 @@ runSwarmEngine();
 <span style="font-size: 11px !important; text-transform: uppercase !important; letter-spacing: 0.3em !important; color: #3eb4ff !important; font-weight: bold !important;">[ SWARMIC SUBSTRATE // SYSTEM PROVISIONING FEES ]</span>
 <h3 style="font-size: 24px !important; font-weight: 800 !important; margin-top: 8px !important; font-family: sans-serif !important;">Infrastructure Subscriptions</h3>
 </div>
-<div style="display: grid !important; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important; gap: 24px !important; width: 100% !important;">
+    <div style="display: grid !important; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important; gap: 28px !important; width: 100% !important; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif !important;">
 
 <!-- Tier 1: Developer Core ($29) -->
-<div onclick="const cards = this.parentElement.children; for(let c of cards){c.style.borderColor=c.getAttribute('data-base-border'); c.style.transform='none'; c.style.boxShadow='none';} this.style.borderColor='rgba(62, 180, 255, 0.9)'; this.style.boxShadow='0 10px 30px rgba(62, 180, 255, 0.25)';"
-onmouseenter="if(this.style.boxShadow.indexOf('180') === -1) { this.style.transform='translateY(-8px)'; this.style.borderColor='rgba(62, 180, 255, 0.6)'; this.style.boxShadow='0 10px 20px rgba(62, 180, 255, 0.15)'; }"
-onmouseleave="if(this.style.borderColor !== 'rgba(62, 180, 255, 0.9)') { this.style.transform='none'; this.style.borderColor='rgba(62, 180, 255, 0.1)'; this.style.boxShadow='none'; }"
-data-base-border="rgba(62, 180, 255, 0.1)"
-style="background: rgba(11, 22, 43, 0.2); border: 1px solid rgba(62, 180, 255, 0.1); border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: flex-start; min-height: 100%; box-sizing: border-box; transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease, border-color 0.3s ease; cursor: pointer;">
-<div style="font-size: 10px; color: #6b7280; font-weight: bold; margin-bottom: 8px;">// CONFIGURATION_TIER_01</div>
-<h3 style="color: #ffffff; font-size: 1.5rem; margin: 0 0 8px 0; font-weight: bold;">Developer Core</h3>
-<div style="color: #ffffff; font-size: 2rem; font-weight: 800; margin-bottom: 16px;">$29 <span style="font-size: 11px; color: #9ca3af; font-weight: normal;">/ mo</span></div>
-<div style="font-size: 11px; color: #9ca3af; line-height: 1.8; margin-bottom: 20px; flex-grow: 1;">
-<div>✓ Access to Dynamic Inference Router Framework</div>
-<div>✓ High-Velocity Local Shard Telemetry Testing Canvas</div>
+<div onclick="const cards = this.parentElement.children; for(let c of cards){c.style.borderColor=c.getAttribute('data-base-border'); c.style.transform='none'; c.style.boxShadow='none'; c.style.background='rgba(11, 22, 43, 0.35)';} this.style.borderColor='rgba(62, 180, 255, 0.9)'; this.style.boxShadow='0 20px 40px rgba(62, 180, 255, 0.2), inset 0 1px 1px rgba(255,255,255,0.15)'; this.style.background='rgba(11, 22, 43, 0.55)';"
+onmouseenter="if(this.style.boxShadow.indexOf('20px') === -1) { this.style.transform='translateY(-10px) scale(1.02)'; this.style.borderColor='rgba(62, 180, 255, 0.6)'; this.style.boxShadow='0 15px 30px rgba(62, 180, 255, 0.15), inset 0 1px 1px rgba(255,255,255,0.1)'; }"
+onmouseleave="if(this.style.borderColor !== 'rgba(62, 180, 255, 0.9)') { this.style.transform='none'; this.style.borderColor='rgba(62, 180, 255, 0.15)'; this.style.boxShadow='none'; this.style.background='rgba(11, 22, 43, 0.35)'; }"
+data-base-border="rgba(62, 180, 255, 0.15)"
+style="background: rgba(11, 22, 43, 0.35); border: 1px solid rgba(62, 180, 255, 0.15); border-radius: 16px; padding: 28px; display: flex; flex-direction: column; justify-content: flex-start; min-height: 100%; box-sizing: border-box; backdrop-filter: blur(16px) !important; -webkit-backdrop-filter: blur(16px) !important; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease, background 0.4s ease; cursor: pointer;">
+<div style="font-size: 10px; color: #6b7280; font-weight: 700; letter-spacing: 1px; margin-bottom: 12px;">// CONFIGURATION_TIER_01</div>
+<h3 style="color: #ffffff; font-size: 1.6rem; margin: 0 0 6px 0; font-weight: 700; font-family: inherit !important; letter-spacing: -0.5px;">Developer Core</h3>
+<div style="color: #ffffff; font-size: 2.2rem; font-weight: 800; margin-bottom: 20px; font-family: inherit !important; letter-spacing: -1px;">$29 <span style="font-size: 12px; color: #9ca3af; font-weight: normal; letter-spacing: 0;">/ mo</span></div>
+<div style="font-size: 12px; color: #9ca3af; line-height: 1.8; margin-bottom: 24px; flex-grow: 1; font-weight: 400;">
+<div style="margin-bottom: 8px;">✓ Access to Dynamic Inference Router Framework</div>
+<div style="margin-bottom: 8px;">✓ High-Velocity Local Shard Telemetry Testing Canvas</div>
 <div>✓ Cancel infrastructure billing loop at any moment</div>
 </div>
-<button onclick="event.stopPropagation(); openSwarmicModal('Developer Core ($29/mo)')" style="display: block; width: 100%; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.4); color: #ffffff; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; cursor: pointer; margin-top: auto;">Initialize Node</button>
+<button onclick="event.stopPropagation(); openSwarmicModal('Developer Core ($29/mo)')" style="display: block; width: 100%; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.25); color: #ffffff; padding: 14px 24px; border-radius: 10px; font-weight: 600; font-size: 0.95rem; cursor: pointer; margin-top: auto; font-family: inherit !important; transition: background 0.2s, border-color 0.2s;" onmouseenter="this.style.background='rgba(255, 255, 255, 0.18)'; this.style.borderColor='rgba(255, 255, 255, 0.5)';" onmouseleave="this.style.background='rgba(255, 255, 255, 0.08)'; this.style.borderColor='rgba(255, 255, 255, 0.25)';">Initialize Node</button>
 </div>
 
 <!-- Tier 2: Orchestration Suite ($79) -->
-<div onclick="const cards = this.parentElement.children; for(let c of cards){c.style.borderColor=c.getAttribute('data-base-border'); c.style.transform='none'; c.style.boxShadow='none';} this.style.borderColor='rgba(62, 180, 255, 1)'; this.style.boxShadow='0 10px 35px rgba(62, 180, 255, 0.45)';"
-onmouseenter="if(this.style.boxShadow.indexOf('180') === -1) { this.style.transform='translateY(-8px)'; this.style.borderColor='rgba(62, 180, 255, 0.7)'; this.style.boxShadow='0 10px 20px rgba(62, 180, 255, 0.2)'; }"
-onmouseleave="if(this.style.borderColor !== 'rgba(62, 180, 255, 1)') { this.style.transform='none'; this.style.borderColor='rgba(62, 180, 255, 0.2)'; this.style.boxShadow='none'; }"
-data-base-border="rgba(62, 180, 255, 0.2)"
-style="background: rgba(11, 22, 43, 0.3); border: 1px solid rgba(62, 180, 255, 0.2); border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: flex-start; min-height: 100%; box-sizing: border-box; transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease, border-color 0.3s ease; cursor: pointer;">
-<div style="font-size: 10px; color: #3eb4ff; font-weight: bold; margin-bottom: 8px;">// CONFIGURATION_TIER_02</div>
-<h3 style="color: #ffffff; font-size: 1.5rem; margin: 0 0 8px 0; font-weight: bold;">Orchestration Suite</h3>
-<div style="color: #ffffff; font-size: 2rem; font-weight: 800; margin-bottom: 16px;">$79 <span style="font-size: 11px; color: #9ca3af; font-weight: normal;">/ mo</span></div>
-<div style="font-size: 11px; color: #9ca3af; line-height: 1.8; margin-bottom: 20px; flex-grow: 1;">
-<div>✓ Full Cognitive Layer & Context Prompt Caching</div>
-<div>✓ Latency-Optimized Multi-Agent Synchronization Tools</div>
+<div onclick="const cards = this.parentElement.children; for(let c of cards){c.style.borderColor=c.getAttribute('data-base-border'); c.style.transform='none'; c.style.boxShadow='none'; c.style.background='rgba(11, 22, 43, 0.45)';} this.style.borderColor='rgba(62, 180, 255, 1)'; this.style.boxShadow='0 20px 45px rgba(62, 180, 255, 0.35), inset 0 1px 1px rgba(255,255,255,0.2)'; this.style.background='rgba(11, 22, 43, 0.65)';"
+onmouseenter="if(this.style.boxShadow.indexOf('20px') === -1) { this.style.transform='translateY(-10px) scale(1.02)'; this.style.borderColor='rgba(62, 180, 255, 0.8)'; this.style.boxShadow='0 15px 35px rgba(62, 180, 255, 0.25), inset 0 1px 1px rgba(255,255,255,0.15)'; }"
+onmouseleave="if(this.style.borderColor !== 'rgba(62, 180, 255, 1)') { this.style.transform='none'; this.style.borderColor='rgba(62, 180, 255, 0.3)'; this.style.boxShadow='none'; this.style.background='rgba(11, 22, 43, 0.45)'; }"
+data-base-border="rgba(62, 180, 255, 0.3)"
+style="background: rgba(11, 22, 43, 0.45); border: 1px solid rgba(62, 180, 255, 0.3); border-radius: 16px; padding: 28px; display: flex; flex-direction: column; justify-content: flex-start; min-height: 100%; box-sizing: border-box; backdrop-filter: blur(16px) !important; -webkit-backdrop-filter: blur(16px) !important; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease, background 0.4s ease; cursor: pointer;">
+<div style="font-size: 10px; color: #3eb4ff; font-weight: 700; letter-spacing: 1px; margin-bottom: 12px;">// CONFIGURATION_TIER_02</div>
+<h3 style="color: #ffffff; font-size: 1.6rem; margin: 0 0 6px 0; font-weight: 700; font-family: inherit !important; letter-spacing: -0.5px;">Orchestration Suite</h3>
+<div style="color: #ffffff; font-size: 2.2rem; font-weight: 800; margin-bottom: 20px; font-family: inherit !important; letter-spacing: -1px;">$79 <span style="font-size: 12px; color: #9ca3af; font-weight: normal; letter-spacing: 0;">/ mo</span></div>
+<div style="font-size: 12px; color: #9ca3af; line-height: 1.8; margin-bottom: 24px; flex-grow: 1; font-weight: 400;">
+<div style="margin-bottom: 8px;">✓ Full Cognitive Layer & Context Prompt Caching</div>
+<div style="margin-bottom: 8px;">✓ Latency-Optimized Multi-Agent Synchronization Tools</div>
 <div>✓ Complete 14-Day Sovereign Infrastructure Guarantee</div>
 </div>
-<button onclick="event.stopPropagation(); openSwarmicModal('Orchestration Suite ($79/mo)')" style="display: block; width: 100%; background: linear-gradient(90deg, #00d2ff 0%, #0066ff 100%); border: none; color: #ffffff; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; cursor: pointer; margin-top: auto; box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);">Deploy Suite Layer</button>
+<button onclick="event.stopPropagation(); openSwarmicModal('Orchestration Suite ($79/mo)')" style="display: block; width: 100%; background: linear-gradient(90deg, #00d2ff 0%, #0066ff 100%); border: none; color: #ffffff; padding: 14px 24px; border-radius: 10px; font-weight: 600; font-size: 0.95rem; cursor: pointer; margin-top: auto; box-shadow: 0 4px 20px rgba(0, 210, 255, 0.3); font-family: inherit !important; transition: filter 0.2s, transform 0.2s;" onmouseenter="this.style.filter='brightness(1.15)'; this.style.transform='scale(1.01)';" onmouseleave="this.style.filter='none'; this.style.transform='none';">Deploy Suite Layer</button>
 </div>
 
 <!-- Tier 3: Enterprise Substrate ($249) -->
-<div onclick="const cards = this.parentElement.children; for(let c of cards){c.style.borderColor=c.getAttribute('data-base-border'); c.style.transform='none'; c.style.boxShadow='none';} this.style.borderColor='rgba(168, 85, 247, 0.9)'; this.style.boxShadow='0 10px 30px rgba(168, 85, 247, 0.35)';"
-onmouseenter="if(this.style.boxShadow.indexOf('168') === -1) { this.style.transform='translateY(-8px)'; this.style.borderColor='rgba(168, 85, 247, 0.6)'; this.style.boxShadow='0 10px 20px rgba(168, 85, 247, 0.2)'; }"
-onmouseleave="if(this.style.borderColor !== 'rgba(168, 85, 247, 0.9)') { this.style.transform='none'; this.style.borderColor='rgba(168, 85, 247, 0.3)'; this.style.boxShadow='none'; }"
+<div onclick="const cards = this.parentElement.children; for(let c of cards){c.style.borderColor=c.getAttribute('data-base-border'); c.style.transform='none'; c.style.boxShadow='none'; c.style.background='rgba(4, 8, 20, 0.65)';} this.style.borderColor='rgba(168, 85, 247, 0.9)'; this.style.boxShadow='0 20px 40px rgba(168, 85, 247, 0.25), inset 0 1px 1px rgba(255,255,255,0.15)'; this.style.background='rgba(4, 8, 20, 0.85)';"
+onmouseenter="if(this.style.boxShadow.indexOf('20px') === -1) { this.style.transform='translateY(-10px) scale(1.02)'; this.style.borderColor='rgba(168, 85, 247, 0.6)'; this.style.boxShadow='0 15px 30px rgba(168, 85, 247, 0.2), inset 0 1px 1px rgba(255,255,255,0.1)'; }"
+onmouseleave="if(this.style.borderColor !== 'rgba(168, 85, 247, 0.9)') { this.style.transform='none'; this.style.borderColor='rgba(168, 85, 247, 0.3)'; this.style.boxShadow='none'; this.style.background='rgba(4, 8, 20, 0.65)'; }"
 data-base-border="rgba(168, 85, 247, 0.3)"
-style="background: rgba(4, 8, 20, 0.6); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: flex-start; min-height: 100%; box-sizing: border-box; transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease, border-color 0.3s ease; cursor: pointer;">
-<div style="font-size: 10px; color: #a855f7; font-weight: bold; margin-bottom: 8px;">// CONFIGURATION_TIER_03</div>
-<h3 style="color: #ffffff; font-size: 1.5rem; margin: 0 0 8px 0; font-weight: bold;">Enterprise Substrate</h3>
-<div style="color: #ffffff; font-size: 2rem; font-weight: 800; margin-bottom: 16px;">$249 <span style="font-size: 11px; color: #9ca3af; font-weight: normal;">/ mo</span></div>
-<div style="font-size: 11px; color: #9ca3af; line-height: 1.8; margin-bottom: 20px; flex-grow: 1;">
-<div>• Full Deterministic Mesh & Institutional Data Isolation</div>
-<div>• Secure Bare-Metal Execution Node Handshaking</div>
+style="background: rgba(4, 8, 20, 0.65); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 16px; padding: 28px; display: flex; flex-direction: column; justify-content: flex-start; min-height: 100%; box-sizing: border-box; backdrop-filter: blur(16px) !important; -webkit-backdrop-filter: blur(16px) !important; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease, background 0.4s ease; cursor: pointer;">
+<div style="font-size: 10px; color: #a855f7; font-weight: 700; letter-spacing: 1px; margin-bottom: 12px;">// CONFIGURATION_TIER_03</div>
+<h3 style="color: #ffffff; font-size: 1.6rem; margin: 0 0 6px 0; font-weight: 700; font-family: inherit !important; letter-spacing: -0.5px;">Enterprise Substrate</h3>
+<div style="color: #ffffff; font-size: 2.2rem; font-weight: 800; margin-bottom: 20px; font-family: inherit !important; letter-spacing: -1px;">$249 <span style="font-size: 12px; color: #9ca3af; font-weight: normal; letter-spacing: 0;">/ mo</span></div>
+<div style="font-size: 12px; color: #9ca3af; line-height: 1.8; margin-bottom: 24px; flex-grow: 1; font-weight: 400;">
+<div style="margin-bottom: 8px;">• Full Deterministic Mesh & Institutional Data Isolation</div>
+<div style="margin-bottom: 8px;">• Secure Bare-Metal Execution Node Handshaking</div>
 <div>• Premium Dedicated Enterprise Support SLA Channels</div>
 </div>
-<button onclick="event.stopPropagation(); openSwarmicModal('Enterprise Substrate ($249/mo)')" style="display: block; width: 100%; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.4); color: #ffffff; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; cursor: pointer; margin-top: auto;">Launch Substrate</button>
+<button onclick="event.stopPropagation(); openSwarmicModal('Enterprise Substrate ($249/mo)')" style="display: block; width: 100%; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.25); color: #ffffff; padding: 14px 24px; border-radius: 10px; font-weight: 600; font-size: 0.95rem; cursor: pointer; margin-top: auto; font-family: inherit !important; transition: background 0.2s, border-color 0.2s;" onmouseenter="this.style.background='rgba(255, 255, 255, 0.18)'; this.style.borderColor='rgba(255, 255, 255, 0.5)';" onmouseleave="this.style.background='rgba(255, 255, 255, 0.08)'; this.style.borderColor='rgba(255, 255, 255, 0.25)';">Launch Substrate</button>
 </div>
 
 </div>
-
-
 </section>
 <div style="width: 100% !important; text-align: center !important; margin-top: 40px !important; color: #9ca3af !important; font-size: 0.85rem !important; display: block !important; clear: both !important;">Secure billing and automated multi-currency routing powered by enterprise-grade payment infrastructure.</div>
 
