@@ -13,25 +13,13 @@
 <link rel="stylesheet" href="style.css">
 <style>
 html { scroll-behavior: smooth; }
-/* --- CORE GRADIENT LAYOUT CONTAINER --- */
 body {
 background: linear-gradient(180deg, #000000 0%, #16151a 50%, #000000 100%) !important;
 margin: 0;
 padding: 0;
 }
 
-/* PREMIUM MATTE TILES INTEGRATION */
-.sw-enterprise-tile, .card, .container-block, section, div[class*="card"], div[class*="-dashboard"] {
-background: rgba(25, 24, 29, 0.65) !important;
-backdrop-filter: blur(20px) !important;
--webkit-backdrop-filter: blur(20px) !important;
-border: 1px solid rgba(255, 255, 255, 0.04) !important;
-border-radius: 28px !important;
-box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5) !important;
-}
-
-/* --- AMBIENT NEON GLOW ENGINE FOR GLOBAL SHARD REGISTRY --- */
-div[class*="GLOBAL_SHARD_REGISTRY"], .global-shard-container, [id*="GLOBAL_SHARD"] {
+.global-shard-container, div[class*="GLOBAL_SHARD_REGISTRY"], [id*="GLOBAL_SHARD"] {
 position: relative !important;
 background: #0d0c10 !important;
 border-radius: 20px !important;
@@ -40,7 +28,7 @@ border: none !important;
 box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7) !important;
 }
 
-div[class*="GLOBAL_SHARD_REGISTRY"]::before, .global-shard-container::before, [id*="GLOBAL_SHARD"]::before {
+.global-shard-container::before, div[class*="GLOBAL_SHARD_REGISTRY"]::before, [id*="GLOBAL_SHARD"]::before {
 content: '' !important;
 position: absolute !important;
 top: -2px !important;
@@ -53,7 +41,7 @@ z-index: -1 !important;
 opacity: 0.85 !important;
 }
 
-div[class*="GLOBAL_SHARD_REGISTRY"]::after, .global-shard-container::after, [id*="GLOBAL_SHARD"]::after {
+.global-shard-container::after, div[class*="GLOBAL_SHARD_REGISTRY"]::after, [id*="GLOBAL_SHARD"]::after {
 content: '' !important;
 position: absolute !important;
 top: -2px !important;
@@ -66,6 +54,7 @@ z-index: -2 !important;
 filter: blur(15px) !important;
 opacity: 0.45 !important;
 }
+
 
 </style>
 
