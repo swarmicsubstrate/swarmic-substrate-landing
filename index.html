@@ -19,25 +19,25 @@ margin: 0;
 padding: 0;
 }
 
-/* --- INTERACTIVE LIGHT SPOTLIGHT ON HOVER --- */
-[class*="shard"], [class*="SHARD"], [id*="shard"], [id*="SHARD"], [class*="registry"], [class*="REGISTRY"] {
+/* --- FEATURE CARDS RENDERING INTERFACE --- */
+.feature-card, div[class*="feature-card"], .card {
 position: relative !important;
 background: #0d0c10 !important;
 border-radius: 20px !important;
-padding: 24px !important;
+padding: 32px !important;
 border: none !important;
 box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7) !important;
-overflow: hidden !important; /* Locks the spotlight inside the frame */
+overflow: hidden !important;
 }
 
-/* THE LIGHT HOVER SPOTLIGHT MATRIX */
-[class*="shard"]:hover, [class*="SHARD"]:hover, [id*="shard"]:hover, [id*="SHARD"]:hover, [class*="registry"]:hover, [class*="REGISTRY"]:hover {
-background: radial-gradient(circle 180px at var(--x, 50%) var(--y, 50%), rgba(138, 43, 226, 0.15), #0d0c10) !important;
+/* LIGHT SPOTLIGHT TRACKING EFFECT ON HOVER */
+.feature-card:hover, div[class*="feature-card"]:hover, .card:hover {
+background: radial-gradient(circle 220px at var(--x, 50%) var(--y, 50%), rgba(138, 43, 226, 0.15), #0d0c10) !important;
 transition: background 0.1s ease !important;
 }
 
-/* LINEAR INTERACTIVE AMBIENT GLOW BORDERS */
-[class*="shard"]::before, [class*="SHARD"]::before, [id*="shard"]::before, [id*="SHARD"]::before, [class*="registry"]::before, [class*="REGISTRY"]::before {
+/* NEON MULTI-COLOR GRADIENT BORDER CORE */
+.feature-card::before, div[class*="feature-card"]::before, .card::before {
 content: '' !important;
 position: absolute !important;
 top: -2px !important;
@@ -50,8 +50,8 @@ z-index: -1 !important;
 opacity: 0.85 !important;
 }
 
-/* SOFT UNDER-GLOW BLUR BACKGROUND */
-[class*="shard"]::after, [class*="SHARD"]::after, [id*="shard"]::after, [id*="SHARD"]::after, [class*="registry"]::after, [class*="REGISTRY"]::after {
+/* AMBIENT SOFT BACKGROUND BLUR LAYER */
+.feature-card::after, div[class*="feature-card"]::after, .card::after {
 content: '' !important;
 position: absolute !important;
 top: -2px !important;
@@ -64,9 +64,6 @@ z-index: -2 !important;
 filter: blur(15px) !important;
 opacity: 0.45 !important;
 }
-
-
-
 </style>
 
 
