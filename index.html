@@ -13,57 +13,7 @@
 <link rel="stylesheet" href="style.css">
 <style>
 html { scroll-behavior: smooth; }
-body {
-background: linear-gradient(180deg, #000000 0%, #16151a 50%, #000000 100%) !important;
-margin: 0;
-padding: 0;
-}
 
-/* --- FEATURE CARDS RENDERING INTERFACE --- */
-.feature-card, div[class*="feature-card"], .card {
-position: relative !important;
-background: #0d0c10 !important;
-border-radius: 20px !important;
-padding: 32px !important;
-border: none !important;
-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7) !important;
-overflow: hidden !important;
-}
-
-/* LIGHT SPOTLIGHT TRACKING EFFECT ON HOVER */
-.feature-card:hover, div[class*="feature-card"]:hover, .card:hover {
-background: radial-gradient(circle 220px at var(--x, 50%) var(--y, 50%), rgba(138, 43, 226, 0.15), #0d0c10) !important;
-transition: background 0.1s ease !important;
-}
-
-/* NEON MULTI-COLOR GRADIENT BORDER CORE */
-.feature-card::before, div[class*="feature-card"]::before, .card::before {
-content: '' !important;
-position: absolute !important;
-top: -2px !important;
-left: -2px !important;
-right: -2px !important;
-bottom: -2px !important;
-background: linear-gradient(135deg, #0055ff 0%, #8a2be2 40%, #ff5500 100%) !important;
-border-radius: 22px !important;
-z-index: -1 !important;
-opacity: 0.85 !important;
-}
-
-/* AMBIENT SOFT BACKGROUND BLUR LAYER */
-.feature-card::after, div[class*="feature-card"]::after, .card::after {
-content: '' !important;
-position: absolute !important;
-top: -2px !important;
-left: -2px !important;
-right: -2px !important;
-bottom: -2px !important;
-background: linear-gradient(135deg, #0055ff 0%, #8a2be2 40%, #ff5500 100%) !important;
-border-radius: 22px !important;
-z-index: -2 !important;
-filter: blur(15px) !important;
-opacity: 0.45 !important;
-}
 </style>
 
 
