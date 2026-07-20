@@ -95,12 +95,14 @@ overflow-x: hidden;
 }
 
 .logo-icon {
-    width: 32px;
-    height: 32px;
-    color: var(--color-accent); filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.45)) drop-shadow(0 0 50px rgba(135, 149, 240, 0.2));
-
+width: 32px;
+height: 32px;
+color: var(--color-accent);
 }
 
+.logo-icon svg * {
+filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 15px rgba(0, 210, 255, 0.4)) !important;
+}
 .logo-text {
     font-size: 1.125rem;
     font-weight: 600;
