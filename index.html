@@ -2219,7 +2219,71 @@ initial-value: 0deg;
 100% { --border-angle: 360deg; }
 }
 </style>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+// 1. Dynamic Top Metrics Simulation
+setInterval(() => {
+const baseThroughput = 142000;
+const fluxThroughput = Math.floor(Math.random() * 4000);
+const elThroughput = document.getElementById("sv-live-throughput");
+if (elThroughput) elThroughput.textContent = `${(baseThroughput + fluxThroughput).toLocaleString()} t/s`;
 
+const latency = (1.15 + (Math.random() * 0.12)).toFixed(2);
+const elLatency = document.getElementById("sv-live-latency");
+if (elLatency) elLatency.textContent = `${latency}ms`;
+}, 1200);
+
+// 2. SLA Jitter Tracker
+setInterval(() => {
+const jitter = (Math.random() * 0.07 + 0.09).toFixed(2);
+const jitterEl = document.getElementById("sv-live-jitter");
+if (jitterEl) jitterEl.textContent = `${jitter}ms`;
+}, 2500);
+
+// 3. Node 135 Dynamic Silicon Valley Compute Hedge Engine
+const sbScore = document.getElementById("sb-score");
+const sbRaw = document.getElementById("sb-raw-stream");
+const sbJournalism = document.getElementById("sb-journalism-output");
+const sbSocial = document.getElementById("sb-social-output");
+
+if (sbScore && sbRaw && sbJournalism && sbSocial) {
+const siliconValleyStates = [
+{
+score: "COMPUTE_HEDGE: MONITORING_MESH (TIER_3)",
+raw: "{\n \"task_id\": \"swm_infrastructure_mesh\",\n \"framework\": \"vLLM_PagedAttention\",\n \"active_load\": \"Anthropic_Claude_3.5_Sonnet\",\n \"throughput_ratio\": \"994.82 Gbps\",\n \"vram_allocation\": \"84.12%\"\n}",
+journalism: "GENERATED REASONING METRIC (@ T=0.1)\n\nSYSTEM: Analyzing API latency fluctuations and compute pricing spikes across top-tier Silicon Valley LLM providers. Shuffling weight ontologies.",
+social: "[SECURE_FLOW] Predictive load balancing sequence initialized. Ingress payload received at US-East gateway. Scanning cluster node stress profiles. #AIInfra"
+},
+{
+score: "COMPUTE_HEDGE: TARGET_SECURED (100% OK)",
+raw: "{\n \"task_id\": \"swm_infrastructure_mesh\",\n \"framework\": \"NVIDIA_TensorRT-LLM\",\n \"active_load\": \"OpenAI_o3_Ultra\",\n \"failover_target\": \"Anthropic_Claude_4_Opus\",\n \"cost_mitigation\": \"-42.5%\"\n}",
+journalism: "BREAKING: Dynamic Inference Router triggered cross-model failover. Diverted massive inference rendering cycles from Anthropic to OpenAI cluster grid. Latency bottleneck eliminated.",
+social: "[SECURE_FLOW] Multi-model orchestration completed successfully. 100% stable runtime granted. Cost mitigation factor optimized by 4.2x. #AIInfra"
+}
+];
+
+let stateIdx = 0;
+function cycleValleyEngine() {
+const state = siliconValleyStates[stateIdx];
+
+sbScore.innerText = state.score;
+sbRaw.innerText = "Auditing cross-platform model latency bottlenecks...";
+sbJournalism.innerText = "Executing real-time token infrastructure pricing hedge via dynamic inference router...";
+sbSocial.innerText = "Securing multi-currency cloud routing encryption arrays...";
+
+setTimeout(() => {
+sbRaw.innerText = state.raw;
+sbJournalism.innerText = state.journalism;
+sbSocial.innerText = state.social;
+stateIdx = (stateIdx + 1) % siliconValleyStates.length;
+}, 600);
+}
+
+cycleValleyEngine();
+setInterval(cycleValleyEngine, 6500);
+}
+});
+</script>
 
 </body>
 </html>
