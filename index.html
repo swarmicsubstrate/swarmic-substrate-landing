@@ -2230,7 +2230,7 @@ if (elThroughput) {
 elThroughput.textContent = `${(baseThroughput + fluxThroughput).toLocaleString()} T/s`;
 }
 
-const elLatency = document.getElementById("live-latency");
+const elLatency = document.getElementById("sv-live-latency");
 if (elLatency) {
 const latency = (1.12 + (Math.random() * 0.07)).toFixed(2);
 elLatency.textContent = `${latency} ms`;
