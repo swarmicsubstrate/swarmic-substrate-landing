@@ -2221,67 +2221,66 @@ initial-value: 0deg;
 </style>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-// 1. Core Network Synchronized Metrics (Perfectly mapped to your live HTML IDs)
+// 1. Core Network Synchronized Metrics (Mapped directly to your live HTML IDs)
 setInterval(() => {
 const baseThroughput = 142000;
 const fluxThroughput = Math.floor(Math.random() * 4000);
-// Fixed: Changed from sv-live-throughput to live-throughput
 const elThroughput = document.getElementById("live-throughput");
 if (elThroughput) {
 elThroughput.textContent = `${(baseThroughput + fluxThroughput).toLocaleString()} T/s`;
 }
 
-// Fixed: Changed from sv-live-latency to live-latency
 const elLatency = document.getElementById("live-latency");
 if (elLatency) {
-const latency = (1.15 + (Math.random() * 0.09)).toFixed(2);
+const latency = (1.12 + (Math.random() * 0.07)).toFixed(2);
 elLatency.textContent = `${latency} ms`;
 }
 }, 1200);
 
-// 2. Official Swarmic Substrate Core Multi-Agent Orchestrator
+// 2. Next-Gen Multi-Agent Infrastructure Orchestrator (Silicon Valley Standard)
 const sbScore = document.getElementById("sb-score");
 const sbRaw = document.getElementById("sb-raw-stream");
 const sbJournalism = document.getElementById("sb-journalism-output");
 const sbSocial = document.getElementById("sb-social-output");
 
 if (sbScore && sbRaw && sbJournalism && sbSocial) {
-const productionSubstrateStates = [
+const innovationStates = [
 {
-// STATE 1: REASONING ROUTING & TELEMETRY AUDIT
-score: "SWARMIC_CORE: SHARD_OPTIMIZATION (TIER_3)",
-raw: "{\n \"block_id\": \"#994,204.811\",\n \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\",\n \"runtime_engine\": \"HuggingFace_Candle_Rust\",\n \"framework\": \"vLLM_PagedAttention\",\n \"active_shards\": [\"SAN_FRANCISCO_CORE\", \"LONDON_EDGE_7\", \"WARSZAWA_NODE_4\"],\n \"active_gpu_nodes\": \"512/512\",\n \"shard_precision\": \"FP32_BASELINE\"\n}",
-journalism: "GENERATED REASONING METRIC // COGNITIVE LAYER CORE (@ T=0.1)\n\nSYSTEM: Ingesting active telemetry matrix. Mapping isolated execution partitions and verifying cross-region low-latency heartbeat meshes. Initializing declarative boundaries on multi-agent execution nodes.",
-social: "[SYS_FABRIC] Active tensor weights buffer aligned successfully. Deploying localized, quantized sLLM clusters on zero-trust compute substrate layers to eliminate context latency bottlenecks. #SwarmicCore"
+// EVENT A: HIGH VRAM STRAIN - TRANSIENT QUANTIZATION TRIGGERED
+score: "CLUSTER_OPTIMIZER: INFERENCE_PROTECT (FP32 -> INT8)",
+raw: "{\n \"block_id\": \"#994,204.811\",\n \"event\": \"VRAM_OOM_PREVENTION\",\n \"telemetry_node\": \"SAN_FRANCISCO_CORE\",\n \"active_memory_strain\": \"94.8% CRITICAL\",\n \"dynamic_action\": \"FORCE_CONTEXT_QUANTIZATION\",\n \"target_precision\": \"INT8_FALLBACK\"\n}",
+journalism: "INFRASTRUCTURE METRIC WARNING // ACTIVE SHARD MANAGEMENT (@ T=0.1)\n\nWARNING: High-density token ingress detected on Western node pipelines. Substrate orchestration layers autonomously shifted tensor weights memory space from FP32 to quantized INT8 constraints in 1.2ms to preserve VRAM stability.",
+social: "[CORE_FABRIC] Speculative context shrinking active. Mitigated unexpected token spikes on database shard storage. Latency overhead neutralized. Localized cluster grid secured. #AIInfra"
 },
 {
-// STATE 2: MULTI-AGENT DIRECTIVE SUCCESS & HARDWARE QUANTIZATION
-score: "SWARMIC_CORE: COMPUTE_MESH_ACCELERATED (100% OK)",
-raw: "{\n \"block_id\": \"#994,204.811\",\n \"framework\": \"NVIDIA_TensorRT-LLM\",\n \"optimization_mode\": \"DYNAMIC_MIXTURE_OF_EXPERTS\",\n \"active_directive\": \"AUDIT_AND_OPTIMIZE_SHARDS\",\n \"hardware_compression\": \"6.4X\",\n \"throughput_ratio\": \"994.82 Gbps\",\n \"cost_mitigation_factor\": \"4.2X_SAVED\"\n}",
-journalism: "INFRASTRUCTURE LOG COMPILER // ALGORITHMIC METRICS (@ T=0.2)\n\nSUCCESS: Multi-agent directive command matrix executed. Substrate layer successfully audited server cluster anomalies, re-routed broken gateway logs, and optimized database shard storage for the swarm core.",
-social: "[SYS_FABRIC] High-throughput cache deployment finalized. Transformed probabilistic language processing into reliable, auditable state machine transitions under strict regulatory European data sovereignty. #SwarmicCore"
+// EVENT B: SPECULATIVE SAMPLING ENGAGED - THROUGHPUT BURST MAX
+score: "CLUSTER_OPTIMIZER: SPECULATIVE_DRAFTING_ACTIVE (100% OK)",
+raw: "{\n \"block_id\": \"#994,204.811\",\n \"runtime_engine\": \"vLLM_PagedAttention\",\n \"acceleration_mode\": \"SPECULATIVE_DECODING\",\n \"draft_model_weight\": \"sLLM_Quantized_Reasoner_v4\",\n \"vram_efficiency\": \"99.98%\",\n \"tokens_per_sec\": \"198,400 t/s\"\n}",
+journalism: "TELEMETRY COMPILER // HIGH-THROUGHPUT CACHE OPTIMIZATION (@ T=0.2)\n\nSUCCESS: Elastic execution layer successfully engaged concurrent multi-agent speculative decoding loops. Draft model predictive tokens accepted at 92.4% validation ratio. Sub-millisecond response clarity granted.",
+social: "[CORE_FABRIC] Next-generation distributed inference acceleration mesh verified. Vault-level multi-model synchronization loops fully operational under strict data isolation frameworks. Max efficiency achieved. #AIInfra"
 }
 ];
 
 let stateIdx = 0;
-function cycleSubstrateEngine() {
-const state = productionSubstrateStates[stateIdx];
+function cycleInnovationEngine() {
+const state = innovationStates[stateIdx];
 
+// innerText strips raw \n strings and forces beautiful native browser linebreaks
 sbScore.innerText = state.score;
-sbRaw.innerText = "Executing hardware-level tensor quantization vectors...";
-sbJournalism.innerText = "Orchestrating domain-specific multi-agent pipeline matrices...";
-sbSocial.innerText = "Verifying enterprise cryptographic authentication and zero-trust private flows...";
+sbRaw.innerText = "Scanning active memory profiles for token saturation spikes...";
+sbJournalism.innerText = "Re-allocating tensor quantization arrays via local inference layer...";
+sbSocial.innerText = "Compiling multi-model state machine transitions across secure pipelines...";
 
 setTimeout(() => {
 sbRaw.innerText = state.raw;
 sbJournalism.innerText = state.journalism;
 sbSocial.innerText = state.social;
-stateIdx = (stateIdx + 1) % productionSubstrateStates.length;
+stateIdx = (stateIdx + 1) % innovationStates.length;
 }, 600);
 }
 
-cycleSubstrateEngine();
-setInterval(cycleSubstrateEngine, 7000);
+cycleInnovationEngine();
+setInterval(cycleInnovationEngine, 6800);
 }
 });
 </script>
