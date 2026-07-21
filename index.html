@@ -2221,69 +2221,71 @@ initial-value: 0deg;
 </style>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-// 1. Dynamic Top Metrics Simulation
+// 1. Core Network Synchronized Metrics (Perfectly mapped to your live HTML IDs)
 setInterval(() => {
 const baseThroughput = 142000;
 const fluxThroughput = Math.floor(Math.random() * 4000);
-const elThroughput = document.getElementById("sv-live-throughput");
-if (elThroughput) elThroughput.textContent = `${(baseThroughput + fluxThroughput).toLocaleString()} t/s`;
+// Fixed: Changed from sv-live-throughput to live-throughput
+const elThroughput = document.getElementById("live-throughput");
+if (elThroughput) {
+elThroughput.textContent = `${(baseThroughput + fluxThroughput).toLocaleString()} T/s`;
+}
 
-const latency = (1.15 + (Math.random() * 0.12)).toFixed(2);
-const elLatency = document.getElementById("sv-live-latency");
-if (elLatency) elLatency.textContent = `${latency}ms`;
+// Fixed: Changed from sv-live-latency to live-latency
+const elLatency = document.getElementById("live-latency");
+if (elLatency) {
+const latency = (1.15 + (Math.random() * 0.09)).toFixed(2);
+elLatency.textContent = `${latency} ms`;
+}
 }, 1200);
 
-// 2. SLA Jitter Tracker
-setInterval(() => {
-const jitter = (Math.random() * 0.07 + 0.09).toFixed(2);
-const jitterEl = document.getElementById("sv-live-jitter");
-if (jitterEl) jitterEl.textContent = `${jitter}ms`;
-}, 2500);
-
-// 3. Node 135 Dynamic Silicon Valley Compute Hedge Engine
+// 2. Official Swarmic Substrate Core Multi-Agent Orchestrator
 const sbScore = document.getElementById("sb-score");
 const sbRaw = document.getElementById("sb-raw-stream");
 const sbJournalism = document.getElementById("sb-journalism-output");
 const sbSocial = document.getElementById("sb-social-output");
 
 if (sbScore && sbRaw && sbJournalism && sbSocial) {
-const siliconValleyStates = [
+const productionSubstrateStates = [
 {
-score: "COMPUTE_MESH: ANTHROPIC_ENTERPRISE_SYNC",
-raw: "{\n \"task_id\": \"swm_partner_mesh\",\n \"framework\": \"vLLM_PagedAttention\",\n \"integrated_model\": \"Anthropic_Claude_3.5_Sonnet\",\n \"status\": \"STABLE_SYNCHRONIZATION\",\n \"throughput_rate\": \"114,250 t/s\"\n}",
-journalism: "GENERATED REASONING METRIC (@ T=0.1)\n\nSYSTEM: Orchestrating high-performance enterprise workflows. Optimizing token delivery streams and context window alignment across active Anthropic API shard registries.",
-social: "[CORE_FABRIC] Strategic infrastructure alignment with Anthropic model architectures verified. Secure data routing pipelines performing at optimal production parameters. #AIInfra"
+// STATE 1: REASONING ROUTING & TELEMETRY AUDIT
+score: "SWARMIC_CORE: SHARD_OPTIMIZATION (TIER_3)",
+raw: "{\n \"block_id\": \"#994,204.811\",\n \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\",\n \"runtime_engine\": \"HuggingFace_Candle_Rust\",\n \"framework\": \"vLLM_PagedAttention\",\n \"active_shards\": [\"SAN_FRANCISCO_CORE\", \"LONDON_EDGE_7\", \"WARSZAWA_NODE_4\"],\n \"active_gpu_nodes\": \"512/512\",\n \"shard_precision\": \"FP32_BASELINE\"\n}",
+journalism: "GENERATED REASONING METRIC // COGNITIVE LAYER CORE (@ T=0.1)\n\nSYSTEM: Ingesting active telemetry matrix. Mapping isolated execution partitions and verifying cross-region low-latency heartbeat meshes. Initializing declarative boundaries on multi-agent execution nodes.",
+social: "[SYS_FABRIC] Active tensor weights buffer aligned successfully. Deploying localized, quantized sLLM clusters on zero-trust compute substrate layers to eliminate context latency bottlenecks. #SwarmicCore"
 },
 {
-score: "COMPUTE_MESH: OPENAI_COGNITIVE_ACCELERATION",
-raw: "{\n \"task_id\": \"swm_partner_mesh\",\n \"framework\": \"NVIDIA_TensorRT-LLM\",\n \"integrated_model\": \"OpenAI_o3_Ultra\",\n \"status\": \"MAX_EFFICIENCY_GRANTED\",\n \"throughput_rate\": \"142,500 t/s\"\n}",
-journalism: "INFRASTRUCTURE LOG COMPILER (@ T=0.2)\n\nSYSTEM: Seamless multi-agent pipeline optimization completed. Swarmic substrate layer successfully scaled active operational routing loops alongside OpenAI o3 infrastructure.",
-social: "[CORE_FABRIC] Advanced token orchestration grid online. Verified cross-platform cryptographic handshake across secure enterprise OpenAI routing gateways. #AIInfra"
+// STATE 2: MULTI-AGENT DIRECTIVE SUCCESS & HARDWARE QUANTIZATION
+score: "SWARMIC_CORE: COMPUTE_MESH_ACCELERATED (100% OK)",
+raw: "{\n \"block_id\": \"#994,204.811\",\n \"framework\": \"NVIDIA_TensorRT-LLM\",\n \"optimization_mode\": \"DYNAMIC_MIXTURE_OF_EXPERTS\",\n \"active_directive\": \"AUDIT_AND_OPTIMIZE_SHARDS\",\n \"hardware_compression\": \"6.4X\",\n \"throughput_ratio\": \"994.82 Gbps\",\n \"cost_mitigation_factor\": \"4.2X_SAVED\"\n}",
+journalism: "INFRASTRUCTURE LOG COMPILER // ALGORITHMIC METRICS (@ T=0.2)\n\nSUCCESS: Multi-agent directive command matrix executed. Substrate layer successfully audited server cluster anomalies, re-routed broken gateway logs, and optimized database shard storage for the swarm core.",
+social: "[SYS_FABRIC] High-throughput cache deployment finalized. Transformed probabilistic language processing into reliable, auditable state machine transitions under strict regulatory European data sovereignty. #SwarmicCore"
 }
 ];
 
 let stateIdx = 0;
-function cycleValleyEngine() {
-const state = siliconValleyStates[stateIdx];
+function cycleSubstrateEngine() {
+const state = productionSubstrateStates[stateIdx];
 
 sbScore.innerText = state.score;
-sbRaw.innerText = "Optimizing cross-platform infrastructure allocation...";
-sbJournalism.innerText = "Synchronizing partner network API pipelines...";
-sbSocial.innerText = "Verifying enterprise cryptographic authentication layers...";
+sbRaw.innerText = "Executing hardware-level tensor quantization vectors...";
+sbJournalism.innerText = "Orchestrating domain-specific multi-agent pipeline matrices...";
+sbSocial.innerText = "Verifying enterprise cryptographic authentication and zero-trust private flows...";
 
 setTimeout(() => {
 sbRaw.innerText = state.raw;
 sbJournalism.innerText = state.journalism;
 sbSocial.innerText = state.social;
-stateIdx = (stateIdx + 1) % siliconValleyStates.length;
+stateIdx = (stateIdx + 1) % productionSubstrateStates.length;
 }, 600);
 }
 
-cycleValleyEngine();
-setInterval(cycleValleyEngine, 6500);
+cycleSubstrateEngine();
+setInterval(cycleSubstrateEngine, 7000);
 }
 });
 </script>
+
 
 
 </body>
