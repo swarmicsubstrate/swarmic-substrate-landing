@@ -2221,23 +2221,50 @@ initial-value: 0deg;
 </style>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-// 1. Core Network Synchronized Metrics (Mapped directly to your live HTML IDs)
+// 1. Dynamic Top Metrics Simulation (For live-throughput and live-latency)
 setInterval(() => {
 const baseThroughput = 142000;
 const fluxThroughput = Math.floor(Math.random() * 4000);
-const elThroughput = document.getElementById("live-throughput");
+const elThroughput = document.getElementById("live-throughput") || document.getElementById("sv-live-throughput");
 if (elThroughput) {
 elThroughput.textContent = `${(baseThroughput + fluxThroughput).toLocaleString()} T/s`;
 }
 
-const elLatency = document.getElementById("sv-live-latency");
-if (elLatency) {
+const elTopLatency = document.getElementById("live-latency");
+if (elTopLatency) {
 const latency = (1.12 + (Math.random() * 0.07)).toFixed(2);
-elLatency.textContent = `${latency} ms`;
+elTopLatency.textContent = `${latency} ms`;
 }
 }, 1200);
 
-// 2. Next-Gen Multi-Agent Infrastructure Orchestrator (Silicon Valley Standard)
+// 2. ULTRA-SAFE BOTTOM LATENCY TRACKER (Wymuszony start dolnego licznika)
+setInterval(() => {
+// Sprawdzamy wszystkie możliwe kombinacje ID, które mogą być w Twoim HTML
+const elBottomLatency = document.getElementById("sv-live-latency") ||
+document.getElementById("live-latency-counter") ||
+document.getElementById("bottom-latency");
+
+const nextLatency = (1.12 + (Math.random() * 0.07)).toFixed(2);
+
+if (elBottomLatency) {
+// Jeśli skrypt znalazł właściwe ID, od razu wstrzykuje tam ruchomą liczbę
+elBottomLatency.textContent = `${nextLatency} ms`;
+} else {
+// AWARYJNE ROZWIĄZANIE: Jeśli w HTML nie ma żadnego ID, skrypt sam przeszukuje
+// całą stronę, lokalizuje tekst "0.11ms" i zamienia go na żywy licznik!
+const allSpans = document.getElementsByTagName("span");
+for (let i = 0; i < allSpans.length; i++) {
+if (allSpans[i].textContent.includes("0.11ms") || allSpans[i].textContent.includes("ms")) {
+if (allSpans[i].parentNode.textContent.includes("EU-WEST LATENCY")) {
+allSpans[i].textContent = `${nextLatency} ms`;
+break;
+}
+}
+}
+}
+}, 1300);
+
+// 3. Official Swarmic Substrate Core Multi-Agent Orchestrator
 const sbScore = document.getElementById("sb-score");
 const sbRaw = document.getElementById("sb-raw-stream");
 const sbJournalism = document.getElementById("sb-journalism-output");
@@ -2246,14 +2273,12 @@ const sbSocial = document.getElementById("sb-social-output");
 if (sbScore && sbRaw && sbJournalism && sbSocial) {
 const innovationStates = [
 {
-// EVENT A: HIGH VRAM STRAIN - TRANSIENT QUANTIZATION TRIGGERED
 score: "CLUSTER_OPTIMIZER: INFERENCE_PROTECT (FP32 -> INT8)",
 raw: "{\n \"block_id\": \"#994,204.811\",\n \"event\": \"VRAM_OOM_PREVENTION\",\n \"telemetry_node\": \"SAN_FRANCISCO_CORE\",\n \"active_memory_strain\": \"94.8% CRITICAL\",\n \"dynamic_action\": \"FORCE_CONTEXT_QUANTIZATION\",\n \"target_precision\": \"INT8_FALLBACK\"\n}",
 journalism: "INFRASTRUCTURE METRIC WARNING // ACTIVE SHARD MANAGEMENT (@ T=0.1)\n\nWARNING: High-density token ingress detected on Western node pipelines. Substrate orchestration layers autonomously shifted tensor weights memory space from FP32 to quantized INT8 constraints in 1.2ms to preserve VRAM stability.",
 social: "[CORE_FABRIC] Speculative context shrinking active. Mitigated unexpected token spikes on database shard storage. Latency overhead neutralized. Localized cluster grid secured. #AIInfra"
 },
 {
-// EVENT B: SPECULATIVE SAMPLING ENGAGED - THROUGHPUT BURST MAX
 score: "CLUSTER_OPTIMIZER: SPECULATIVE_DRAFTING_ACTIVE (100% OK)",
 raw: "{\n \"block_id\": \"#994,204.811\",\n \"runtime_engine\": \"vLLM_PagedAttention\",\n \"acceleration_mode\": \"SPECULATIVE_DECODING\",\n \"draft_model_weight\": \"sLLM_Quantized_Reasoner_v4\",\n \"vram_efficiency\": \"99.98%\",\n \"tokens_per_sec\": \"198,400 t/s\"\n}",
 journalism: "TELEMETRY COMPILER // HIGH-THROUGHPUT CACHE OPTIMIZATION (@ T=0.2)\n\nSUCCESS: Elastic execution layer successfully engaged concurrent multi-agent speculative decoding loops. Draft model predictive tokens accepted at 92.4% validation ratio. Sub-millisecond response clarity granted.",
@@ -2264,8 +2289,6 @@ social: "[CORE_FABRIC] Next-generation distributed inference acceleration mesh v
 let stateIdx = 0;
 function cycleInnovationEngine() {
 const state = innovationStates[stateIdx];
-
-// innerText strips raw \n strings and forces beautiful native browser linebreaks
 sbScore.innerText = state.score;
 sbRaw.innerText = "Scanning active memory profiles for token saturation spikes...";
 sbJournalism.innerText = "Re-allocating tensor quantization arrays via local inference layer...";
@@ -2278,7 +2301,6 @@ sbSocial.innerText = state.social;
 stateIdx = (stateIdx + 1) % innovationStates.length;
 }, 600);
 }
-
 cycleInnovationEngine();
 setInterval(cycleInnovationEngine, 6800);
 }
