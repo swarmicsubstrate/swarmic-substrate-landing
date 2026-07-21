@@ -1643,11 +1643,8 @@ if (elLatency) elLatency.innerHTML = latency + ' <span style="font-size: 12px; f
 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
 }
 </style>
-<!-- ===============================================================================
-SWARMIC SUBSTRATE LLC // SECTION 04 // LIVE SAAS SHOWCASE SHARDS
-=============================================================================== -->
 <style>
-.sportsbook-engine-section {
+.ledger-engine-section {
 padding: 4rem 2rem;
 max-width: 1400px;
 margin: 0 auto;
@@ -1655,15 +1652,15 @@ position: relative;
 z-index: 98 !important;
 font-family: 'Courier New', Courier, monospace;
 }
-.sportsbook-grid {
+.ledger-grid {
 display: grid;
 grid-template-columns: 1fr;
 gap: 2rem;
 }
 @media (min-width: 1024px) {
-.sportsbook-grid { grid-template-columns: 1fr 1fr 1fr; }
+.ledger-grid { grid-template-columns: 1fr 1fr; }
 }
-.sportsbook-card {
+.ledger-card {
 background: rgba(8, 8, 12, 0.95) !important;
 backdrop-filter: blur(12px);
 border: 1px solid rgba(138, 43, 226, 0.25);
@@ -1671,21 +1668,21 @@ border-radius: 6px;
 overflow: hidden;
 box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
-.sportsbook-header {
+.ledger-header {
 background: rgba(15, 15, 25, 0.95);
 padding: 0.7rem 1rem;
 display: flex;
 align-items: center;
 border-bottom: 1px solid rgba(138, 43, 226, 0.15);
 }
-.sportsbook-title {
+.ledger-title {
 color: #00ffcc;
 font-size: 0.8rem;
 margin-left: 1rem;
 font-weight: bold;
 letter-spacing: 1px;
 }
-sportsbook-body {
+.ledger-body {
 padding: 1.2rem;
 background: rgba(5, 5, 8, 0.5);
 height: 340px;
@@ -1695,67 +1692,42 @@ display: flex;
 flex-direction: column;
 justify-content: flex-start;
 }
-.metric-row {
-display: flex;
-justify-content: space-between;
-margin-bottom: 0.6rem;
-border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
-padding-bottom: 0.4rem;
-}
-.metric-label { color: #8a2be2; font-weight: bold; }
-.metric-value { color: #ffffff; }
-.stream-text { color: #a2a2d0; font-size: 0.85rem; line-height: 1.5; margin: 0; white-space: pre-wrap; }
-.sb-dot { width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; display: inline-block; }
 </style>
 
-<section class="sportsbook-engine-section">
+<section class="ledger-engine-section">
 <div style="margin-bottom: 2rem;">
-<span style="color: #8a2be2; font-size: 0.8rem; font-weight: bold; letter-spacing: 2px;">[ SUBSURFACE_INFRASTRUCTURE // LIVE_COMPUTE_FEED ]</span>
-<h2 style="color: #ffffff; font-size: 1.75rem; margin: 0.5rem 0 0 0; font-family: sans-serif; font-weight: 700;">Distributed Whitelabel Engine Telemetry</h2>
+<span style="color: #8a2be2; font-size: 0.8rem; font-weight: bold;">SWARMIC INFRASTRUCTURE MESH</span>
+<h2 style="color: #ffffff; font-size: 1.75rem; margin: 0.5rem 0 0 0;">Dynamic Inference Router & Compute Hedge Telemetry</h2>
 </div>
-<div class="sportsbook-grid">
-<div class="sportsbook-card">
-<div class="sportsbook-header">
-<span class="sb-dot" style="background: #ff5f56;"></span><span class="sb-dot" style="background: #ffbd2e;"></span><span class="sb-dot" style="background: #27c93f;"></span>
-<span class="sportsbook-title">node135_sportsbook_stream.json</span>
+<div class="ledger-grid">
+<!-- COLUMN 1: STRUCTURAL TELEMETRY STREAM -->
+<div class="ledger-card">
+<div class="ledger-header">
+<span class="sb-dot" style="background: #00ffcc;"></span>
+<span class="ledger-title">node135_compute_hedge.json</span>
 </div>
-<div class="sportsbook-body">
-<div style="background: rgba(2, 2, 4, 0.8); border: 1px solid rgba(138, 43, 226, 0.1); padding: 0.8rem; border-radius: 4px; margin-bottom: 1rem;">
-<div class="metric-row"><span class="metric-label">ENGINE:</span><span class="metric-value">Gemini 2.5 Pro</span></div>
-<div class="metric-row"><span class="metric-label">LIVE_SCORE:</span><span class="metric-value" id="sb-score" style="color: #00ffcc; font-weight: bold;">Spain 0 - 0 Argentina</span></div>
+<div class="ledger-body">
+<div style="background: rgba(2, 2, 4, 0.8); border: 1px solid rgba(138, 43, 226, 0.15); padding: 1rem; border-radius: 4px; margin-bottom: 1rem;">
+<div class="metric-row"><span class="metric-label">CORE_ROUTER:</span><span class="metric-value">Swarmic MoE v2</span></div>
+<div class="metric-row"><span class="metric-label">HEDGE_STATUS:</span><span class="metric-value" style="color: #00ffcc;">COMPUTE_OPTIMIZED</span></div>
 </div>
-<div style="background: rgba(2, 2, 4, 0.8); border: 1px solid rgba(138, 43, 226, 0.1); padding: 0.8rem; border-radius: 4px; max-height: 140px; overflow-y: auto;">
-<pre id="sb-raw-stream" style="font-size: 0.75rem; color: #00ffcc; font-family: monospace; display: block !important; height: 140px !important; max-height: 140px !important; overflow: hidden !important; margin: 0; padding: 0; white-space: pre-wrap;"></pre>
-</div>
-</div>
-</div>
-<div class="sportsbook-card">
-<div class="sportsbook-header">
-<span class="sb-dot" style="background: #ff5f56;"></span><span class="sb-dot" style="background: #ffbd2e;"></span><span class="sb-dot" style="background: #27c93f;"></span>
-<span class="sportsbook-title">gemini-2.5-pro // SPORTS_OUTPUT</span>
-</div>
-<div class="sportsbook-body" style="background: rgba(2, 2, 4, 0.6); overflow-y: auto; max-height: 320px;">
-<div style="font-size: 0.75rem; color: #8a2be2; font-weight: bold; border-bottom: 1px solid rgba(138, 43, 226, 0.1); padding-bottom: 0.3rem; margin-bottom: 0.5rem;">GENERATED JOURNALISM CORE (@ T=0.2)</div>
-<p id="sb-journalism-output" class="stream-text" style="color: #ffffff; margin-bottom: 1rem;"></p>
-<div style="font-size: 0.75rem; color: #00ffcc; font-weight: bold; border-bottom: 1px solid rgba(0, 255, 204, 0.1); padding-bottom: 0.3rem; margin-bottom: 0.5rem;">MULTI-VARIANT SOCIAL MESH</div>
-<p id="sb-social-output" class="stream-text" style="color: #00ffcc; font-style: italic;"></p>
+<div style="font-size: 0.75rem; color: #8a2be2; margin-bottom: 0.5rem; font-weight: bold;">METRIC_FLOW // TELEMETRY:</div>
+<pre id="sb-score" style="font-size: 0.8rem; color: #00ffcc; font-family: monospace; margin: 0 0 1rem 0; font-weight: bold;"></pre>
+<pre id="sb-raw-stream" style="font-size: 0.75rem; color: #a2a2d0; font-family: monospace; margin: 0; white-space: pre-wrap; height: 160px; overflow: hidden;"></pre>
 </div>
 </div>
-<div class="sportsbook-card">
-<div class="sportsbook-header">
-<span class="sb-dot" style="background: #ff5f56;"></span><span class="sb-dot" style="background: #ffbd2e;"></span><span class="sb-dot" style="background: #27c93f;"></span>
-<span class="sportsbook-title">node131_fashion_pipeline.sh</span>
-</div>
-<div class="sportsbook-body">
-<div style="background: rgba(2, 2, 4, 0.8); border: 1px solid rgba(138, 43, 226, 0.1); padding: 0.8rem; border-radius: 4px; margin-bottom: 1rem;">
-<div class="metric-row"><span class="metric-label">PIPELINE:</span><span class="metric-value">Flux.1-Dev + IDM-VTON</span></div>
-<div class="metric-row"><span class="metric-label">GPU_CLUSTER:</span><span class="metric-value" style="color: #00ffcc;">H100_NODES_ACTIVE</span></div>
-<div class="metric-row"><span class="metric-label">RENDER_STATUS:</span><span class="metric-value" id="fashion-status" style="color: #ffbd2e; font-weight: bold;">Awaiting Ingestion</span></div>
-</div>
-<div style="background: rgba(2, 2, 4, 0.8); border: 1px solid rgba(138, 43, 226, 0.1); padding: 0.8rem; border-radius: 4px; max-height: 140px; overflow-y: auto;">
-<pre id="fashion-logs" style="font-size: 0.75rem; color: #a2a2d0; font-family: monospace; display: block !important; height: 140px !important; max-height: 140px !important; overflow: hidden !important; margin: 0; padding: 0; white-space: pre-wrap;"></pre>
 
+<!-- COLUMN 2: COGNITIVE ORCHESTRATION FEED (GEMINI) -->
+<div class="ledger-card">
+<div class="ledger-header">
+<span class="sb-dot" style="background: #9b59b6;"></span>
+<span class="ledger-title">gemini-2.5-pro // COMPUTE_ROUTING</span>
 </div>
+<div class="ledger-body">
+<div style="font-size: 0.75rem; color: #9b59b6; margin-bottom: 0.5rem; font-weight: bold;">GENERATED ORCHESTRATION LOG:</div>
+<p id="sb-journalism-output" class="stream-text" style="font-size: 0.75rem; color: #ffffff; margin: 0 0 1rem 0; white-space: pre-wrap; height: 100px; overflow: hidden;"></p>
+<div style="font-size: 0.75rem; color: #00ffcc; margin-bottom: 0.5rem; font-weight: bold;">MULTI-VARIANT MESH LOG:</div>
+<p id="sb-social-output" class="stream-text" style="font-size: 0.75rem; color: #2ecc71; margin: 0; white-space: pre-wrap; height: 90px; overflow: hidden;"></p>
 </div>
 </div>
 </div>
@@ -2073,99 +2045,50 @@ const jitterEl = document.getElementById("sv-live-jitter");
 if (jitterEl) jitterEl.textContent = `${jitter}ms`;
 }, 2500);
 
-// 2. Node 135 Dynamic Sportsbook Engine Automation
+// 2. Node 135 Dynamic Silicon Valley Compute Hedge Automation
 const sbScore = document.getElementById("sb-score");
 const sbRaw = document.getElementById("sb-raw-stream");
 const sbJournalism = document.getElementById("sb-journalism-output");
 const sbSocial = document.getElementById("sb-social-output");
 
 if (sbScore && sbRaw && sbJournalism && sbSocial) {
-const matchStates = [
+const siliconValleyStates = [
 {
-score: "Spain 0 - 0 Argentina (90')",
-raw: `{\n "minute": 90,\n "possession": {"home": 54, "away": 46},\n "xg": {"home": 1.42, "away": 1.08},\n "event": "Full-time whistle."\n}`,
-journalism: "Compiling full-time telemetry. Tactical matrix shifting towards endurance profiles. Gemini 2.5 Pro initiating high-density analysis...",
-social: "[Twitter A] Full-time in New Jersey. Spain 0-0 Argentina. Extra time awaits. Absolute tactical chess match. #WorldCup"
+score: "COMPUTE_HEDGE: MONITORING_MESH (TIER_3)",
+raw: "{\n \"task_id\": \"swm_fashion_init\",\n \"framework\": \"vLLM_PagedAttention\",\n \"active_load\": \"Anthropic_Claude_3.5_Sonnet\",\n \"throughput_ratio\": \"994.82 Gbps\",\n \"vram_allocation\": \"84.12%\"\n}",
+journalism: "GENERATED REASONING METRIC (@ T=0.1)\n\nSYSTEM: Analyzing API latency fluctuations and compute pricing spikes across top-tier Silicon Valley LLM providers. Evaluation parameters loaded for high-throughput model networks.",
+social: "[SECURE_FLOW] Predictive load balancing sequence initialized. Ingress payload received at US-East gateway. Scanning cluster node stress profiles. #AIInfra"
 },
 {
-score: "Spain 1 - 0 Argentina (106')",
-raw: `{\n "minute": 106,\n "event": "GOAL",\n "team": "Spain",\n "player": "Ferran Torres",\n "assist": "Pedri"\n}`,
-journalism: "BREAKING: Extra-time deadlock broken! Ferran Torres strikes at 106'. Spain shifts to immediate low-block defensive compression grid.",
-social: "[Twitter B] GOAL! Ferran Torres strikes! Spain leads 1-0! Pedri with the assist. MetLife Stadium erupts! #WorldCupFinal"
+score: "COMPUTE_HEDGE: TARGET_SECURED (100% OK)",
+raw: "{\n \"hedge_id\": \"hdg_2026_ai\",\n \"event\": \"COMPUTE_SHIFTED\",\n \"active_load\": \"OpenAI_o3_Ultra\",\n \"failover_target\": \"Anthropic_Claude_4_Opus\",\n \"arbitrage_yield\": \"+34.2%\",\n \"tokens_per_sec\": \"142500 t/s\"\n}",
+journalism: "BREAKING: High-throughput telemetry grid detected network degradation across Anthropic clusters. Swarmic layer autonomously rerouted 4.2M active reasoning cycles to OpenAI o3 infrastructure. Capital efficiency optimized.",
+social: "[SECURE_FLOW] Automated cross-platform API handshakes granted. Vault-level multi-currency billing token encryption initialized for OpenAI/Anthropic enterprise routing gateways. #AIInfra"
 }
 ];
+
 let stateIdx = 0;
-function cycleSportsbookEngine() {
-const state = matchStates[stateIdx];
-sbScore.textContent = state.score;
-sbRaw.textContent = "Ingesting new match telemetry packet...";
-sbJournalism.textContent = "Executing low-temperature inference routing...";
-sbSocial.textContent = "Compiling cross-platform distribution array...";
+function cycleValleyEngine() {
+const state = siliconValleyStates[stateIdx];
+
+// innerText dba o to, by \n prawidłowo łamało wiersze na ekranie aplikacji
+sbScore.innerText = state.score;
+sbRaw.innerText = "Auditing cross-platform model latency bottlenecks...";
+sbJournalism.innerText = "Executing real-time token infrastructure pricing hedge via dynamic inference router...";
+sbSocial.innerText = "Securing multi-currency cloud routing encryption arrays...";
+
 setTimeout(() => {
-sbRaw.textContent = state.raw;
-sbJournalism.textContent = state.journalism;
-sbSocial.textContent = state.social;
-stateIdx = (stateIdx + 1) % matchStates.length;
+sbRaw.innerText = state.raw;
+sbJournalism.innerText = state.journalism;
+sbSocial.innerText = state.social;
+stateIdx = (stateIdx + 1) % siliconValleyStates.length;
 }, 600);
 }
-cycleSportsbookEngine();
-setInterval(cycleSportsbookEngine, 6500);
+
+cycleValleyEngine();
+setInterval(cycleValleyEngine, 6500);
 }
 
-// 3. Node 131 Fashion AI Engine Automation
-const fStatus = document.getElementById("fashion-status");
-const fLogs = document.getElementById("fashion-logs");
-
-if (fStatus && fLogs) {
-const fashionStates = [
-{ status: "INGESTING", text: "[API] Received target asset: luxury_blazer_red.jpg\n[IDM-VTON] Extracting cloth\ngarment geometric nodes...\n[COMPUTE] Tokenizing\ntexture density profile." },
-{ status: "GENERATING", text: "[Flux.1-Dev] Injected Virtual Model ID: female_cyberpunk_nordic\n[InstantID] Locking hyper-realistic facial structural map...\n[GPU Cluster] Processing latent diffusion steps (12/28)..." },
-{ status: "SUCCESS", text: "[SUCCESS] Photorealistic 8K rendering compiled successfully in 18s" }
-];
-let fIdx = 0;
-function cycleFashionEngine() {
-const fState = fashionStates[fIdx];
-fStatus.textContent = fState.status;
-if (fState.status === "INGESTING") fStatus.style.color = "#ffbd2e";
-if (fState.status === "GENERATING") fStatus.style.color = "#8a2be2";
-if (fState.status === "SUCCESS") fStatus.style.color = "#27c93f";
-fLogs.innerText = fState.text;
-fIdx = (fIdx + 1) % fashionStates.length;
-}
-cycleFashionEngine();
-setInterval(cycleFashionEngine, 4000);
-}
-
-// 4. Chat Agent Ingestion Hook (B2B Liability Shield)
-const msgContainer = document.getElementById("swarmic-bot-messages");
-const promptButtons = document.querySelectorAll('#swarmic-bot-prompts button');
-
-const b2bCompliancePayload = `
-<div style="margin-top: 12px; padding: 10px; background: rgba(5, 5, 8, 0.8); border: 1px solid rgba(138, 43, 226, 0.2); border-radius: 4px; font-family: monospace; font-size: 0.75rem; text-align: left; line-height: 1.4;">
-<div style="color: #8a2be2; font-weight: bold; margin-bottom: 4px;">[B2B_LIABILITY_SHIELD_PROVISIONING]</div>
-<div style="color: #ffffff; margin-bottom: 6px;">Pipeline: [SWARMIC ENGINE] ──► (Raw Tokens) ──► [TENANT SAAS] ──► [COMMERCE / FASHION STORAGE]</div>
-<div style="color: #a2a2d0;">
-Execution Sandboxed. 100% data tracking, localized hosting, and GDPR/RODO end-user legal responsibilities are programmatically shifted to independent white-label tenants. Delaware enterprise core is isolated.
-</div>
-</div>`;
-
-if (promptButtons && msgContainer) {
-promptButtons.forEach(button => {
-button.addEventListener('click', function() {
-setTimeout(() => {
-const botBubbles = msgContainer.querySelectorAll('.cyber-bubble-bot');
-if (botBubbles.length > 0) {
-const latestBotBubble = botBubbles[botBubbles.length - 1];
-if (!latestBotBubble.innerHTML.includes('B2B_LIABILITY_SHIELD_PROVISIONING')) {
-latestBotBubble.innerHTML += b2bCompliancePayload;
-msgContainer.scrollTop = msgContainer.scrollHeight;
-}
-}
-}, 100);
-});
-});
-}
-});
 </script>
 
 
