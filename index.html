@@ -2118,9 +2118,9 @@ const fLogs = document.getElementById("fashion-logs");
 
 if (fStatus && fLogs) {
 const fashionStates = [
-{ status: "INGESTING", text: "[API] Received target asset: luxury_blazer_red.jpg\\n[IDM-VTON] Extracting cloth garment geometric nodes...\\n[COMPUTE] Tokenizing texture density profile." },
-{ status: "GENERATING", text: "[Flux.1-Dev] Injected Virtual Model ID: female_cyberpunk_nordic\\n[InstantID] Locking hyper-realistic facial structural map...\\n[GPU Cluster] Processing latent diffusion steps (12/28)..." },
-{ status: "SUCCESS", text: "[SUCCESS] Photorealistic 8K rendering compiled successfully in 182ms.\\n[API] Dispatching payload matrix to B2B tenant CDN storefront storage cluster." }
+{ status: "INGESTING", text: "[API] Received target asset: luxury_blazer_red.jpg\n[IDM-VTON] Extracting cloth\ngarment geometric nodes...\n[COMPUTE] Tokenizing\ntexture density profile." },
+{ status: "GENERATING", text: "[Flux.1-Dev] Injected Virtual Model ID: female_cyberpunk_nordic\n[InstantID] Locking hyper-realistic facial structural map...\n[GPU Cluster] Processing latent diffusion steps (12/28)..." },
+{ status: "SUCCESS", text: "[SUCCESS] Photorealistic 8K rendering compiled successfully in 18s" }
 ];
 let fIdx = 0;
 function cycleFashionEngine() {
@@ -2129,7 +2129,7 @@ fStatus.textContent = fState.status;
 if (fState.status === "INGESTING") fStatus.style.color = "#ffbd2e";
 if (fState.status === "GENERATING") fStatus.style.color = "#8a2be2";
 if (fState.status === "SUCCESS") fStatus.style.color = "#27c93f";
-fLogs.textContent = fState.text;
+fLogs.innerText = fState.text;
 fIdx = (fIdx + 1) % fashionStates.length;
 }
 cycleFashionEngine();
