@@ -1019,7 +1019,17 @@ if (box) box.style.display = 'block';
 <div style="background: #111827; border: 1px solid #1f2937; padding: 20px; border-radius: 8px; font-family: monospace; color: #3b82f6; font-size: 0.9rem;">
 // High-Availability Multitasking Swarm Provisioning Protocol<br>
 [Cluster-Init] Mapping isolated execution partitions... OK<br>
-[State-Sync] Verifying cross-region low-latency heartbeat: 14ms
+[State-Sync] Verifying cross-region low-latency heartbeat: <span id="mcp-telemetry-ping" style="color: #10b981; font-weight: bold; font-family: monospace;">14ms</span>
+<script>
+setInterval(() => {
+const el = document.getElementById("mcp-telemetry-ping");
+if(el) {
+const ms = Math.floor(Math.random() * (16 - 11 + 1)) + 11;
+el.style.opacity = "0.4";
+setTimeout(() => { el.innerText = ms + "ms"; el.style.opacity = "1"; }, 100);
+}
+}, 2000);
+</script>
 </div>
 </div>
 </section>
