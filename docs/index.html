@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swarmic Substrate — Core API Reference</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background-color: #09090b; color: #f4f4f5; font-family: monospace; font-size: 14px; line-height: 1.6; padding: 40px 24px; }
+.container { max-width: 1024px; margin: 0 auto; }
+header { border-b: 1px solid rgba(16, 185, 129, 0.2); padding-bottom: 24px; margin-bottom: 40px; }
+.badge-prod { background-color: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); padding: 2px 8px; font-size: 12px; font-weight: bold; text-transform: uppercase; border-radius: 4px; display: inline-block; }
+.version { font-size: 12px; color: #71717a; margin-left: 12px; }
+h1 { font-size: 28px; font-weight: 900; color: #f4f4f5; margin-top: 8px; tracking-tight: -0.05em; }
+.subtitle { color: #a1a1aa; font-size: 12px; margin-top: 8px; max-width: 600px; }
+.layout { display: grid; grid-template-columns: 1fr; gap: 32px; }
+@media (min-width: 1024px) { .layout { grid-template-columns: 200px 1fr; } }
+nav { font-size: 12px; border-right: 1px solid #18181b; padding-right: 16px; }
+.nav-title { font-weight: bold; color: #52525b; text-transform: uppercase; letter-spacing: 0.1em; font-size: 10px; margin-bottom: 8px; }
+nav ul { list-style: none; margin-bottom: 16px; }
+nav ul li { color: #a1a1aa; margin-bottom: 8px; cursor: pointer; }
+nav ul li.active { color: #10b981; font-weight: bold; }
+.method { font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; margin-right: 6px; display: inline-block; width: 45px; text-align: center; }
+.method-post { background-color: rgba(16, 185, 129, 0.1); color: #10b981; }
+.method-get { background-color: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+main { display: flex; flex-direction: column; gap: 40px; }
+.auth-box { background-color: rgba(24, 24, 27, 0.3); padding: 24px; border-radius: 8px; border: 1px solid #18181b; }
+.auth-title { font-size: 14px; font-weight: bold; color: #e4e4e7; margin-bottom: 12px; display: flex; items-center: center; gap: 8px; }
+.dot { w: 6px; h: 6px; background-color: #10b981; border-radius: 50%; display: inline-block; width: 6px; height: 6px; }
+.auth-desc { color: #a1a1aa; font-size: 12px; margin-bottom: 16px; }
+.code-block { background-color: #09090b; padding: 16px; border-radius: 6px; border: 1px solid #27272a; font-size: 12px; color: #6ee7b7; overflow-x: auto; }
+.endpoint-header { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+.endpoint-title { font-size: 16px; font-weight: bold; color: #e4e4e7; }
+.endpoint-desc { color: #a1a1aa; font-size: 12px; margin-bottom: 16px; }
+.grid-code { display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 768px) { .grid-code { grid-template-columns: 1fr 1fr; } }
+.code-title { font-size: 10px; color: #52525b; font-weight: bold; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+.code-pre { background-color: #18181b; padding: 16px; border-radius: 6px; border: 1px solid #27272a; font-size: 12px; color: #d4d4d8; overflow-x: auto; }
+.code-pre.response { color: #10b981; }
+footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid #18181b; text-align: center; font-size: 10px; color: #52525b; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div>
+<span class="badge-prod">Production</span>
+<span class="version">v1.4.2-stable</span>
+</div>
+<h1>Swarmic Core API Reference</h1>
+<p class="subtitle">Automated bare-metal node orchestration, token-efficient routing protocols, and Model Context Protocol (MCP) handshake endpoints for autonomous multi-agent microarchitectures.</p>
+</header>
+
+<div class="layout">
+<nav>
+<div class="nav-title">Welcome</div>
+<ul>
+<li class="active">Quickstart Guide</li>
+<li>Architecture Spec</li>
+</ul>
+<div class="nav-title">Endpoints</div>
+<ul>
+<li style="color: #e4e4e7;"><span class="method method-post">POST</span> /v1/swarm/init</li>
+<li style="color: #e4e4e7;"><span class="method method-get">GET</span> /v1/mesh/status</li>
+</ul>
+</nav>
+
+<main>
+<section class="auth-box">
+<div class="auth-title">
+<span class="dot"></span>
+<span>Global Authentication</span>
+</div>
+<p class="auth-desc">Every inbound request to the Substrate deployment ledger must include a secure bearer cryptokey issued in your dashboard. Authenticate your distributed nodes using the header layout below.</p>
+<div class="code-block">
+Authorization: Bearer sk_substrate_live_4f92a83c11e74b9d09c2a8f3
+</div>
+</section>
+
+<section style="border-top: 1px solid #18181b; padding-top: 32px;">
+<div class="endpoint-header">
+<span class="method method-post" style="font-size: 12px; padding: 4px 8px; width: auto;">POST</span>
+<span class="endpoint-title">/v1/swarm/initialize</span>
+</div>
+<p class="endpoint-desc">Provisions a high-throughput secure bare-metal inference cluster. Deploys tailored context routers mapped to specific distributed multi-agent task structures.</p>
+
+<div class="grid-code">
+<div>
+<div class="code-title">JSON Payload</div>
+<pre class="code-pre">{
+"node_profile": "sLLM-inference-v4",
+"routing_target": "secure-bare-metal",
+"max_vram_allocation": "24GB",
+"mcp_handshake": true,
+"telemetry": "active"
+}</pre>
+</div>
+<div>
+<div class="code-title">Expected Response</div>
+<pre class="code-pre response">{
+"status": "provisioned",
+"cluster_id": "sub-node-01x9",
+"mcp_protocol": "MCP/2026",
+"allocated_nodes": 42,
+"latency_ms": 1.42
+}</pre>
+</div>
+</div>
+</section>
+</main>
+</div>
+
+<footer>
+Swarmic Substrate LLC, Delaware. Technical Developer Infrastructure Documentation. All API calls adhere to international B2B technical standards.
+</footer>
+</div>
+</body>
+</html>
