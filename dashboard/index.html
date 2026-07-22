@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swarmic Substrate — Central Node Console</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background-color: #09090b; color: #f4f4f5; font-family: monospace; font-size: 12px; padding: 24px; }
+.container { max-width: 1152px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
+
+/* Top Header Bar */
+.header-bar { background-color: rgba(24, 24, 27, 0.4); p-4; padding: 16px; border-radius: 12px; border: 1px solid #18181b; display: flex; flex-direction: column; gap: 16px; }
+@media (min-width: 640px) { .header-bar { flex-direction: row; justify-content: space-between; align-items: center; } }
+.header-left { display: flex; align-items: center; gap: 12px; }
+.pulse-dot { width: 12px; height: 12px; background-color: #10b981; border-radius: 50%; box-shadow: 0 0 10px rgba(16, 185, 129, 0.5); }
+.header-title { font-size: 14px; font-weight: 900; letter-spacing: 0.05em; color: #e4e4e7; }
+.header-sub { font-size: 10px; color: #52525b; margin-top: 2px; }
+.plan-box { background-color: #09090b; padding: 8px 12px; border-radius: 8px; border: 1px solid #27272a; text-align: right; }
+.plan-title { color: #52525b; display: block; font-size: 9px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em; }
+.plan-name { color: #10b981; font-weight: 900; font-size: 12px; }
+
+/* Metric Grid Row */
+.metric-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 640px) { .metric-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .metric-grid { grid-template-columns: repeat(4, 1fr); } }
+.metric-card { background-color: rgba(24, 24, 27, 0.5); padding: 16px; border-radius: 12px; border: 1px solid #18181b; display: flex; flex-direction: column; justify-content: space-between; }
+.metric-label { font-size: 10px; color: #52525b; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em; }
+.metric-value { font-size: 20px; font-weight: 900; color: #10b981; margin-top: 6px; }
+.metric-value.white { color: #f4f4f5; }
+.metric-sub { font-size: 9px; color: #27272a; margin-top: 4px; }
+.metric-sub.live { color: rgba(16, 185, 129, 0.8); }
+.ledger-row { font-size: 12px; color: #d4d4d8; font-weight: bold; margin-top: 6px; display: flex; justify-content: space-between; align-items: center; }
+.ledger-badge { font-size: 10px; background-color: #27272a; color: #a1a1aa; padding: 2px 6px; border-radius: 4px; border: 1px solid #3f3f46; }
+.ledger-link { font-size: 9px; color: #52525b; text-decoration: underline; cursor: pointer; margin-top: 8px; }
+.ledger-link:hover { color: #10b981; }
+
+/* Architecture Grid Layout Table */
+.table-section { background-color: rgba(24, 24, 27, 0.3); border-radius: 12px; border: 1px solid #18181b; padding: 20px; display: flex; flex-direction: column; gap: 16px; }
+.table-header-row { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #18181b; padding-bottom: 12px; }
+.table-title { font-weight: bold; font-size: 12px; uppercase; color: #a1a1aa; tracking-wider: 0.05em; text-transform: uppercase; }
+.sync-badge { font-size: 10px; background-color: rgba(16, 185, 129, 0.1); color: #10b981; padding: 2px 8px; border-radius: 9999px; font-weight: bold; border: 1px solid rgba(16, 185, 129, 0.2); }
+.overflow-wrapper { overflow-x: auto; }
+table { w-full; width: 100%; border-collapse: collapse; text-align: left; }
+th { font-size: 10px; color: #52525b; font-weight: bold; letter-spacing: 0.05em; pb-3; padding-bottom: 12px; text-transform: uppercase; }
+td { py-4; padding: 16px 0; border-bottom: 1px solid rgba(24, 24, 27, 0.4); color: #d4d4d8; }
+tr:last-child td { border-bottom: none; }
+.node-id { color: #10b981; font-weight: bold; }
+.status-badge { background-color: rgba(16, 185, 129, 0.1); color: #10b981; padding: 4px 8px; border-radius: 4px; font-weight: bold; border: 1px solid rgba(16, 185, 129, 0.2); }
+
+/* Diagnostic Outputs Simulation Log */
+.log-section { background-color: #09090b; padding: 16px; border-radius: 12px; border: 1px solid #18181b; font-family: monospace; font-size: 11px; color: #52525b; display: flex; flex-direction: column; gap: 4px; }
+.log-header { color: #a1a1aa; font-weight: bold; border-bottom: 1px solid #18181b; padding-bottom: 8px; margin-bottom: 8px; display: flex; justify-content: space-between; }
+.log-ready { color: rgba(16, 185, 129, 0.6); }
+
+footer { text-align: center; font-size: 10px; color: #52525b; padding-top: 16px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- Header Bar -->
+<div class="header-bar">
+<div class="header-left">
+<div class="pulse-dot"></div>
+<div>
+<h1 class="header-title">SUBSTRATE CENTRAL ORCHESTRATION CONSOLE</h1>
+<p class="header-sub">Firmware Status: Network Mesh Synchronized</p>
+</div>
+</div>
+<div class="plan-box">
+<span class="plan-title">Active Subscribed Plan</span>
+<span class="plan-name">Developer Core ($29 / mo)</span>
+</div>
+</div>
+
+<!-- Metric Stat Cards -->
+<div class="metric-grid">
+<div class="metric-card">
+<div class="metric-label">Aggregate Grid Throughput</div>
+<div class="metric-value">4,129.82 T/s</div>
+<div class="metric-sub">Global scale ingestion latency: 1.42ms</div>
+</div>
+<div class="metric-card">
+<div class="metric-label">Active Computational Mesh</div>
+<div class="metric-value white">42 / 42 Nodes</div>
+<div class="metric-sub live">● 100% Operational bare-metal layer</div>
+</div>
+<div class="metric-card">
+<div class="metric-label">Token Efficiency Rate</div>
+<div class="metric-value white">87.41%</div>
+<div class="metric-sub">Dynamic optimization array enabled</div>
+</div>
+<div class="metric-card">
+<div>
+<div class="metric-label">Billing Ecosystem</div>
+<div class="ledger-row">
+<span>Ledger: PADDLE INC.</span>
+<span class="ledger-badge">US Account</span>
+</div>
+</div>
+<div class="ledger-link">Access Ledger & Download Historical Invoices</div>
+</div>
+</div>
+
+<!-- Network Table -->
+<div class="table-section">
+<div class="table-header-row">
+<h3 class="table-title">Distributed Node Allocation Framework</h3>
+<span class="sync-badge">Data Synchronized Live</span>
+</div>
+
+<div class="overflow-wrapper">
+<table>
+<thead>
+<tr>
+<th>VIRTUAL NODE CLUSTER ID</th>
+<th>ROUTING PROTOCOL</th>
+<th>GEOGRAPHIC REGION</th>
+<th>VRAM ALLOCATION</th>
+<th style="text-align: right;">OPERATIONAL METRIC STATUS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="node-id">sub-node-01x9-core</td>
+<td>MCP/2026 (Secure Handshake)</td>
+<td>US-East (Delaware Datacenter)</td>
+<td>24GB Dedicated VRAM</td>
+<td style="text-align: right;"><span class="status-badge">● Active</span></td>
+</tr>
+<tr>
+<td class="node-id">sub-node-02x4-edge</td>
+<td>MCP/2026 (Zero Latency Routing)</td>
+<td>EU-Central (Frankfurt Backup Mesh)</td>
+<td>24GB Dedicated VRAM</td>
+<td style="text-align: right;"><span class="status-badge">● Active</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<!-- Diagnostic Log -->
+<div class="log-section">
+<div class="log-header">
+<span>SYSTEM DIAGNOSTIC TELEMETRY LOG</span>
+<span class="log-ready">SYSTEM READY</span>
+</div>
+<div>[08:21:04] INITIATING SECURE COMPUTE HANDSHAKE WITH REGISTRATION AGENT DELAWARE...</div>
+<div>[08:21:05] VERIFYING MERCHANT OF RECORD ROUTING LAYER: PADDLE SEAMLESS GATEWAY...</div>
+<div>[08:21:06] VERIFYING REVENUE LEDGER MATRIX FOR CORPORATE ACCOUNT ENTITY... PASSED.</div>
+<div>[08:21:07] CLUSTER OPERATION SYNCHRONIZED: SUCCESSFUL B2B INFRASTRUCTURE ALLOCATION.</div>
+</div>
+
+<!-- Footer -->
+<footer>
+Swarmic Substrate LLC • Registered Corporate Entity Newark, Delaware, USA • Enterprise Administration Portal.
+</footer>
+</div>
+</body>
+</html>
