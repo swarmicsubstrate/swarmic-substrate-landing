@@ -10,10 +10,11 @@ body { background-color: #09090b; color: #f4f4f5; font-family: monospace; font-s
 .container { max-width: 1152px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
 
 /* Top Header Bar */
-.header-bar { background-color: rgba(24, 24, 27, 0.4); p-4; padding: 16px; border-radius: 12px; border: 1px solid #18181b; display: flex; flex-direction: column; gap: 16px; }
+.header-bar { background-color: rgba(24, 24, 27, 0.4); padding: 16px; border-radius: 12px; border: 1px solid #18181b; display: flex; flex-direction: column; gap: 16px; }
 @media (min-width: 640px) { .header-bar { flex-direction: row; justify-content: space-between; align-items: center; } }
 .header-left { display: flex; align-items: center; gap: 12px; }
-.pulse-dot { width: 12px; height: 12px; background-color: #10b981; border-radius: 50%; box-shadow: 0 0 10px rgba(16, 185, 129, 0.5); }
+.pulse-dot { width: 12px; height: 12px; background-color: #10b981; border-radius: 50%; box-shadow: 0 0 10px rgba(16, 185, 129, 0.5); animation: pulseGlow 2s infinite; }
+@keyframes pulseGlow { 0% { transform: scale(0.9); opacity: 0.6; } 50% { transform: scale(1.1); opacity: 1; box-shadow: 0 0 15px rgba(16, 185, 129, 0.8); } 100% { transform: scale(0.9); opacity: 0.6; } }
 .header-title { font-size: 14px; font-weight: 900; letter-spacing: 0.05em; color: #e4e4e7; }
 .header-sub { font-size: 10px; color: #52525b; margin-top: 2px; }
 .plan-box { background-color: #09090b; padding: 8px 12px; border-radius: 8px; border: 1px solid #27272a; text-align: right; }
@@ -26,7 +27,7 @@ body { background-color: #09090b; color: #f4f4f5; font-family: monospace; font-s
 @media (min-width: 1024px) { .metric-grid { grid-template-columns: repeat(4, 1fr); } }
 .metric-card { background-color: rgba(24, 24, 27, 0.5); padding: 16px; border-radius: 12px; border: 1px solid #18181b; display: flex; flex-direction: column; justify-content: space-between; }
 .metric-label { font-size: 10px; color: #52525b; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em; }
-.metric-value { font-size: 20px; font-weight: 900; color: #10b981; margin-top: 6px; }
+.metric-value { font-size: 20px; font-weight: 900; color: #10b981; margin-top: 6px; font-variant-numeric: tabular-nums; }
 .metric-value.white { color: #f4f4f5; }
 .metric-sub { font-size: 9px; color: #27272a; margin-top: 4px; }
 .metric-sub.live { color: rgba(16, 185, 129, 0.8); }
@@ -38,20 +39,22 @@ body { background-color: #09090b; color: #f4f4f5; font-family: monospace; font-s
 /* Architecture Grid Layout Table */
 .table-section { background-color: rgba(24, 24, 27, 0.3); border-radius: 12px; border: 1px solid #18181b; padding: 20px; display: flex; flex-direction: column; gap: 16px; }
 .table-header-row { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #18181b; padding-bottom: 12px; }
-.table-title { font-weight: bold; font-size: 12px; uppercase; color: #a1a1aa; tracking-wider: 0.05em; text-transform: uppercase; }
+.table-title { font-weight: bold; font-size: 12px; color: #a1a1aa; tracking-wider: 0.05em; text-transform: uppercase; }
 .sync-badge { font-size: 10px; background-color: rgba(16, 185, 129, 0.1); color: #10b981; padding: 2px 8px; border-radius: 9999px; font-weight: bold; border: 1px solid rgba(16, 185, 129, 0.2); }
 .overflow-wrapper { overflow-x: auto; }
-table { w-full; width: 100%; border-collapse: collapse; text-align: left; }
-th { font-size: 10px; color: #52525b; font-weight: bold; letter-spacing: 0.05em; pb-3; padding-bottom: 12px; text-transform: uppercase; }
-td { py-4; padding: 16px 0; border-bottom: 1px solid rgba(24, 24, 27, 0.4); color: #d4d4d8; }
+table { width: 100%; border-collapse: collapse; text-align: left; }
+th { font-size: 10px; color: #52525b; font-weight: bold; letter-spacing: 0.05em; padding-bottom: 12px; text-transform: uppercase; }
+td { padding: 16px 0; border-bottom: 1px solid rgba(24, 24, 27, 0.4); color: #d4d4d8; font-variant-numeric: tabular-nums; }
 tr:last-child td { border-bottom: none; }
 .node-id { color: #10b981; font-weight: bold; }
 .status-badge { background-color: rgba(16, 185, 129, 0.1); color: #10b981; padding: 4px 8px; border-radius: 4px; font-weight: bold; border: 1px solid rgba(16, 185, 129, 0.2); }
 
 /* Diagnostic Outputs Simulation Log */
-.log-section { background-color: #09090b; padding: 16px; border-radius: 12px; border: 1px solid #18181b; font-family: monospace; font-size: 11px; color: #52525b; display: flex; flex-direction: column; gap: 4px; }
+.log-section { background-color: #09090b; padding: 16px; border-radius: 12px; border: 1px solid #18181b; font-family: monospace; font-size: 11px; color: #52525b; display: flex; flex-direction: column; gap: 4px; height: 150px; overflow-y: hidden; }
 .log-header { color: #a1a1aa; font-weight: bold; border-bottom: 1px solid #18181b; padding-bottom: 8px; margin-bottom: 8px; display: flex; justify-content: space-between; }
 .log-ready { color: rgba(16, 185, 129, 0.6); }
+.log-stream { display: flex; flex-direction: column; gap: 2px; color: #4b5563; }
+.log-line-new { color: #9ca3af; }
 
 footer { text-align: center; font-size: 10px; color: #52525b; padding-top: 16px; }
 </style>
@@ -78,17 +81,17 @@ footer { text-align: center; font-size: 10px; color: #52525b; padding-top: 16px;
 <div class="metric-grid">
 <div class="metric-card">
 <div class="metric-label">Aggregate Grid Throughput</div>
-<div class="metric-value">4,129.82 T/s</div>
-<div class="metric-sub">Global scale ingestion latency: 1.42ms</div>
+<div class="metric-value" id="throughput-val">4,129.82 T/s</div>
+<div class="metric-sub" id="latency-val">Global scale ingestion latency: 1.42ms</div>
 </div>
 <div class="metric-card">
 <div class="metric-label">Active Computational Mesh</div>
-<div class="metric-value white">42 / 42 Nodes</div>
+<div class="metric-value white" id="nodes-val">42 / 42 Nodes</div>
 <div class="metric-sub live">● 100% Operational bare-metal layer</div>
 </div>
 <div class="metric-card">
 <div class="metric-label">Token Efficiency Rate</div>
-<div class="metric-value white">87.41%</div>
+<div class="metric-value white" id="efficiency-val">87.41%</div>
 <div class="metric-sub">Dynamic optimization array enabled</div>
 </div>
 <div class="metric-card">
@@ -147,16 +150,7 @@ footer { text-align: center; font-size: 10px; color: #52525b; padding-top: 16px;
 <span>SYSTEM DIAGNOSTIC TELEMETRY LOG</span>
 <span class="log-ready">SYSTEM READY</span>
 </div>
+<div class="log-stream" id="log-box">
 <div>[08:21:04] INITIATING SECURE COMPUTE HANDSHAKE WITH REGISTRATION AGENT DELAWARE...</div>
 <div>[08:21:05] VERIFYING MERCHANT OF RECORD ROUTING LAYER: PADDLE SEAMLESS GATEWAY...</div>
 <div>[08:21:06] VERIFYING REVENUE LEDGER MATRIX FOR CORPORATE ACCOUNT ENTITY... PASSED.</div>
-<div>[08:21:07] CLUSTER OPERATION SYNCHRONIZED: SUCCESSFUL B2B INFRASTRUCTURE ALLOCATION.</div>
-</div>
-
-<!-- Footer -->
-<footer>
-Swarmic Substrate LLC • Registered Corporate Entity Newark, Delaware, USA • Enterprise Administration Portal.
-</footer>
-</div>
-</body>
-</html>
