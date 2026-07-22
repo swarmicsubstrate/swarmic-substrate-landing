@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swarmic Substrate — B2B Enterprise AIaaS Commercial Framework</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background-color: #09090b; color: #f4f4f5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; padding: 32px 24px; line-height: 1.6; }
+.container { max-width: 960px; margin: 0 auto; display: flex; flex-direction: column; gap: 64px; }
+
+/* Navigation Header Bar */
+.header-bar { background-color: rgba(24, 24, 27, 0.4); padding: 18px 24px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.03); display: flex; flex-direction: column; gap: 16px; backdrop-filter: blur(12px); }
+@media (min-width: 768px) { .header-bar { flex-direction: row; justify-content: space-between; align-items: center; } }
+.header-left { display: flex; align-items: center; gap: 12px; }
+.pulse-dot { width: 8px; height: 8px; background-color: #10b981; border-radius: 50%; box-shadow: 0 0 10px #10b981; }
+.header-title { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: #e4e4e7; text-transform: uppercase; }
+.nav-links { display: flex; gap: 24px; }
+.nav-link { color: #a1a1aa; text-decoration: none; font-size: 12px; font-weight: 500; transition: color 0.2s; }
+.nav-link:hover { color: #10b981; }
+.nav-link.active { color: #10b981; font-weight: 600; }
+
+/* Main Intro Hero */
+.hero-section { display: flex; flex-direction: column; gap: 16px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 40px; }
+.hero-tag { font-size: 11px; color: #10b981; font-weight: 600; text-transform: uppercase; letter-spacing: 0.2em; }
+.hero-title-main { font-size: 36px; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; line-height: 1.1; }
+.hero-desc { font-size: 16px; color: #a1a1aa; font-weight: 400; line-height: 1.6; }
+
+/* Two-Tier Core Offering Architecture */
+.architecture-showcase { display: grid; grid-template-columns: 1fr; gap: 32px; }
+@media (min-width: 768px) { .architecture-showcase { grid-template-columns: 1fr 1fr; } }
+.arch-card { background-color: rgba(255, 255, 255, 0.01); border: 1px solid rgba(255,255,255,0.02); padding: 32px; border-radius: 24px; display: flex; flex-direction: column; gap: 20px; }
+.arch-num { font-size: 10px; color: #71717a; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+.arch-title { font-size: 20px; font-weight: 700; color: #ffffff; letter-spacing: -0.01em; }
+.arch-text { color: #71717a; font-size: 13px; line-height: 1.6; }
+.arch-list { list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 13px; color: #a1a1aa; border-top: 1px solid rgba(255,255,255,0.03); padding-top: 20px; }
+.arch-list strong { color: #ffffff; font-weight: 600; }
+
+/* Whitelabel Business Model Arbitrage Explainer */
+.arbitrage-banner { background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.00) 100%); border: 1px solid rgba(255,255,255,0.03); padding: 40px; border-radius: 24px; display: flex; flex-direction: column; gap: 12px; }
+.banner-title { font-size: 16px; font-weight: 700; color: #ffffff; letter-spacing: -0.01em; }
+.banner-text { font-size: 14px; color: #71717a; line-height: 1.6; }
+
+/* Subscription Catalog Grid */
+.pricing-section-title { font-size: 18px; font-weight: 700; color: #ffffff; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 12px; letter-spacing: -0.01em; }
+.pricing-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
+@media (min-width: 768px) { .pricing-grid { grid-template-columns: repeat(3, 1fr); } }
+.price-card { background-color: rgba(255, 255, 255, 0.01); border: 1px solid rgba(255,255,255,0.02); padding: 32px 24px; border-radius: 24px; display: flex; flex-direction: column; gap: 24px; }
+.price-card.featured { border-color: rgba(47, 128, 237, 0.3); box-shadow: 0 0 30px rgba(47, 128, 237, 0.03); }
+.tier-cat { font-size: 10px; color: #71717a; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; }
+.tier-title { font-size: 22px; font-weight: 700; color: #ffffff; letter-spacing: -0.02em; }
+.tier-price-box { margin-top: 4px; display: flex; align-items: baseline; gap: 4px; }
+.tier-amt { font-size: 32px; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; }
+.tier-period { font-size: 13px; color: #52525b; }
+.tier-desc { font-size: 13px; color: #71717a; line-height: 1.5; }
+.repo-title { font-size: 11px; color: #ffffff; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 8px; border-top: 1px solid rgba(255,255,255,0.03); padding-top: 20px; }
+.repo-list { list-style: none; display: flex; flex-direction: column; gap: 16px; font-size: 13px; color: #a1a1aa; }
+.repo-list strong { color: #ffffff; display: block; margin-bottom: 4px; font-weight: 600; }
+.cta-btn { display: block; text-align: center; background-color: rgba(255,255,255,0.02); color: #ffffff; border: 1px solid rgba(255,255,255,0.05); padding: 14px; border-radius: 12px; font-size: 13px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+.cta-btn:hover { background-color: rgba(255,255,255,0.05); }
+.price-card.featured .cta-btn { background-color: #2f80ed; color: #ffffff; border: none; }
+.price-card.featured .cta-btn:hover { opacity: 0.9; }
+
+footer { text-align: center; font-size: 11px; color: #3f3f46; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 40px; margin-top: 32px; letter-spacing: 0.02em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- Navigation Header Bar -->
+<div class="header-bar">
+<div class="header-left">
+<div class="pulse-dot"></div>
+<h1 class="header-title">Swarmic Substrate // Commercial Matrix</h1>
+</div>
+<div class="nav-links">
+<a href="/" class="nav-link">Home Presence</a>
+<a href="/offer/" class="nav-link active">B2B Offer Matrix</a>
+<a href="/docs/" class="nav-link">API Specification</a>
+<a href="/dashboard/" class="nav-link">Central Console</a>
+</div>
+</div>
+
+<!-- Main Intro Hero -->
+<div class="hero-section">
+<span class="hero-tag">Product Architecture Framework</span>
+<h2 class="hero-title-main">Enterprise Full-Stack AIaaS Partnership</h2>
+<p class="hero-desc">
+Swarmic Substrate integrates raw infrastructure resource isolation with cognitive workflow execution layers into a single B2B platform. We combine private cloud hardware allocations (bare-metal GPU processing) with a high-performance repository of pre-trained multi-agent swarm blueprints. This unified operational environment allows corporate entities and agencies to instantly scale custom automation without external dependencies or data leak vectors.
+</p>
+</div>
+
+<!-- Two-Tier Core Offering Showcase -->
+<div class="architecture-showcase">
+
+<!-- Pillar 1: Cloud Substrate -->
+<div class="arch-card">
+<span class="arch-num">[Pillar 01 // Hardware Infrastructure]</span>
+<h3 class="arch-title">Sovereign Cloud Substrate</h3>
+<p class="arch-text">
+Lease high-performance, private bare-metal computing environments engineered for total execution isolation. This secure hardware layer supplies the dedicated VRAM capacity and processing throughput required to execute enterprise automated networks natively without performance latency.
+</p>
+<ul class="arch-list">
+<li>• Hardware-Isolated <strong>Microcontainer Runspaces</strong></li>
+<li>• Native <strong>Model Context Protocol (MCP)</strong> Routing</li>
+<li>• High-Throughput <strong>GPU Compute Resource Tiers</strong></li>
+</ul>
+</div>
+
+<!-- Pillar 2: AI Models Swarm -->
+<div class="arch-card">
+<span class="arch-num">[Pillar 02 // Cognitive Registries]</span>
+<h3 class="arch-title">Multi-Agent Swarm Registry</h3>
+<p class="arch-text">
+Access an advanced, pre-configured repository of autonomous, interconnected AI model swarm frameworks. These algorithmic networks cooperate seamlessly inside isolated context environments, executing systematic data compiling, continuous transaction mapping, and institutional regulatory auditing.
+</p>
+<ul class="arch-list">
+<li>• Deterministic <strong>Compliance Tracking Logs</strong></li>
+<li>• Specialized <strong>Commercial Ad-Tech Automation</strong></li>
+<li>• High-Value <strong>B2B Billing Verification Swarms</strong></li>
+</ul>
+</div>
+
+</div>
+
+<!-- Whitelabel Business Model Arbitrage Explainer -->
+<div class="arbitrage-banner">
+<h4 class="banner-title">Whitelabel Distribution & MSRP Profit Arbitrage</h4>
+<p class="banner-text">
+  Our entire infrastructure cluster and model repository operates under strict brand isolation. B2B corporate partners, digital marketing agencies, and software houses buy wholesale compute and execution packages via flat monthly sub-billing tiers, white-label the technology, and deploy individual model runs to their corporate consumers. Partners secure maximum commercial scaling by setting localized enterprise retail rates (MSRP Target: $45.00 to $3,500.00 per workflow closure) while maintaining a flat, predictable operational backend cost structure managed securely via Paddle.
+</p>
+</div>
+
+<!-- Subscription Matrix Catalog -->
+<div style="display: flex; flex-direction: column; gap: 24px;">
+<h3 class="pricing-section-title">Wholesale B2B Subscription Layers</h3>
+<div class="pricing-grid">
+
+<!-- Tier 1: Developer Core -->
+<div class="price-card">
+<div>
+<span class="tier-cat">Category 01 // Core Volume</span>
+<h4 class="tier-title">Developer Core</h4>
+<div class="tier-price-box">
+<span class="tier-amt">$29</span>
+<span class="tier-period"> / month</span>
+</div>
+<p class="tier-desc" style="margin-top: 12px;">Engineered for independent software vendors and standalone developers packaging standard marketing content automation frameworks.</p>
+</div>
+<span class="repo-title">Allocated Runspace:</span>
+<ul class="repo-list">
+<li>
+<strong>• 5,000 Model Executions / mo</strong>
+Assigned directly to localized high-throughput infrastructure blocks [NODE_01_CORE].
+</li>
+<li>
+<strong>• Creative Ad-Tech Swarms</strong>
+Automates e-commerce catalog text compilation, descriptive metadata matrices, and conversion hook optimization.
+</li>
+</ul>
+<a href="/dashboard/" class="cta-btn">Initialize Developer Core</a>
+</div>
+
+<!-- Tier 2: Orchestration Suite -->
+<div class="price-card featured">
+<div>
+<span class="tier-cat" style="color: #2f80ed;">Category 02 // High Allocation</span>
+<h4 class="tier-title">Orchestration Suite</h4>
+<div class="tier-price-box">
+<span class="tier-amt">$79</span>
+<span class="tier-period"> / month</span>
+</div>
+<p class="tier-desc" style="margin-top: 12px;">Optimized for digital agencies, fleet logistics providers, and professional contractors requiring secure data auditing nodes.</p>
+</div>
+<span class="repo-title">All Cat 01 Features Plus:</span>
+<ul class="repo-list">
+<li>
+<strong>• 25,000 Model Executions / mo</strong>
+Assigned directly to dedicated network edge pipelines [NODE_02_EDGE].
+</li>
+<li>
+<strong>• Logistics & Billing Protection</strong>
+Automates corporate mileage ledger auditing, transit document resolution workflows, and pre-litigation payment notices.
+</li>
+</ul>
+<a href="/dashboard/" class="cta-btn">Initialize Suite Layer</a>
+</div>
+
+<!-- Tier 3: Enterprise Substrate -->
+<div class="price-card">
+<div>
+<span class="tier-cat">Category 03 // Institutional-Grade</span>
+<h4 class="tier-title">Enterprise Substrate</h4>
+<div class="tier-price-box">
+<span class="tier-amt">$249</span>
+<span class="tier-period"> / month</span>
+</div>
+<p class="tier-desc" style="margin-top: 12px;">Tailored for massive corporate data architectures, venture-backed startups, and strict legal compliance operations.</p>
+</div>
+<span class="repo-title">Full Repository Unlocked:</span>
+<ul class="repo-list">
+<li>
+<strong>• 100,000 Model Executions / mo</strong>
+Assigned directly to isolated high-security availability environments [NODE_03_AZ].
+</li>
+<li>
+<strong>• Deep Tech Corporate Governance</strong>
+Executes European AI Act compliance structure audits, cross-border corporate GDPR transfer validations, and venture funding capital simulators.
+</li>
+</ul>
+<a href="/dashboard/" class="cta-btn">Initialize Enterprise Layer</a>
+</div>
+
+</div>
+</div>
+
+<!-- Footer -->
+<footer>
+Swarmic Substrate LLC • Registered Corporate Identity • Newark, Delaware, USA • Billing Operations Ledgered via Paddle Inc (Merchant of Record).
+</footer>
+</div>
+</body>
+</html>
