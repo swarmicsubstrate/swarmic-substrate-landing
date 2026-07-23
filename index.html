@@ -1399,7 +1399,7 @@ card.style.borderColor = 'rgba(255, 255, 255, 0.02)';
 });
 });
 </script>
-
+<canvas id="hyperdrive-interactive-engine" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 1; mix-blend-mode: screen;"></canvas>
 <!-- Dynamic Mouse-Tracking Spotlight Script -->
 <script>
 document.querySelectorAll('.swarm-card-core').forEach(card => {
@@ -1411,6 +1411,8 @@ card.style.setProperty('--x', `${x}px`);
 card.style.setProperty('--y', `${y}px`);
 });
 });
+    
+
 / ============================================================
 // THE ULTIMATE IMPRESSIVE INTERACTIVE ENGINE — PART 01
 // ============================================================
