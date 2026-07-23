@@ -1467,7 +1467,8 @@ requestAnimationFrame(loop);
 size(); loop(); window.addEventListener("resize", size);
 }
 
-// 3. AUTO-FALLBACK MULTI-AGENT CARD INTERACTION & TELEMETRY
+/ 3. AUTO-FALLBACK MULTI-AGENT CARD INTERACTION & TELEMETRY
+window.addEventListener("load", () => {
 const targets = document.querySelectorAll("div[data-base-border]");
 const logs = [
 ["[*NODE_01_CORE] Thread: Active", "[*NODE_01] VRAM Allocation: 42.1%"],
@@ -1525,6 +1526,8 @@ b.style.opacity = "1";
 }, 4000);
 }
 });
+});
+
 </script>
 <!-- ================================================================= --><!-- ================================================================= -->
 <!-- PRESTIGIOUS LIVE DEMO / INTERACTIVE SWARM SIMULATION TERMINAL -->
