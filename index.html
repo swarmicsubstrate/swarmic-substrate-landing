@@ -1411,6 +1411,104 @@ card.style.setProperty('--x', `${x}px`);
 card.style.setProperty('--y', `${y}px`);
 });
 });
+/ ============================================================
+// THE ULTIMATE IMPRESSIVE INTERACTIVE ENGINE — PART 01
+// ============================================================
+
+const noiseOverlay = document.createElement("div");
+noiseOverlay.style.cssText = "position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 9999; opacity: 0.022; background-image: url('data:image/svg+xml,%3Csvg viewBox=\\'0 0 200 200\\' xmlns=\\'http://w3.org\\'%3E%3Cfilter id=\\'noiseFilter\\'%3E%3CfeTurbulence type=\\'fractalNoise\\' baseFrequency=\\'0.85\\' numOctaves=\\'4\\' stitchTiles=\\'stitch\\'/%3E%3C/filter%3E%3Crect width=\\'100%25\\' height=\\'100%25\\' filter=\\'url(%23noiseFilter)\\'/%3E%3C/svg%3E');";
+document.body.appendChild(noiseOverlay);
+
+const mouseGlow = document.createElement("div");
+mouseGlow.style.cssText = "position: fixed; top: 0; left: 0; width: 600px; height: 600px; background: radial-gradient(circle, rgba(47, 128, 237, 0.04) 0%, rgba(139, 92, 246, 0.01) 50%, transparent 100%); border-radius: 50%; pointer-events: none; z-index: 0; transform: translate(-50%, -50%); mix-blend-mode: screen; transition: opacity 1s ease; opacity: 0; will-change: transform;";
+document.body.appendChild(mouseGlow);
+
+document.addEventListener("mousemove", (e) => {
+mouseGlow.style.opacity = "1";
+mouseGlow.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+});
+document.addEventListener("mouseleave", () => { mouseGlow.style.opacity = "0"; });
+
+const sandboxPortal = document.getElementById("swarm-hyperdrive-canvas-portal") || document.body;
+const canvas = document.createElement("canvas");
+canvas.style.cssText = "position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; mix-blend-mode: screen;";
+sandboxPortal.style.position = "relative";
+sandboxPortal.insertBefore(canvas, sandboxPortal.firstChild);
+
+if (canvas) {
+const ctx = canvas.getContext("2d");
+let particlesArray = [];
+let globalSpeedModifier = 1.0;
+const mouseRadius = { x: null, y: null, radius: 140 };
+
+window.addEventListener("mousemove", function(e) {
+const rect = canvas.getBoundingClientRect();
+mouseRadius.x = e.clientX - rect.left;
+mouseRadius.y = e.clientY - rect.top;
+});
+
+function initCanvas() {
+canvas.width = canvas.parentElement.clientWidth;
+canvas.height = canvas.parentElement.clientHeight || 600;
+particlesArray = [];
+let num = Math.min(Math.floor((canvas.width * canvas.height) / 9000), 140);
+const colors = ["rgba(59, 130, 246, 0.25)", "rgba(16, 185, 129, 0.25)", "rgba(139, 92, 246, 0.25)"];
+for (let i = 0; i < num; i++) {
+let size = (Math.random() * 2.5) + 1;
+particlesArray.push({
+x: Math.random() * canvas.width, y: Math.random() * canvas.height,
+dx: (Math.random() * 0.6) - 0.3, dy: (Math.random() * 0.6) - 0.3,
+size: size, baseSize: size, color: colors[Math.floor(Math.random() * colors.length)]
+});
+}
+}
+window.accelerateParticles = function(mod) { globalSpeedModifier = mod; };
+
+function animate() {
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+particlesArray.forEach(p => {
+let mdx = mouseRadius.x - p.x; let mdy = mouseRadius.y - p.y;
+let dist = Math.sqrt(mdx * mdx + mdy * mdy);
+if (dist < mouseRadius.radius) {
+let f = (mouseRadius.radius - dist) / mouseRadius.radius;
+p.x -= (mdx / dist) * f * 4; p.y -= (mdy / dist) * f * 4;
+p.size = p.baseSize * 1.8;
+} else if (p.size > p.baseSize) { p.size -= 0.1; }
+p.x += p.dx * globalSpeedModifier; p.y += p.dy * globalSpeedModifier;
+if (p.x > canvas.width || p.x < 0) p.dx = -p.dx;
+if (p.y > canvas.height || p.y < 0) p.dy = -p.dy;
+ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+ctx.fillStyle = p.color; ctx.fill();
+});
+requestAnimationFrame(animate);
+}
+initCanvas(); animate();
+window.addEventListener("resize", initCanvas);
+}
+
+// 3. LIVE MICRO-COPY TELEMETRY STREAM ROTATOR
+const allCards = document.querySelectorAll(".swarm-card-core");
+const pools = [
+["[NODE_01_CORE] Thread: Active", "[NODE_01] VRAM Allocation: 42.1%", "[NODE_01] Trace Handshake: 100%"],
+["[NODE_02_EDGE] Vector Sync: Live", "[NODE_02] Pipeline Load: 68.4%", "[NODE_02] Stream Pulse: Active"],
+["[NODE_03_AZ] Compute Bonded: True", "[NODE_03] Isolate Runspace: Secure", "[NODE_03] Cluster Power: Maximum"]
+];
+if(allCards.length >= 3) {
+allCards.forEach((card, i) => {
+const desc = card.querySelector("p");
+if(desc) {
+const b = document.createElement("div");
+b.style.cssText = "font-family: monospace; font-size: 10px; margin-top: 12px; font-weight: bold; letter-spacing: 0.05em; transition: opacity 0.4s ease;";
+b.style.color = i === 0 ? "#2f80ed" : (i === 1 ? "#10b981" : "#8b5cf6");
+b.innerText = pools[i][0]; desc.parentNode.insertBefore(b, desc.nextSibling);
+let idx = 0;
+setInterval(() => {
+b.style.opacity = "0.3";
+setTimeout(() => { idx = (idx + 1) % pools[i].length; b.innerText = pools[i][idx]; b.style.opacity = "1"; }, 400);
+}, 4000);
+}
+});
+}
 
 </script>
 <!-- ================================================================= --><!-- ================================================================= -->
