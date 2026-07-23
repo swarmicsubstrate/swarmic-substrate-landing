@@ -1468,7 +1468,7 @@ size(); loop(); window.addEventListener("resize", size);
 }
 
 // 3. AUTO-FALLBACK MULTI-AGENT CARD INTERACTION & TELEMETRY
-    const targets = document.querySelectorAll("div[data-base-border*='rgba']");
+ const targets = document.querySelectorAll("div[data-base-border*='rgba']");
 const logs = [
 ["[NODE_01_CORE] Thread: Active", "[NODE_01] VRAM Allocation: 42.1%"],
 ["[NODE_02_EDGE] Vector Sync: Live", "[NODE_02] Pipeline Load: 68.4%"],
@@ -1484,27 +1484,19 @@ card.addEventListener('mouseleave', () => { card.style.transform = 'translateY(0
 
 const priceContainer = Array.from(card.querySelectorAll("div")).find(d => d.style.fontSize.includes("2.2rem"));
 
-
-const allDivs = Array.from(card.querySelectorAll("div"));
-const priceContainer = allDivs.find(d => d.style.color.includes("fff") || d.style.fontSize.includes("2.2"));
+if(priceContainer && logs[i]) {
 const b = document.createElement("div");
 b.style.cssText = "font-family: monospace; font-size: 10px; margin-top: -12px; margin-bottom: 24px; font-weight: bold; letter-spacing: 0.05em; transition: opacity 0.4s ease; text-align: left; width: 100%;";
 b.style.color = i === 0 ? "#2f80ed" : (i === 1 ? "#10b981" : "#8b5cf6");
-b.innerText = logs[i][0];
-priceContainer.parentNode.insertBefore(b, priceContainer.nextSibling);
+b.innerText = logs[i][0]; priceContainer.parentNode.insertBefore(b, priceContainer.nextSibling);
 
 let idx = 0;
 setInterval(() => {
 b.style.opacity = "0.3";
-setTimeout(() => {
-idx = (idx + 1) % logs[i].length;
-b.innerText = logs[i][idx];
-b.style.opacity = "1";
-}, 400);
+setTimeout(() => { idx = (idx + 1) % logs[i].length; b.innerText = logs[i][idx]; b.style.opacity = "1"; }, 400);
 }, 4000);
 }
-});
-
+});  
 
 </script>
 <!-- ================================================================= --><!-- ================================================================= -->
