@@ -1482,6 +1482,9 @@ card.style.transform = `translateY(-12px) rotateX(${tx}deg) rotateY(${ty}deg)`;
 });
 card.addEventListener('mouseleave', () => { card.style.transform = 'translateY(0) rotateX(0deg) rotateY(0deg)'; });
 
+const priceContainer = Array.from(card.querySelectorAll("div")).find(d => d.style.fontSize.includes("2.2rem"));
+
+
 const allDivs = Array.from(card.querySelectorAll("div"));
 const priceContainer = allDivs.find(d => d.style.color.includes("fff") || d.style.fontSize.includes("2.2"));
 const b = document.createElement("div");
