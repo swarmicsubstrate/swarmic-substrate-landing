@@ -1468,7 +1468,7 @@ size(); loop(); window.addEventListener("resize", size);
 }
 
 // 3. AUTO-FALLBACK MULTI-AGENT CARD INTERACTION & TELEMETRY
-const targets = document.querySelectorAll('.swarm-card-core, .feature-card, .price-card');
+    const targets = document.querySelectorAll("div[data-base-border*='rgba']");
 const logs = [
 ["[NODE_01_CORE] Thread: Active", "[NODE_01] VRAM Allocation: 42.1%"],
 ["[NODE_02_EDGE] Vector Sync: Live", "[NODE_02] Pipeline Load: 68.4%"],
@@ -1476,19 +1476,20 @@ const logs = [
 ];
 targets.forEach((card, i) => {
 card.addEventListener('mousemove', e => {
-const r = card.getBoundingClientRect(); const x = e.clientX - r.left; const y = e.clientY - r.top;
-const tx = ((y - (r.height/2)) / (r.height/2)) * -7; const ty = ((x - (r.width/2)) / (r.width/2)) * 7;
-card.style.transform = `scale(1.015) rotateX(${tx}deg) rotateY(${ty}deg)`;
-card.style.boxShadow = `0 30px 60px rgba(0,0,0,0.5), 0 0 25px rgba(47,128,237,0.05)`;
+const rect = card.getBoundingClientRect(); const x = e.clientX - rect.left; const y = e.clientY - rect.top;
+const tx = ((y - (rect.height/2)) / (rect.height/2)) * -6; const ty = ((x - (rect.width/2)) / (rect.width/2)) * 6;
+card.style.transform = `translateY(-12px) rotateX(${tx}deg) rotateY(${ty}deg)`;
 });
-card.addEventListener('mouseleave', () => { card.style.transform = 'scale(1) rotateX(0deg) rotateY(0deg)'; card.style.boxShadow = 'none'; });
+card.addEventListener('mouseleave', () => { card.style.transform = 'translateY(0) rotateX(0deg) rotateY(0deg)'; });
 
-const desc = card.querySelector("h3");
-if(desc && logs[i]) {
+const priceContainer = Array.from(card.querySelectorAll("div")).find(d => d.style.fontSize.includes("2.2rem"));
+
+if(priceContainer && logs[i]) {
 const b = document.createElement("div");
-b.style.cssText = "font-family: monospace; font-size: 10px; margin-top: 12px; font-weight: bold; letter-spacing: 0.05em; transition: opacity 0.4s ease;";
+b.style.cssText = "font-family: monospace; font-size: 10px; margin-top: -12px; margin-bottom: 24px; font-weight: bold; letter-spacing: 0.05em; transition: opacity 0.4s ease; text-align: left; width: 100%;";
 b.style.color = i === 0 ? "#2f80ed" : (i === 1 ? "#10b981" : "#8b5cf6");
-b.innerText = logs[i][0]; desc.parentNode.insertBefore(b, desc.nextSibling);
+b.innerText = logs[i][0]; priceContainer.parentNode.insertBefore(b, priceContainer.nextSibling);
+
 let idx = 0;
 setInterval(() => {
 b.style.opacity = "0.3";
@@ -1496,7 +1497,6 @@ setTimeout(() => { idx = (idx + 1) % logs[i].length; b.innerText = logs[i][idx];
 }, 4000);
 }
 });
-   
 
 </script>
 <!-- ================================================================= --><!-- ================================================================= -->
