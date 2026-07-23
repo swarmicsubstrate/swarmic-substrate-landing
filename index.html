@@ -1399,7 +1399,9 @@ card.style.borderColor = 'rgba(255, 255, 255, 0.02)';
 });
 });
 </script>
-<canvas id="hyperdrive-interactive-engine" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 1; mix-blend-mode: screen;"></canvas>
+<div id="swarm-hyperdrive-canvas-portal" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 1; mix-blend-mode: screen;">
+<canvas id="hyperdrive-interactive-engine" style="width: 100%; height: 100%;"></canvas>
+</div>
 <!-- Dynamic Mouse-Tracking Spotlight Script -->
 <script>
 document.querySelectorAll('.swarm-card-core').forEach(card => {
