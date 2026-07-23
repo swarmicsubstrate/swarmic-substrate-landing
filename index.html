@@ -1324,6 +1324,81 @@ transform: translateX(4px);
 stroke: #ffffff !important;
 }
 </style>
+<!-- KINETIC SUBSCRIPTION GRID ORCHESTRATOR — TREND 2026 ENTERPRISE COMPLIANCE -->
+<style>
+/* Activating hardware-accelerated 3D space across the entire container */
+.features-grid, .swarm-grid-core, .pricing-grid {
+perspective: 1200px !important;
+transform-style: preserve-3d !important;
+}
+
+/* Upgrading all systemic cards into dynamic glass substrates */
+.swarm-card-core, .feature-card, .price-card {
+position: relative !important;
+transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease !important;
+transform-style: preserve-3d !important;
+will-change: transform, box-shadow;
+}
+
+/* Ambient Saturation Layer for Cupertino Backlight Effect */
+.swarm-card-core::before, .feature-card::before, .price-card::before {
+content: '' !important;
+position: absolute !important;
+top: 0; left: 0; right: 0; bottom: 0;
+border-radius: inherit !important;
+background: radial-gradient(600px circle at var(--ux-mouse-x, 0px) var(--ux-mouse-y, 0px), rgba(47, 128, 237, 0.08), transparent 50%) !important;
+z-index: 1 !important;
+pointer-events: none !important;
+opacity: 0;
+transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Activate glow boundary strictly on focus matrix */
+.swarm-card-core:hover::before, .feature-card:hover::before, .price-card:hover::before {
+opacity: 1 !important;
+}
+
+/* Isolating internal content elements from clipping plane distortions */
+.swarm-card-core > *, .feature-card > *, .price-card > * {
+transform: translateZ(25px) !important;
+position: relative !important;
+z-index: 2 !important;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+// Select all operational layout blocks across the entire interface
+const dynamicCards = document.querySelectorAll('.swarm-card-core, .feature-card, .price-card');
+
+dynamicCards.forEach(card => {
+card.addEventListener('mousemove', e => {
+const rect = card.getBoundingClientRect();
+const x = e.clientX - rect.left;
+const y = e.clientY - rect.top;
+
+// Kinetic spatial tilt coefficient calculations
+const widthMid = rect.width / 2;
+const heightMid = rect.height / 2;
+const tiltAxisX = ((y - heightMid) / heightMid) * -8; // Locked to safe 8deg maximum tilt
+const tiltAxisY = ((x - widthMid) / widthMid) * 8;
+
+card.style.setProperty('--ux-mouse-x', `${x}px`);
+card.style.setProperty('--ux-mouse-y', `${y}px`);
+card.style.transform = `scale(1.015) rotateX(${tiltAxisX}deg) rotateY(${tiltAxisY}deg)`;
+card.style.boxShadow = `0 30px 60px rgba(0, 0, 0, 0.5), 0 0 30px rgba(47, 128, 237, 0.06), inset 0 0 12px rgba(255,255,255,0.02)`;
+card.style.borderColor = "rgba(255, 255, 255, 0.09)";
+});
+
+card.addEventListener('mouseleave', () => {
+// Instant smooth elastic dampening to rest matrix position
+card.style.transform = 'scale(1) rotateX(0deg) rotateY(0deg)';
+card.style.boxShadow = 'none';
+card.style.borderColor = 'rgba(255, 255, 255, 0.02)';
+});
+});
+});
+</script>
 
 <!-- Dynamic Mouse-Tracking Spotlight Script -->
 <script>
