@@ -1482,9 +1482,8 @@ card.style.transform = `translateY(-12px) rotateX(${tx}deg) rotateY(${ty}deg)`;
 });
 card.addEventListener('mouseleave', () => { card.style.transform = 'translateY(0) rotateX(0deg) rotateY(0deg)'; });
 
-const priceContainer = Array.from(card.querySelectorAll("div")).find(d => d.style.fontSize.includes("2.2rem"));
-
-if (priceContainer && logs[i]) {
+const allDivs = Array.from(card.querySelectorAll("div"));
+const priceContainer = allDivs.find(d => d.style.fontSize.includes("2.2") || d.style.color.includes("ffffff"));
 const b = document.createElement("div");
 b.style.cssText = "font-family: monospace; font-size: 10px; margin-top: -12px; margin-bottom: 24px; font-weight: bold; letter-spacing: 0.05em; transition: opacity 0.4s ease; text-align: left; width: 100%;";
 b.style.color = i === 0 ? "#2f80ed" : (i === 1 ? "#10b981" : "#8b5cf6");
