@@ -2642,6 +2642,7 @@ setInterval(cycleInnovationEngine, 6800);
 }
 });
 </script>
+
 <!-- ==========================================================
 ISOLATED 3D PRICING CARDS ENGINE (US PRODUCTION SPEC)
 ========================================================== -->
@@ -2684,11 +2685,15 @@ card.style.boxShadow = "none";
 card.style.borderColor = baseBorder;
 });
 
-const priceBox = Array.from(card.querySelectorAll("div")).find(d => d.style.fontSize && d.style.fontSize.includes("2.2rem"));
+let priceBox = Array.from(card.querySelectorAll("div")).find(d => d.style.fontSize && d.style.fontSize.includes("2.2rem"));
+
+if(!priceBox) {
+priceBox = Array.from(card.querySelectorAll("div, span, h3")).find(d => d.innerText && d.innerText.includes("$"));
+}
 
 if (priceBox && telemetryData[i]) {
 const loggerLine = document.createElement("div");
-loggerLine.style.cssText = "font-family: monospace; font-size: 10px; margin-top: -12px; margin-bottom: 24px; font-weight: bold; letter-spacing: 0.5px; transition: opacity 0.4s ease;";
+loggerLine.style.cssText = "font-family: monospace; font-size: 10px; margin-top: 6px; margin-bottom: 12px; font-weight: bold; letter-spacing: 0.5px; transition: opacity 0.4s ease;";
 loggerLine.style.color = i === 0 ? "#2f80ed" : (i === 1 ? "#10b981" : "#8b5cf6");
 
 loggerLine.innerText = telemetryData[i];
@@ -2707,7 +2712,6 @@ loggerLine.style.opacity = "1";
 });
 });
 </script>
-
 
 
 
