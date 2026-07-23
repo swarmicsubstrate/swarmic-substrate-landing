@@ -2643,75 +2643,8 @@ setInterval(cycleInnovationEngine, 6800);
 });
 </script>
 
-<!-- ==========================================================
-ISOLATED 3D PRICING CARDS ENGINE (US PRODUCTION SPEC)
-========================================================== -->
-<script>
-window.addEventListener("load", () => {
-const priceCards = document.querySelectorAll("div[data-base-border]");
 
-const telemetryData = [
-["[*NODE_01_CORE] Thread: Active", "[*NODE_01] VRAM Allocation: 42.1%"],
-["[*NODE_02_EDGE] Vector Sync: Live", "[*NODE_02] Pipeline Load: 68.4%"],
-["[*NODE_03_AZ] Compute Bonded: True", "[*NODE_03] Isolate Runspace: Secure"]
-];
 
-priceCards.forEach((card, i) => {
-card.removeAttribute("onmouseenter");
-card.removeAttribute("onmouseleave");
-
-const baseBorder = card.getAttribute("data-base-border") || "rgba(62, 180, 255, 0.15)";
-const activeBorder = i === 2 ? "rgba(168, 85, 247, 0.9)" : "rgba(62, 180, 255, 0.9)";
-const glowShadow = i === 2 ? "rgba(168, 85, 247, 0.25)" : "rgba(62, 180, 255, 0.25)";
-
-card.style.transition = "transform 0.1s ease-out, border-color 0.2s ease, box-shadow 0.2s ease";
-
-card.addEventListener('mousemove', e => {
-const rect = card.getBoundingClientRect();
-const x = e.clientX - rect.left;
-const y = e.clientY - rect.top;
-
-const tx = ((y - (rect.height/2)) / (rect.height/2)) * -6;
-const ty = ((x - (rect.width/2)) / (rect.width/2)) * 6;
-
-card.style.transform = `translateY(-12px) rotateX(${tx}deg) rotateY(${ty}deg)`;
-card.style.boxShadow = `0px 20px 40px ${glowShadow}`;
-card.style.borderColor = activeBorder;
-});
-
-card.addEventListener('mouseleave', () => {
-card.style.transform = 'translateY(0) rotateX(0deg) rotateY(0deg)';
-card.style.boxShadow = "none";
-card.style.borderColor = baseBorder;
-});
-
-let priceBox = Array.from(card.querySelectorAll("div")).find(d => d.style.fontSize && d.style.fontSize.includes("2.2rem"));
-
-if(!priceBox) {
-priceBox = Array.from(card.querySelectorAll("div, span, h3")).find(d => d.innerText && d.innerText.includes("$"));
-}
-
-if (priceBox && telemetryData[i]) {
-const loggerLine = document.createElement("div");
-loggerLine.style.cssText = "font-family: monospace; font-size: 10px; margin-top: 6px; margin-bottom: 12px; font-weight: bold; letter-spacing: 0.5px; transition: opacity 0.4s ease;";
-loggerLine.style.color = i === 0 ? "#2f80ed" : (i === 1 ? "#10b981" : "#8b5cf6");
-
-loggerLine.innerText = telemetryData[i];
-priceBox.parentNode.insertBefore(loggerLine, priceBox.nextSibling);
-
-let idx = 0;
-setInterval(() => {
-loggerLine.style.opacity = "0.3";
-setTimeout(() => {
-idx = (idx + 1) % telemetryData[i].length;
-loggerLine.innerText = telemetryData[i][idx];
-loggerLine.style.opacity = "1";
-}, 400);
-}, 4000);
-}
-});
-});
-</script>
 
 
 
