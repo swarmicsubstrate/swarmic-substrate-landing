@@ -2171,7 +2171,142 @@ Average US Office Labor Rate ($/Hr): <span id="rate-val" style="color: #ffffff; 
 </div>
 <button onclick="handleSwarmClick(event, 'tier2');" style="width: 100%; padding: 14px; background: #00d2ff; color: #03060f; border: none; border-radius: 6px; font-weight: 700; font-size: 0.95rem; margin-top: 32px; transform: translateZ(40px);">Queue Ingestion Request</button>
 </div>
-    
+
+<!-- TIER 03: OPERATIONS SWARM -->
+<div id="card-tier3" data-swarm-card onclick="handleSwarmClick(event, 'tier3');" style="background: rgba(4, 8, 20, 0.65); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(168, 85, 247, 0.35); border-radius: 16px; padding: 40px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; transform-style: preserve-3d; transition: border-color 0.2s ease, box-shadow 0.2s ease; will-change: transform;">
+<div style="transform: translateZ(30px);">
+<div style="color: #8b5cf6; font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px;">Office AI Framework // Tier 03</div>
+<h3 style="font-size: 1.4rem; font-weight: 700; margin: 0 0 12px 0; color: #ffffff;">Office Operations Swarm</h3>
+<div style="margin-bottom: 4px; color: #ffffff;"><span style="font-size: 2.2rem; font-weight: 800;">$249</span><span style="color: #9ca3af; font-size: 0.85rem;"> / mo</span></div>
+<div style="color: #9ca3af; font-size: 0.8rem; margin-bottom: 24px;">+Custom Enterprise Setup Fee</div>
+<ul style="list-style: none; padding: 0; margin: 0; color: #9ca3af; font-size: 0.95rem; line-height: 2;">
+<li style="margin-bottom: 8px;"><span style="color: #a855f7; margin-right: 10px;">✓</span>Zastępuje rutynową pracę sekretariatu i back-office</li>
+<li style="margin-bottom: 8px;"><span style="color: #a855f7; margin-right: 10px;">✓</span>Automatyczna segregacja i parowanie faktur</li>
+<li style="margin-bottom: 8px;"><span style="color: #a855f7; margin-right: 10px;">✓</span>24/7 Autonomiczny audyt i układanie plików</li>
+</ul>
+</div>
+<button onclick="handleSwarmClick(event, 'tier3');" style="width: 100%; padding: 14px; background: #a855f7; color: #ffffff; border: none; border-radius: 6px; font-weight: 700; font-size: 0.95rem; margin-top: 32px; transform: translateZ(40px);">Submit Profile Verification</button>
+</div>
+</div>
+</section>
+</main>
+
+<!-- HIGH-END VECTOR SHARD LOGIC ENGINE -->
+<script>
+const swarmPriceDictionary = {
+'tier1': 'Autonomous Front Desk ($49/mo)',
+'tier2': 'Data Bridge & Sync Engine ($99/mo)',
+'tier3': 'Office Operations Swarm ($249/mo)'
+};
+
+// MUTATION OBSERVER INTERCEPTOR FOR ZERO LATENCY DEPLOYMENT
+const swarmModalObserver = new MutationObserver(() => {
+const modalElement = document.querySelector('#swarmic-modal, [class*="modal"]');
+if (modalElement && modalElement.style.display === 'block') {
+const paragraphs = modalElement.getElementsByTagName('p');
+for (let p of paragraphs) {
+if (p.textContent.includes('Infrastructure') || p.textContent.includes('tier') || p.textContent.includes('assigned') || p.textContent.includes('tokens')) {
+let activeKey = 'tier1';
+if (window.currentActiveSwarmTier) { activeKey = window.currentActiveSwarmTier; }
+const verifiedTarget = swarmPriceDictionary[activeKey] || "Suite ($0/mo)";
+p.innerHTML = "Infrastructure allocation tokens for <strong>" + verifiedTarget + "</strong> are being assigned within the local routing layer.";
+break;
+}
+}
+}
+});
+swarmModalObserver.observe(document.body, { childList: true, subtree: true });
+
+// 3D MATRIX CARD INTERACTION
+document.querySelectorAll('[data-swarm-card]').forEach(card => {
+card.addEventListener('mousemove', e => {
+const rect = card.getBoundingClientRect();
+const x = e.clientX - rect.left;
+const y = e.clientY - rect.top;
+const xc = rect.width / 2;
+const yc = rect.height / 2;
+const angleX = (yc - y) / 12;
+const angleY = (x - xc) / 12;
+card.style.transform = "rotateX(" + angleX + "deg) rotateY(" + angleY + "deg) translateZ(10px)";
+card.style.boxShadow = "0 20px 40px rgba(0,0,0,0.6), 0 0 25px " + (card.id === 'card-tier3' ? 'rgba(168,85,247,0.35)' : 'rgba(62,180,255,0.35)');
+card.style.borderColor = card.id === 'card-tier3' ? 'rgba(168,85,247,0.8)' : 'rgba(62,180,255,0.8)';
+});
+card.addEventListener('mouseleave', () => {
+card.style.transform = "rotateX(0deg) rotateY(0deg) translateZ(0px)";
+card.style.boxShadow = "none";
+card.style.borderColor = card.id === 'card-tier3' ? 'rgba(168, 85, 247, 0.35)' : 'rgba(62, 180, 255, 0.2)';
+});
+});
+
+function handleSwarmClick(event, tierId) {
+if(event) { event.stopPropagation(); event.preventDefault(); }
+window.currentActiveSwarmTier = tierId;
+if(typeof openSwarmicModal === 'function') { try { openSwarmicModal(tierId); } catch(e) {} }
+}
+
+// ASYNCHRONOUS CORPORATE ROI SIMULATOR LOGIC
+function calculateCorporateROI() {
+const hours = parseInt(document.getElementById('hours-input').value) || 40;
+const rate = parseInt(document.getElementById('rate-input').value) || 35;
+const outcomeEl = document.getElementById('roi-outcome');
+const savingEl = document.getElementById('roi-saving-text');
+
+let currentCount = 0;
+const finalLoss = hours * rate * 52;
+
+const interval = setInterval(() => {
+currentCount++;
+outcomeEl.textContent = "$" + Math.floor(Math.random() * 50000 + 10000).toLocaleString();
+outcomeEl.style.color = "#ffb020";
+savingEl.textContent = "ANALYZING MANUAL WORKFLOW DRAINS...";
+savingEl.style.color = "#ffb020";
+
+if(currentCount > 15) {
+clearInterval(interval);
+outcomeEl.textContent = "$" + finalLoss.toLocaleString();
+outcomeEl.style.color = "#ef4444";
+
+let targetedTier = 'tier1';
+savingEl.style.color = "#10b981";
+
+if (finalLoss > 40000 && finalLoss <= 150000) {
+targetedTier = 'tier2';
+savingEl.textContent = "CRITICAL OFFICE BLEEDING // Recommended: Tier 02 Automation.";
+} else if (finalLoss > 150000) {
+targetedTier = 'tier3';
+savingEl.textContent = "ENTERPRISE INEFFICIENCY DETECTED // Recommended: Tier 03 Swarm.";
+} else {
+savingEl.textContent = "RECOVERY POTENTIAL LOGGED // Ready for Tier 01 System.";
+}
+
+setTimeout(() => {
+const targetCard = document.getElementById('card-' + targetedTier);
+if(targetCard) {
+targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+targetCard.style.boxShadow = targetedTier === 'tier3' ? "0 0 45px rgba(168, 85, 247, 0.6)" : "0 0 45px rgba(16, 185, 129, 0.6)";
+setTimeout(() => { targetCard.style.boxShadow = "none"; }, 2500);
+}
+}, 800);
+}
+}, 80);
+}
+
+// INTERSECTION OBSERVER FOR CINEMATIC HEADER TRIGGER
+(function() {
+const targetText = document.getElementById('dynamic-cinema-text');
+const triggerZone = document.getElementById('swarmic-trigger-zone');
+if (!targetText || !triggerZone) return;
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+targetText.classList.add('play-entrance');
+observer.unobserve(triggerZone);
+}
+});
+}, { threshold: 0.15 });
+observer.observe(triggerZone);
+})();
+</script>
 
 
 
