@@ -2252,10 +2252,7 @@ else if (typeof input === 'string') finalTargetText = input;
 
 const paragraphs = modalElement.getElementsByTagName('p');
 for (let p of paragraphs) {
-if (p.textContent.includes('Infrastructure') || p.innerHTML.includes('tier')) {
 p.innerHTML = "Infrastructure allocation tokens for <strong>" + finalTargetText + "</strong> are being assigned within the local routing layer.";
-break;
-}
 }
 }
 
