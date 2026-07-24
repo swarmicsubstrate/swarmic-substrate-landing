@@ -2235,10 +2235,10 @@ const swarmPriceDictionary = {
 'tier3': 'Office Operations Swarm ($249/mo)'
 };
 // UNIVERSAL INTELLIGENT DISPATCHER FOR USA PRICING
-function openSwarmicModal(input) {
+function handleSwarmClick(event, input) {
+if (event) event.stopPropagation();
 const modalElement = document.querySelector('#swarmic-modal, [class*="modal"]');
 if (!modalElement) return;
-
 modalElement.style.display = 'block';
 let finalTargetText = "Autonomous Front Desk ($49/mo)";
 
