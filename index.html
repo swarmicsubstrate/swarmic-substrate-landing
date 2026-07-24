@@ -2227,6 +2227,9 @@ Average US Office Labor Rate ($/Hr): <span id="rate-val" style="color: #ffffff; 
 <!-- HIGH-END VECTOR SHARD LOGIC ENGINE -->
 <script>
 const swarmPriceDictionary = {
+'Developer Core ($29/mo)': 'Developer Core Swarm ($29/mo)',
+'Orchestration Suite ($79/mo)': 'Orchestration Suite Swarm ($79/mo)',
+'Enterprise Substrate ($249/mo)': 'Enterprise Substrate Swarm ($249/mo)',
 'tier1': 'Autonomous Front Desk ($49/mo)',
 'tier2': 'Data Bridge & Sync Engine ($99/mo)',
 'tier3': 'Office Operations Swarm ($249/mo)'
@@ -2238,9 +2241,8 @@ const modalElement = document.querySelector('#swarmic-modal, [class*="modal"]');
 if (modalElement && modalElement.style.display === 'block') {
 const paragraphs = modalElement.getElementsByTagName('p');
 for (let p of paragraphs) {
-if (p.textContent.includes('Infrastructure') || p.textContent.includes('tier') || p.textContent.includes('assigned') || p.textContent.includes('tokens')) {
-let activeKey = 'tier1';
-if (window.currentActiveSwarmTier) { activeKey = window.currentActiveSwarmTier; }
+if (p.textContent.includes('Infrastructure') || p.textContent.includes('tier')) {
+let activeKey = window.currentActiveSwarmTier || 'tier1';
 const verifiedTarget = swarmPriceDictionary[activeKey] || "Suite ($0/mo)";
 p.innerHTML = "Infrastructure allocation tokens for <strong>" + verifiedTarget + "</strong> are being assigned within the local routing layer.";
 break;
