@@ -2080,20 +2080,52 @@ justify-content: flex-start;
 <!-- GLOBAL INFRASTRUCTURE MATRIX // ENTERPRISE ROBUST CORE -->
 <main style="background: #03060f; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #ffffff; padding: 0; margin: 0; min-height: 100vh; overflow-x: hidden;">
 
-<!-- BALANCED SECTOR HERO -->
-<section style="padding: 100px 20px 40px 20px; text-align: center; max-width: 1200px; margin: 0 auto;">
-<div style="color: #00d2ff; font-size: 0.8rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px;">Autonomous Infrastructure Matrix // US Division</div>
-<h1 style="font-size: 2.3rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 20px; line-height: 1.2; color: #ffffff;">Orchestrate Frictionless Operations With <span style="color: #00d2ff;">Autonomous Swarms</span></h1>
-<p style="color: #9ca3af; font-size: 1.05rem; max-width: 700px; margin: 0 auto 36px auto; line-height: 1.6;">Deploy self-directed, multi-agent validation loops to optimize front-line communications, transactional alignment, and internal structural indexing. Reduce operational cycle times seamlessly.</p>
+<!-- STYLES FOR CINEMATIC EFFECTS AND ORBITING LAZER RINGS -->
+<style>
+@keyframes cinematicEntrance {
+0% { transform: scale(0.6) translateZ(-200px); opacity: 0; filter: blur(10px); }
+100% { transform: scale(1) translateZ(0); opacity: 1; filter: blur(0); }
+}
+@keyframes laserOrbit {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+.cinema-header {
+animation: cinematicEntrance 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+will-change: transform, opacity;
+}
+.laser-container {
+position: relative; width: 100%; max-width: 520px; margin: 0 auto; padding: 3px; border-radius: 12px; overflow: hidden; background: rgba(9, 17, 36, 0.5); box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+}
+.laser-container::before {
+content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: conic-gradient(transparent, #00d2ff, #a855f7, transparent 60%); animation: laserOrbit 4s linear infinite; will-change: transform;
+}
+.laser-content {
+position: relative; background: #03060f; border-radius: 10px; padding: 20px; z-index: 2; backdrop-filter: blur(20px);
+}
+</style>
 
-<!-- HIGH-CONVERSION WAITLIST PANEL -->
-<div style="background: rgba(9, 17, 36, 0.45); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(62, 180, 255, 0.25); border-radius: 12px; padding: 24px; max-width: 580px; margin: 0 auto; box-shadow: 0 15px 35px rgba(0,0,0,0.6);">
-<div style="font-size: 0.85rem; color: #10b981; font-weight: 700; margin-bottom: 10px; letter-spacing: 0.5px;">🔴 INGESTION CAP: 5 ENTERPRISE SLOTS REMAINING FOR JULY 2026</div>
-<p style="color: #9ca3af; font-size: 0.8rem; margin: 0 0 16px 0; line-height: 1.4;">Due to dedicated GPU cluster performance limits, we enforce a validation queue. Submit your profile below.</p>
-<a href="#onboarding" style="background: #00d2ff; color: #03060f; padding: 12px 36px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.95rem; display: inline-block; box-shadow: 0 0 25px rgba(0, 210, 255, 0.3); transition: transform 0.2s ease;">Request Ingestion Slot // Begin Onboarding</a>
+<!-- BALANCED SECTOR HERO -->
+<section style="padding: 110px 20px 40px 20px; text-align: center; max-width: 1200px; margin: 0 auto; perspective: 1200px;">
+<div style="color: #00d2ff; font-size: 0.8rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px;">Autonomous Infrastructure Matrix // US Division</div>
+
+<!-- CINEMATIC OPENAI STYLE ENTRANCE HEADER -->
+<h1 class="cinema-header" style="font-size: 2.3rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 24px; line-height: 1.2; color: #ffffff;">
+Orchestrate Frictionless Operations With <span style="color: #00d2ff;">Autonomous Swarms</span>
+</h1>
+
+<p style="color: #9ca3af; font-size: 1.05rem; max-width: 700px; margin: 0 auto 40px auto; line-height: 1.6;">Deploy self-directed, multi-agent validation loops to optimize front-line communications, transactional alignment, and internal structural indexing. Reduce operational cycle times seamlessly.</p>
+
+<!-- NEW LASER ORBITING FRAMEWORK -->
+<div class="laser-container">
+<div class="laser-content">
+<div style="font-size: 0.85rem; color: #00d2ff; font-weight: 700; margin-bottom: 8px; letter-spacing: 0.5px;">SECURE INBOUND CAPABILITY VECTOR</div>
+<p style="color: #9ca3af; font-size: 0.8rem; margin: 0 0 16px 0; line-height: 1.45;">Multi-agent clusters are currently active. Initialize your ingestion pipeline below to request secure infrastructure synchronization.</p>
+<a href="#onboarding" style="background: #00d2ff; color: #03060f; padding: 10px 28px; border-radius: 4px; font-weight: 700; text-decoration: none; font-size: 0.9rem; display: inline-block; box-shadow: 0 0 20px rgba(0, 210, 255, 0.25);">Initialize Infrastructure Gateway</a>
+</div>
 </div>
 </section>
-    <!-- INTERACTIVE TELEMETRY LABORATORY -->
+<!-- INTERACTIVE TELEMETRY LABORATORY -->
 <section style="max-width: 1200px; margin: 40px auto; padding: 0 20px;">
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-bottom: 60px;">
 <!-- MONITOR 01 -->
@@ -2130,7 +2162,7 @@ justify-content: flex-start;
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
 
 <!-- TIER 01: FRONT DESK -->
-<div id="card-tier1" data-swarm-card style="background: rgba(9, 17, 36, 0.4); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(62, 180, 255, 0.2); border-radius: 16px; padding: 40px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; transform-style: preserve-3d; transition: border-color 0.2s ease, box-shadow 0.2s ease; will-change: transform;">
+<div id="card-tier1" data-swarm-card onclick="handleSwarmClick(event, 'tier1');" style="background: rgba(9, 17, 36, 0.4); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(62, 180, 255, 0.2); border-radius: 16px; padding: 40px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; transform-style: preserve-3d; transition: border-color 0.2s ease, box-shadow 0.2s ease; will-change: transform;">
 <div style="transform: translateZ(30px);">
 <div style="color: #3eb4ff; font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px;">Category 01 // Inbound Communications</div>
 <h3 style="font-size: 1.4rem; font-weight: 700; margin: 0 0 12px 0; color: #ffffff;">Autonomous Front Desk</h3>
@@ -2142,10 +2174,10 @@ justify-content: flex-start;
 <li style="margin-bottom: 8px;"><span style="color: #00d2ff; margin-right: 10px;">✓</span>Ledger & Scheduling Sync</li>
 </ul>
 </div>
-<button onclick="handleSwarmClick(event, 'tier1');" style="width: 100%; padding: 14px; background: #00d2ff; color: #03060f; border: none; border-radius: 6px; font-weight: 700; font-size: 0.95rem; margin-top: 32px; transform: translateZ(40px);">Queue Ingestion Request</button>
+<button style="width: 100%; padding: 14px; background: #00d2ff; color: #03060f; border: none; border-radius: 6px; font-weight: 700; font-size: 0.95rem; margin-top: 32px; transform: translateZ(40px);">Queue Ingestion Request</button>
 </div>
     <!-- TIER 02: DATA BRIDGE -->
-<div id="card-tier2" data-swarm-card style="background: rgba(9, 17, 36, 0.45); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(62, 180, 255, 0.35); border-radius: 16px; padding: 40px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; transform-style: preserve-3d; transition: border-color 0.2s ease, box-shadow 0.2s ease; will-change: transform;">
+<div id="card-tier2" data-swarm-card onclick="handleSwarmClick(event, 'tier2');" style="background: rgba(9, 17, 36, 0.45); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(62, 180, 255, 0.35); border-radius: 16px; padding: 40px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; transform-style: preserve-3d; transition: border-color 0.2s ease, box-shadow 0.2s ease; will-change: transform;">
 <div style="transform: translateZ(30px);">
 <div style="color: #3eb4ff; font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px;">Category 02 // Structural Sync</div>
 <h3 style="font-size: 1.4rem; font-weight: 700; margin: 0 0 12px 0; color: #ffffff;">Data Bridge & Sync Engine</h3>
@@ -2157,11 +2189,11 @@ justify-content: flex-start;
 <li style="margin-bottom: 8px;"><span style="color: #00d2ff; margin-right: 10px;">✓</span>Bidirectional CRM & SQL Mapping</li>
 </ul>
 </div>
-<button onclick="handleSwarmClick(event, 'tier2');" style="width: 100%; padding: 14px; background: #00d2ff; color: #03060f; border: none; border-radius: 6px; font-weight: 700; font-size: 0.95rem; margin-top: 32px; transform: translateZ(40px);">Queue Ingestion Request</button>
+<button style="width: 100%; padding: 14px; background: #00d2ff; color: #03060f; border: none; border-radius: 6px; font-weight: 700; font-size: 0.95rem; margin-top: 32px; transform: translateZ(40px);">Queue Ingestion Request</button>
 </div>
 
 <!-- TIER 03: OPERATIONS SWARM -->
-<div id="card-tier3" data-swarm-card style="background: rgba(4, 8, 20, 0.65); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(168, 85, 247, 0.35); border-radius: 16px; padding: 40px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; transform-style: preserve-3d; transition: border-color 0.2s ease, box-shadow 0.2s ease; will-change: transform;">
+<div id="card-tier3" data-swarm-card onclick="handleSwarmClick(event, 'tier3');" style="background: rgba(4, 8, 20, 0.65); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(168, 85, 247, 0.35); border-radius: 16px; padding: 40px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; transform-style: preserve-3d; transition: border-color 0.2s ease, box-shadow 0.2s ease; will-change: transform;">
 <div style="transform: translateZ(30px);">
 <div style="color: #8b5cf6; font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px;">Category 03 // Back-Office Execution</div>
 <h3 style="font-size: 1.4rem; font-weight: 700; margin: 0 0 12px 0; color: #ffffff;">Office Operations Swarm</h3>
@@ -2173,7 +2205,7 @@ justify-content: flex-start;
 <li style="margin-bottom: 8px;"><span style="color: #a855f7; margin-right: 10px;">✓</span>Autonomous Directory Structuring</li>
 </ul>
 </div>
-<button onclick="handleSwarmClick(event, 'tier3');" style="width: 100%; padding: 14px; background: #a855f7; color: #ffffff; border: none; border-radius: 6px; font-weight: 700; font-size: 0.95rem; margin-top: 32px; transform: translateZ(40px);">Submit Profile Verification</button>
+<button style="width: 100%; padding: 14px; background: #a855f7; color: #ffffff; border: none; border-radius: 6px; font-weight: 700; font-size: 0.95rem; margin-top: 32px; transform: translateZ(40px);">Submit Profile Verification</button>
 </div>
 </div>
 </section>
@@ -2203,7 +2235,7 @@ card.style.borderColor = card.id === 'card-tier3' ? 'rgba(168, 85, 247, 0.35)' :
 });
 });
 
-// SYNCHRONOUS LEVERAGE INTERCEPTOR & GOOGLE MODAL OVERRIDE
+// TOTAL MODAL OVERRIDE ENGINE - FIXED FOR ZERO LATENCY DEPLOYMENT
 function handleSwarmClick(event, tierId) {
 if(event) {
 event.stopPropagation();
@@ -2217,19 +2249,17 @@ const shards = {
 };
 const p = shards[tierId] || "Suite ($0/mo)";
 
-if(typeof openSwarmicModal === 'function') {
-openSwarmicModal(tierId);
-}
-
 const m = document.querySelector('#swarmic-modal, [class*="modal"]');
 if(m) {
 m.style.display = 'block';
-for(let x of m.getElementsByTagName('p')) {
-if(x.textContent.includes('Infrastructure') || x.textContent.includes('tier') || x.textContent.includes('assigned') || x.textContent.includes('tokens')) {
+const paragraphs = m.getElementsByTagName('p');
+for(let x of paragraphs) {
 x.innerHTML = "Infrastructure allocation tokens for <strong>" + p + "</strong> are being assigned within the local routing layer.";
-break;
 }
 }
+
+if(typeof openSwarmicModal === 'function') {
+try { openSwarmicModal(tierId); } catch(e) {}
 }
 }
 
@@ -2274,6 +2304,7 @@ setTimeout(() => { targetCard.style.boxShadow = "none"; }, 2000);
 }, 100);
 }
 </script>
+    
 
 
 
