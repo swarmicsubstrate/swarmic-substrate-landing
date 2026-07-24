@@ -2240,11 +2240,14 @@ const swarmModalObserver = new MutationObserver(() => {
 const modalElement = document.querySelector('#swarmic-modal, [class*="modal"]');
 if (modalElement && modalElement.style.display === 'block') {
 const paragraphs = modalElement.getElementsByTagName('p');
-for (let p of paragraphs) {
-if (p.textContent.includes('Infrastructure') || p.textContent.includes('tier')) {
+
 let activeKey = window.currentActiveSwarmTier || 'tier1';
-const verifiedTarget = swarmPriceDictionary[activeKey] || "Suite ($0/mo)";
+const verifiedTarget = swarmPriceDictionary[activeKey] || 'Autonomous Front Desk ($49/mo)';
+
+for (let p of paragraphs) {
+if (p.innerHTML.includes('tier1') || p.textContent.includes('Infrastructure')) {
 p.innerHTML = "Infrastructure allocation tokens for <strong>" + verifiedTarget + "</strong> are being assigned within the local routing layer.";
+swarmModalObserver.disconnect();
 break;
 }
 }
