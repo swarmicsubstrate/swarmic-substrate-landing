@@ -2234,26 +2234,35 @@ const swarmPriceDictionary = {
 'tier2': 'Data Bridge & Sync Engine ($99/mo)',
 'tier3': 'Office Operations Swarm ($249/mo)'
 };
-
-// MUTATION OBSERVER INTERCEPTOR FOR ZERO LATENCY DEPLOYMENT
-const swarmModalObserver = new MutationObserver(() => {
+// UNIVERSAL INTELLIGENT DISPATCHER FOR USA PRICING
+function openSwarmicModal(input) {
 const modalElement = document.querySelector('#swarmic-modal, [class*="modal"]');
-if (modalElement && modalElement.style.display === 'block') {
+if (!modalElement) return;
+
+modalElement.style.display = 'block';
+let finalTargetText = "Autonomous Front Desk ($49/mo)";
+
+if (input === 'tier1') finalTargetText = "Autonomous Front Desk ($49/mo)";
+else if (input === 'tier2') finalTargetText = "Data Bridge & Sync Engine ($99/mo)";
+else if (input === 'tier3') finalTargetText = "Office Operations Swarm ($249/mo)";
+else if (input && input.includes('Developer Core')) finalTargetText = "Developer Core Swarm ($29/mo)";
+else if (input && input.includes('Orchestration Suite')) finalTargetText = "Orchestration Suite Swarm ($79/mo)";
+else if (input && input.includes('Enterprise Substrate')) finalTargetText = "Enterprise Substrate Swarm ($249/mo)";
+else if (typeof input === 'string') finalTargetText = input;
+
 const paragraphs = modalElement.getElementsByTagName('p');
-
-let activeKey = window.currentActiveSwarmTier || 'tier1';
-const verifiedTarget = swarmPriceDictionary[activeKey] || 'Autonomous Front Desk ($49/mo)';
-
 for (let p of paragraphs) {
-if (p.innerHTML.includes('tier1') || p.textContent.includes('Infrastructure')) {
-p.innerHTML = "Infrastructure allocation tokens for <strong>" + verifiedTarget + "</strong> are being assigned within the local routing layer.";
-swarmModalObserver.disconnect();
+if (p.textContent.includes('Infrastructure') || p.innerHTML.includes('tier')) {
+p.innerHTML = "Infrastructure allocation tokens for <strong>" + finalTargetText + "</strong> are being assigned within the local routing layer.";
 break;
 }
 }
 }
-});
-swarmModalObserver.observe(document.body, { childList: true, subtree: true });
+
+// swarmModalObserver.observe(document.body, { childList: true, subtree: true });
+
+
+//swarmModalObserver.observe(document.body, { childList: true, subtree: true });
 
 // 3D MATRIX CARD INTERACTION
 document.querySelectorAll('[data-swarm-card]').forEach(card => {
