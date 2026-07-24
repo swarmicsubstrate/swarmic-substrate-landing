@@ -2080,10 +2080,10 @@ justify-content: flex-start;
 <!-- GLOBAL INFRASTRUCTURE MATRIX // ENTERPRISE ROBUST CORE -->
 <main style="background: #03060f; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #ffffff; padding: 0; margin: 0; min-height: 100vh; overflow-x: hidden;">
 
-<!-- STYLES FOR CINEMATIC EFFECTS AND ORBITING LAZER RINGS -->
+<!-- STYLES FOR CINEMATIC EFFECT AND RUNNING LASER GRADIENTS -->
 <style>
 @keyframes cinematicEntrance {
-0% { transform: scale(0.6) translateZ(-200px); opacity: 0; filter: blur(10px); }
+0% { transform: scale(0.7) translateZ(-150px); opacity: 0; filter: blur(12px); }
 100% { transform: scale(1) translateZ(0); opacity: 1; filter: blur(0); }
 }
 @keyframes laserOrbit {
@@ -2091,32 +2091,33 @@ justify-content: flex-start;
 100% { transform: rotate(360deg); }
 }
 .cinema-header {
-animation: cinematicEntrance 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-will-change: transform, opacity;
+animation: cinematicEntrance 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+will-change: transform, opacity, filter;
+text-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
 }
 .laser-container {
-position: relative; width: 100%; max-width: 520px; margin: 0 auto; padding: 3px; border-radius: 12px; overflow: hidden; background: rgba(9, 17, 36, 0.5); box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+position: relative; width: 100%; max-width: 520px; margin: 0 auto; padding: 2px; border-radius: 12px; overflow: hidden; background: rgba(9, 17, 36, 0.5); box-shadow: 0 15px 35px rgba(0,0,0,0.7);
 }
 .laser-container::before {
 content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: conic-gradient(transparent, #00d2ff, #a855f7, transparent 60%); animation: laserOrbit 4s linear infinite; will-change: transform;
 }
 .laser-content {
-position: relative; background: #03060f; border-radius: 10px; padding: 20px; z-index: 2; backdrop-filter: blur(20px);
+position: relative; background: #03060f; border-radius: 10px; padding: 20px; z-index: 2; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
 }
 </style>
 
-<!-- BALANCED SECTOR HERO -->
+<!-- COMPACT ENTERPRISE HERO -->
 <section style="padding: 110px 20px 40px 20px; text-align: center; max-width: 1200px; margin: 0 auto; perspective: 1200px;">
 <div style="color: #00d2ff; font-size: 0.8rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px;">Autonomous Infrastructure Matrix // US Division</div>
 
-<!-- CINEMATIC OPENAI STYLE ENTRANCE HEADER -->
+<!-- LUXURIOUS WHITE CINEMATIC ENTRANCE HEADER -->
 <h1 class="cinema-header" style="font-size: 2.3rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 24px; line-height: 1.2; color: #ffffff;">
-Orchestrate Frictionless Operations With <span style="color: #00d2ff;">Autonomous Swarms</span>
+Orchestrate Frictionless Operations With <span style="color: #00d2ff; text-shadow: 0 0 20px rgba(0,210,255,0.3);">Autonomous Swarms</span>
 </h1>
 
 <p style="color: #9ca3af; font-size: 1.05rem; max-width: 700px; margin: 0 auto 40px auto; line-height: 1.6;">Deploy self-directed, multi-agent validation loops to optimize front-line communications, transactional alignment, and internal structural indexing. Reduce operational cycle times seamlessly.</p>
 
-<!-- NEW LASER ORBITING FRAMEWORK -->
+<!-- LASER ORBITING CONTAINER -->
 <div class="laser-container">
 <div class="laser-content">
 <div style="font-size: 0.85rem; color: #00d2ff; font-weight: 700; margin-bottom: 8px; letter-spacing: 0.5px;">SECURE INBOUND CAPABILITY VECTOR</div>
@@ -2125,7 +2126,7 @@ Orchestrate Frictionless Operations With <span style="color: #00d2ff;">Autonomou
 </div>
 </div>
 </section>
-<!-- INTERACTIVE TELEMETRY LABORATORY -->
+    <!-- INTERACTIVE TELEMETRY LABORATORY -->
 <section style="max-width: 1200px; margin: 40px auto; padding: 0 20px;">
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-bottom: 60px;">
 <!-- MONITOR 01 -->
@@ -2164,7 +2165,7 @@ Orchestrate Frictionless Operations With <span style="color: #00d2ff;">Autonomou
 <!-- TIER 01: FRONT DESK -->
 <div id="card-tier1" data-swarm-card onclick="handleSwarmClick(event, 'tier1');" style="background: rgba(9, 17, 36, 0.4); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(62, 180, 255, 0.2); border-radius: 16px; padding: 40px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; transform-style: preserve-3d; transition: border-color 0.2s ease, box-shadow 0.2s ease; will-change: transform;">
 <div style="transform: translateZ(30px);">
-<div style="color: #3eb4ff; font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px;">Category 01 // Inbound Communications</div>
+<div style="color: #3eb4ff; font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px;">Operational Layer // Tier 01</div>
 <h3 style="font-size: 1.4rem; font-weight: 700; margin: 0 0 12px 0; color: #ffffff;">Autonomous Front Desk</h3>
 <div style="margin-bottom: 6px; color: #ffffff;"><span style="font-size: 2.2rem; font-weight: 800;">$49</span><span style="color: #9ca3af; font-size: 0.85rem;"> / mo</span></div>
 <div style="color: #9ca3af; font-size: 0.8rem; margin-bottom: 24px;">+$499 Setup Fee</div>
@@ -2179,7 +2180,7 @@ Orchestrate Frictionless Operations With <span style="color: #00d2ff;">Autonomou
     <!-- TIER 02: DATA BRIDGE -->
 <div id="card-tier2" data-swarm-card onclick="handleSwarmClick(event, 'tier2');" style="background: rgba(9, 17, 36, 0.45); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(62, 180, 255, 0.35); border-radius: 16px; padding: 40px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; transform-style: preserve-3d; transition: border-color 0.2s ease, box-shadow 0.2s ease; will-change: transform;">
 <div style="transform: translateZ(30px);">
-<div style="color: #3eb4ff; font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px;">Category 02 // Structural Sync</div>
+<div style="color: #3eb4ff; font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px;">Data Sync Infrastructure // Tier 02</div>
 <h3 style="font-size: 1.4rem; font-weight: 700; margin: 0 0 12px 0; color: #ffffff;">Data Bridge & Sync Engine</h3>
 <div style="margin-bottom: 4px; color: #ffffff;"><span style="font-size: 2.2rem; font-weight: 800;">$99</span><span style="color: #9ca3af; font-size: 0.85rem;"> / mo</span></div>
 <div style="color: #9ca3af; font-size: 0.8rem; margin-bottom: 24px;">+$899 Setup Fee</div>
@@ -2195,7 +2196,7 @@ Orchestrate Frictionless Operations With <span style="color: #00d2ff;">Autonomou
 <!-- TIER 03: OPERATIONS SWARM -->
 <div id="card-tier3" data-swarm-card onclick="handleSwarmClick(event, 'tier3');" style="background: rgba(4, 8, 20, 0.65); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(168, 85, 247, 0.35); border-radius: 16px; padding: 40px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; transform-style: preserve-3d; transition: border-color 0.2s ease, box-shadow 0.2s ease; will-change: transform;">
 <div style="transform: translateZ(30px);">
-<div style="color: #8b5cf6; font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px;">Category 03 // Back-Office Execution</div>
+<div style="color: #8b5cf6; font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px;">Enterprise Automation Mesh // Tier 03</div>
 <h3 style="font-size: 1.4rem; font-weight: 700; margin: 0 0 12px 0; color: #ffffff;">Office Operations Swarm</h3>
 <div style="margin-bottom: 4px; color: #ffffff;"><span style="font-size: 2.2rem; font-weight: 800;">$249</span><span style="color: #9ca3af; font-size: 0.85rem;"> / mo</span></div>
 <div style="color: #9ca3af; font-size: 0.8rem; margin-bottom: 24px;">+Custom Enterprise Setup Fee</div>
@@ -2211,8 +2212,38 @@ Orchestrate Frictionless Operations With <span style="color: #00d2ff;">Autonomou
 </section>
 </main>
 
-<!-- HIGH-END VECTOR SHARD LOGIC ENGINE -->
+<!-- PREMIUM VECTOR SHARD LOGIC ENGINE -->
 <script>
+// GLOBAL ACTIVE DICTIONARY FOR TRANSLATIONAL PAYLOADS
+const swarmPriceDictionary = {
+'tier1': 'Autonomous Front Desk ($49/mo)',
+'tier2': 'Data Bridge & Sync Engine ($99/mo)',
+'tier3': 'Office Operations Swarm ($249/mo)'
+};
+
+// ELITARNY OBSERWATOR STRUKTURY DOM (MUTATION OBSERVER) - NISZCZY BŁĄD TIER1/TIER2 RAZ NA ZAWSZE
+const swarmModalObserver = new MutationObserver(() => {
+const modalElement = document.querySelector('#swarmic-modal, [class*="modal"]');
+if (modalElement && modalElement.style.display === 'block') {
+const paragraphs = modalElement.getElementsByTagName('p');
+for (let p of paragraphs) {
+// Sprawdzamy czy Google wstrzyknęło swój surowy tekst
+if (p.textContent.includes('Infrastructure') || p.textContent.includes('tier') || p.textContent.includes('assigned') || p.textContent.includes('tokens')) {
+// Wyciągamy aktywny klucz z kontekstu okna
+let activeKey = 'tier2';
+if (window.currentActiveSwarmTier) { activeKey = window.currentActiveSwarmTier; }
+
+const verifiedTarget = swarmPriceDictionary[activeKey] || "Suite ($0/mo)";
+p.innerHTML = "Infrastructure allocation tokens for <strong>" + verifiedTarget + "</strong> are being assigned within the local routing layer.";
+break;
+}
+}
+}
+});
+
+// URUCHOMIENIE OBSERWATORA W PAMIECI PRZEGLĄDARKI
+swarmModalObserver.observe(document.body, { childList: true, subtree: true });
+
 // 3D MATRIX ORIENTATION CORE ENGINE
 document.querySelectorAll('[data-swarm-card]').forEach(card => {
 card.addEventListener('mousemove', e => {
@@ -2227,7 +2258,6 @@ card.style.transform = "rotateX(" + angleX + "deg) rotateY(" + angleY + "deg) tr
 card.style.boxShadow = "0 20px 40px rgba(0,0,0,0.6), 0 0 25px " + (card.id === 'card-tier3' ? 'rgba(168,85,247,0.35)' : 'rgba(62,180,255,0.35)');
 card.style.borderColor = card.id === 'card-tier3' ? 'rgba(168,85,247,0.8)' : 'rgba(62,180,255,0.8)';
 });
-
 card.addEventListener('mouseleave', () => {
 card.style.transform = "rotateX(0deg) rotateY(0deg) translateZ(0px)";
 card.style.boxShadow = "none";
@@ -2235,28 +2265,15 @@ card.style.borderColor = card.id === 'card-tier3' ? 'rgba(168, 85, 247, 0.35)' :
 });
 });
 
-// TOTAL MODAL OVERRIDE ENGINE - FIXED FOR ZERO LATENCY DEPLOYMENT
+// SYNCHRONOUS LEVERAGE INTERCEPTOR
 function handleSwarmClick(event, tierId) {
 if(event) {
 event.stopPropagation();
 event.preventDefault();
 }
 
-const shards = {
-'tier1': 'Autonomous Front Desk ($49/mo)',
-'tier2': 'Data Bridge & Sync Engine ($99/mo)',
-'tier3': 'Office Operations Swarm ($249/mo)'
-};
-const p = shards[tierId] || "Suite ($0/mo)";
-
-const m = document.querySelector('#swarmic-modal, [class*="modal"]');
-if(m) {
-m.style.display = 'block';
-const paragraphs = m.getElementsByTagName('p');
-for(let x of paragraphs) {
-x.innerHTML = "Infrastructure allocation tokens for <strong>" + p + "</strong> are being assigned within the local routing layer.";
-}
-}
+// Zapisujemy aktywny pakiet globalnie w oknie przeglądarki dla Obserwatora
+window.currentActiveSwarmTier = tierId;
 
 if(typeof openSwarmicModal === 'function') {
 try { openSwarmicModal(tierId); } catch(e) {}
