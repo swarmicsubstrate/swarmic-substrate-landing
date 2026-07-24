@@ -2080,25 +2080,56 @@ justify-content: flex-start;
 <!-- GLOBAL INFRASTRUCTURE MATRIX // ENTERPRISE ROBUST CORE -->
 <main style="background: #03060f; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #ffffff; padding: 0; margin: 0; min-height: 100vh; overflow-x: hidden;">
 
-<!-- STYLES FOR CINEMATIC EFFECT AND RUNNING GRADIENTS -->
+<!-- STYLES FOR CINEMATIC EFFECT, ACTIVE NEON ORBITS & PREMIUM BUTTONS -->
 <style>
 @keyframes cinematicEntrance {
 0% { transform: scale(0.7) translateZ(-150px); opacity: 0; filter: blur(12px); }
 100% { transform: scale(1) translateZ(0); opacity: 1; filter: blur(0); }
 }
+@keyframes laserOrbit {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+@keyframes neonPulse {
+0% { box-shadow: 0 0 15px rgba(0, 210, 255, 0.2); }
+50% { box-shadow: 0 0 30px rgba(0, 210, 255, 0.5), 0 0 15px rgba(168, 85, 247, 0.3); }
+100% { box-shadow: 0 0 15px rgba(0, 210, 255, 0.2); }
+}
 .cinema-header {
-animation: cinematicEntrance 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+opacity: 0;
 will-change: transform, opacity, filter;
 text-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
 }
-.simulator-panel {
-background: rgba(9, 17, 36, 0.4); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(62, 180, 255, 0.25); border-radius: 16px; padding: 32px; max-width: 650px; margin: 40px auto; box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+.cinema-header.play-entrance {
+animation: cinematicEntrance 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.laser-container {
+position: relative; width: 100%; max-width: 650px; margin: 40px auto; padding: 2px; border-radius: 16px; overflow: hidden; background: rgba(9, 17, 36, 0.4);
+animation: neonPulse 3s infinite ease-in-out;
+}
+.laser-container::before {
+content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+background: conic-gradient(transparent, #00d2ff 10%, #a855f7 20%, transparent 40%, #00d2ff 60%, transparent 80%);
+animation: laserOrbit 3s linear infinite; will-change: transform; filter: blur(1px);
+}
+.laser-content {
+position: relative; background: #03060f; border-radius: 14px; padding: 32px; z-index: 2; backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
 }
 .biz-range {
-width: 100%; -webkit-appearance: none; background: rgba(255,255,255,0.1); height: 6px; border-radius: 4px; outline: none; margin: 12px 0 24px 0;
+width: 100%; -webkit-appearance: none; background: rgba(255,255,255,0.08); height: 6px; border-radius: 4px; outline: none; margin: 12px 0 24px 0; transition: background 0.2s ease;
 }
 .biz-range::-webkit-slider-thumb {
--webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%; background: #00d2ff; cursor: pointer; box-shadow: 0 0 10px #00d2ff;
+-webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%; background: #00d2ff; cursor: pointer; box-shadow: 0 0 12px #00d2ff; transition: transform 0.1s ease;
+}
+.biz-range::-webkit-slider-thumb:hover { transform: scale(1.25); }
+.premium-audit-btn {
+width: 100%; padding: 16px; background: transparent; border: 1px solid #00d2ff; color: #00d2ff; border-radius: 8px; font-weight: 800; font-family: monospace; font-size: 1rem; letter-spacing: 1px; cursor: pointer; position: relative; overflow: hidden; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); will-change: transform, box-shadow;
+}
+.premium-audit-btn:hover {
+color: #03060f; background: #00d2ff; transform: translateY(-3px) scale(1.02); box-shadow: 0 0 35px rgba(0, 210, 255, 0.6);
+}
+.premium-audit-btn:active {
+transform: translateY(-1px) scale(0.99); box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
 }
 </style>
 
@@ -2112,9 +2143,10 @@ Orchestrate Frictionless Operations With <span style="color: #00d2ff; text-shado
 </h1>
 <p style="color: #9ca3af; font-size: 1.05rem; max-width: 700px; margin: 0 auto 20px auto; line-height: 1.6;">Deploy self-directed, multi-agent validation loops to optimize front-line communications, transactional alignment, and internal structural indexing. Reduce operational cycle times seamlessly.</p>
 
-<!-- NEW INTERACTIVE OPERATIONAL ROI SIMULATOR -->
-<div class="simulator-panel">
-<div style="font-size: 0.85rem; color: #00d2ff; font-weight: 700; margin-bottom: 20px; letter-spacing: 1px; text-transform: uppercase; text-align: left;">[ Executive Office Efficiency Audit ]</div>
+<!-- HYPER-NEON ORBITING OPERATIONAL ROI SIMULATOR PANEL -->
+<div class="laser-container">
+<div class="laser-content">
+<div style="font-size: 0.85rem; color: #00d2ff; font-weight: 700; margin-bottom: 24px; letter-spacing: 1px; text-transform: uppercase; text-align: left;">[ Executive Office Efficiency Audit ]</div>
 
 <div style="text-align: left; color: #9ca3af; font-size: 0.9rem;">
 Weekly Tedious Office Hours Wasted: <span id="hours-val" style="color: #ffffff; font-weight: 700;">40 Hours</span>
@@ -2124,13 +2156,14 @@ Average US Office Labor Rate ($/Hr): <span id="rate-val" style="color: #ffffff; 
 <input type="range" id="rate-input" min="20" max="150" value="35" class="biz-range" oninput="document.getElementById('rate-val').textContent = '$' + this.value + '/hr';">
 </div>
 
-<div style="background: rgba(4, 8, 20, 0.5); border-radius: 8px; padding: 20px; margin-bottom: 24px; border: 1px dashed rgba(255,255,255,0.1); text-align: left;">
-<div style="font-family: monospace; font-size: 11px; color: #9ca3af; margin-bottom: 6px;">AUDIT OUTCOME TELEMETRY:</div>
+<div style="background: rgba(4, 8, 20, 0.6); border-radius: 8px; padding: 20px; margin-bottom: 28px; border: 1px dashed rgba(255,255,255,0.1); text-align: left;">
+<div style="font-family: monospace; font-size: 10px; color: #00d2ff; margin-bottom: 8px; letter-spacing: 0.5px;">AUDIT OUTCOME TELEMETRY:</div>
 <div style="font-size: 1.4rem; font-weight: 800; color: #ffffff;">Annual Manual Overhead Bleed: <span id="roi-outcome" style="color: #ef4444;">$72,800</span></div>
-<div style="font-size: 0.85rem; color: #10b981; margin-top: 4px; font-weight: 600;" id="roi-saving-text">Potential Office AI Recovery: Up to 85% Time Saved</div>
+<div style="font-size: 0.85rem; color: #10b981; margin-top: 6px; font-weight: 600; letter-spacing: 0.3px;" id="roi-saving-text">Potential Office AI Recovery: Up to 85% Time Saved</div>
 </div>
 
-<button onclick="calculateCorporateROI()" style="width: 100%; padding: 14px; background: #00d2ff; color: #03060f; border: none; border-radius: 6px; font-weight: 700; font-size: 1rem; cursor: pointer; box-shadow: 0 0 25px rgba(0, 210, 255, 0.25);">[ RUN OPERATION AUDIT ]</button>
+<button onclick="calculateCorporateROI()" class="premium-audit-btn">[ RUN OPERATION AUDIT ]</button>
+</div>
 </div>
 </section>
     <!-- LIVE 3D PRODUCTION TIERS -->
@@ -2141,7 +2174,7 @@ Average US Office Labor Rate ($/Hr): <span id="rate-val" style="color: #ffffff; 
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
 
-<!-- TIER 01: FRONT DESK -->
+<!-- TIER 01: FRONT DESK WITH PHONE & DATABASE ROUTING -->
 <div id="card-tier1" data-swarm-card onclick="handleSwarmClick(event, 'tier1');" style="background: rgba(9, 17, 36, 0.4); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(62, 180, 255, 0.2); border-radius: 16px; padding: 40px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; transform-style: preserve-3d; transition: border-color 0.2s ease, box-shadow 0.2s ease; will-change: transform;">
 <div style="transform: translateZ(30px);">
 <div style="color: #3eb4ff; font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px;">Office AI Framework // Tier 01</div>
@@ -2149,14 +2182,14 @@ Average US Office Labor Rate ($/Hr): <span id="rate-val" style="color: #ffffff; 
 <div style="margin-bottom: 6px; color: #ffffff;"><span style="font-size: 2.2rem; font-weight: 800;">$49</span><span style="color: #9ca3af; font-size: 0.85rem;"> / mo</span></div>
 <div style="color: #9ca3af; font-size: 0.8rem; margin-bottom: 24px;">+$499 Setup Fee</div>
 <ul style="list-style: none; padding: 0; margin: 0; color: #9ca3af; font-size: 0.95rem; line-height: 2;">
-<li style="margin-bottom: 8px;"><span style="color: #00d2ff; margin-right: 10px;">✓</span>Zastępuje ręczną obsługę połączeń i skrzynek</li>
-<li style="margin-bottom: 8px;"><span style="color: #00d2ff; margin-right: 10px;">✓</span>Autonomiczne filtrowanie i triaż intencji</li>
-<li style="margin-bottom: 8px;"><span style="color: #00d2ff; margin-right: 10px;">✓</span>Automatyczna synchronizacja kalendarzy</li>
+<li style="margin-bottom: 8px;"><span style="color: #00d2ff; margin-right: 10px;">✓</span>Autonomous AI call ingestion, answering & automated dial-backs</li>
+<li style="margin-bottom: 8px;"><span style="color: #00d2ff; margin-right: 10px;">✓</span>Natural language conversational appointment & booking routing</li>
+<li style="margin-bottom: 8px;"><span style="color: #00d2ff; margin-right: 10px;">✓</span>Instant meeting injection with automatic office database syncing</li>
 </ul>
 </div>
 <button style="width: 100%; padding: 14px; background: #00d2ff; color: #03060f; border: none; border-radius: 6px; font-weight: 700; font-size: 0.95rem; margin-top: 32px; transform: translateZ(40px);">Queue Ingestion Request</button>
 </div>
-    <!-- TIER 02: DATA BRIDGE -->
+<!-- TIER 02: DATA BRIDGE -->
 <div id="card-tier2" data-swarm-card onclick="handleSwarmClick(event, 'tier2');" style="background: rgba(9, 17, 36, 0.45); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(62, 180, 255, 0.35); border-radius: 16px; padding: 40px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; transform-style: preserve-3d; transition: border-color 0.2s ease, box-shadow 0.2s ease; will-change: transform;">
 <div style="transform: translateZ(30px);">
 <div style="color: #3eb4ff; font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px;">Office AI Framework // Tier 02</div>
@@ -2164,9 +2197,9 @@ Average US Office Labor Rate ($/Hr): <span id="rate-val" style="color: #ffffff; 
 <div style="margin-bottom: 4px; color: #ffffff;"><span style="font-size: 2.2rem; font-weight: 800;">$99</span><span style="color: #9ca3af; font-size: 0.85rem;"> / mo</span></div>
 <div style="color: #9ca3af; font-size: 0.8rem; margin-bottom: 24px;">+$899 Setup Fee</div>
 <ul style="list-style: none; padding: 0; margin: 0; color: #9ca3af; font-size: 0.95rem; line-height: 2;">
-<li style="margin-bottom: 8px;"><span style="color: #00d2ff; margin-right: 10px;">✓</span>Zastępuje żmudne, ręczne przepisywanie danych</li>
-<li style="margin-bottom: 8px;"><span style="color: #00d2ff; margin-right: 10px;">✓</span>Bezpieczne mosty danych i tunele MCP [F09u7s]</li>
-<li style="margin-bottom: 8px;"><span style="color: #00d2ff; margin-right: 10px;">✓</span>Automatyczna synchronizacja SQL, ERP i CRM [F09u7s]</li>
+<li style="margin-bottom: 8px;"><span style="color: #00d2ff; margin-right: 10px;">✓</span>Replaces tedious manual data entry operations</li>
+<li style="margin-bottom: 8px;"><span style="color: #00d2ff; margin-right: 10px;">✓</span>Secure Model Context Protocol (MCP) tunnels [F09u7s]</li>
+<li style="margin-bottom: 8px;"><span style="color: #00d2ff; margin-right: 10px;">✓</span>Bidirectional CRM, ERP, and SQL pipeline sync [F09u7s]</li>
 </ul>
 </div>
 <button onclick="handleSwarmClick(event, 'tier2');" style="width: 100%; padding: 14px; background: #00d2ff; color: #03060f; border: none; border-radius: 6px; font-weight: 700; font-size: 0.95rem; margin-top: 32px; transform: translateZ(40px);">Queue Ingestion Request</button>
@@ -2180,12 +2213,12 @@ Average US Office Labor Rate ($/Hr): <span id="rate-val" style="color: #ffffff; 
 <div style="margin-bottom: 4px; color: #ffffff;"><span style="font-size: 2.2rem; font-weight: 800;">$249</span><span style="color: #9ca3af; font-size: 0.85rem;"> / mo</span></div>
 <div style="color: #9ca3af; font-size: 0.8rem; margin-bottom: 24px;">+Custom Enterprise Setup Fee</div>
 <ul style="list-style: none; padding: 0; margin: 0; color: #9ca3af; font-size: 0.95rem; line-height: 2;">
-<li style="margin-bottom: 8px;"><span style="color: #a855f7; margin-right: 10px;">✓</span>Zastępuje rutynową pracę sekretariatu i back-office</li>
-<li style="margin-bottom: 8px;"><span style="color: #a855f7; margin-right: 10px;">✓</span>Automatyczna segregacja i parowanie faktur</li>
-<li style="margin-bottom: 8px;"><span style="color: #a855f7; margin-right: 10px;">✓</span>24/7 Autonomiczny audyt i układanie plików</li>
+<li style="margin-bottom: 8px;"><span style="color: #a855f7; margin-right: 10px;">✓</span>Replaces routine back-office clerical overhead</li>
+<li style="margin-bottom: 8px;"><span style="color: #a855f7; margin-right: 10px;">✓</span>Autonomous asset ingestion & cross-matching</li>
+<li style="margin-bottom: 8px;"><span style="color: #a855f7; margin-right: 10px;">✓</span>24/7 automated document auditing pipelines</li>
 </ul>
 </div>
-<button onclick="handleSwarmClick(event, 'tier3');" style="width: 100%; padding: 14px; background: #a855f7; color: #ffffff; border: none; border-radius: 6px; font-weight: 700; font-size: 0.95rem; margin-top: 32px; transform: translateZ(40px);">Submit Profile Verification</button>
+<div onclick="handleSwarmClick(event, 'tier3');" style="width: 100%; padding: 14px; background: #a855f7; color: #ffffff; border: none; border-radius: 6px; font-weight: 700; font-size: 0.95rem; margin-top: 32px; text-align:center; transform: translateZ(40px);">Submit Profile Verification</div>
 </div>
 </div>
 </section>
@@ -2250,6 +2283,7 @@ const hours = parseInt(document.getElementById('hours-input').value) || 40;
 const rate = parseInt(document.getElementById('rate-input').value) || 35;
 const outcomeEl = document.getElementById('roi-outcome');
 const savingEl = document.getElementById('roi-saving-text');
+if(!outcomeEl || !savingEl) return;
 
 let currentCount = 0;
 const finalLoss = hours * rate * 52;
