@@ -2080,36 +2080,25 @@ justify-content: flex-start;
 <!-- GLOBAL INFRASTRUCTURE MATRIX // ENTERPRISE ROBUST CORE -->
 <main style="background: #03060f; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #ffffff; padding: 0; margin: 0; min-height: 100vh; overflow-x: hidden;">
 
-<!-- STYLES FOR CINEMATIC EFFECT AND RUNNING LASER GRADIENTS -->
+<!-- STYLES FOR CINEMATIC EFFECT AND RUNNING GRADIENTS -->
 <style>
 @keyframes cinematicEntrance {
-0% { transform: scale(0.5) translateZ(-200px); opacity: 0; filter: blur(15px); }
+0% { transform: scale(0.7) translateZ(-150px); opacity: 0; filter: blur(12px); }
 100% { transform: scale(1) translateZ(0); opacity: 1; filter: blur(0); }
 }
-@keyframes laserOrbit {
-0% { transform: rotate(0deg); }
-100% { transform: rotate(360deg); }
-}
-/* Nagłówek startuje jako całkowicie ukryty w głębi */
 .cinema-header {
-opacity: 0;
-transform: scale(0.5) translateZ(-200px);
+animation: cinematicEntrance 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 will-change: transform, opacity, filter;
 text-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
-transition: opacity 0.3s ease;
 }
-/* Ta klasa zostanie wstrzyknięta przez skrypt, gdy klient dojedzie do sekcji */
-.cinema-header.play-entrance {
-animation: cinematicEntrance 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+.simulator-panel {
+background: rgba(9, 17, 36, 0.4); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(62, 180, 255, 0.25); border-radius: 16px; padding: 32px; max-width: 650px; margin: 40px auto; box-shadow: 0 20px 50px rgba(0,0,0,0.6);
 }
-.laser-container {
-position: relative; width: 100%; max-width: 520px; margin: 0 auto; padding: 2px; border-radius: 12px; overflow: hidden; background: rgba(9, 17, 36, 0.5); box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+.biz-range {
+width: 100%; -webkit-appearance: none; background: rgba(255,255,255,0.1); height: 6px; border-radius: 4px; outline: none; margin: 12px 0 24px 0;
 }
-.laser-container::before {
-content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: conic-gradient(transparent, #00d2ff, #a855f7, transparent 60%); animation: laserOrbit 4s linear infinite; will-change: transform;
-}
-.laser-content {
-position: relative; background: #03060f; border-radius: 10px; padding: 20px; z-index: 2; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+.biz-range::-webkit-slider-thumb {
+-webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%; background: #00d2ff; cursor: pointer; box-shadow: 0 0 10px #00d2ff;
 }
 </style>
 
@@ -2121,87 +2110,48 @@ position: relative; background: #03060f; border-radius: 10px; padding: 20px; z-i
 <h1 id="dynamic-cinema-text" class="cinema-header" style="font-size: 2.3rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 24px; line-height: 1.2; color: #ffffff;">
 Orchestrate Frictionless Operations With <span style="color: #00d2ff; text-shadow: 0 0 20px rgba(0,210,255,0.3);">Autonomous Swarms</span>
 </h1>
+<p style="color: #9ca3af; font-size: 1.05rem; max-width: 700px; margin: 0 auto 20px auto; line-height: 1.6;">Deploy self-directed, multi-agent validation loops to optimize front-line communications, transactional alignment, and internal structural indexing. Reduce operational cycle times seamlessly.</p>
 
-<p style="color: #9ca3af; font-size: 1.05rem; max-width: 700px; margin: 0 auto 40px auto; line-height: 1.6;">Deploy self-directed, multi-agent validation loops to optimize front-line communications, transactional alignment, and internal structural indexing. Reduce operational cycle times seamlessly.</p>
+<!-- NEW INTERACTIVE OPERATIONAL ROI SIMULATOR -->
+<div class="simulator-panel">
+<div style="font-size: 0.85rem; color: #00d2ff; font-weight: 700; margin-bottom: 20px; letter-spacing: 1px; text-transform: uppercase; text-align: left;">[ Executive Office Efficiency Audit ]</div>
 
-<!-- LASER ORBITING CONTAINER -->
-<div class="laser-container">
-<div class="laser-content">
-<div style="font-size: 0.85rem; color: #00d2ff; font-weight: 700; margin-bottom: 8px; letter-spacing: 0.5px;">SECURE INBOUND CAPABILITY VECTOR</div>
-<p style="color: #9ca3af; font-size: 0.8rem; margin: 0 0 16px 0; line-height: 1.45;">Multi-agent clusters are currently active. Initialize your ingestion pipeline below to request secure infrastructure synchronization.</p>
-<a href="#onboarding" style="background: #00d2ff; color: #03060f; padding: 10px 28px; border-radius: 4px; font-weight: 700; text-decoration: none; font-size: 0.9rem; display: inline-block; box-shadow: 0 0 20px rgba(0, 210, 255, 0.25);">Initialize Infrastructure Gateway</a>
-</div>
-</div>
-</section>
+<div style="text-align: left; color: #9ca3af; font-size: 0.9rem;">
+Weekly Tedious Office Hours Wasted: <span id="hours-val" style="color: #ffffff; font-weight: 700;">40 Hours</span>
+<input type="range" id="hours-input" min="10" max="200" value="40" class="biz-range" oninput="document.getElementById('hours-val').textContent = this.value + ' Hours';">
 
-<!-- AUTOMATIC SCROLL DETECTOR TRIGGER -->
-<script>
-(function() {
-const targetText = document.getElementById('dynamic-cinema-text');
-const triggerZone = document.getElementById('swarmic-trigger-zone');
-if (!targetText || !triggerZone) return;
+Average US Office Labor Rate ($/Hr): <span id="rate-val" style="color: #ffffff; font-weight: 700;">$35/hr</span>
+<input type="range" id="rate-input" min="20" max="150" value="35" class="biz-range" oninput="document.getElementById('rate-val').textContent = '$' + this.value + '/hr';">
+</div>
 
-const observer = new IntersectionObserver((entries) => {
-entries.forEach(entry => {
-// Jeśli sekcja cennika wejdzie w pole widzenia chociaż w 15%
-if (entry.isIntersecting) {
-targetText.classList.add('play-entrance');
-observer.unobserve(triggerZone); // Odpala animację tylko raz
-}
-});
-}, { threshold: 0.15 });
+<div style="background: rgba(4, 8, 20, 0.5); border-radius: 8px; padding: 20px; margin-bottom: 24px; border: 1px dashed rgba(255,255,255,0.1); text-align: left;">
+<div style="font-family: monospace; font-size: 11px; color: #9ca3af; margin-bottom: 6px;">AUDIT OUTCOME TELEMETRY:</div>
+<div style="font-size: 1.4rem; font-weight: 800; color: #ffffff;">Annual Manual Overhead Bleed: <span id="roi-outcome" style="color: #ef4444;">$72,800</span></div>
+<div style="font-size: 0.85rem; color: #10b981; margin-top: 4px; font-weight: 600;" id="roi-saving-text">Potential Office AI Recovery: Up to 85% Time Saved</div>
+</div>
 
-observer.observe(triggerZone);
-})();
-</script>
-
-<!-- INTERACTIVE TELEMETRY LABORATORY -->
-<section style="max-width: 1200px; margin: 40px auto; padding: 0 20px;">
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-bottom: 60px;">
-<!-- MONITOR 01 -->
-<div style="background: rgba(9, 17, 36, 0.3); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 12px; padding: 28px; position: relative;">
-<div id="sim-badge-1" style="position: absolute; top: 16px; right: 16px; color: #10b981; font-family: monospace; font-size: 10px; font-weight: bold; background: rgba(16, 185, 129, 0.1); padding: 4px 8px; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.25);">[ SIMULATOR IDLE ]</div>
-<div style="color: #10b981; font-family: monospace; font-size: 10px; font-weight: 700; margin-bottom: 12px;">STREAM // NASA_MODIS_INGESTION</div>
-<h4 style="color: #ffffff; font-size: 1.2rem; margin: 0 0 8px 0; font-weight: 700;">Geo-Spatial Stream Layer</h4>
-<p style="color: #9ca3af; font-size: 0.85rem; line-height: 1.5; margin-bottom: 20px;">Test mapping spatial arrays. Simulating orbital data pipeline feeds to verify synchronization latency.</p>
-<div style="font-family: monospace; font-size: 10px; color: #9ca3af; line-height: 1.8; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 12px; margin-bottom: 20px;">
-<div>STATUS: <span id="sim-status-1" style="color: #9ca3af;">READY // STANDBY</span></div>
-<div>LATENCY: <span id="sim-lat-1" style="color: #00d2ff;">0.00ms</span></div>
-<div>INTEGRITY: <span id="sim-int-1" style="color: #ffffff;">100.0%</span></div>
-</div>
-<button onclick="runNasaSimulator('modis', 'tier2', 'sim-status-1', 'sim-lat-1', 'sim-int-1', 'sim-badge-1')" style="width: 100%; padding: 12px; background: transparent; border: 1px solid #10b981; color: #10b981; border-radius: 6px; font-weight: 700; font-family: monospace; font-size: 0.8rem; cursor: pointer;">[ INITIATE STREAM SIMULATION ]</button>
-</div>
-<!-- MONITOR 02 -->
-<div style="background: rgba(9, 17, 36, 0.3); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 12px; padding: 28px; position: relative;">
-<div id="sim-badge-2" style="position: absolute; top: 16px; right: 16px; color: #a855f7; font-family: monospace; font-size: 10px; font-weight: bold; background: rgba(168, 85, 247, 0.1); padding: 4px 8px; border-radius: 4px; border: 1px solid rgba(168, 85, 247, 0.25);">[ SIMULATOR IDLE ]</div>
-<div style="color: #a855f7; font-family: monospace; font-size: 10px; font-weight: 700; margin-bottom: 12px;">STREAM // NASA_FIRMS_HOTSPOT</div>
-<h4 style="color: #ffffff; font-size: 1.2rem; margin: 0 0 8px 0; font-weight: 700;">Multi-Agent Thermal Swarm</h4>
-<p style="color: #9ca3af; font-size: 0.85rem; line-height: 1.5; margin-bottom: 20px;">Test automated recursive matrix behaviors. Simulating threat vector ingestion routes to verify distributed node actions.</p>
-<div style="font-family: monospace; font-size: 10px; color: #9ca3af; line-height: 1.8; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 12px; margin-bottom: 20px;">
-<div>STATUS: <span id="sim-status-2" style="color: #9ca3af;">READY // STANDBY</span></div>
-<div>NODES: <span id="sim-lat-2" style="color: #00d2ff;">0 NODES</span></div>
-<div>ALGORITHM: <span id="sim-int-2" style="color: #ffffff;">RECURSIVE SWARM</span></div>
-</div>
-<button onclick="runNasaSimulator('firms', 'tier3', 'sim-status-2', 'sim-lat-2', 'sim-int-2', 'sim-badge-2')" style="width: 100%; padding: 12px; background: transparent; border: 1px solid #a855f7; color: #a855f7; border-radius: 6px; font-weight: 700; font-family: monospace; font-size: 0.8rem; cursor: pointer;">[ INITIATE SWARM SIMULATION ]</button>
-</div>
+<button onclick="calculateCorporateROI()" style="width: 100%; padding: 14px; background: #00d2ff; color: #03060f; border: none; border-radius: 6px; font-weight: 700; font-size: 1rem; cursor: pointer; box-shadow: 0 0 25px rgba(0, 210, 255, 0.25);">[ RUN OPERATION AUDIT ]</button>
 </div>
 </section>
-
-<!-- LIVE 3D PRODUCTION TIERS -->
-<section id="onboarding" style="padding: 20px; max-width: 1200px; margin: 0 auto; perspective: 1000px;">
+    <!-- LIVE 3D PRODUCTION TIERS -->
+<section id="onboarding" style="padding: 40px 20px; max-width: 1200px; margin: 0 auto; perspective: 1000px;">
+<div style="text-align: center; margin-bottom: 50px;">
+<h2 style="font-size: 1.8rem; font-weight: 800; letter-spacing: -0.3px; margin-bottom: 12px; color: #ffffff;">Production-Ready Frameworks</h2>
+<p style="color: #9ca3af; font-size: 0.95rem; max-width: 500px; margin: 0 auto; line-height: 1.5;">Secure your operational slot. Select a capability tier to submit configuration.</p>
+</div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
 
 <!-- TIER 01: FRONT DESK -->
 <div id="card-tier1" data-swarm-card onclick="handleSwarmClick(event, 'tier1');" style="background: rgba(9, 17, 36, 0.4); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(62, 180, 255, 0.2); border-radius: 16px; padding: 40px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; transform-style: preserve-3d; transition: border-color 0.2s ease, box-shadow 0.2s ease; will-change: transform;">
 <div style="transform: translateZ(30px);">
-<div style="color: #3eb4ff; font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px;">Operational Layer // Tier 01</div>
+<div style="color: #3eb4ff; font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px;">Office AI Framework // Tier 01</div>
 <h3 style="font-size: 1.4rem; font-weight: 700; margin: 0 0 12px 0; color: #ffffff;">Autonomous Front Desk</h3>
 <div style="margin-bottom: 6px; color: #ffffff;"><span style="font-size: 2.2rem; font-weight: 800;">$49</span><span style="color: #9ca3af; font-size: 0.85rem;"> / mo</span></div>
 <div style="color: #9ca3af; font-size: 0.8rem; margin-bottom: 24px;">+$499 Setup Fee</div>
 <ul style="list-style: none; padding: 0; margin: 0; color: #9ca3af; font-size: 0.95rem; line-height: 2;">
-<li style="margin-bottom: 8px;"><span style="color: #00d2ff; margin-right: 10px;">✓</span>500 Automated Inbound Minutes</li>
-<li style="margin-bottom: 8px;"><span style="color: #00d2ff; margin-right: 10px;">✓</span>Structured Intent Triage</li>
-<li style="margin-bottom: 8px;"><span style="color: #00d2ff; margin-right: 10px;">✓</span>Ledger & Scheduling Sync</li>
+<li style="margin-bottom: 8px;"><span style="color: #00d2ff; margin-right: 10px;">✓</span>Zastępuje ręczną obsługę połączeń i skrzynek</li>
+<li style="margin-bottom: 8px;"><span style="color: #00d2ff; margin-right: 10px;">✓</span>Autonomiczne filtrowanie i triaż intencji</li>
+<li style="margin-bottom: 8px;"><span style="color: #00d2ff; margin-right: 10px;">✓</span>Automatyczna synchronizacja kalendarzy</li>
 </ul>
 </div>
 <button style="width: 100%; padding: 14px; background: #00d2ff; color: #03060f; border: none; border-radius: 6px; font-weight: 700; font-size: 0.95rem; margin-top: 32px; transform: translateZ(40px);">Queue Ingestion Request</button>
@@ -2209,145 +2159,18 @@ observer.observe(triggerZone);
     <!-- TIER 02: DATA BRIDGE -->
 <div id="card-tier2" data-swarm-card onclick="handleSwarmClick(event, 'tier2');" style="background: rgba(9, 17, 36, 0.45); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(62, 180, 255, 0.35); border-radius: 16px; padding: 40px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; transform-style: preserve-3d; transition: border-color 0.2s ease, box-shadow 0.2s ease; will-change: transform;">
 <div style="transform: translateZ(30px);">
-<div style="color: #3eb4ff; font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px;">Data Sync Infrastructure // Tier 02</div>
+<div style="color: #3eb4ff; font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px;">Office AI Framework // Tier 02</div>
 <h3 style="font-size: 1.4rem; font-weight: 700; margin: 0 0 12px 0; color: #ffffff;">Data Bridge & Sync Engine</h3>
 <div style="margin-bottom: 4px; color: #ffffff;"><span style="font-size: 2.2rem; font-weight: 800;">$99</span><span style="color: #9ca3af; font-size: 0.85rem;"> / mo</span></div>
 <div style="color: #9ca3af; font-size: 0.8rem; margin-bottom: 24px;">+$899 Setup Fee</div>
 <ul style="list-style: none; padding: 0; margin: 0; color: #9ca3af; font-size: 0.95rem; line-height: 2;">
-<li style="margin-bottom: 8px;"><span style="color: #00d2ff; margin-right: 10px;">✓</span>5,000 Inter-System Transfers</li>
-<li style="margin-bottom: 8px;"><span style="color: #00d2ff; margin-right: 10px;">✓</span>Secure Model Context Tunnels</li>
-<li style="margin-bottom: 8px;"><span style="color: #00d2ff; margin-right: 10px;">✓</span>Bidirectional CRM & SQL Mapping</li>
+<li style="margin-bottom: 8px;"><span style="color: #00d2ff; margin-right: 10px;">✓</span>Zastępuje żmudne, ręczne przepisywanie danych</li>
+<li style="margin-bottom: 8px;"><span style="color: #00d2ff; margin-right: 10px;">✓</span>Bezpieczne mosty danych i tunele MCP [F09u7s]</li>
+<li style="margin-bottom: 8px;"><span style="color: #00d2ff; margin-right: 10px;">✓</span>Automatyczna synchronizacja SQL, ERP i CRM [F09u7s]</li>
 </ul>
 </div>
-<button style="width: 100%; padding: 14px; background: #00d2ff; color: #03060f; border: none; border-radius: 6px; font-weight: 700; font-size: 0.95rem; margin-top: 32px; transform: translateZ(40px);">Queue Ingestion Request</button>
+<button onclick="handleSwarmClick(event, 'tier2');" style="width: 100%; padding: 14px; background: #00d2ff; color: #03060f; border: none; border-radius: 6px; font-weight: 700; font-size: 0.95rem; margin-top: 32px; transform: translateZ(40px);">Queue Ingestion Request</button>
 </div>
-
-<!-- TIER 03: OPERATIONS SWARM -->
-<div id="card-tier3" data-swarm-card onclick="handleSwarmClick(event, 'tier3');" style="background: rgba(4, 8, 20, 0.65); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(168, 85, 247, 0.35); border-radius: 16px; padding: 40px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; transform-style: preserve-3d; transition: border-color 0.2s ease, box-shadow 0.2s ease; will-change: transform;">
-<div style="transform: translateZ(30px);">
-<div style="color: #8b5cf6; font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px;">Enterprise Automation Mesh // Tier 03</div>
-<h3 style="font-size: 1.4rem; font-weight: 700; margin: 0 0 12px 0; color: #ffffff;">Office Operations Swarm</h3>
-<div style="margin-bottom: 4px; color: #ffffff;"><span style="font-size: 2.2rem; font-weight: 800;">$249</span><span style="color: #9ca3af; font-size: 0.85rem;"> / mo</span></div>
-<div style="color: #9ca3af; font-size: 0.8rem; margin-bottom: 24px;">+Custom Enterprise Setup Fee</div>
-<ul style="list-style: none; padding: 0; margin: 0; color: #9ca3af; font-size: 0.95rem; line-height: 2;">
-<li style="margin-bottom: 8px;"><span style="color: #a855f7; margin-right: 10px;">✓</span>Asset Ingestion & Sorting</li>
-<li style="margin-bottom: 8px;"><span style="color: #a855f7; margin-right: 10px;">✓</span>Transactional Matching Logs</li>
-<li style="margin-bottom: 8px;"><span style="color: #a855f7; margin-right: 10px;">✓</span>Autonomous Directory Structuring</li>
-</ul>
-</div>
-<button style="width: 100%; padding: 14px; background: #a855f7; color: #ffffff; border: none; border-radius: 6px; font-weight: 700; font-size: 0.95rem; margin-top: 32px; transform: translateZ(40px);">Submit Profile Verification</button>
-</div>
-</div>
-</section>
-</main>
-
-<!-- HIGH-END VECTOR SHARD LOGIC ENGINE -->
-<script>
-// GLOBAL ACTIVE DICTIONARY FOR TRANSLATIONAL PAYLOADS
-const swarmPriceDictionary = {
-'tier1': 'Autonomous Front Desk ($49/mo)',
-'tier2': 'Data Bridge & Sync Engine ($99/mo)',
-'tier3': 'Office Operations Swarm ($249/mo)'
-};
-
-// MUTATION OBSERVER INTERCEPTOR - DESTROYS TIER1/TIER2 RAW STRING CONFLICTS ON THE FLY
-const swarmModalObserver = new MutationObserver(() => {
-const modalElement = document.querySelector('#swarmic-modal, [class*="modal"]');
-if (modalElement && modalElement.style.display === 'block') {
-const paragraphs = modalElement.getElementsByTagName('p');
-for (let p of paragraphs) {
-if (p.textContent.includes('Infrastructure') || p.textContent.includes('tier') || p.textContent.includes('assigned') || p.textContent.includes('tokens')) {
-let activeKey = 'tier1';
-if (window.currentActiveSwarmTier) { activeKey = window.currentActiveSwarmTier; }
-
-const verifiedTarget = swarmPriceDictionary[activeKey] || "Suite ($0/mo)";
-p.innerHTML = "Infrastructure allocation tokens for <strong>" + verifiedTarget + "</strong> are being assigned within the local routing layer.";
-break;
-}
-}
-}
-});
-
-// START DOM MONITORING IN RUNTIME ENVIRONMENT
-swarmModalObserver.observe(document.body, { childList: true, subtree: true });
-
-// 3D MATRIX ORIENTATION CORE ENGINE
-document.querySelectorAll('[data-swarm-card]').forEach(card => {
-card.addEventListener('mousemove', e => {
-const rect = card.getBoundingClientRect();
-const x = e.clientX - rect.left;
-const y = e.clientY - rect.top;
-const xc = rect.width / 2;
-const yc = rect.height / 2;
-const angleX = (yc - y) / 12;
-const angleY = (x - xc) / 12;
-card.style.transform = "rotateX(" + angleX + "deg) rotateY(" + angleY + "deg) translateZ(10px)";
-card.style.boxShadow = "0 20px 40px rgba(0,0,0,0.6), 0 0 25px " + (card.id === 'card-tier3' ? 'rgba(168,85,247,0.35)' : 'rgba(62,180,255,0.35)');
-card.style.borderColor = card.id === 'card-tier3' ? 'rgba(168,85,247,0.8)' : 'rgba(62,180,255,0.8)';
-});
-card.addEventListener('mouseleave', () => {
-card.style.transform = "rotateX(0deg) rotateY(0deg) translateZ(0px)";
-card.style.boxShadow = "none";
-card.style.borderColor = card.id === 'card-tier3' ? 'rgba(168, 85, 247, 0.35)' : 'rgba(62, 180, 255, 0.2)';
-});
-});
-
-// SYNCHRONOUS LEVERAGE INTERCEPTOR
-function handleSwarmClick(event, tierId) {
-if(event) {
-event.stopPropagation();
-event.preventDefault();
-}
-
-// Bind active payload context key for the MutationObserver interface
-window.currentActiveSwarmTier = tierId;
-
-if(typeof openSwarmicModal === 'function') {
-try { openSwarmicModal(tierId); } catch(e) {}
-}
-}
-
-// ASYNCHRONIC RECURSIVE NASA STREAM SIMULATOR
-function runNasaSimulator(type, tierId, statusId, latId, intId, badgeId) {
-const statusEl = document.getElementById(statusId);
-const latEl = document.getElementById(latId);
-const intEl = document.getElementById(intId);
-const badgeEl = document.getElementById(badgeId);
-if(!statusEl || !latEl || !intEl || !badgeEl) return;
-let count = 0;
-badgeEl.textContent = "[ RUNNING CORE TEST ]";
-badgeEl.style.background = "rgba(239, 68, 68, 0.15)";
-badgeEl.style.borderColor = "#ef4444";
-badgeEl.style.color = "#ef4444";
-const interval = setInterval(() => {
-count++;
-statusEl.textContent = type === 'modis' ? "BUFFERING // INGESTING" : "ROUTING // MATRIX_ACTIVE";
-statusEl.style.color = "#ffb020";
-if(type === 'modis') {
-latEl.textContent = (Math.random() * 0.3 + 0.05).toFixed(2) + "ms";
-intEl.textContent = (Math.random() * 1 + 99).toFixed(1) + "% INTEGRITY";
-} else {
-latEl.textContent = Math.floor(Math.random() * 2000 + 8000) + " CORE NODES";
-intEl.textContent = "ALGORITHM // GEN_" + Math.floor(Math.random() * 50 + 50);
-}
-if(count > 12) {
-clearInterval(interval);
-statusEl.textContent = type === 'modis' ? "CONNECTED // NOMINAL" : "MONITORING // SECURE";
-statusEl.style.color = type === 'modis' ? "#10b981" : "#a855f7";
-badgeEl.textContent = "[ SIMULATION COMPLETE ]";
-badgeEl.style.background = "rgba(16, 185, 129, 0.1)";
-badgeEl.style.borderColor = "#10b981";
-badgeEl.style.color = "#10b981";
-const targetCard = document.getElementById('card-' + tierId);
-if(targetCard) {
-targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-targetCard.style.boxShadow = type === 'modis' ? "0 0 40px rgba(16, 185, 129, 0.6)" : "0 0 40px rgba(168, 85, 247, 0.6)";
-setTimeout(() => { targetCard.style.boxShadow = "none"; }, 2000);
-}
-}
-}, 100);
-}
-</script>
     
 
 
